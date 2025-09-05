@@ -1,0 +1,230 @@
+/*
+Theme Name: Smart Grant Solutions
+Description: Custom WordPress theme for Smart Grant Solutions - MissionGranted platform. Modular, scalable theme built without theme.json for maximum flexibility.
+Version: 1.0.0
+Author: Tyler Sear
+Text Domain: sgs
+*/
+
+/*!
+ * Smart Grant Solutions WordPress Theme
+ * Custom SCSS Architecture
+ */
+
+// ==========================================================================
+// ABSTRACTS
+// ==========================================================================
+@import 'abstracts/variables';
+@import 'abstracts/mixins';
+
+// ==========================================================================
+// BASE
+// ==========================================================================
+@import 'base/reset';
+@import 'base/typography';
+
+// ==========================================================================
+// LAYOUT
+// ==========================================================================
+@import 'layout/header';
+@import 'layout/footer';
+@import 'layout/grid';
+
+// ==========================================================================
+// COMPONENTS
+// ==========================================================================
+@import 'components/buttons';
+@import 'components/cards';
+@import 'components/forms';
+@import 'components/hero';
+@import 'components/features';
+
+// ==========================================================================
+// PAGES
+// ==========================================================================
+// Page-specific styles will be imported here as needed
+// @import 'pages/home';
+// @import 'pages/about';
+// @import 'pages/services';
+// @import 'pages/contact';
+
+// ==========================================================================
+// THEMES
+// ==========================================================================
+// Theme variations will be imported here if needed
+// @import 'themes/dark';
+
+// ==========================================================================
+// UTILITIES
+// ==========================================================================
+// Utility classes and helper styles
+
+// Spacing utilities
+@each $size, $value in $spacing-sizes {
+  // Margin utilities
+  .m-#{$size} { margin: $value; }
+  .mt-#{$size} { margin-top: $value; }
+  .mr-#{$size} { margin-right: $value; }
+  .mb-#{$size} { margin-bottom: $value; }
+  .ml-#{$size} { margin-left: $value; }
+  .mx-#{$size} { 
+    margin-left: $value; 
+    margin-right: $value; 
+  }
+  .my-#{$size} { 
+    margin-top: $value; 
+    margin-bottom: $value; 
+  }
+  
+  // Padding utilities
+  .p-#{$size} { padding: $value; }
+  .pt-#{$size} { padding-top: $value; }
+  .pr-#{$size} { padding-right: $value; }
+  .pb-#{$size} { padding-bottom: $value; }
+  .pl-#{$size} { padding-left: $value; }
+  .px-#{$size} { 
+    padding-left: $value; 
+    padding-right: $value; 
+  }
+  .py-#{$size} { 
+    padding-top: $value; 
+    padding-bottom: $value; 
+  }
+}
+
+// Background utilities
+.bg-primary { background-color: $color-primary; }
+.bg-secondary { background-color: $color-secondary; }
+.bg-black { background-color: $color-black; }
+.bg-white { background-color: $color-white; }
+.bg-gray-50 { background-color: $color-gray-50; }
+.bg-gray-100 { background-color: $color-gray-100; }
+.bg-gray-200 { background-color: $color-gray-200; }
+
+// Shadow utilities
+.shadow-none { box-shadow: none; }
+.shadow-sm { box-shadow: $shadow-sm; }
+.shadow { box-shadow: $shadow-md; }
+.shadow-lg { box-shadow: $shadow-lg; }
+
+// Border utilities
+.border-0 { border: 0; }
+.border { border: 1px solid $color-gray-200; }
+.border-top { border-top: 1px solid $color-gray-200; }
+.border-right { border-right: 1px solid $color-gray-200; }
+.border-bottom { border-bottom: 1px solid $color-gray-200; }
+.border-left { border-left: 1px solid $color-gray-200; }
+
+.border-primary { border-color: $color-primary; }
+.border-secondary { border-color: $color-secondary; }
+.border-white { border-color: $color-white; }
+
+// Rounded corners
+.rounded-0 { border-radius: 0; }
+.rounded { border-radius: 4px; }
+.rounded-lg { border-radius: 8px; }
+.rounded-circle { border-radius: 50%; }
+
+// Animation utilities
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.6s ease-in-out forwards;
+}
+
+.slide-up {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: slideUp 0.6s ease-out forwards;
+}
+
+.scale-in {
+  opacity: 0;
+  transform: scale(0.9);
+  animation: scaleIn 0.5s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+// Loading states
+.loading {
+  position: relative;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin: -10px 0 0 -10px;
+    border: 2px solid $color-gray-300;
+    border-top-color: $color-primary;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+// Accessibility utilities
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.sr-only-focusable {
+  &:active,
+  &:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+  }
+}
+
+// Skip links
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  z-index: 999999;
+  padding: $spacing-sm $spacing-md;
+  background-color: $color-black;
+  color: $color-white;
+  text-decoration: none;
+  
+  &:focus {
+    left: 6px;
+    top: 7px;
+  }
+}

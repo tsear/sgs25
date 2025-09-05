@@ -1,0 +1,266 @@
+// Mixins - Smart Grant Solutions Theme
+
+// Responsive breakpoints
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == xs {
+    @media (max-width: #{$breakpoint-xs - 1}) { @content; }
+  }
+  @if $breakpoint == sm {
+    @media (max-width: #{$breakpoint-sm - 1}) { @content; }
+  }
+  @if $breakpoint == md {
+    @media (max-width: #{$breakpoint-md - 1}) { @content; }
+  }
+  @if $breakpoint == lg {
+    @media (max-width: #{$breakpoint-lg - 1}) { @content; }
+  }
+  @if $breakpoint == xl {
+    @media (max-width: #{$breakpoint-xl - 1}) { @content; }
+  }
+}
+
+@mixin respond-above($breakpoint) {
+  @if $breakpoint == xs {
+    @media (min-width: $breakpoint-xs) { @content; }
+  }
+  @if $breakpoint == sm {
+    @media (min-width: $breakpoint-sm) { @content; }
+  }
+  @if $breakpoint == md {
+    @media (min-width: $breakpoint-md) { @content; }
+  }
+  @if $breakpoint == lg {
+    @media (min-width: $breakpoint-lg) { @content; }
+  }
+  @if $breakpoint == xl {
+    @media (min-width: $breakpoint-xl) { @content; }
+  }
+}
+
+// Container
+@mixin container {
+  width: 100%;
+  max-width: $container-max-width;
+  margin: 0 auto;
+  padding: 0 $container-padding;
+}
+
+// Flex utilities
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+// Grid system
+@mixin grid-container {
+  display: grid;
+  grid-template-columns: repeat($grid-columns, 1fr);
+  gap: $grid-gap;
+}
+
+@mixin grid-column($cols, $total: $grid-columns) {
+  grid-column: span $cols;
+}
+
+// Typography mixins
+@mixin font-heading($size: $font-size-2xl, $weight: $font-weight-bold) {
+  font-family: $font-primary;
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $line-height-normal;
+}
+
+@mixin font-body($size: $font-size-base, $weight: $font-weight-regular) {
+  font-family: $font-primary;
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $line-height-relaxed;
+}
+
+// Button mixins
+@mixin button-base {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 $spacing-md;
+  border: none;
+  border-radius: $input-border-radius;
+  font-family: $font-primary;
+  font-weight: $font-weight-semibold;
+  text-decoration: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all $transition-fast;
+  
+  &:focus {
+    outline: none;
+  }
+}
+
+@mixin button-primary {
+  @include button-base;
+  background-color: $color-primary;
+  color: $color-white;
+  
+  &:hover,
+  &:focus {
+    background-color: $color-black;
+    border: 1px solid $color-primary;
+  }
+}
+
+@mixin button-secondary {
+  @include button-base;
+  background-color: transparent;
+  color: $color-primary;
+  border: 1px solid $color-primary;
+  
+  &:hover,
+  &:focus {
+    background-color: $color-primary;
+    color: $color-white;
+  }
+}
+
+// Form elements
+@mixin input-base {
+  width: 100%;
+  height: $input-height;
+  padding: 0 $spacing-md;
+  border: 1px solid $input-border;
+  border-radius: $input-border-radius;
+  background-color: $input-bg;
+  font-family: $font-primary;
+  font-size: $font-size-base;
+  
+  &:focus {
+    outline: none;
+    border-color: $color-primary;
+  }
+}
+
+// Animations
+@mixin fadeIn($duration: $transition-normal) {
+  opacity: 0;
+  animation: fadeIn $duration ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@mixin slideInUp($duration: $transition-normal) {
+  transform: translateY(30px);
+  opacity: 0;
+  animation: slideInUp $duration ease-out forwards;
+}
+
+@keyframes slideInUp {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+// Layout utilities
+@mixin aspect-ratio($width, $height) {
+  position: relative;
+  
+  &::before {
+    content: '';
+    display: block;
+    padding-top: percentage($height / $width);
+  }
+  
+  > * {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@mixin visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+// Text utilities
+@mixin text-truncate {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+@mixin text-clamp($lines: 3) {
+  display: -webkit-box;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+// Background utilities
+@mixin background-cover {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+// Hover states
+@mixin hover-lift {
+  transition: transform $transition-fast;
+  
+  &:hover {
+    transform: translateY(-2px);
+  }
+}
+
+// Button mixin
+@mixin btn($bg-color: $color-primary, $text-color: $color-white, $border-color: null) {
+  display: inline-block;
+  padding: 15px 30px;
+  background-color: $bg-color;
+  color: $text-color;
+  text-decoration: none;
+  font-family: $font-primary;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border: 2px solid if($border-color, $border-color, $bg-color);
+  border-radius: 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    background-color: if($bg-color == transparent, $text-color, transparent);
+    color: if($bg-color == transparent, $bg-color, $text-color);
+    border-color: if($border-color, $border-color, $text-color);
+  }
+  
+  &:focus {
+    outline: 2px solid $color-primary;
+    outline-offset: 2px;
+  }
+}

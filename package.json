@@ -1,0 +1,32 @@
+{
+  "name": "smartgrantsolutions-theme",
+  "version": "1.0.0",
+  "description": "1:1 WordPress recreation of Smart Grant Solutions Tilda website",
+  "main": "assets/js/main.js",
+  "scripts": {
+    "sass": "sass assets/scss/main.scss:style.css --watch --style=compressed --source-map",
+    "sass-dev": "sass assets/scss/main.scss:style.css --watch --style=expanded --source-map",
+    "build-css": "sass assets/scss/main.scss:style.css --style=compressed --no-source-map",
+    "build-css-dev": "sass assets/scss/main.scss:style.css --style=expanded --source-map",
+    "watch": "npm run sass-dev"
+  },
+  "devDependencies": {
+    "sass": "^1.77.8"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ],
+  "keywords": [
+    "wordpress",
+    "theme",
+    "sass",
+    "scss",
+    "smart-grant-solutions",
+    "tilda",
+    "missiongranted"
+  ],
+  "author": "Smart Grant Solutions",
+  "license": "GPL-2.0+"
+}

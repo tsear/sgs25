@@ -1,0 +1,410 @@
+// Card component styles
+
+.card {
+  background-color: $color-white;
+  border-radius: 0;
+  box-shadow: $shadow-sm;
+  overflow: hidden;
+  transition: all $transition-fast;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: $shadow-md;
+  }
+  
+  // Card variants
+  &.card-flat {
+    box-shadow: none;
+    border: 1px solid $color-gray-200;
+  }
+  
+  &.card-elevated {
+    box-shadow: $shadow-lg;
+  }
+  
+  &.card-bordered {
+    border: 2px solid $color-gray-200;
+  }
+}
+
+// Card header
+.card-header {
+  padding: $spacing-lg;
+  border-bottom: 1px solid $color-gray-200;
+  background-color: $color-gray-50;
+  
+  .card-title {
+    margin: 0;
+    font-size: $font-size-lg;
+    font-weight: $font-weight-semibold;
+    color: $color-text;
+  }
+  
+  .card-subtitle {
+    margin: $spacing-xs 0 0;
+    font-size: $font-size-sm;
+    color: $color-text-muted;
+  }
+}
+
+// Card body
+.card-body {
+  padding: $spacing-lg;
+  
+  .card-title {
+    margin: 0 0 $spacing-md;
+    font-size: $font-size-lg;
+    font-weight: $font-weight-semibold;
+    color: $color-text;
+  }
+  
+  .card-text {
+    margin-bottom: $spacing-md;
+    color: $color-text-muted;
+    line-height: 1.6;
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+// Card footer
+.card-footer {
+  padding: $spacing-lg;
+  border-top: 1px solid $color-gray-200;
+  background-color: $color-gray-50;
+  
+  &.text-muted {
+    color: $color-text-muted;
+  }
+}
+
+// Card image
+.card-img {
+  width: 100%;
+  height: auto;
+  
+  &.card-img-top {
+    border-top-left-radius: inherit;
+    border-top-right-radius: inherit;
+  }
+  
+  &.card-img-bottom {
+    border-bottom-left-radius: inherit;
+    border-bottom-right-radius: inherit;
+  }
+}
+
+.card-img-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: $spacing-lg;
+  border-radius: inherit;
+}
+
+// Service card
+.service-card {
+  @extend .card;
+  text-align: center;
+  padding: $spacing-2xl $spacing-lg;
+  
+  .service-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto $spacing-lg;
+    background-color: $color-primary;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all $transition-fast;
+    
+    svg {
+      width: 30px;
+      height: 30px;
+      fill: $color-white;
+    }
+  }
+  
+  .service-title {
+    font-size: $font-size-xl;
+    font-weight: $font-weight-semibold;
+    margin-bottom: $spacing-md;
+    color: $color-text;
+  }
+  
+  .service-description {
+    color: $color-text-muted;
+    line-height: 1.6;
+    margin-bottom: $spacing-lg;
+  }
+  
+  &:hover {
+    .service-icon {
+      background-color: $color-secondary;
+      transform: scale(1.1);
+    }
+  }
+}
+
+// Team card
+.team-card {
+  @extend .card;
+  text-align: center;
+  overflow: visible;
+  
+  .team-image {
+    position: relative;
+    overflow: hidden;
+    
+    img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      transition: transform $transition-normal;
+    }
+    
+    .team-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(45deg, rgba($color-primary, 0.8), rgba($color-secondary, 0.8));
+      opacity: 0;
+      transition: opacity $transition-fast;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      
+      .social-links {
+        display: flex;
+        gap: $spacing-sm;
+        
+        a {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 40px;
+          height: 40px;
+          background-color: $color-white;
+          color: $color-primary;
+          border-radius: 50%;
+          transition: all $transition-fast;
+          transform: translateY(20px);
+          
+          &:hover {
+            background-color: $color-secondary;
+            color: $color-white;
+            transform: translateY(0) scale(1.1);
+          }
+        }
+      }
+    }
+  }
+  
+  .team-info {
+    padding: $spacing-lg;
+    
+    .team-name {
+      font-size: $font-size-lg;
+      font-weight: $font-weight-semibold;
+      margin-bottom: $spacing-xs;
+      color: $color-text;
+    }
+    
+    .team-position {
+      font-size: $font-size-sm;
+      color: $color-primary;
+      font-weight: $font-weight-semibold;
+      text-transform: uppercase;
+    }
+  }
+  
+  &:hover {
+    .team-image {
+      img {
+        transform: scale(1.05);
+      }
+      
+      .team-overlay {
+        opacity: 1;
+        
+        .social-links a {
+          transform: translateY(0);
+        }
+      }
+    }
+  }
+}
+
+// Testimonial card
+.testimonial-card {
+  @extend .card;
+  padding: $spacing-2xl;
+  position: relative;
+  
+  &::before {
+    content: '"';
+    position: absolute;
+    top: $spacing-lg;
+    left: $spacing-lg;
+    font-size: 60px;
+    font-weight: $font-weight-bold;
+    color: $color-primary;
+    opacity: 0.3;
+    line-height: 1;
+  }
+  
+  .testimonial-content {
+    font-style: italic;
+    font-size: $font-size-lg;
+    line-height: 1.6;
+    color: $color-text;
+    margin-bottom: $spacing-lg;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: $spacing-md;
+    
+    .author-avatar {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    
+    .author-info {
+      .author-name {
+        font-weight: $font-weight-semibold;
+        color: $color-text;
+        margin-bottom: $spacing-xs;
+      }
+      
+      .author-title {
+        font-size: $font-size-sm;
+        color: $color-text-muted;
+      }
+    }
+  }
+}
+
+// Project card
+.project-card {
+  @extend .card;
+  position: relative;
+  overflow: hidden;
+  
+  .project-image {
+    position: relative;
+    overflow: hidden;
+    height: 250px;
+    
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform $transition-normal;
+    }
+    
+    .project-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(45deg, rgba($color-primary, 0.9), rgba($color-secondary, 0.9));
+      opacity: 0;
+      transition: opacity $transition-fast;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      padding: $spacing-lg;
+      
+      .project-links {
+        display: flex;
+        gap: $spacing-md;
+        
+        .btn {
+          transform: translateY(20px);
+          transition: transform $transition-fast 0.1s;
+        }
+      }
+    }
+  }
+  
+  .project-info {
+    padding: $spacing-lg;
+    
+    .project-category {
+      font-size: $font-size-xs;
+      color: $color-primary;
+      text-transform: uppercase;
+      font-weight: $font-weight-semibold;
+      margin-bottom: $spacing-xs;
+    }
+    
+    .project-title {
+      font-size: $font-size-lg;
+      font-weight: $font-weight-semibold;
+      color: $color-text;
+      margin-bottom: $spacing-sm;
+    }
+    
+    .project-description {
+      color: $color-text-muted;
+      font-size: $font-size-sm;
+      line-height: 1.6;
+    }
+  }
+  
+  &:hover {
+    .project-image {
+      img {
+        transform: scale(1.05);
+      }
+      
+      .project-overlay {
+        opacity: 1;
+        
+        .btn {
+          transform: translateY(0);
+        }
+      }
+    }
+  }
+}
+
+// Responsive adjustments
+@include respond-to(md) {
+  .service-card,
+  .testimonial-card {
+    padding: $spacing-xl $spacing-md;
+  }
+  
+  .team-card .team-image img {
+    height: 250px;
+  }
+}
+
+@include respond-to(sm) {
+  .card-header,
+  .card-body,
+  .card-footer {
+    padding: $spacing-md;
+  }
+  
+  .service-card,
+  .testimonial-card {
+    padding: $spacing-lg $spacing-sm;
+  }
+}

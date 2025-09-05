@@ -1,0 +1,143 @@
+// Base - Reset and normalize styles
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: $font-primary;
+  font-size: $font-size-base;
+  font-weight: $font-weight-regular;
+  line-height: $line-height-relaxed;
+  color: $color-white;
+  background-color: $color-black;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// Reset margins and padding for common elements
+h1, h2, h3, h4, h5, h6, p, ul, ol, dl, dd, figure, blockquote, pre {
+  margin: 0;
+  padding: 0;
+}
+
+// Headings
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-primary;
+  font-weight: $font-weight-bold;
+  line-height: $line-height-normal;
+  color: inherit;
+}
+
+h1 { font-size: $font-size-7xl; }
+h2 { font-size: $font-size-6xl; }
+h3 { font-size: $font-size-5xl; }
+h4 { font-size: $font-size-4xl; }
+h5 { font-size: $font-size-3xl; }
+h6 { font-size: $font-size-2xl; }
+
+@include respond-to(lg) {
+  h1 { font-size: $font-size-5xl; }
+  h2 { font-size: $font-size-4xl; }
+  h3 { font-size: $font-size-3xl; }
+  h4 { font-size: $font-size-2xl; }
+  h5 { font-size: $font-size-xl; }
+  h6 { font-size: $font-size-lg; }
+}
+
+@include respond-to(sm) {
+  h1 { font-size: $font-size-4xl; }
+  h2 { font-size: $font-size-3xl; }
+  h3 { font-size: $font-size-2xl; }
+  h4 { font-size: $font-size-xl; }
+  h5 { font-size: $font-size-lg; }
+  h6 { font-size: $font-size-base; }
+}
+
+// Paragraphs
+p {
+  margin-bottom: $spacing-md;
+  
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+// Links
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color $transition-fast;
+  
+  &:hover,
+  &:focus {
+    color: $color-secondary;
+  }
+}
+
+// Lists
+ul, ol {
+  list-style: none;
+}
+
+// Images
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+// Forms
+input, textarea, select, button {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+button {
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+// Tables
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+}
+
+// Strong and em
+strong, b {
+  font-weight: $font-weight-bold;
+}
+
+em, i {
+  font-style: italic;
+}
+
+// Code
+code, pre {
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+}
+
+// Hr
+hr {
+  border: none;
+  height: 1px;
+  background-color: $color-white;
+  margin: $spacing-2xl 0;
+}
+
+// Focus styles
+*:focus {
+  outline: 2px solid $color-primary;
+  outline-offset: 2px;
+}

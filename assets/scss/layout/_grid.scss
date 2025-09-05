@@ -1,0 +1,216 @@
+// Grid system and layout utilities
+
+// Container
+.container {
+  @include container;
+}
+
+.container-fluid {
+  width: 100%;
+  max-width: none;
+  padding-left: $spacing-lg;
+  padding-right: $spacing-lg;
+  
+  @include respond-to(sm) {
+    padding-left: $spacing-md;
+    padding-right: $spacing-md;
+  }
+}
+
+// Grid system
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -#{$gutter / 2};
+  margin-right: -#{$gutter / 2};
+  
+  &.no-gutters {
+    margin-left: 0;
+    margin-right: 0;
+    
+    > [class*="col-"] {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+}
+
+.col {
+  flex: 1;
+  padding-left: $gutter / 2;
+  padding-right: $gutter / 2;
+}
+
+// Grid columns
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include respond-to($breakpoint) {
+    @for $i from 1 through 12 {
+      .col-#{$breakpoint}-#{$i} {
+        flex: 0 0 percentage($i / 12);
+        max-width: percentage($i / 12);
+        padding-left: $gutter / 2;
+        padding-right: $gutter / 2;
+      }
+    }
+    
+    // Auto width columns
+    .col-#{$breakpoint}-auto {
+      flex: 0 0 auto;
+      width: auto;
+      padding-left: $gutter / 2;
+      padding-right: $gutter / 2;
+    }
+  }
+}
+
+// Default columns (no breakpoint)
+@for $i from 1 through 12 {
+  .col-#{$i} {
+    flex: 0 0 percentage($i / 12);
+    max-width: percentage($i / 12);
+    padding-left: $gutter / 2;
+    padding-right: $gutter / 2;
+  }
+}
+
+// Section spacing
+.section {
+  padding: $spacing-4xl 0;
+  
+  &.section-sm {
+    padding: $spacing-2xl 0;
+  }
+  
+  &.section-lg {
+    padding: $spacing-6xl 0;
+  }
+  
+  &.section-hero {
+    padding: calc(#{$header-height} + #{$spacing-4xl}) 0 $spacing-4xl;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    
+    @include respond-to(lg) {
+      padding-top: calc(#{$header-height} + #{$spacing-2xl});
+      min-height: 80vh;
+    }
+  }
+  
+  @include respond-to(md) {
+    padding: $spacing-3xl 0;
+    
+    &.section-sm {
+      padding: $spacing-xl 0;
+    }
+    
+    &.section-lg {
+      padding: $spacing-4xl 0;
+    }
+  }
+}
+
+// Layout utilities
+.d-flex {
+  display: flex;
+}
+
+.d-inline-flex {
+  display: inline-flex;
+}
+
+.d-block {
+  display: block;
+}
+
+.d-inline-block {
+  display: inline-block;
+}
+
+.d-none {
+  display: none;
+}
+
+// Responsive display utilities
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include respond-to($breakpoint) {
+    .d-#{$breakpoint}-flex { display: flex; }
+    .d-#{$breakpoint}-inline-flex { display: inline-flex; }
+    .d-#{$breakpoint}-block { display: block; }
+    .d-#{$breakpoint}-inline-block { display: inline-block; }
+    .d-#{$breakpoint}-none { display: none; }
+  }
+}
+
+// Flexbox utilities
+.justify-content-start { justify-content: flex-start; }
+.justify-content-end { justify-content: flex-end; }
+.justify-content-center { justify-content: center; }
+.justify-content-between { justify-content: space-between; }
+.justify-content-around { justify-content: space-around; }
+
+.align-items-start { align-items: flex-start; }
+.align-items-end { align-items: flex-end; }
+.align-items-center { align-items: center; }
+.align-items-baseline { align-items: baseline; }
+.align-items-stretch { align-items: stretch; }
+
+.align-self-start { align-self: flex-start; }
+.align-self-end { align-self: flex-end; }
+.align-self-center { align-self: center; }
+.align-self-baseline { align-self: baseline; }
+.align-self-stretch { align-self: stretch; }
+
+.flex-direction-row { flex-direction: row; }
+.flex-direction-column { flex-direction: column; }
+.flex-direction-row-reverse { flex-direction: row-reverse; }
+.flex-direction-column-reverse { flex-direction: column-reverse; }
+
+.flex-wrap { flex-wrap: wrap; }
+.flex-nowrap { flex-wrap: nowrap; }
+
+.flex-grow-0 { flex-grow: 0; }
+.flex-grow-1 { flex-grow: 1; }
+
+.flex-shrink-0 { flex-shrink: 0; }
+.flex-shrink-1 { flex-shrink: 1; }
+
+// Position utilities
+.position-static { position: static; }
+.position-relative { position: relative; }
+.position-absolute { position: absolute; }
+.position-fixed { position: fixed; }
+.position-sticky { position: sticky; }
+
+// Width and height utilities
+.w-100 { width: 100%; }
+.w-auto { width: auto; }
+.h-100 { height: 100%; }
+.h-auto { height: auto; }
+
+// Overflow utilities
+.overflow-hidden { overflow: hidden; }
+.overflow-auto { overflow: auto; }
+.overflow-scroll { overflow: scroll; }
+
+// Z-index utilities
+.z-index-1 { z-index: 1; }
+.z-index-2 { z-index: 2; }
+.z-index-3 { z-index: 3; }
+
+// Visibility utilities
+.visible { visibility: visible; }
+.invisible { visibility: hidden; }
+
+// Float utilities
+.float-left { float: left; }
+.float-right { float: right; }
+.float-none { float: none; }
+
+.clearfix {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}

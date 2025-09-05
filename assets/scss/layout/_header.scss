@@ -1,0 +1,207 @@
+// Header styles
+
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: $z-fixed;
+  background-color: $header-bg;
+  border-bottom: 1px solid $color-white;
+  
+  .header-container {
+    @include container;
+    @include flex-between;
+    height: $header-height;
+  }
+}
+
+// Logo
+.site-logo {
+  display: flex;
+  align-items: center;
+  
+  img {
+    height: 33px;
+    width: auto;
+  }
+  
+  @include respond-to(sm) {
+    img {
+      height: 28px;
+    }
+  }
+}
+
+// Desktop Navigation
+.main-navigation {
+  display: flex;
+  align-items: center;
+  
+  @include respond-to(lg) {
+    display: none;
+  }
+  
+  .nav-menu {
+    display: flex;
+    align-items: center;
+    gap: $spacing-lg;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  .nav-item {
+    a {
+      display: block;
+      padding: $spacing-md 0;
+      color: $color-white;
+      font-size: $font-size-sm;
+      font-weight: $font-weight-semibold;
+      text-transform: uppercase;
+      transition: color $transition-fast;
+      
+      &:hover,
+      &:focus,
+      &.current-menu-item {
+        color: $color-secondary;
+      }
+    }
+    
+    &.cta-button a {
+      color: $color-secondary;
+      
+      &:hover,
+      &:focus {
+        color: $color-white;
+      }
+    }
+  }
+}
+
+// Mobile menu toggle
+.mobile-menu-toggle {
+  display: none;
+  width: 28px;
+  height: 20px;
+  position: relative;
+  cursor: pointer;
+  z-index: $z-modal;
+  
+  @include respond-to(lg) {
+    display: block;
+  }
+  
+  span {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background-color: $color-white;
+    transition: all $transition-fast;
+    
+    &:nth-child(1) { top: 0; }
+    &:nth-child(2) { top: 8px; }
+    &:nth-child(3) { top: 16px; }
+  }
+  
+  &.active {
+    span {
+      &:nth-child(1) {
+        top: 8px;
+        transform: rotate(45deg);
+      }
+      
+      &:nth-child(2) {
+        opacity: 0;
+      }
+      
+      &:nth-child(3) {
+        top: 8px;
+        transform: rotate(-45deg);
+      }
+    }
+  }
+}
+
+// Mobile Navigation
+.mobile-navigation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: $color-black;
+  z-index: $z-modal-backdrop;
+  transform: translateX(-100%);
+  transition: transform $transition-normal;
+  
+  &.active {
+    transform: translateX(0);
+  }
+  
+  .mobile-nav-content {
+    padding-top: calc(#{$header-height} + #{$spacing-lg});
+    padding-left: $spacing-lg;
+    padding-right: $spacing-lg;
+  }
+  
+  .mobile-nav-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    
+    .nav-item {
+      margin-bottom: $spacing-lg;
+      
+      a {
+        display: block;
+        color: $color-white;
+        font-size: $font-size-2xl;
+        font-weight: $font-weight-regular;
+        transition: color $transition-fast;
+        
+        &:hover,
+        &:focus,
+        &.current-menu-item {
+          color: $color-secondary;
+        }
+      }
+    }
+  }
+  
+  .mobile-social-links {
+    position: absolute;
+    bottom: $spacing-4xl;
+    left: $spacing-lg;
+    
+    .social-links {
+      display: flex;
+      gap: $spacing-md;
+      
+      a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border: 1px solid $color-white;
+        color: $color-white;
+        transition: all $transition-fast;
+        
+        &:hover,
+        &:focus {
+          background-color: $color-white;
+          color: $color-black;
+        }
+      }
+    }
+  }
+}
+
+// Header animation on scroll
+.site-header {
+  &.scrolled {
+    box-shadow: $shadow-sm;
+  }
+}

@@ -1,0 +1,332 @@
+// Hero Section - Exact 1:1 Match of Tilda Design
+// This recreates the MissionGranted hero with animated text
+
+.hero-section {
+    height: 330px;
+    background-color: $color-black;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    .hero-content {
+        text-align: center;
+        position: relative;
+        z-index: 2;
+        
+        .hero-logo {
+            margin-bottom: 20px;
+            
+            img {
+                max-height: 80px;
+                width: auto;
+            }
+        }
+        
+        .hero-text {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            
+            .hero-title {
+                font-family: $font-primary;
+                font-size: 48px;
+                font-weight: 600;
+                color: $color-white;
+                margin: 0;
+                line-height: 1.2;
+            }
+            
+            .hero-is {
+                font-family: $font-primary;
+                font-size: 48px;
+                font-weight: 300;
+                color: $color-white;
+                margin: 0;
+                line-height: 1.2;
+            }
+            
+            .hero-animated-text {
+                font-family: $font-primary;
+                font-size: 48px;
+                font-weight: 400;
+                min-height: 60px;
+                display: flex;
+                align-items: center;
+                
+                .typed-text {
+                    color: $color-white;
+                }
+                
+                .typed-cursor {
+                    color: $color-primary;
+                    font-weight: normal;
+                    animation: typed-blink 1s infinite;
+                }
+            }
+        }
+        
+        .hero-logo-bottom {
+            margin-top: 30px;
+            opacity: 0.8;
+            
+            img {
+                max-height: 60px;
+                width: auto;
+            }
+        }
+    }
+}
+
+@keyframes typed-blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+}
+
+// Spacer section after hero
+.spacer-section {
+    height: 60px;
+    background-color: $color-black;
+}
+
+// Value proposition section
+.value-prop-section {
+    background-color: $color-black;
+    padding: 75px 0;
+    
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+    
+    .value-prop-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        align-items: center;
+        
+        .value-prop-left {
+            .value-prop-graphic {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                
+                svg, img {
+                    max-width: 100%;
+                    height: auto;
+                }
+            }
+        }
+        
+        .value-prop-right {
+            .value-prop-title {
+                font-family: $font-secondary;
+                font-size: 36px;
+                font-weight: 700;
+                color: $color-white;
+                line-height: 1.3;
+                margin-bottom: 40px;
+                
+                // Orange highlights matching Tilda
+                span {
+                    color: $color-accent;
+                }
+            }
+            
+            .cta-button {
+                display: inline-block;
+                padding: 15px 30px;
+                font-family: $font-primary;
+                font-size: 14px;
+                font-weight: 600;
+                text-transform: uppercase;
+                text-decoration: none;
+                letter-spacing: 0.5px;
+                border-radius: 0;
+                transition: all 0.3s ease;
+                margin-right: 15px;
+                
+                &.primary {
+                    background-color: $color-secondary;
+                    color: $color-black;
+                    border: 2px solid $color-secondary;
+                    
+                    &:hover {
+                        background-color: transparent;
+                        color: $color-secondary;
+                    }
+                }
+                
+                &.secondary-arrow {
+                    width: 50px;
+                    height: 50px;
+                    background-color: transparent;
+                    border: 2px solid $color-secondary;
+                    position: relative;
+                    
+                    &::after {
+                        content: '→';
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        color: $color-secondary;
+                        font-size: 18px;
+                    }
+                    
+                    &:hover {
+                        background-color: $color-secondary;
+                        
+                        &::after {
+                            color: $color-black;
+                        }
+                    }
+                }
+            }
+        }
+        
+        .value-prop-video {
+            grid-column: 1 / -1;
+            margin-top: 40px;
+            text-align: center;
+            
+            video {
+                max-width: 100%;
+                height: auto;
+                border-radius: 8px;
+            }
+        }
+    }
+}
+
+// Trust section
+.trust-section {
+    background-color: $color-black;
+    padding: 75px 0;
+    
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+    
+    .trust-content {
+        text-align: center;
+        
+        .trust-title {
+            font-family: $font-primary;
+            font-size: 16px;
+            font-weight: 600;
+            color: $color-white;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 60px;
+        }
+        
+        .trust-logos {
+            position: relative;
+            
+            .trust-slide {
+                display: none;
+                
+                &.active {
+                    display: block;
+                }
+                
+                .logo-grid {
+                    display: grid;
+                    grid-template-columns: repeat(6, 1fr);
+                    gap: 40px;
+                    align-items: center;
+                    
+                    img {
+                        max-height: 60px;
+                        width: auto;
+                        opacity: 0.7;
+                        transition: opacity 0.3s ease;
+                        
+                        &:hover {
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Responsive design
+@media (max-width: 1199px) {
+    .hero-section {
+        height: 280px;
+        
+        .hero-text {
+            .hero-title,
+            .hero-is,
+            .hero-animated-text {
+                font-size: 36px;
+            }
+        }
+    }
+    
+    .value-prop-section .value-prop-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+    }
+    
+    .trust-section .trust-content .trust-logos .trust-slide .logo-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+    }
+}
+
+@media (max-width: 960px) {
+    .hero-section {
+        height: 240px;
+        
+        .hero-text {
+            .hero-title,
+            .hero-is,
+            .hero-animated-text {
+                font-size: 28px;
+            }
+        }
+    }
+    
+    .trust-section .trust-content .trust-logos .trust-slide .logo-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
+
+@media (max-width: 640px) {
+    .hero-section {
+        height: 200px;
+        padding: 0 20px;
+        
+        .hero-text {
+            flex-direction: column;
+            gap: 10px;
+            
+            .hero-title,
+            .hero-is,
+            .hero-animated-text {
+                font-size: 24px;
+            }
+        }
+    }
+    
+    .value-prop-section .value-prop-right .value-prop-title {
+        font-size: 28px;
+    }
+    
+    .trust-section .trust-content .trust-logos .trust-slide .logo-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+}
