@@ -1,0 +1,183 @@
+// ==========================================================================
+// TRUSTED ORGANIZATIONS CAROUSEL LAYOUT
+// ==========================================================================
+// Recreates Tilda t738 carousel component exactly
+// Background: #000000, Padding: 75px/60px, Poppins typography
+
+.trusted-organizations-section {
+  background-color: #000000;
+  padding-top: 75px;
+  padding-bottom: 60px;
+  
+  @media screen and (max-width: 960px) {
+    padding-top: 45px;
+    padding-bottom: 45px;
+  }
+}
+
+.trusted-orgs-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+// Section Title
+.trusted-orgs-title {
+  text-align: center;
+  margin-bottom: 105px;
+  
+  @media screen and (max-width: 960px) {
+    margin-bottom: 45px;
+  }
+  
+  h2 {
+    font-size: 24px;
+    line-height: 1.15;
+    color: #ffffff;
+    font-weight: 700;
+    font-family: 'Poppins', Arial, sans-serif;
+    text-transform: uppercase;
+    margin: 0;
+    max-width: 800px;
+    margin: 0 auto;
+    
+    @media screen and (max-width: 768px) {
+      font-size: 20px;
+    }
+    
+    @media screen and (max-width: 480px) {
+      font-size: 18px;
+    }
+  }
+}
+
+// Carousel Container
+.trusted-orgs-carousel {
+  position: relative;
+  overflow: visible; // Allow arrows to show outside
+  width: 100%;
+  padding: 0 45px; // Add padding for arrow space
+}
+
+// Navigation Arrows (positioned within slides wrapper for better alignment)
+
+.carousel-arrow {
+  @include carousel-arrow;
+  pointer-events: auto;
+  
+  &--left {
+    left: 0;
+    
+    svg {
+      transform: rotate(180deg);
+    }
+  }
+  
+  &--right {
+    right: 0;
+  }
+}
+
+// Slides Wrapper
+.carousel-slides-wrapper {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+  
+  // Position navigation relative to slides wrapper for better vertical alignment
+  .carousel-navigation {
+    position: absolute !important;
+    top: 50% !important;
+    transform: translateY(-20px) !important; // Fine-tune to align with image centers
+    width: calc(100% + 90px) !important; // Extend width to account for arrow positioning and padding
+    left: -45px !important; // Account for carousel padding
+    z-index: 10 !important;
+    pointer-events: none;
+    
+    @media screen and (max-width: 768px) {
+      display: none; // Hide arrows on mobile
+    }
+  }
+}
+
+.carousel-slides {
+  display: flex;
+  transition: transform 0.5s ease;
+  will-change: transform;
+  width: 100%;
+}
+
+.carousel-slide {
+  flex: 0 0 100%;
+  width: 100%;
+  min-height: 100px;
+}
+
+// Organizations Grid
+.trusted-orgs-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 30px;
+  align-items: center;
+  justify-items: center;
+  
+  @media screen and (max-width: 1024px) {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+  }
+  
+  @media screen and (max-width: 768px) {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  
+  @media screen and (max-width: 480px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+}
+
+// Individual Organization Items
+.trusted-org-item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  a {
+    display: block;
+    width: 100%;
+    max-width: 200px;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      transform: scale(1.05);
+      opacity: 0.8;
+    }
+    
+    &:focus {
+      outline: 2px solid #ffffff;
+      outline-offset: 4px;
+    }
+  }
+}
+
+.trusted-org-logo {
+  width: 100%;
+  height: auto;
+  max-width: 200px;
+  display: block;
+  filter: brightness(0) invert(1); // Makes logos white on black background
+  transition: all 0.3s ease;
+  
+  &:hover {
+    filter: brightness(0) invert(1) opacity(0.8);
+  }
+}
+
+// Auto-hide carousel on very small screens
+@media screen and (max-width: 320px) {
+  .trusted-orgs-grid {
+    grid-template-columns: 1fr;
+  }
+}

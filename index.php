@@ -15,6 +15,8 @@ get_header();
     
     <?php get_template_part('template-parts/value-proposition'); ?>
 
+    <?php get_template_part('template-parts/trusted-organizations'); ?>
+
 </main>
 
 <?php get_footer(); ?>
