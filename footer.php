@@ -37,5 +37,29 @@
 
 <?php wp_footer(); ?>
 
+<!-- Typewriter Animation Script -->
+<script src="<?php echo get_template_directory_uri(); ?>/assets/js/modules/typed-animation.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize typewriter animation
+    const typedElement = document.getElementById('hero-typed-text');
+    if (typedElement) {
+        new TypedAnimation('#hero-typed-text', {
+            texts: [
+                'spreadsheet automation',
+                'grant&fund management', 
+                'simplified compliance',
+                'proudly built by'
+            ],
+            typeSpeed: 100,
+            backSpeed: 50,
+            startDelay: 1000,
+            backDelay: 2000,
+            loop: true
+        });
+    }
+});
+</script>
+
 </body>
 </html>

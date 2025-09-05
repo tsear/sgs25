@@ -48,7 +48,7 @@ class TypedAnimation {
                     51%, 100% { opacity: 0; }
                 }
                 .typed-text {
-                    color: #ffffff;
+                    color: #d81259;
                 }
             `;
             document.head.appendChild(style);

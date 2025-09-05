@@ -1,89 +1,17 @@
-// Hero Section - Exact 1:1 Match of Tilda Design
-// This recreates the MissionGranted hero with animated text
+// Hero Section - 1:1 Tilda Remake
+// Uses inline positioning for exact pixel-perfect layout
 
 .hero-section {
-    height: 330px;
-    background-color: $color-black;
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    // Positioning and layout handled inline in PHP template
+    // This file just contains any global overrides or utilities
     
-    .hero-content {
-        text-align: center;
-        position: relative;
-        z-index: 2;
-        
-        .hero-logo {
-            margin-bottom: 20px;
-            
-            img {
-                max-height: 80px;
-                width: auto;
-            }
-        }
-        
-        .hero-text {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-            
-            .hero-title {
-                font-family: $font-primary;
-                font-size: 48px;
-                font-weight: 600;
-                color: $color-white;
-                margin: 0;
-                line-height: 1.2;
-            }
-            
-            .hero-is {
-                font-family: $font-primary;
-                font-size: 48px;
-                font-weight: 300;
-                color: $color-white;
-                margin: 0;
-                line-height: 1.2;
-            }
-            
-            .hero-animated-text {
-                font-family: $font-primary;
-                font-size: 48px;
-                font-weight: 400;
-                min-height: 60px;
-                display: flex;
-                align-items: center;
-                
-                .typed-text {
-                    color: $color-white;
-                }
-                
-                .typed-cursor {
-                    color: $color-primary;
-                    font-weight: normal;
-                    animation: typed-blink 1s infinite;
-                }
-            }
-        }
-        
-        .hero-logo-bottom {
-            margin-top: 30px;
-            opacity: 0.8;
-            
-            img {
-                max-height: 60px;
-                width: auto;
-            }
-        }
+    // Ensure Poppins font loads properly
+    font-family: 'Poppins', Arial, sans-serif;
+    
+    // Smooth typewriter cursor animation
+    .typewriter-text {
+        animation: none; // Let JavaScript handle the animation
     }
-}
-
-@keyframes typed-blink {
-    0%, 50% { opacity: 1; }
-    51%, 100% { opacity: 0; }
 }
 
 // Spacer section after hero
