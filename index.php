@@ -17,6 +17,8 @@ get_header();
 
     <?php get_template_part('template-parts/trusted-organizations'); ?>
 
+    <?php get_template_part('template-parts/financial-compliance'); ?>
+
 </main>
 
 <?php get_footer(); ?>

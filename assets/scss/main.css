@@ -1812,6 +1812,38 @@ hr {
     grid-template-columns: 1fr;
   }
 }
+.request-demo-button {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  height: 45px;
+}
+.request-demo-button .arrow-square {
+  width: 45px;
+  height: 45px;
+  border: 1px solid #d81259;
+  background: transparent;
+  transition: all 0.3s ease;
+}
+.request-demo-button .arrow-square:hover {
+  background-color: #0066cc;
+}
+.request-demo-button .arrow-square a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  text-decoration: none;
+}
+.request-demo-button .arrow-square a img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 8px;
+  height: 15px;
+}
+
 .btn {
   display: inline-flex;
   align-items: center;
@@ -2237,6 +2269,16 @@ hr {
   border-color: #d81259;
   color: #ffffff;
   text-decoration: none;
+}
+@media (max-width: 479px) {
+  .request-demo-btn {
+    width: 200px !important;
+    height: 45px !important;
+    padding: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
 }
 
 .card, .project-card, .testimonial-card, .team-card, .service-card {
@@ -3470,6 +3512,152 @@ select.form-control:focus::-ms-value {
     font-size: 20px;
   }
 }
+.financial-compliance-section {
+  position: relative;
+  background-color: #000000;
+  height: 240px;
+}
+@media screen and (max-width: 1199px) {
+  .financial-compliance-section {
+    height: 300px;
+  }
+}
+@media screen and (max-width: 959px) {
+  .financial-compliance-section {
+    height: 500px;
+  }
+}
+.financial-compliance-section::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: calc(50% - 960px);
+  width: 1920px;
+  height: 1px;
+  background-color: #ffffff;
+  z-index: 5;
+}
+
+.financial-compliance-container {
+  position: relative;
+  max-width: 1500px;
+  margin: 0 auto;
+  padding-left: 40px;
+  height: 100%;
+  display: flex;
+}
+
+.compliance-content {
+  position: relative;
+  width: 36%;
+  padding: 50px 0 50px 70px;
+  z-index: 3;
+}
+.compliance-content::before {
+  content: "";
+  position: absolute;
+  top: -59px;
+  left: calc(50% - 600px - 340px);
+  width: 700px;
+  height: auto;
+  background-image: url("../images/ellipse.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  opacity: 0.75;
+  z-index: 1;
+}
+.compliance-content::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../images/union.svg");
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-size: contain;
+  z-index: 2;
+}
+.compliance-content .compliance-title {
+  color: #ffffff;
+  font-family: "Poppins", Arial, sans-serif;
+  font-size: 32px;
+  font-weight: 900;
+  line-height: 1.25;
+  margin: 0;
+  width: 245px;
+  position: relative;
+  z-index: 1;
+}
+@media (max-width: 479px) {
+  .compliance-content .compliance-title {
+    font-size: 28px;
+  }
+}
+
+.compliance-right-content {
+  position: relative;
+  width: 64%;
+  padding: 40px 48px 40px 30px;
+  z-index: 3;
+  display: flex;
+  align-items: flex-end;
+}
+.compliance-right-content::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 100%;
+  background-color: #ffffff;
+  z-index: 4;
+}
+
+.compliance-text {
+  flex: 1;
+  max-width: none;
+  margin-right: 20px;
+}
+
+.request-demo-button {
+  flex-shrink: 0;
+}
+
+.compliance-description {
+  color: #ffffff;
+  font-size: 18px;
+  font-family: "Poppins", Arial, sans-serif;
+  font-weight: 400;
+  line-height: 1.55;
+  margin-bottom: 0;
+  max-width: 502px;
+}
+
+.page-indicator {
+  position: absolute;
+  bottom: -40px;
+  right: 48px;
+  color: #000000;
+  font-size: 12px;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 400;
+  line-height: 1.55;
+  z-index: 3;
+}
+@media (max-width: 959px) {
+  .page-indicator {
+    bottom: -20px;
+  }
+}
+@media (max-width: 639px) {
+  .page-indicator {
+    bottom: -10px;
+  }
+}
+
 .m-xs {
   margin: 5px;
 }

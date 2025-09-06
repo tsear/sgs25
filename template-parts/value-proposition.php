@@ -1,17 +1,6 @@
 <?php
 /**
- * Value Propos        <!-- CTA Button -->
-        <div class="cta-section" style="position: absolute; top: 394px; left: 0px; width: 245px; height: 45px; z-index: 3;">
-            <a href="/reach-out" class="request-demo-btn">REQUEST A DEMO</a>
-            
-            <!-- Arrow Square -->
-            <div class="arrow-square" style="position: absolute; top: 0px; left: 200px; width: 45px; height: 45px; border: 1px solid #d81259; background: transparent;">
-                <a href="/reach-out" style="display: block; width: 100%; height: 100%; position: relative;">
-                    <!-- Arrow Icon -->
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/tild3965-6330-4137-a638-623161636534__vector.svg" alt="Arrow" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 8px; height: 15px;" />
-                </a>
-            </div>
-        </div>n Section - Tilda Recreation
+ * Value Proposition Section - Tilda Recreation
  */
 ?>
 
@@ -35,14 +24,14 @@
         </div>
         
         <!-- CTA Button -->
-        <div class="cta-section" style="position: absolute; top: 394px; left: 0px; width: 245px; height: 45px; z-index: 3;">
+        <div class="request-demo-button" style="position: absolute; top: 394px; left: 0px; z-index: 3;">
             <a href="/reach-out" class="request-demo-btn">REQUEST A DEMO</a>
             
             <!-- Arrow Square -->
-            <div class="arrow-square" style="position: absolute; top: 0px; left: 200px; width: 45px; height: 45px; border: 1px solid #d81259; background: transparent;">
-                <a href="/reach-out" style="display: block; width: 100%; height: 100%; position: relative;">
+            <div class="arrow-square">
+                <a href="/reach-out">
                     <!-- Arrow Icon -->
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/tild3965-6330-4137-a638-623161636534__vector.svg" alt="Arrow" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 8px; height: 15px;" />
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/tild3965-6330-4137-a638-623161636534__vector.svg" alt="Arrow" />
                 </a>
             </div>
         </div>

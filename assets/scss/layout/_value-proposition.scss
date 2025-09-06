@@ -1,0 +1,179 @@
+// Value Proposition Section
+// Recreates Tilda section with proper mixin usage
+
+.value-proposition-section {
+  height: 486px;
+  background-color: $color-black;
+  position: relative;
+}
+
+.value-prop-container {
+  @include container;
+  height: 100%;
+  position: relative;
+  max-width: 1200px;
+}
+
+// Borders
+.top-border,
+.bottom-border {
+  position: absolute;
+  left: -360px;
+  width: 1920px;
+  height: 1px;
+  background-color: $color-white;
+  z-index: 3;
+}
+
+.top-border {
+  top: 0;
+}
+
+.bottom-border {
+  top: 485px;
+}
+
+// Grid Background
+.value-prop-grid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 480px;
+  height: 486px;
+  z-index: 1;
+  opacity: 1;
+  
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+// Main Heading
+.main-heading {
+  position: absolute;
+  top: 63px;
+  left: 0;
+  width: 389px;
+  z-index: 3;
+  color: $color-white;
+  font-size: 30px;
+  font-family: $font-primary;
+  line-height: 1.25;
+  font-weight: 600;
+  
+  span {
+    &:nth-of-type(1) {
+      color: #FCB03E;
+    }
+    &:nth-of-type(2),
+    &:nth-of-type(3) {
+      color: #FFB03F;
+    }
+  }
+}
+
+// CTA Section
+.cta-section {
+  position: absolute;
+  top: 394px;
+  left: 0px;
+  width: 245px;
+  height: 45px;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+// Request Demo Button - USING THE MIXIN
+.request-demo-btn {
+  @include button-primary;
+  height: 45px;
+  width: 200px;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-radius: 0;
+}
+
+// Arrow Square
+.arrow-square {
+  width: 45px;
+  height: 45px;
+  border: 1px solid $color-primary;
+  background: transparent;
+  margin-left: 0;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    background-color: $color-primary;
+  }
+  
+  a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    text-decoration: none;
+    
+    img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 8px;
+      height: 15px;
+    }
+  }
+}
+
+// Vertical Divider
+.vertical-divider {
+  position: absolute;
+  top: 1px;
+  left: 480px;
+  width: 1px;
+  height: 486px;
+  background-color: $color-white;
+  z-index: 3;
+}
+
+// Video Section
+.video-section {
+  position: absolute;
+  top: 56px;
+  left: 565px;
+  width: 635px;
+  height: 375px;
+  z-index: 3;
+  overflow: hidden;
+  
+  div {
+    width: 100%;
+    height: 100%;
+    background-color: #222;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $color-white;
+    font-family: $font-primary;
+  }
+}
+
+// Animated Element
+.animated-element {
+  position: absolute;
+  top: 161px;
+  left: 897px;
+  width: 500px;
+  z-index: 3;
+  opacity: 0.75;
+  
+  img {
+    width: 100%;
+    height: auto;
+  }
+}

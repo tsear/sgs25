@@ -1,0 +1,183 @@
+// Financial Compliance Section - Clean Rewrite
+
+.financial-compliance-section {
+  height: 240px;
+  background-color: $color-black;
+  position: relative;
+  
+  @include respond-to(lg) {
+    height: 300px;
+  }
+  
+  @include respond-to(md) {
+    height: 500px;
+  }
+}
+
+.financial-compliance-container {
+  @include container;
+  height: 100%;
+  position: relative;
+  max-width: 1200px;
+}
+
+.top-border,
+.bottom-border {
+  position: absolute;
+  left: -360px;
+  width: 1920px;
+  height: 1px;
+  background-color: $color-white;
+  z-index: 3;
+}
+
+.top-border {
+  top: 0;
+}
+
+.bottom-border {
+  bottom: 0;
+}
+
+.vertical-divider {
+  position: absolute;
+  top: 0;
+  left: 320px;
+  width: 1px;
+  height: 100%;
+  background-color: $color-white;
+  z-index: 3;
+  
+  @include respond-to(md) {
+    left: 680px;
+  }
+  
+  @include respond-to(sm) {
+    display: none;
+  }
+}
+
+.compliance-content {
+  position: relative;
+  z-index: 2;
+  padding-left: 35px;
+  padding-top: 60px;
+  
+  // Layered background images - union.svg grid over ellipse
+  background-image: 
+    url('../assets/images/tild6535-3966-4638-a265-393438636538__union.svg'),
+    url('../assets/images/tild6162-6461-4233-b730-396261356134__ellipse_13_1.png');
+  background-size: 700px 700px, 700px 700px;
+  background-repeat: no-repeat, no-repeat;
+  background-position: -340px -59px, -340px -59px;
+  
+  .compliance-title {
+    color: $color-white;
+    font-family: $font-tertiary;
+    font-size: 32px;
+    font-weight: 900;
+    line-height: 1.25;
+    margin: 0;
+    width: 245px;
+    position: relative;
+    z-index: 1;
+    
+    @include respond-to(sm) {
+      font-size: 28px;
+    }
+  }
+}
+
+.compliance-right-content {
+  position: absolute;
+  top: 40px;
+  left: 400px;
+  right: 48px;
+  bottom: 60px;
+  z-index: 3;
+  
+  @include respond-to(lg) {
+    left: 380px;
+    right: 40px;
+  }
+  
+  @include respond-to(md) {
+    position: relative;
+    top: 20px;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    margin-left: 70px;
+    max-width: 420px;
+  }
+  
+  @include respond-to(sm) {
+    margin-left: 20px;
+    max-width: 280px;
+  }
+}
+
+.content-row {
+  display: flex;
+  align-items: flex-end;
+  gap: 40px;
+  height: 100%;
+  
+  @include respond-to(md) {
+    flex-direction: column;
+    gap: 20px;
+    height: auto;
+    align-items: flex-start;
+  }
+  
+  .compliance-description {
+    flex: 1;
+    margin: 0;
+    color: $color-white;
+    font-size: 18px;
+    font-family: $font-tertiary;
+    font-weight: 400;
+    line-height: 1.55;
+    max-width: 502px;
+    align-self: flex-start;
+    
+    @include respond-to(lg) {
+      max-width: 500px;
+    }
+    
+    @include respond-to(md) {
+      max-width: 420px;
+      font-size: 16px;
+    }
+    
+    @include respond-to(sm) {
+      max-width: 280px;
+      font-size: 14px;
+    }
+  }
+  
+  .request-demo-button {
+    flex-shrink: 0;
+    align-self: flex-end;
+  }
+}
+
+.page-indicator {
+  position: absolute;
+  bottom: -40px;
+  right: 48px;
+  color: $color-black;
+  font-size: 12px;
+  font-family: $font-primary;
+  font-weight: 400;
+  line-height: 1.55;
+  z-index: 3;
+  
+  @include respond-to(lg) {
+    bottom: -20px;
+  }
+  
+  @include respond-to(md) {
+    bottom: -10px;
+  }
+}

@@ -40,6 +40,9 @@ Text Domain: sgs
 @import 'components/hero';
 @import 'components/features';
 
+// Financial compliance section - moved here to ensure it compiles after all dependencies
+@import 'layout/financial-compliance';
+
 // ==========================================================================
 // PAGES
 // ==========================================================================
