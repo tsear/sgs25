@@ -31,6 +31,7 @@ Text Domain: sgs
 html {
   font-size: 16px;
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -44,6 +45,7 @@ body {
   background-color: #000000;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5, h6, p, ul, ol, dl, dd, figure, blockquote, pre {
@@ -3531,8 +3533,8 @@ select.form-control:focus::-ms-value {
   content: "";
   position: absolute;
   bottom: 0;
-  left: calc(50% - 960px);
-  width: 1920px;
+  left: 0;
+  width: 100%;
   height: 1px;
   background-color: #ffffff;
   z-index: 5;
@@ -3545,6 +3547,7 @@ select.form-control:focus::-ms-value {
   padding-left: 40px;
   height: 100%;
   display: flex;
+  overflow: hidden;
 }
 
 .compliance-content {
@@ -3556,14 +3559,14 @@ select.form-control:focus::-ms-value {
 .compliance-content::before {
   content: "";
   position: absolute;
-  top: -59px;
-  left: calc(50% - 600px - 340px);
-  width: 700px;
-  height: auto;
-  background-image: url("../images/ellipse.svg");
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("assets/images/tild6162-6461-4233-b730-396261356134__ellipse_13_1.png");
   background-repeat: no-repeat;
   background-position: center center;
-  background-size: contain;
+  background-size: cover;
   opacity: 0.75;
   z-index: 1;
 }
@@ -3574,10 +3577,10 @@ select.form-control:focus::-ms-value {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url("../images/union.svg");
+  background-image: url("assets/images/tild6535-3966-4638-a265-393438636538__union.svg");
   background-repeat: no-repeat;
-  background-position: right center;
-  background-size: contain;
+  background-position: left center;
+  background-size: cover;
   z-index: 2;
 }
 .compliance-content .compliance-title {
@@ -3589,7 +3592,7 @@ select.form-control:focus::-ms-value {
   margin: 0;
   width: 245px;
   position: relative;
-  z-index: 1;
+  z-index: 3;
 }
 @media (max-width: 479px) {
   .compliance-content .compliance-title {
@@ -3600,7 +3603,7 @@ select.form-control:focus::-ms-value {
 .compliance-right-content {
   position: relative;
   width: 64%;
-  padding: 40px 48px 40px 30px;
+  padding: 30px 48px 40px 30px;
   z-index: 3;
   display: flex;
   align-items: flex-end;
@@ -3620,10 +3623,12 @@ select.form-control:focus::-ms-value {
   flex: 1;
   max-width: none;
   margin-right: 20px;
+  margin-bottom: 10px;
 }
 
 .request-demo-button {
   flex-shrink: 0;
+  align-self: center;
 }
 
 .compliance-description {

@@ -18,8 +18,8 @@
 .top-border,
 .bottom-border {
   position: absolute;
-  left: -360px;
-  width: 1920px;
+  left: 0;
+  width: 100%;
   height: 1px;
   background-color: $color-white;
   z-index: 3;
