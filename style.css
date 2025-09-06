@@ -694,10 +694,6 @@ hr {
   border-radius: 0;
   cursor: pointer;
   transition: all 0.3s ease;
-  width: 100%;
-  font-size: 14px;
-  text-transform: uppercase;
-  font-weight: 600;
 }
 .site-footer .footer-top .footer-newsletter .newsletter-form .btn-submit:hover {
   background-color: transparent;
@@ -707,6 +703,12 @@ hr {
 .site-footer .footer-top .footer-newsletter .newsletter-form .btn-submit:focus {
   outline: 2px solid #0066cc;
   outline-offset: 2px;
+}
+.site-footer .footer-top .footer-newsletter .newsletter-form .btn-submit {
+  width: 100%;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 600;
 }
 .site-footer .footer-bottom .footer-bottom-content {
   width: 100%;
@@ -1619,6 +1621,7 @@ hr {
   background-color: #000000;
   padding-top: 75px;
   padding-bottom: 60px;
+  border-bottom: 1px solid #ffffff;
 }
 @media screen and (max-width: 960px) {
   .trusted-organizations-section {
@@ -1671,22 +1674,36 @@ hr {
   padding: 0 45px;
 }
 
+.carousel-navigation {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-35px);
+  width: 100%;
+  left: 0;
+  z-index: 10;
+  pointer-events: none;
+}
+@media screen and (max-width: 768px) {
+  .carousel-navigation {
+    display: none;
+  }
+}
+
 .carousel-arrow {
   position: absolute;
   width: 30px;
   height: 30px;
   background: transparent;
-  border: 1px solid #222;
+  border: 1px solid #ffffff;
   cursor: pointer;
   transition: all 0.3s ease;
   display: flex;
   align-items: center;
   justify-content: center;
-  pointer-events: auto;
 }
 .carousel-arrow:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-  border-color: #444;
+  background-color: #d81259;
+  border-color: #d81259;
 }
 .carousel-arrow:focus {
   outline: 2px solid #ffffff;
@@ -1698,40 +1715,29 @@ hr {
   height: 13px;
 }
 .carousel-arrow svg polyline {
-  stroke: #222;
+  stroke: #ffffff;
   transition: stroke 0.3s ease;
 }
 .carousel-arrow:hover svg polyline {
   stroke: #ffffff;
 }
+.carousel-arrow {
+  pointer-events: auto;
+}
 .carousel-arrow--left {
-  left: 0;
+  left: -60px;
 }
 .carousel-arrow--left svg {
   transform: rotate(180deg);
 }
 .carousel-arrow--right {
-  right: 0;
+  right: -60px;
 }
 
 .carousel-slides-wrapper {
   overflow: hidden;
   width: 100%;
   position: relative;
-}
-.carousel-slides-wrapper .carousel-navigation {
-  position: absolute !important;
-  top: 50% !important;
-  transform: translateY(-20px) !important;
-  width: calc(100% + 90px) !important;
-  left: -45px !important;
-  z-index: 10 !important;
-  pointer-events: none;
-}
-@media screen and (max-width: 768px) {
-  .carousel-slides-wrapper .carousel-navigation {
-    display: none;
-  }
 }
 
 .carousel-slides {
@@ -1799,11 +1805,10 @@ hr {
   height: auto;
   max-width: 200px;
   display: block;
-  filter: brightness(0) invert(1);
   transition: all 0.3s ease;
 }
 .trusted-org-logo:hover {
-  filter: brightness(0) invert(1) opacity(0.8);
+  opacity: 0.8;
 }
 
 @media screen and (max-width: 320px) {
@@ -1929,7 +1934,6 @@ hr {
   border-radius: 0;
   cursor: pointer;
   transition: all 0.3s ease;
-  border: 2px solid #0066cc;
 }
 .btn-outline-primary:hover {
   background-color: #0066cc;
@@ -1939,6 +1943,9 @@ hr {
 .btn-outline-primary:focus {
   outline: 2px solid #0066cc;
   outline-offset: 2px;
+}
+.btn-outline-primary {
+  border: 2px solid #0066cc;
 }
 .btn-outline-primary:hover, .btn-outline-primary:focus {
   background-color: #0066cc;
@@ -1961,7 +1968,6 @@ hr {
   border-radius: 0;
   cursor: pointer;
   transition: all 0.3s ease;
-  border: 2px solid #ff6b35;
 }
 .btn-outline-secondary:hover {
   background-color: #ff6b35;
@@ -1971,6 +1977,9 @@ hr {
 .btn-outline-secondary:focus {
   outline: 2px solid #0066cc;
   outline-offset: 2px;
+}
+.btn-outline-secondary {
+  border: 2px solid #ff6b35;
 }
 .btn-outline-secondary:hover, .btn-outline-secondary:focus {
   background-color: #ff6b35;
@@ -1993,7 +2002,6 @@ hr {
   border-radius: 0;
   cursor: pointer;
   transition: all 0.3s ease;
-  border: 2px solid #ffffff;
 }
 .btn-outline-white:hover {
   background-color: #ffffff;
@@ -2003,6 +2011,9 @@ hr {
 .btn-outline-white:focus {
   outline: 2px solid #0066cc;
   outline-offset: 2px;
+}
+.btn-outline-white {
+  border: 2px solid #ffffff;
 }
 .btn-outline-white:hover, .btn-outline-white:focus {
   background-color: #ffffff;
@@ -2060,10 +2071,6 @@ hr {
   border-radius: 0;
   cursor: pointer;
   transition: all 0.3s ease;
-  padding: 0;
-  text-transform: none;
-  font-weight: 400;
-  text-decoration: underline;
 }
 .btn-link:hover {
   background-color: #0066cc;
@@ -2073,6 +2080,12 @@ hr {
 .btn-link:focus {
   outline: 2px solid #0066cc;
   outline-offset: 2px;
+}
+.btn-link {
+  padding: 0;
+  text-transform: none;
+  font-weight: 400;
+  text-decoration: underline;
 }
 .btn-link:hover, .btn-link:focus {
   color: rgb(0, 76.5, 153);
@@ -2137,11 +2150,6 @@ hr {
   border-radius: 0;
   cursor: pointer;
   transition: all 0.3s ease;
-  font-size: 16px;
-  padding: 30px 60px;
-  font-weight: 700;
-  position: relative;
-  overflow: hidden;
 }
 .btn-cta:hover {
   background-color: transparent;
@@ -2151,6 +2159,13 @@ hr {
 .btn-cta:focus {
   outline: 2px solid #0066cc;
   outline-offset: 2px;
+}
+.btn-cta {
+  font-size: 16px;
+  padding: 30px 60px;
+  font-weight: 700;
+  position: relative;
+  overflow: hidden;
 }
 .btn-cta::before {
   content: "";

@@ -8,6 +8,7 @@
   background-color: #000000;
   padding-top: 75px;
   padding-bottom: 60px;
+  border-bottom: 1px solid $color-white;
   
   @media screen and (max-width: 960px) {
     padding-top: 45px;
@@ -59,14 +60,27 @@
   padding: 0 45px; // Add padding for arrow space
 }
 
-// Navigation Arrows (positioned within slides wrapper for better alignment)
+// Navigation Arrows - Position relative to carousel container
+.carousel-navigation {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-35px); // Fine-tune to align with image centers
+  width: 100%;
+  left: 0;
+  z-index: 10;
+  pointer-events: none;
+  
+  @media screen and (max-width: 768px) {
+    display: none; // Hide arrows on mobile
+  }
+}
 
 .carousel-arrow {
   @include carousel-arrow;
   pointer-events: auto;
   
   &--left {
-    left: 0;
+    left: -60px; // Position 15px from page edge (45px carousel padding - 60px = -15px)
     
     svg {
       transform: rotate(180deg);
@@ -74,7 +88,7 @@
   }
   
   &--right {
-    right: 0;
+    right: -60px; // Position 15px from page edge
   }
 }
 
@@ -84,20 +98,7 @@
   width: 100%;
   position: relative;
   
-  // Position navigation relative to slides wrapper for better vertical alignment
-  .carousel-navigation {
-    position: absolute !important;
-    top: 50% !important;
-    transform: translateY(-20px) !important; // Fine-tune to align with image centers
-    width: calc(100% + 90px) !important; // Extend width to account for arrow positioning and padding
-    left: -45px !important; // Account for carousel padding
-    z-index: 10 !important;
-    pointer-events: none;
-    
-    @media screen and (max-width: 768px) {
-      display: none; // Hide arrows on mobile
-    }
-  }
+
 }
 
 .carousel-slides {
@@ -167,11 +168,12 @@
   height: auto;
   max-width: 200px;
   display: block;
-  filter: brightness(0) invert(1); // Makes logos white on black background
+  // filter: brightness(0) invert(1); // Makes logos white on black background - TEMPORARILY DISABLED
   transition: all 0.3s ease;
   
   &:hover {
-    filter: brightness(0) invert(1) opacity(0.8);
+    // filter: brightness(0) invert(1) opacity(0.8); // TEMPORARILY DISABLED
+    opacity: 0.8;
   }
 }
 

@@ -62,7 +62,7 @@
                             
                             <div class="trusted-org-item">
                                 <a href="https://ovc.ojp.gov/" target="_blank" rel="noopener">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/tild3037-6434-4966-a434-633537623633__4_2.png" 
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/tild6635-6566-4033-b633-313166663836__3_2.png" 
                                          alt="Office for Victims of Crime" 
                                          class="trusted-org-logo" />
                                 </a>
@@ -70,7 +70,7 @@
                             
                             <div class="trusted-org-item">
                                 <a href="https://www.bnymellon.com/" target="_blank" rel="noopener">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/tild6533-6661-4133-b634-616232383039__5_2.png" 
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/tild3037-6434-4966-a434-633537623633__4_2.png" 
                                          alt="BNY Mellon" 
                                          class="trusted-org-logo" />
                                 </a>
@@ -78,7 +78,7 @@
                             
                             <div class="trusted-org-item">
                                 <a href="https://yieldgiving.com/" target="_blank" rel="noopener">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/tild6563-3965-4264-b363-633532396561__6_1.png" 
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/tild6533-6661-4133-b634-616232383039__5_2.png" 
                                          alt="Yield Giving" 
                                          class="trusted-org-logo" />
                                 </a>
@@ -86,7 +86,7 @@
                             
                             <div class="trusted-org-item">
                                 <a href="https://www.heinz.org/" target="_blank" rel="noopener">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/tild6635-6566-4033-b633-313166663836__3_2.png" 
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/tild6563-3965-4264-b363-633532396561__6_1.png" 
                                          alt="Heinz Endowments" 
                                          class="trusted-org-logo" />
                                 </a>
