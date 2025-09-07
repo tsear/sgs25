@@ -28,24 +28,30 @@ This theme recreates the entire MissionGranted by Smart Grant Solutions website 
 smartgrantsolutions-theme/
 ├── assets/
 │   ├── scss/
-│   │   ├── abstracts/        # Variables, mixins
-│   │   ├── base/             # Reset, typography
-│   │   ├── components/       # Reusable components
-│   │   ├── layout/           # Header, footer, grid
-│   │   └── main.scss         # Main import file
+│   │   ├── abstracts/        # Variables, mixins, functions
+│   │   ├── base/             # Reset, typography, global styles
+│   │   ├── components/       # Buttons, cards, forms, hero
+│   │   ├── layout/           # Header, footer, grid, video-features
+│   │   └── main.scss         # Main SCSS compilation file
 │   ├── js/
-│   │   ├── components/       # Navigation, forms, etc.
-│   │   ├── modules/          # Typed animation, carousel
+│   │   ├── components/       # Navigation, forms, animations
+│   │   ├── modules/          # Typed animation, carousel, trust
 │   │   ├── utils/            # Helper functions
-│   │   └── main.js           # Main JavaScript entry
-│   └── images/               # Theme images
-├── inc/                      # Theme functions
-├── template-parts/           # Reusable template parts
-├── functions.php             # WordPress theme setup
-├── header.php               # Site header
+│   │   ├── rocket-animations.js  # Video features rocket & exhaust animations
+│   │   ├── video-features.js     # Video features section logic
+│   │   └── main.js           # Main JavaScript entry point
+│   ├── css/                  # Original Tilda exported CSS files
+│   └── images/               # Theme images and Tilda assets
+├── template-parts/           # Reusable template components
+│   ├── hero.php             # Hero section with typed animation
+│   ├── video-features.php   # Video features with rocket animations
+│   └── trust-carousel.php   # Trust section with logo carousel
+├── functions.php             # WordPress theme setup and enqueuing
+├── header.php               # Site header with navigation
 ├── footer.php               # Site footer
-├── index.php                # Homepage template
-└── style.css                # Main stylesheet
+├── index.php                # Main homepage template
+├── style.css                # Compiled main stylesheet
+└── package.json             # NPM dependencies and build scripts
 ```
 
 ## Original Content Recreation
@@ -65,23 +71,39 @@ smartgrantsolutions-theme/
 - **Exact copy**: "TRUSTED BY ORGANIZATIONS MANAGING GRANTS FROM TOP U.S. FUNDERS"
 - **Logo grid** with opacity hover effects
 
-### Product Features
-- **Four main features** with alternating layouts:
-  1. Strategic Insights for Growth
-  2. Automation Over Spreadsheets  
-  3. Simplified Compliance & Guidance
-  4. Embedded Best Practices
-- **White background cards** with videos and descriptions
-- **Exact copy** from original Tilda site
+### Hero Section
+- **MissionGranted branding** with animated cycling text
+- **Grid background pattern** with moving pink spotlight effect
+- **Typed animation**: "spreadsheet automation", "grant&fund management", "simplified compliance", "proudly built by"
+- **Color-matched cursor** animation (#d81259)
+- **Mouse-following spotlight** with radial gradient effect
 
-### Testimonial Section
-- **Customer testimonial**: "MissionGranted addressed all of the things I was looking for in a Grant management system"
-- **Attribution**: Elizabeth Crisfield, Executive Director, ClearWater Conservancy
-- **Video integration** with proper styling
+### Value Proposition Section
+- **Main headline**: "We Make Financial Grant Management and Compliance Easy, So You Can Focus on What Matters Most – Your Mission."
+- **Grid background** with fish-eye distortion effect
+- **CTA buttons** with exact styling and hover effects
+- **Left-aligned content** with background grid pattern
 
-### Final CTA
-- **Main headline**: "Our Mission is to Fuel Yours"
-- **Three-line tagline**: "Eliminate Spreadsheets. Ensure Compliance. Drive Strategy."
+### Trusted Organizations Section  
+- **Auto-rotating logo carousel** with organization logos
+- **Section title**: "TRUSTED BY ORGANIZATIONS MANAGING GRANTS FROM TOP U.S. FUNDERS"
+- **Smooth carousel transitions** with pause on hover
+- **Multiple funder organization logos** in continuous loop
+
+### Financial Compliance Section
+- **Section headline**: "Propelling Your Financial Compliance" 
+- **Descriptive content** about compliance management
+- **CTA integration** with proper styling
+- **Top border separator** for section division
+
+### Video Features Section
+- **Animated rocket sequence** with scroll-triggered fade-in effects
+- **Four rocket stages** representing product evolution
+- **Exhaust flame animations** with rotation effects beneath final rocket
+- **Connection labels** linking rockets to feature cards
+- **Background ellipses** with precise positioning from original design
+- **Scroll detection** with intersection observer for performance
+- **White floor border** providing visual foundation
 
 ## Navigation Structure
 
@@ -117,10 +139,23 @@ $font-tertiary: 'Poppins'     // Additional accent font
 - Configurable speed, delay, and loop settings
 - Matches original animation timing exactly
 
+### RocketAnimations  
+- **Scroll-triggered rocket animations** with intersection observer
+- **Sequential fade-in effects** with staggered timing
+- **Exhaust flame animations** with 3-second delay after rockets
+- **Rotation effects** using sine wave motion (left rotates left, right rotates right)
+- **Performance optimized** with requestAnimationFrame
+- **One-time triggers** preventing re-animation on scroll
+
 ### TrustCarousel
 - Auto-rotating logo carousel
 - Pause on hover functionality
 - Smooth transitions between slides
+
+### VideoFeatures
+- Coordinates video features section interactions
+- Manages scroll effects and timing
+- Integrates with rocket animation system
 
 ### Navigation
 - Mobile menu toggle
@@ -135,13 +170,42 @@ $font-tertiary: 'Poppins'     // Additional accent font
 - **Accessibility features** with ARIA labels and keyboard navigation
 - **Performance optimized** with lazy loading and minified assets
 
+## Development Setup
+
+### Prerequisites
+- Node.js and npm for SCSS compilation
+- WordPress development environment
+
+### Build System
+```bash
+# Install dependencies
+npm install
+
+# Development build (expanded CSS with source maps)
+npm run build-css-dev
+
+# Production build (compressed CSS)
+npm run build-css-prod
+
+# Watch mode for development
+npm run watch-css
+```
+
+### SCSS Architecture
+- **7-1 Pattern**: Organized SCSS following industry standards
+- **Component-based**: Modular styles for maintainability  
+- **Variables**: Centralized color and typography system
+- **Mixins**: Reusable responsive breakpoints and utilities
+
 ## Installation
 
 1. Extract theme to `/wp-content/themes/smartgrantsolutions-theme/`
-2. Activate theme in WordPress admin
-3. Copy images from original Tilda export `/project13160023/images/` to `/assets/images/`
-4. Configure navigation menus
-5. Add content through WordPress admin
+2. Run `npm install` to install SCSS dependencies
+3. Run `npm run build-css-dev` to compile styles
+4. Activate theme in WordPress admin
+5. Copy images from original Tilda export `/project13160023/images/` to `/assets/images/`
+6. Configure navigation menus
+7. Add content through WordPress admin
 
 ## Asset Requirements
 
