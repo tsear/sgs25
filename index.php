@@ -19,6 +19,8 @@ get_header();
 
     <?php get_template_part('template-parts/financial-compliance'); ?>
 
+    <?php get_template_part('template-parts/video-features'); ?>
+
 </main>
 
 <?php get_footer(); ?>

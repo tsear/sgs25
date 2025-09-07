@@ -61,6 +61,8 @@ function sgs_enqueue_assets() {
     // Enqueue JavaScript
     wp_enqueue_script('sgs-main', SGS_THEME_URI . '/assets/js/main.js', array('jquery'), SGS_THEME_VERSION, true);
     wp_enqueue_script('sgs-trusted-orgs-carousel', SGS_THEME_URI . '/assets/js/trusted-organizations-carousel.js', array(), SGS_THEME_VERSION, true);
+    wp_enqueue_script('sgs-video-features', SGS_THEME_URI . '/assets/js/video-features.js', array('jquery'), SGS_THEME_VERSION, true);
+    wp_enqueue_script('sgs-rocket-animations', SGS_THEME_URI . '/assets/js/rocket-animations.js', array(), SGS_THEME_VERSION, true);
     
     // Localize script for AJAX
     wp_localize_script('sgs-main', 'sgs_ajax', array(

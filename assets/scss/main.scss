@@ -30,6 +30,8 @@ Text Domain: sgs
 @import 'layout/footer';
 @import 'layout/grid';
 @import 'layout/trusted-organizations';
+@import 'layout/financial-compliance';
+@import 'layout/video-features';
 
 // ==========================================================================
 // COMPONENTS
@@ -39,9 +41,6 @@ Text Domain: sgs
 @import 'components/forms';
 @import 'components/hero';
 @import 'components/features';
-
-// Financial compliance section - moved here to ensure it compiles after all dependencies
-@import 'layout/financial-compliance';
 
 // ==========================================================================
 // PAGES

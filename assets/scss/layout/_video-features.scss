@@ -1,0 +1,378 @@
+// Video Features Section - Exact Tilda Implementation
+// Section: rec1176798881
+
+.video-features-section {
+  height: 1800px;
+  background-color: #000000;
+  position: relative;
+  width: 100%;
+  overflow: visible;
+  border-bottom: 1px solid #ffffff;
+
+  // Background ellipse decorations
+  .background-ellipses {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+
+    .ellipse {
+      position: absolute;
+      background-image: url('assets/images/tild6162-6461-4233-b730-396261356134__ellipse_13_1.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      opacity: 0.75;
+
+      &.ellipse-top-right {
+        top: -160px;
+        left: calc(50% - 600px + 880px);
+        width: 746px;
+        height: 746px;
+      }
+
+      &.ellipse-bottom-left {
+        top: 1269px;
+        left: calc(50% - 600px + -300px);
+        width: 800px;
+        height: 800px;
+      }
+    }
+  }
+
+  .rocket-images {
+    position: absolute;
+    left: calc(50% - 600px + -65px);
+    top: 0;
+    z-index: 1;
+    width: 308px;
+
+    .rocket {
+      position: absolute;
+      width: 308px;
+      height: 408px;
+      object-fit: contain;
+      opacity: 0;
+      transform: translateY(300px);
+      transition: opacity 2s ease-out, transform 2s ease-out;
+      
+      &.rocket-1 {
+        top: 61px;
+      }
+      
+      &.rocket-2 {
+        top: 465px;
+      }
+      
+      &.rocket-3 {
+        top: 883px;
+      }
+      
+      &.rocket-4 {
+        top: 1284px;
+      }
+    }
+  }
+
+  .exhaust-flame {
+    position: absolute;
+    width: 260px;
+    height: 260px;
+
+    &.exhaust-flame-left {
+      top: 1588px;
+      left: calc(50% - 600px - 134px);
+    }
+
+    &.exhaust-flame-right {
+      top: 1594px;
+      left: calc(50% - 600px + 40px);
+    }
+  }
+
+  .connection-labels {
+    position: absolute;
+    left: calc(50% - 600px + 100px);
+    top: 0;
+    z-index: 2;
+    width: 168px;
+
+    .connection-label {
+      position: absolute;
+      width: 168px;
+      height: 94px;
+      object-fit: contain;
+      animation: fadeinright 2s ease 0.5s;
+      
+      &.label-1 {
+        top: 172px;
+      }
+      
+      &.label-2 {
+        top: 618px;
+      }
+      
+      &.label-3 {
+        top: 1084px;
+      }
+      
+      &.label-4 {
+        top: 1528px;
+      }
+    }
+  }
+  
+  @keyframes rotateLeftFlame {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    33% { transform: translateY(0) rotate(-45deg); }
+    66% { transform: translateY(0) rotate(45deg); }
+  }
+  
+  @keyframes rotateRightFlame {
+    0%, 100% { transform: translateY(0) rotate(41deg); }
+    33% { transform: translateY(0) rotate(86deg); } // 41 + 45
+    66% { transform: translateY(0) rotate(-4deg); } // 41 - 45
+  }
+
+  .video-cards-container {
+    position: absolute;
+    left: calc(50% - 600px + 263px);
+    top: 0;
+    z-index: 3;
+    width: 890px;
+
+    .video-card {
+      position: absolute;
+      width: 890px;
+      height: 340px;
+      border: 1px solid #ffffff;
+      border-radius: 0;
+      background: #ffffff;
+      box-sizing: border-box;
+
+      &:nth-child(1) {
+        top: 86px;
+      }
+      
+      &:nth-child(2) {
+        top: 496px;
+      }
+      
+      &:nth-child(3) {
+        top: 931px;
+      }
+      
+      &:nth-child(4) {
+        top: 1353px;
+      }
+
+      .video-wrapper {
+        position: absolute;
+        left: 15px;
+        top: 20px;
+        width: 441px;
+        height: 287px;
+        
+        video {
+          width: 100%;
+          height: 100%;
+          border-radius: 0;
+          opacity: 0.9;
+        }
+      }
+
+      .card-content {
+        position: absolute;
+        right: 5px;
+        top: 45px;
+        width: 420px;
+        height: 250px;
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        
+        p {
+          color: #000000;
+          font-size: 18px;
+          font-family: 'Poppins', Arial, sans-serif;
+          line-height: 1.55;
+          font-weight: 400;
+          margin: 0;
+        }
+      }
+    }
+  }
+  
+  // Responsive breakpoints matching Tilda exactly
+  @media screen and (max-width: 1199px) {
+    .rocket-images {
+      left: calc(50% - 480px + -165px);
+    }
+    
+    .connection-labels {
+      left: calc(50% - 480px + -50px);
+    }
+    
+    .video-cards-container {
+      left: calc(50% - 480px + 43px);
+    }
+  }
+
+  @media screen and (max-width: 959px) {
+    height: 2660px;
+    
+    .rocket-images {
+      left: calc(50% - 320px + -615px);
+    }
+    
+    .connection-labels {
+      left: calc(50% - 320px + -500px);
+    }
+    
+    .video-cards-container {
+      left: calc(50% - 320px + 35px);
+    }
+  }
+
+  @media screen and (max-width: 639px) {
+    height: 2659px;
+    
+    .video-cards-container {
+      left: calc(50% - 240px + 40px);
+      
+      .video-card {
+        width: 570px;
+        height: 600px;
+        
+        .video-wrapper {
+          width: 500px;
+          height: 281px;
+          left: 35px;
+          top: 31px;
+        }
+        
+        .card-content {
+          width: 500px;
+          right: 35px;
+          top: 340px;
+          
+          p {
+            color: #000000;
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 479px) {
+    height: 2660px;
+    
+    .rocket-images {
+      left: calc(50% - 160px + -901px);
+      
+      .rocket {
+        width: 443px;
+        height: 587px;
+        
+        &.rocket-1 {
+          top: 10px;
+        }
+        
+        &.rocket-2 {
+          top: 591px;
+        }
+        
+        &.rocket-3 {
+          top: 1194px;
+        }
+        
+        &.rocket-4 {
+          top: 1771px;
+        }
+      }
+    }
+    
+    .connection-labels {
+      left: calc(50% - 160px + -735px);
+      
+      .connection-label {
+        width: 242px;
+        height: 135px;
+        
+        &.label-1 {
+          top: 191px;
+        }
+        
+        &.label-2 {
+          top: 834px;
+        }
+        
+        &.label-3 {
+          top: 1505px;
+        }
+        
+        &.label-4 {
+          top: 2145px;
+        }
+      }
+    }
+    
+    .video-cards-container {
+      left: calc(50% - 160px + 16px);
+      
+      .video-card {
+        width: 289px;
+        height: 566px;
+        
+        &:nth-child(1) {
+          top: 52px;
+        }
+        
+        &:nth-child(2) {
+          top: 648px;
+        }
+        
+        &:nth-child(3) {
+          top: 1244px;
+        }
+        
+        &:nth-child(4) {
+          top: 1872px;
+        }
+        
+        .video-wrapper {
+          width: 254px;
+          height: 143px;
+          left: 16px;
+          top: 29px;
+        }
+        
+        .card-content {
+          width: 250px;
+          right: 19px;
+          top: 200px;
+          
+          p {
+            color: #000000;
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+
+  // Animation keyframes
+  @keyframes fadeinright {
+    0% {
+      opacity: 0;
+      transform: translateX(-200px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+}
