@@ -1,125 +1,55 @@
-// Button component styles
-
-// Button mixins moved from abstracts/_mixins.scss
-@mixin button-base {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 $spacing-md;
-  border: none;
-  border-radius: $input-border-radius;
-  font-family: $font-primary;
-  font-weight: $font-weight-semibold;
-  text-decoration: none;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: all $transition-fast;
-  &:focus {
-    outline: none;
-  }
-}
-
-@mixin button-primary {
-  @include button-base;
-  background-color: $color-primary;
-  color: $color-white;
-  &:hover,
-  &:focus {
-    background-color: $color-black;
-    border: 1px solid $color-primary;
-  }
-}
-
-@mixin button-secondary {
-  @include button-base;
-  background-color: transparent;
-  color: $color-primary;
-  border: 1px solid $color-primary;
-  &:hover,
-  &:focus {
-    background-color: $color-primary;
-    color: $color-white;
-  }
-}
-
-@mixin btn($bg-color: $color-primary, $text-color: $color-white, $border-color: null) {
-  display: inline-block;
-  padding: 15px 30px;
-  background-color: $bg-color;
-  color: $text-color;
-  text-decoration: none;
-  font-family: $font-primary;
-  font-size: 14px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  border: 2px solid if($border-color, $border-color, $bg-color);
-  border-radius: 0;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  &:hover {
-    background-color: if($bg-color == transparent, $text-color, transparent);
-    color: if($bg-color == transparent, $bg-color, $text-color);
-    border-color: if($border-color, $border-color, $text-color);
-  }
-  &:focus {
-    outline: 2px solid $color-primary;
-    outline-offset: 2px;
-  }
-}
-
-@mixin btn-request-demo {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 200px;
-  height: 45px;
-  color: #ffffff;
-  font-size: 16px;
-  font-family: 'Poppins', Arial, sans-serif;
-  line-height: 1.55;
-  font-weight: 600;
-  text-transform: uppercase;
-  border: 1px solid transparent;
-  border-radius: 0px;
-  background-color: #d81259;
-  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
-  text-decoration: none;
-  cursor: pointer;
-  &:hover,
-  &:focus {
-    background-color: #000000;
-    border-color: #d81259;
-    color: #ffffff;
-    text-decoration: none;
-  }
-}
-
-// Complete Request Demo Button - Button + Arrow Square as one component
+// Modular Request Demo Button with Arrow Square (restored from prior commit)
 .request-demo-button {
   display: flex;
   align-items: center;
   gap: 0;
   height: 45px;
-  
+
+  .request-demo-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 45px;
+    color: #ffffff;
+    font-size: 16px;
+    font-family: 'Poppins', Arial, sans-serif;
+    line-height: 1.55;
+    font-weight: 600;
+    text-transform: uppercase;
+    border: 1px solid transparent;
+    border-radius: 0px;
+    background-color: #d81259;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+    text-decoration: none;
+    cursor: pointer;
+    &:hover,
+    &:focus {
+      background-color: #000000;
+      border-color: #d81259;
+      color: #ffffff;
+      text-decoration: none;
+    }
+  }
+
   .arrow-square {
     width: 45px;
     height: 45px;
-    border: 1px solid $color-brand-pink;
+    border: 1px solid #d81259;
     background: transparent;
     transition: all 0.3s ease;
-    
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 0;
     &:hover {
-      background-color: $color-primary;
+      background-color: #d81259;
     }
-    
     a {
       display: block;
       width: 100%;
       height: 100%;
       position: relative;
       text-decoration: none;
-      
       img {
         position: absolute;
         top: 50%;
@@ -132,16 +62,19 @@
   }
 }
 
+
+
+// Core button base
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: $btn-padding;
+  padding: 15px 30px;
   border: none;
   border-radius: 0;
   font-family: $font-family-primary;
-  font-size: $font-size-sm;
-  font-weight: $font-weight-semibold;
+  font-size: 14px;
+  font-weight: 600;
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
@@ -150,30 +83,25 @@
   transition: all $transition-fast;
   position: relative;
   overflow: hidden;
-  
+  letter-spacing: 0.5px;
   &:focus {
     outline: none;
     box-shadow: 0 0 0 3px rgba($color-primary, 0.3);
   }
-  
   &:disabled,
   &.disabled {
     opacity: 0.6;
     cursor: not-allowed;
     pointer-events: none;
   }
-  
-  // Button sizes
   &.btn-sm {
     padding: $spacing-sm $spacing-lg;
     font-size: $font-size-xs;
   }
-  
   &.btn-lg {
     padding: $spacing-lg $spacing-2xl;
     font-size: $font-size-md;
   }
-  
   &.btn-xl {
     padding: $spacing-xl $spacing-3xl;
     font-size: $font-size-lg;
@@ -182,11 +110,14 @@
 
 // Primary button
 .btn-primary {
-  @include btn($color-primary, $color-white);
-  
+  background-color: $color-primary;
+  color: $color-white;
+  border: 2px solid $color-primary;
   &:hover,
   &:focus {
     background-color: darken($color-primary, 10%);
+    color: $color-white;
+    border-color: $color-primary;
     transform: translateY(-2px);
     box-shadow: $shadow-md;
   }
@@ -194,240 +125,16 @@
 
 // Secondary button
 .btn-secondary {
-  @include btn($color-secondary, $color-black);
-  
+  background-color: $color-secondary;
+  color: $color-black;
+  border: 2px solid $color-secondary;
   &:hover,
   &:focus {
     background-color: darken($color-secondary, 10%);
-    transform: translateY(-2px);
-    box-shadow: $shadow-md;
-  }
-}
-
-// Outline buttons
-.btn-outline-primary {
-  @include btn(transparent, $color-primary);
-  border: 2px solid $color-primary;
-  
-  &:hover,
-  &:focus {
-    background-color: $color-primary;
     color: $color-white;
-    transform: translateY(-2px);
+    border-color: $color-secondary;
   }
 }
 
-.btn-outline-secondary {
-  @include btn(transparent, $color-secondary);
-  border: 2px solid $color-secondary;
-  
-  &:hover,
-  &:focus {
-    background-color: $color-secondary;
-    color: $color-black;
-    transform: translateY(-2px);
-  }
-}
 
-.btn-outline-white {
-  @include btn(transparent, $color-white);
-  border: 2px solid $color-white;
-  
-  &:hover,
-  &:focus {
-    background-color: $color-white;
-    color: $color-black;
-    transform: translateY(-2px);
-  }
-}
 
-// Ghost button
-.btn-ghost {
-  @include btn(transparent, $color-white);
-  
-  &:hover,
-  &:focus {
-    color: $color-secondary;
-  }
-  
-  &.btn-ghost-dark {
-    color: $color-black;
-    
-    &:hover,
-    &:focus {
-      color: $color-primary;
-    }
-  }
-}
-
-// Link button
-.btn-link {
-  @include btn(transparent, $color-primary);
-  padding: 0;
-  text-transform: none;
-  font-weight: $font-weight-regular;
-  text-decoration: underline;
-  
-  &:hover,
-  &:focus {
-    color: darken($color-primary, 10%);
-    text-decoration: none;
-  }
-}
-
-// Block button
-.btn-block {
-  display: flex;
-  width: 100%;
-}
-
-// Button group
-.btn-group {
-  display: inline-flex;
-  
-  .btn {
-    border-radius: 0;
-    
-    &:not(:last-child) {
-      border-right: 0;
-    }
-    
-    &:first-child {
-      border-top-left-radius: 0;
-      border-bottom-left-radius: 0;
-    }
-    
-    &:last-child {
-      border-top-right-radius: 0;
-      border-bottom-right-radius: 0;
-    }
-    
-    &:focus {
-      z-index: 1;
-    }
-  }
-}
-
-// Button with icon
-.btn-icon {
-  .icon {
-    width: 16px;
-    height: 16px;
-    
-    &.icon-left {
-      margin-right: $spacing-sm;
-    }
-    
-    &.icon-right {
-      margin-left: $spacing-sm;
-    }
-  }
-  
-  &.btn-icon-only {
-    padding: $spacing-md;
-    
-    .icon {
-      margin: 0;
-    }
-  }
-}
-
-// CTA Button (Call to Action)
-.btn-cta {
-  @include btn($color-secondary, $color-black);
-  font-size: $font-size-md;
-  padding: $spacing-lg $spacing-2xl;
-  font-weight: $font-weight-bold;
-  position: relative;
-  overflow: hidden;
-  
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba($color-white, 0.2), transparent);
-    transition: left $transition-normal;
-  }
-  
-  &:hover {
-    &::before {
-      left: 100%;
-    }
-  }
-  
-  &:hover,
-  &:focus {
-    background-color: lighten($color-secondary, 5%);
-    transform: translateY(-3px);
-    box-shadow: $shadow-lg;
-  }
-}
-
-// Loading button
-.btn-loading {
-  position: relative;
-  pointer-events: none;
-  
-  &::after {
-    content: '';
-    position: absolute;
-    width: 16px;
-    height: 16px;
-    margin: auto;
-    border: 2px solid transparent;
-    border-top-color: currentColor;
-    border-radius: 50%;
-    animation: button-loading-spinner 1s ease infinite;
-  }
-  
-  .btn-text {
-    visibility: hidden;
-  }
-}
-
-@keyframes button-loading-spinner {
-  from {
-    transform: rotate(0turn);
-  }
-  
-  to {
-    transform: rotate(1turn);
-  }
-}
-
-// Responsive button adjustments
-@include respond-to(sm) {
-  .btn {
-    font-size: $font-size-xs;
-    padding: $spacing-sm $spacing-md;
-  }
-  
-  .btn-lg {
-    padding: $spacing-md $spacing-lg;
-    font-size: $font-size-sm;
-  }
-  
-  .btn-xl {
-    padding: $spacing-lg $spacing-xl;
-    font-size: $font-size-md;
-  }
-}
-
-// Tilda Request Demo Button - Exact Recreation
-// Request Demo Button (uses mixin)
-.request-demo-btn {
-  @include btn-request-demo;
-  
-  // Mobile override to maintain proper sizing and centering
-  @media (max-width: 479px) {
-    width: 200px !important;
-    height: 45px !important;
-    padding: 0 !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-  }
-}

@@ -1,0 +1,330 @@
+
+// _testimonial-video.scss
+// Elizabeth Crisfield testimonial video section - Exact Tilda Recreation (rec1176888166)
+// Pixel-perfect match to original Tilda design
+
+.testimonial-video-section {
+  position: relative;
+  width: 100%;
+  height: 486px;
+  background-color: #000000;
+  overflow: visible;
+  
+  @media screen and (max-width: 959px) {
+    height: 686px;
+  }
+  
+  @media screen and (max-width: 639px) {
+    height: 666px;
+  }
+  
+  @media screen and (max-width: 479px) {
+    height: 500px;
+  }
+
+  // Background decorative ellipse (elem 1746401491587)
+  .ellipse-decoration {
+    position: absolute;
+    z-index: 3;
+    top: -91px;
+    left: calc(50% - 600px + 880px);
+    width: 500px;
+    height: auto;
+    opacity: 0.75;
+    
+    @media screen and (max-width: 1199px) {
+      top: -270px;
+      left: calc(50% - 480px + 662px);
+    }
+    
+    @media screen and (max-width: 959px) {
+      top: 128px;
+      left: calc(50% - 320px + 218px);
+    }
+    
+    @media screen and (max-width: 639px) {
+      top: 86px;
+      left: calc(50% - 240px + 173px);
+    }
+    
+    @media screen and (max-width: 479px) {
+      top: -15px;
+      left: calc(50% - 160px + -190px);
+    }
+    
+    .ellipse-img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  // Union background graphic (elem 1746325956265)
+  .union-background {
+    position: absolute;
+    z-index: 3;
+    top: 0px;
+    left: calc(50% - 600px + 700px);
+    width: 500px;
+    height: 486px;
+    
+    @media screen and (max-width: 1199px) {
+      left: calc(50% - 480px + 492px);
+    }
+    
+    @media screen and (max-width: 959px) {
+      top: 284px;
+      left: calc(50% - 320px + 70px);
+    }
+    
+    @media screen and (max-width: 639px) {
+      top: 287px;
+      left: calc(50% - 240px + -9px);
+    }
+    
+    @media screen and (max-width: 479px) {
+      top: 109px;
+      left: calc(50% - 160px + 0px);
+      width: 320px;
+    }
+    
+    .union-img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  // Border lines
+  .border-line {
+    position: absolute;
+    z-index: 3;
+    background-color: #ffffff;
+    
+    &.border-line-top {
+      top: 0px;
+      left: calc(50% - 600px + -360px);
+      width: 1920px;
+      height: 1px;
+    }
+    
+    &.border-line-bottom {
+      top: 485px;
+      left: calc(50% - 600px + -360px);
+      width: 1920px;
+      height: 1px;
+      
+      @media screen and (max-width: 959px) {
+        top: 685px;
+      }
+      
+      @media screen and (max-width: 639px) {
+        top: 665px;
+      }
+      
+      @media screen and (max-width: 479px) {
+        top: 499px;
+      }
+    }
+  }
+
+  // Vertical separator line (elem 1746325912058)
+  .separator-line {
+    position: absolute;
+    z-index: 3;
+    top: 1px;
+    left: calc(50% - 600px + 720px);
+    width: 1px;
+    height: 486px;
+    background-color: #ffffff;
+    
+    @media screen and (max-width: 1199px) {
+      top: 0px;
+      left: calc(50% - 480px + 514px);
+    }
+    
+    @media screen and (max-width: 959px) {
+      left: calc(50% - 320px + 695px);
+    }
+    
+    @media screen and (max-width: 479px) {
+      top: 20px;
+      left: calc(50% - 160px + 319px);
+      height: 550px;
+      opacity: 0;
+    }
+  }
+
+  .testimonial-container {
+    position: relative;
+    height: 100%;
+    z-index: 4;
+  }
+
+  // Quote content area - flexbox container for proper stacking - moved higher to align quote at top
+  .testimonial-video-quote {
+    position: absolute;
+    z-index: 3;
+    top: 60px; // Moved up from 200px to position quote at the top
+    left: calc(50% - 600px + 760px);
+    width: 400px;
+    height: 350px; // Give container height so flexbox can distribute space
+    display: flex;
+    flex-direction: column;
+    gap: 20px; // Nice spacing between elements
+    
+    @media screen and (max-width: 1199px) {
+      top: 80px; // Moved up from 220px
+      left: calc(50% - 480px + 530px);
+      width: 350px;
+      height: 320px;
+    }
+    
+    @media screen and (max-width: 959px) {
+      top: 350px; // Moved up from 450px
+      left: calc(50% - 320px + 89px);
+      width: 300px;
+      height: 280px;
+    }
+    
+    @media screen and (max-width: 639px) {
+      top: 320px; // Moved up from 450px
+      left: calc(50% - 240px + 14px);
+      width: 280px;
+      height: 280px;
+    }
+    
+    @media screen and (max-width: 479px) {
+      top: 240px; // Moved up from 280px
+      left: calc(50% - 160px + 10px);
+      width: 250px;
+      height: 220px;
+    }
+
+    // Blockquote wrapper
+    .testimonial-quote {
+      display: flex;
+      flex-direction: column;
+      margin: 0; // Remove default blockquote margins
+      padding: 0; // Remove default blockquote padding
+      height: 100%; // Take full height of parent
+
+      // Quote text styling - bold and positioned at top
+      .quote-text {
+        color: #ffffff;
+        font-size: 28px;
+        font-family: 'Poppins', Arial, sans-serif;
+        line-height: 1.2;
+        font-weight: 700; // Bold weight for the quote
+        text-align: left;
+        
+        @media screen and (max-width: 1199px) {
+          font-size: 24px;
+        }
+        
+        @media screen and (max-width: 959px) {
+          font-size: 22px;
+        }
+        
+        @media screen and (max-width: 639px) {
+          font-size: 20px;
+        }
+        
+        @media screen and (max-width: 479px) {
+          font-size: 16px;
+        }
+      }
+
+      // Quote text - stays at top (natural position)
+      // (styling already defined above)
+
+      // Attribution - push to bottom with auto margin
+      .quote-attribution {
+        color: #ffffff; // White text instead of pink
+        font-size: 12px; // Much smaller than the 28px quote text
+        font-family: 'Poppins', Arial, sans-serif;
+        line-height: 1.1;
+        font-weight: 700; // Based on original Tilda design - entire attribution is bold
+        margin: 0; // Remove default footer margins
+        margin-top: auto; // Push attribution (and button after it) to bottom
+        
+        @media screen and (max-width: 479px) {
+          font-size: 10px;
+        }
+
+        // Individual styling for name, title, organization - all bold in original Tilda design
+        .quote-author {
+          font-weight: 700; // Name is bold
+        }
+        
+        .quote-title,
+        .quote-org {
+          font-weight: 700; // Title and org also bold to match original
+        }
+      }
+
+      // Button positioning - flows naturally after attribution
+      .request-demo-button {
+        align-self: flex-start; // Align to left of container
+        margin-top: 20px; // Space between attribution and button
+      }
+    }
+  }
+
+  // Video section (elem 1746326577962)
+  .testimonial-video {
+    position: absolute;
+    z-index: 3;
+    top: 59px;
+    left: calc(50% - 600px + 20px);
+    width: 629px;
+    height: 368px;
+    border-radius: 0px;
+    overflow: hidden;
+    opacity: 0.9;
+    
+    @media screen and (max-width: 1199px) {
+      top: 111px;
+      left: calc(50% - 480px + 10px);
+      width: 466px;
+      height: 265px;
+    }
+    
+    @media screen and (max-width: 959px) {
+      top: 49px;
+      left: calc(50% - 320px + 87px);
+    }
+    
+    @media screen and (max-width: 639px) {
+      left: calc(50% - 240px + 14px);
+      width: 452px;
+      height: 252px;
+    }
+    
+    @media screen and (max-width: 479px) {
+      top: 28px;
+      left: calc(50% - 160px + 10px);
+      width: 297px;
+      height: 190px;
+    }
+    
+    .video-wrapper {
+      width: 100%;
+      height: 100%;
+      
+      .video-iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+        display: block;
+      }
+    }
+  }
+
+  .testimonial-content {
+    position: relative;
+    z-index: 4;
+  }
+
+  
+
+
+}

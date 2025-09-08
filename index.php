@@ -21,6 +21,8 @@ get_header();
 
     <?php get_template_part('template-parts/video-features'); ?>
 
+    <?php get_template_part('template-parts/testimonial-video'); ?>
+
 </main>
 
 <?php get_footer(); ?>

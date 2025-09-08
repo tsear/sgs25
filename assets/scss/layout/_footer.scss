@@ -180,7 +180,8 @@
         }
         
         .btn-submit {
-          @include btn($color-secondary, $color-white);
+          @extend .btn;
+          @extend .btn-secondary;
           width: 100%;
           font-size: $font-size-sm;
           text-transform: uppercase;
