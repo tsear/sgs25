@@ -1,5 +1,100 @@
 // Button component styles
 
+// Button mixins moved from abstracts/_mixins.scss
+@mixin button-base {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 $spacing-md;
+  border: none;
+  border-radius: $input-border-radius;
+  font-family: $font-primary;
+  font-weight: $font-weight-semibold;
+  text-decoration: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all $transition-fast;
+  &:focus {
+    outline: none;
+  }
+}
+
+@mixin button-primary {
+  @include button-base;
+  background-color: $color-primary;
+  color: $color-white;
+  &:hover,
+  &:focus {
+    background-color: $color-black;
+    border: 1px solid $color-primary;
+  }
+}
+
+@mixin button-secondary {
+  @include button-base;
+  background-color: transparent;
+  color: $color-primary;
+  border: 1px solid $color-primary;
+  &:hover,
+  &:focus {
+    background-color: $color-primary;
+    color: $color-white;
+  }
+}
+
+@mixin btn($bg-color: $color-primary, $text-color: $color-white, $border-color: null) {
+  display: inline-block;
+  padding: 15px 30px;
+  background-color: $bg-color;
+  color: $text-color;
+  text-decoration: none;
+  font-family: $font-primary;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border: 2px solid if($border-color, $border-color, $bg-color);
+  border-radius: 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  &:hover {
+    background-color: if($bg-color == transparent, $text-color, transparent);
+    color: if($bg-color == transparent, $bg-color, $text-color);
+    border-color: if($border-color, $border-color, $text-color);
+  }
+  &:focus {
+    outline: 2px solid $color-primary;
+    outline-offset: 2px;
+  }
+}
+
+@mixin btn-request-demo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 45px;
+  color: #ffffff;
+  font-size: 16px;
+  font-family: 'Poppins', Arial, sans-serif;
+  line-height: 1.55;
+  font-weight: 600;
+  text-transform: uppercase;
+  border: 1px solid transparent;
+  border-radius: 0px;
+  background-color: #d81259;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+  text-decoration: none;
+  cursor: pointer;
+  &:hover,
+  &:focus {
+    background-color: #000000;
+    border-color: #d81259;
+    color: #ffffff;
+    text-decoration: none;
+  }
+}
+
 // Complete Request Demo Button - Button + Arrow Square as one component
 .request-demo-button {
   display: flex;

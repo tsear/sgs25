@@ -1,3 +1,27 @@
+// Flex utilities
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+// Container
+@mixin container {
+  width: 100%;
+  max-width: $container-max-width;
+  margin: 0 auto;
+  padding: 0 $container-padding;
+}
 // Mixins - Smart Grant Solutions Theme
 
 // Responsive breakpoints
@@ -34,103 +58,6 @@
   }
   @if $breakpoint == xl {
     @media (min-width: $breakpoint-xl) { @content; }
-  }
-}
-
-// Container
-@mixin container {
-  width: 100%;
-  max-width: $container-max-width;
-  margin: 0 auto;
-  padding: 0 $container-padding;
-}
-
-// Flex utilities
-@mixin flex-center {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-@mixin flex-between {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-@mixin flex-column {
-  display: flex;
-  flex-direction: column;
-}
-
-// Grid system
-@mixin grid-container {
-  display: grid;
-  grid-template-columns: repeat($grid-columns, 1fr);
-  gap: $grid-gap;
-}
-
-@mixin grid-column($cols, $total: $grid-columns) {
-  grid-column: span $cols;
-}
-
-// Typography mixins
-@mixin font-heading($size: $font-size-2xl, $weight: $font-weight-bold) {
-  font-family: $font-primary;
-  font-size: $size;
-  font-weight: $weight;
-  line-height: $line-height-normal;
-}
-
-@mixin font-body($size: $font-size-base, $weight: $font-weight-regular) {
-  font-family: $font-primary;
-  font-size: $size;
-  font-weight: $weight;
-  line-height: $line-height-relaxed;
-}
-
-// Button mixins
-@mixin button-base {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 $spacing-md;
-  border: none;
-  border-radius: $input-border-radius;
-  font-family: $font-primary;
-  font-weight: $font-weight-semibold;
-  text-decoration: none;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: all $transition-fast;
-  
-  &:focus {
-    outline: none;
-  }
-}
-
-@mixin button-primary {
-  @include button-base;
-  background-color: $color-primary;
-  color: $color-white;
-  
-  &:hover,
-  &:focus {
-    background-color: $color-black;
-    border: 1px solid $color-primary;
-  }
-}
-
-@mixin button-secondary {
-  @include button-base;
-  background-color: transparent;
-  color: $color-primary;
-  border: 1px solid $color-primary;
-  
-  &:hover,
-  &:focus {
-    background-color: $color-primary;
-    color: $color-white;
   }
 }
 
