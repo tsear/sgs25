@@ -1,0 +1,76 @@
+// Features Section Layout
+// 5-card horizontal layout showcasing key platform capabilities
+
+.features-section {
+  padding: $spacing-xl 0;
+  background-color: $color-black;
+  border-bottom: 1px solid $color-white;
+  position: relative;
+  overflow: hidden;
+  
+  // Large ellipse background on left side
+  .ellipse-background {
+    position: absolute;
+    top: -275px;
+    left: -525px;
+    width: 1400px;
+    height: 1400px;
+    background-image: var(--ellipse-bg-url);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.3;
+    z-index: 1;
+    pointer-events: none;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 $spacing-lg;
+    position: relative;
+    z-index: 2;
+  }
+  
+  // Dark theme card enhancements
+  .feature-card {
+    // White borders consistent with other dark sections
+    border-color: $color-white;
+    
+    &:hover {
+      border-color: $color-white;
+    }
+    
+    .card-icon img {
+      // Light filter for icons on dark background
+      filter: brightness(0) saturate(100%) invert(100%);
+      opacity: 0.9;
+    }
+    
+    &:hover .card-icon img {
+      filter: brightness(0) saturate(100%) invert(64%) sepia(98%) saturate(1227%) hue-rotate(6deg) brightness(100%) contrast(101%);
+      opacity: 1;
+    }
+  }
+}
+
+// Responsive section adjustments
+@include respond-to(lg) {
+  .features-section {
+    padding: $spacing-2xl 0 $spacing-3xl;
+    
+    .container {
+      padding: 0 $spacing-md;
+    }
+  }
+}
+
+@include respond-to(md) {
+  .features-section {
+    padding: $spacing-xl 0 $spacing-2xl;
+    
+    .container {
+      padding: 0 $spacing-sm;
+    }
+  }
+}

@@ -25,6 +25,8 @@ get_header();
 
     <?php get_template_part('template-parts/mission-separator'); ?>
 
+    <?php get_template_part('template-parts/features-section'); ?>
+
 </main>
 
 <?php get_footer(); ?>
