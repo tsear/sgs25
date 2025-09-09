@@ -1,0 +1,69 @@
+// Mission Separator Section - Uses inline styles like value proposition
+.mission-separator {
+    .mission-attributes {
+        right: 50px !important;
+        justify-content: space-between !important;
+        gap: 0 !important;
+        align-items: center !important;
+        
+        .request-demo-button {
+            align-self: center;
+        }
+    }
+    // Responsive height adjustments
+    @media (max-width: 1199px) {
+        height: 280px !important;
+        
+        .mission-separator__grid {
+            height: 280px !important;
+        }
+        
+        .vertical-divider {
+            height: 100% !important;
+        }
+    }
+    
+    @media (max-width: 959px) {
+        height: 460px !important;
+        
+        .mission-separator__grid {
+            display: none !important;
+        }
+        
+        .vertical-divider {
+            display: none !important;
+        }
+        
+        .mission-title {
+            position: relative !important;
+            top: auto !important;
+            left: auto !important;
+            transform: none !important;
+            width: auto !important;
+            text-align: center !important;
+            margin-bottom: 40px !important;
+        }
+        
+        .mission-attributes {
+            position: relative !important;
+            top: auto !important;
+            left: auto !important;
+            transform: none !important;
+            flex-direction: column !important;
+            gap: 30px !important;
+            text-align: center !important;
+        }
+    }
+    
+    @media (max-width: 479px) {
+        height: 380px !important;
+        
+        .mission-title {
+            font-size: 24px !important;
+        }
+        
+        .mission-bullets {
+            font-size: 14px !important;
+        }
+    }
+}

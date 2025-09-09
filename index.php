@@ -23,6 +23,8 @@ get_header();
 
     <?php get_template_part('template-parts/testimonial-video'); ?>
 
+    <?php get_template_part('template-parts/mission-separator'); ?>
+
 </main>
 
 <?php get_footer(); ?>
