@@ -1,0 +1,270 @@
+// Post Content Component
+.post-content {
+  background-color: #ffffff;
+  padding: 75px 0;
+
+  // Container
+  &__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  // Article
+  &__article {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  // Content Body
+  &__body {
+    color: #000000;
+    font-family: 'DM Sans', Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.6;
+
+    // Typography styles
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Poppins', Arial, sans-serif;
+      font-weight: 600;
+      color: #000000;
+      margin: 2rem 0 1rem 0;
+      line-height: 1.3;
+
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+
+    h1 {
+      font-size: 36px;
+    }
+
+    h2 {
+      font-size: 28px;
+    }
+
+    h3 {
+      font-size: 24px;
+    }
+
+    h4 {
+      font-size: 20px;
+    }
+
+    h5 {
+      font-size: 18px;
+    }
+
+    h6 {
+      font-size: 16px;
+    }
+
+    p {
+      margin: 0 0 1.5rem 0;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    // Lists
+    ul, ol {
+      margin: 1.5rem 0;
+      padding-left: 2rem;
+
+      li {
+        margin-bottom: 0.5rem;
+        
+        &[data-list="bullet"] {
+          list-style-type: disc;
+        }
+      }
+    }
+
+    // Strong/Bold text
+    strong {
+      font-weight: 600;
+      color: #000000;
+    }
+
+    // Links
+    a {
+      color: #d81259;
+      text-decoration: none;
+      transition: color 0.2s ease-in-out;
+
+      &:hover {
+        color: #ffbc41;
+        text-decoration: underline;
+      }
+    }
+
+    // Images
+    img {
+      max-width: 100%;
+      height: auto;
+      margin: 2rem 0;
+      border-radius: 8px;
+    }
+
+    // Blockquotes
+    blockquote {
+      background-color: #f8f9fa;
+      border-left: 4px solid #d81259;
+      padding: 1.5rem 2rem;
+      margin: 2rem 0;
+      font-style: italic;
+      color: #444444;
+    }
+
+    // Code blocks
+    pre, code {
+      font-family: 'Courier New', monospace;
+      background-color: #f8f9fa;
+      border: 1px solid #e9ecef;
+      border-radius: 4px;
+    }
+
+    code {
+      padding: 0.2rem 0.4rem;
+      font-size: 0.9em;
+    }
+
+    pre {
+      padding: 1rem;
+      overflow-x: auto;
+      margin: 1.5rem 0;
+
+      code {
+        background: none;
+        border: none;
+        padding: 0;
+      }
+    }
+  }
+
+  // Tags Section
+  &__tags {
+    margin: 3rem 0;
+    padding: 2rem 0;
+    border-top: 1px solid #e9ecef;
+    border-bottom: 1px solid #e9ecef;
+  }
+
+  &__tags-title {
+    font-family: 'Poppins', Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: #000000;
+    margin: 0 0 1rem 0;
+  }
+
+  &__tags-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+
+    a {
+      background-color: #f8f9fa;
+      color: #666666;
+      padding: 0.4rem 0.8rem;
+      border-radius: 20px;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 400;
+      transition: all 0.2s ease-in-out;
+
+      &:hover {
+        background-color: #d81259;
+        color: #ffffff;
+      }
+    }
+  }
+
+  // Author Section
+  &__author {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+    margin: 3rem 0 0 0;
+    padding: 2rem;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+  }
+
+  &__author-avatar {
+    flex-shrink: 0;
+
+    img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin: 0;
+    }
+  }
+
+  &__author-info {
+    flex: 1;
+  }
+
+  &__author-name {
+    font-family: 'Poppins', Arial, sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: #000000;
+    margin: 0 0 0.5rem 0;
+  }
+
+  &__author-bio {
+    color: #666666;
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  // Responsive Design
+  @media screen and (max-width: 768px) {
+    padding: 40px 0;
+
+    &__container {
+      padding: 0 25px;
+    }
+
+    &__body {
+      h1 {
+        font-size: 28px;
+      }
+
+      h2 {
+        font-size: 24px;
+      }
+
+      h3 {
+        font-size: 20px;
+      }
+    }
+
+    &__author {
+      flex-direction: column;
+      text-align: center;
+      gap: 1rem;
+
+      &-avatar img {
+        width: 60px;
+        height: 60px;
+      }
+    }
+  }
+
+  @media screen and (max-width: 479px) {
+    &__tags-list {
+      justify-content: center;
+    }
+
+    &__author {
+      padding: 1.5rem;
+    }
+  }
+}

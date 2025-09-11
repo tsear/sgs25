@@ -1,0 +1,87 @@
+// =============================================================================
+// Newsletter Form Component
+// =============================================================================
+
+.newsletter-form {
+  padding-bottom: 20px;
+  
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    max-width: 420px;
+    
+    @media (max-width: 479px) {
+      max-width: 270px;
+    }
+  }
+  
+  &__field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  &__label {
+    color: #ffffff;
+    font-size: 1.25rem;
+    font-family: 'Poppins', Arial, sans-serif;
+    font-weight: 600;
+    
+    @media (max-width: 479px) {
+      font-size: 1.125rem;
+    }
+  }
+  
+  &__input {
+    height: 45px;
+    padding: 0 1rem;
+    background-color: #ffffff;
+    border: none;
+    border-radius: 0;
+    color: #000000;
+    font-size: 1rem;
+    font-family: 'Poppins', Arial, sans-serif;
+    font-weight: 400;
+    
+    @media (max-width: 479px) {
+      font-size: 0.875rem;
+    }
+    
+    &::placeholder {
+      color: #666666;
+    }
+    
+    &:focus {
+      outline: 2px solid #d81259;
+      outline-offset: 0;
+    }
+  }
+  
+  &__button {
+    height: 45px;
+    background-color: #d81259;
+    color: #ffffff;
+    border: none;
+    border-radius: 0;
+    font-size: 1rem;
+    font-family: 'Poppins', Arial, sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    
+    @media (max-width: 479px) {
+      font-size: 0.875rem;
+    }
+    
+    &:hover {
+      background-color: #b01048;
+    }
+    
+    &:focus {
+      outline: 2px solid #ffffff;
+      outline-offset: 2px;
+    }
+  }
+}

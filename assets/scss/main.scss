@@ -44,15 +44,18 @@ Text Domain: sgs
 @import 'components/forms';
 @import 'components/hero';
 @import 'components/features';
+@import 'components/blog-hero';
+@import 'components/newsletter-form';
+@import 'components/post-card';
+@import 'components/post-hero';
+@import 'components/post-content';
+@import 'components/post-navigation';
+@import 'components/related-posts';
 
 // ==========================================================================
 // PAGES
 // ==========================================================================
-// Page-specific styles will be imported here as needed
-// @import 'pages/home';
-// @import 'pages/about';
-// @import 'pages/services';
-// @import 'pages/contact';
+@import 'pages/blog-archive';
 
 // ==========================================================================
 // THEMES
