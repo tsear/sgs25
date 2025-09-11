@@ -6,6 +6,8 @@ A custom WordPress theme that provides a **1:1 exact recreation** of the Smart G
 
 I created this theme to recreate the entire MissionGranted by Smart Grant Solutions website exactly as it appears in the original Tilda export, maintaining pixel-perfect accuracy while converting it to a scalable WordPress custom theme architecture.
 
+This project transforms a static Tilda CMS export into a fully functional WordPress theme with complete blog functionality and modular architecture.
+
 ## Key Features
 
 ### 🎯 1:1 Design Match
