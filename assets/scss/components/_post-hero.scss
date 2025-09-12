@@ -4,6 +4,7 @@
   padding: 0;
   position: relative;
   min-height: 450px;
+  overflow: hidden; // Prevent graphics from bleeding into content
 
   // Container
   &__container {
@@ -15,6 +16,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    z-index: 5; // Ensure content is above background graphics
   }
 
   // Meta Information
@@ -46,16 +48,17 @@
   &__grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 2rem;
+    gap: 4rem;
     align-items: center;
     z-index: 10;
     position: relative;
   }
 
-  &__content {
+  // Left Column: Title
+  &__title-column {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    justify-content: center;
   }
 
   &__title {
@@ -67,28 +70,23 @@
     margin: 0;
   }
 
-  &__excerpt {
+  // Right Column: Description
+  &__description-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__description {
     color: #ffffff;
     font-family: 'DM Sans', Arial, sans-serif;
     font-size: 22px;
     font-weight: 400;
-    line-height: 1.25;
+    line-height: 1.4;
     margin: 0;
   }
 
-  &__image {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  &__img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 0;
-  }
-
-  // Graphics Elements
+  // Background Graphics Elements  
   &__ellipse {
     position: absolute;
     left: -320px;
@@ -131,7 +129,8 @@
 
     &--vertical {
       top: 1px;
-      right: 0;
+      left: 50%;
+      transform: translateX(-50%);
       width: 1px;
       height: 448px;
     }

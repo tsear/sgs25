@@ -28,28 +28,44 @@ wp_enqueue_style('poppins-font', 'https://fonts.googleapis.com/css2?family=Poppi
         <!-- Main Content Grid -->
         <div class="post-hero__grid">
             
-            <!-- Left Column: Title and Description -->
-            <div class="post-hero__content">
+            <!-- Left Column: Title -->
+            <div class="post-hero__title-column">
                 <h1 class="post-hero__title">
                     <?php the_title(); ?>
                 </h1>
-                
-                <div class="post-hero__excerpt">
+            </div>
+            
+            <!-- Right Column: Meta Description -->
+            <div class="post-hero__description-column">
+                <div class="post-hero__description">
                     <?php 
-                    if (has_excerpt()) {
+                    // Priority: RankMath → Yoast → Excerpt → Trimmed content
+                    $meta_description = '';
+                    
+                    // Check RankMath first (free version has better features)
+                    $rankmath_desc = get_post_meta(get_the_ID(), 'rank_math_description', true);
+                    if (!empty($rankmath_desc)) {
+                        $meta_description = $rankmath_desc;
+                    }
+                    
+                    // Fallback to Yoast if RankMath not found
+                    if (empty($meta_description)) {
+                        $yoast_desc = get_post_meta(get_the_ID(), '_yoast_wpseo_metadesc', true);
+                        if (!empty($yoast_desc)) {
+                            $meta_description = $yoast_desc;
+                        }
+                    }
+                    
+                    // Display meta description, excerpt, or trimmed content
+                    if (!empty($meta_description)) {
+                        echo esc_html($meta_description);
+                    } elseif (has_excerpt()) {
                         the_excerpt();
                     } else {
-                        echo wp_trim_words(get_the_content(), 30, '...');
+                        echo wp_trim_words(get_the_content(), 25, '...');
                     }
                     ?>
                 </div>
-            </div>
-            
-            <!-- Right Column: Featured Image -->
-            <div class="post-hero__image">
-                <?php if (has_post_thumbnail()) : ?>
-                    <?php the_post_thumbnail('large', array('class' => 'post-hero__img')); ?>
-                <?php endif; ?>
             </div>
             
         </div>
