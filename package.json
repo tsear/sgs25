@@ -8,9 +8,16 @@
     "sass-dev": "sass assets/scss/main.scss:style.css --watch --style=expanded --source-map",
     "build-css": "sass assets/scss/main.scss:style.css --style=compressed --no-source-map",
     "build-css-dev": "sass assets/scss/main.scss:style.css --style=expanded --source-map",
+    "build-js": "rollup -c",
+    "build-js-watch": "rollup -c --watch",
+    "build": "npm run build-css && npm run build-js",
+    "build-dev": "npm run build-css-dev && npm run build-js",
     "watch": "npm run sass-dev"
   },
   "devDependencies": {
+    "@rollup/plugin-commonjs": "^28.0.6",
+    "@rollup/plugin-node-resolve": "^16.0.1",
+    "rollup": "^4.50.1",
     "sass": "^1.77.8"
   },
   "browserslist": [

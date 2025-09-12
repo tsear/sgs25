@@ -131,4 +131,3 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-export default TypedAnimation;
