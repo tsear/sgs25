@@ -19,7 +19,9 @@ wp_enqueue_style('poppins-font', 'https://fonts.googleapis.com/css2?family=Poppi
                 <?php 
                 $categories = get_the_category();
                 if (!empty($categories)) {
+                    echo '<a href="' . esc_url(get_category_link($categories[0]->term_id)) . '" class="post-hero__category-link">';
                     echo esc_html($categories[0]->name);
+                    echo '</a>';
                 }
                 ?>
             </div>

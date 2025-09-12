@@ -14,8 +14,22 @@
             <!-- Left Column: Title and Newsletter -->
             <div class="blog-header__left-column">
                 <h1 class="blog-header__title">
-                    <strong style="color: #d81259;"><em>MissionGranted</em></strong><br>
-                    <strong style="color: #ffffff;"><em>Blog</em></strong>
+                    <?php if (is_category()) : ?>
+                        <strong style="color: #d81259;"><em>Category:</em></strong><br>
+                        <strong style="color: #ffffff;"><em><?php single_cat_title(); ?></em></strong>
+                    <?php elseif (is_tag()) : ?>
+                        <strong style="color: #d81259;"><em>Tag:</em></strong><br>
+                        <strong style="color: #ffffff;"><em><?php single_tag_title(); ?></em></strong>
+                    <?php elseif (is_author()) : ?>
+                        <strong style="color: #d81259;"><em>Author:</em></strong><br>
+                        <strong style="color: #ffffff;"><em><?php the_author(); ?></em></strong>
+                    <?php elseif (is_search()) : ?>
+                        <strong style="color: #d81259;"><em>Search Results</em></strong><br>
+                        <strong style="color: #ffffff;"><em>Blog</em></strong>
+                    <?php else : ?>
+                        <strong style="color: #d81259;"><em>MissionGranted</em></strong><br>
+                        <strong style="color: #ffffff;"><em>Blog</em></strong>
+                    <?php endif; ?>
                 </h1>
                 
                 <?php get_template_part('template-parts/blog/newsletter-form'); ?>
@@ -42,7 +56,7 @@
             <div class="blog-header__divider"></div>
             
             <!-- Bottom Border -->
-            <div class="bottom-border" style="position: absolute; bottom: 0; left: -360px; width: 1920px; height: 1px; background-color: #ffffff; z-index: 3;"></div>
+            <div class="bottom-border" style="position: absolute; bottom: 0; left: 50%; width: 100vw; height: 1px; background-color: #ffffff; z-index: 3; transform: translateX(-50%);"></div>
         </div>
     </div>
 </section>

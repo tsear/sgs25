@@ -1,0 +1,68 @@
+// Search Results Component
+// Styling for search results info and no results sections
+
+.search-results-info {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+  h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: $color-white;
+    margin-bottom: 0.5rem;
+    
+    @include respond-above(md) {
+      font-size: 1.75rem;
+    }
+  }
+
+  .search-results-count {
+    font-size: 0.875rem;
+    color: rgba($color-white, 0.7);
+    margin: 0;
+  }
+}
+
+.no-search-results {
+  text-align: center;
+  padding: 3rem 1rem;
+
+  h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: $color-white;
+    margin-bottom: 1rem;
+    
+    @include respond-above(md) {
+      font-size: 1.75rem;
+    }
+  }
+
+  p {
+    font-size: 1rem;
+    color: rgba($color-white, 0.8);
+    margin-bottom: 2rem;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    background-color: $color-brand-pink;
+    color: $color-white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: darken($color-brand-pink, 10%);
+      text-decoration: none;
+      color: $color-white;
+    }
+  }
+}

@@ -194,6 +194,24 @@
     border-radius: 8px;
   }
 
+  &__author-link {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+    text-decoration: none;
+    color: inherit;
+    width: 100%;
+    transition: background-color 0.3s ease;
+    padding: 0;
+    border-radius: 8px;
+
+    &:hover {
+      background-color: #e9ecef;
+      text-decoration: none;
+      color: inherit;
+    }
+  }
+
   &__author-avatar {
     flex-shrink: 0;
 

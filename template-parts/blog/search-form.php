@@ -10,9 +10,53 @@ $search_query = isset($_GET['s']) ? get_search_query() : '';
 <section class="blog-search">
     <div class="container">
         <div class="blog-search__wrapper">
-            <div class="blog-search__label">
-                <span class="blog-search__label-text">Find articles:</span>
+            <!-- Categories Filter -->
+            <div class="blog-search__categories">
+                <?php
+                $categories = get_categories(array(
+                    'orderby' => 'name',
+                    'order' => 'ASC',
+                    'hide_empty' => true
+                ));
+                
+                $current_category = '';
+                
+                // Check if we're on a category archive page
+                if (is_category()) {
+                    $current_category_obj = get_queried_object();
+                    $current_category = $current_category_obj->slug;
+                } elseif (isset($_GET['category'])) {
+                    // For manual filtering on blog page
+                    $current_category = sanitize_text_field($_GET['category']);
+                }
+                ?>
+                
+                <?php if (!empty($categories)) : ?>
+                    <div class="blog-search__categories-wrapper">
+                        <span class="blog-search__categories-label">Filter:</span>
+                        <div class="blog-search__categories-list">
+                            <a href="<?php echo get_permalink(get_page_by_path('blog')); ?>" 
+                               class="blog-search__category-link <?php echo empty($current_category) ? 'active' : ''; ?>">
+                                All
+                            </a>
+                            <?php foreach ($categories as $category) : ?>
+                                <a href="<?php echo get_category_link($category->term_id); ?>" 
+                                   class="blog-search__category-link <?php echo ($current_category === $category->slug) ? 'active' : ''; ?>">
+                                    <?php echo esc_html($category->name); ?>
+                                </a>
+                            <?php endforeach; ?>
+                        </div>
+                    </div>
+                <?php endif; ?>
             </div>
+            
+            <?php if ($search_query) : ?>
+                <div class="blog-search__results-info">
+                    <p class="blog-search__results-text">
+                        Search results for: <strong>"<?php echo esc_html(strlen($search_query) > 10 ? substr($search_query, 0, 10) . '...' : $search_query); ?>"</strong>
+                    </p>
+                </div>
+            <?php endif; ?>
             
             <form role="search" method="get" class="blog-search__form" action="<?php echo esc_url(home_url('/')); ?>">
                 <div class="blog-search__input-wrapper">
@@ -45,14 +89,6 @@ $search_query = isset($_GET['s']) ? get_search_query() : '';
                 <!-- Hidden field to ensure we're searching posts -->
                 <input type="hidden" name="post_type" value="post">
             </form>
-            
-            <?php if ($search_query) : ?>
-                <div class="blog-search__results-info">
-                    <p class="blog-search__results-text">
-                        Search results for: <strong>"<?php echo esc_html($search_query); ?>"</strong>
-                    </p>
-                </div>
-            <?php endif; ?>
         </div>
     </div>
 </section>

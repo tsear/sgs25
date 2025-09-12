@@ -25,17 +25,19 @@
             
             <!-- Author Info -->
             <div class="post-content__author">
-                <div class="post-content__author-avatar">
-                    <?php echo get_avatar(get_the_author_meta('ID'), 80); ?>
-                </div>
-                <div class="post-content__author-info">
-                    <h3 class="post-content__author-name">
-                        <?php the_author(); ?>
-                    </h3>
-                    <div class="post-content__author-bio">
-                        <?php echo get_the_author_meta('description'); ?>
+                <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>" class="post-content__author-link">
+                    <div class="post-content__author-avatar">
+                        <?php echo get_avatar(get_the_author_meta('ID'), 80); ?>
                     </div>
-                </div>
+                    <div class="post-content__author-info">
+                        <h3 class="post-content__author-name">
+                            <?php the_author(); ?>
+                        </h3>
+                        <div class="post-content__author-bio">
+                            <?php echo get_the_author_meta('description'); ?>
+                        </div>
+                    </div>
+                </a>
             </div>
             
         </article>

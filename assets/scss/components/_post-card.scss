@@ -96,6 +96,14 @@
   @media (min-width: 1024px) {
     grid-template-columns: repeat(3, 1fr);
   }
+  
+  // Extra bottom padding for archive pages (category/tag/author pages)
+  // Only add padding when there's NO show more button
+  body.category &,
+  body.tag &,
+  body.author & {
+    padding-bottom: 0; // Remove extra padding since show more button handles spacing
+  }
 }
 
 // Hidden posts that will be revealed with show-more
@@ -124,6 +132,13 @@
   text-align: center;
   margin: 3rem 0;
   transition: opacity 0.3s ease;
+  
+  // Ensure consistent spacing on all pages including archives
+  body.category &,
+  body.tag &,
+  body.author & {
+    margin: 3rem 0; // Same spacing as main blog page
+  }
   
   &__btn {
     background: $color-brand-pink;
