@@ -1,0 +1,237 @@
+/* ============================================================================
+   Contact Form Section
+   HubSpot form styling and responsive behavior
+   ============================================================================ */
+
+.contact-form-section {
+  background-color: #000000;
+  padding-top: 90px;
+  padding-bottom: 90px;
+  color: #ffffff;
+
+  &__wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  &__container {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    padding: 3rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    @media (max-width: 767px) {
+      padding: 2rem;
+    }
+
+    @media (max-width: 479px) {
+      padding: 1.5rem;
+    }
+  }
+
+  &__fallback {
+    text-align: center;
+    color: #ffffff;
+
+    p {
+      margin-bottom: 1rem;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    a {
+      color: #ffb03f;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 18px;
+
+      &:hover {
+        color: #d81259;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+/* HubSpot Form Overrides */
+#hubspot-form-contact {
+  .hs-form {
+    max-width: 100%;
+
+    /* Form field styling */
+    .hs-form-field {
+      margin-bottom: 1.5rem;
+
+      label {
+        color: #ffffff !important;
+        font-family: 'Poppins', Arial, sans-serif !important;
+        font-size: 14px !important;
+        font-weight: 600 !important;
+        margin-bottom: 0.5rem !important;
+        display: block !important;
+      }
+
+      input[type="text"],
+      input[type="email"],
+      input[type="tel"],
+      textarea,
+      select {
+        background-color: rgba(255, 255, 255, 0.1) !important;
+        border: 1px solid rgba(255, 255, 255, 0.3) !important;
+        border-radius: 4px !important;
+        color: #ffffff !important;
+        font-family: 'Poppins', Arial, sans-serif !important;
+        font-size: 16px !important;
+        padding: 12px 16px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        transition: border-color 0.3s ease, background-color 0.3s ease !important;
+
+        &::placeholder {
+          color: rgba(255, 255, 255, 0.6) !important;
+        }
+
+        &:focus {
+          outline: none !important;
+          border-color: #ffb03f !important;
+          background-color: rgba(255, 255, 255, 0.15) !important;
+          box-shadow: 0 0 0 2px rgba(255, 176, 63, 0.2) !important;
+        }
+      }
+
+      textarea {
+        min-height: 120px !important;
+        resize: vertical !important;
+      }
+
+      /* Checkbox and radio styling */
+      input[type="checkbox"],
+      input[type="radio"] {
+        margin-right: 8px !important;
+      }
+
+      .hs-form-checkbox,
+      .hs-form-radio {
+        color: #ffffff !important;
+
+        label {
+          font-weight: 400 !important;
+          cursor: pointer !important;
+        }
+      }
+    }
+
+    /* Submit button styling */
+    .hs-submit {
+      .hs-button {
+        background-color: #d81259 !important;
+        border: none !important;
+        border-radius: 4px !important;
+        color: #ffffff !important;
+        cursor: pointer !important;
+        font-family: 'Poppins', Arial, sans-serif !important;
+        font-size: 16px !important;
+        font-weight: 600 !important;
+        padding: 14px 32px !important;
+        text-transform: uppercase !important;
+        transition: background-color 0.3s ease, transform 0.2s ease !important;
+        letter-spacing: 0.5px !important;
+
+        &:hover {
+          background-color: #ffb03f !important;
+          transform: translateY(-2px) !important;
+        }
+
+        &:active {
+          transform: translateY(0) !important;
+        }
+
+        &:focus {
+          outline: none !important;
+          box-shadow: 0 0 0 3px rgba(255, 176, 63, 0.3) !important;
+        }
+      }
+    }
+
+    /* Error message styling */
+    .hs-error-msgs {
+      color: #ff6b6b !important;
+      font-size: 14px !important;
+      margin-top: 0.5rem !important;
+
+      label {
+        color: #ff6b6b !important;
+        font-weight: 400 !important;
+      }
+    }
+
+    /* Required field asterisk */
+    .hs-form-required {
+      color: #d81259 !important;
+    }
+
+    /* Success message */
+    .submitted-message {
+      background-color: rgba(40, 167, 69, 0.1) !important;
+      border: 1px solid #28a745 !important;
+      border-radius: 4px !important;
+      color: #ffffff !important;
+      padding: 1.5rem !important;
+      text-align: center !important;
+
+      h3, p {
+        color: #ffffff !important;
+        margin: 0 !important;
+      }
+    }
+  }
+
+  /* Loading state */
+  .hs-loading {
+    color: #ffffff !important;
+    text-align: center !important;
+    padding: 2rem !important;
+    
+    &:after {
+      content: '';
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      border-top-color: #ffb03f;
+      animation: spin 1s ease-in-out infinite;
+      margin-left: 10px;
+    }
+  }
+}
+
+/* Loading animation */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive adjustments for HubSpot form */
+@media (max-width: 767px) {
+  #hubspot-form-contact .hs-form {
+    .hs-form-field {
+      margin-bottom: 1.25rem;
+
+      input[type="text"],
+      input[type="email"],
+      input[type="tel"],
+      textarea,
+      select {
+        font-size: 16px !important; /* Prevent zoom on iOS */
+        padding: 14px 16px !important;
+      }
+    }
+
+    .hs-submit .hs-button {
+      width: 100% !important;
+      padding: 16px 32px !important;
+    }
+  }
+}

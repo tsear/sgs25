@@ -1,0 +1,227 @@
+/* ============================================================================
+   Contact Header Component
+   Based on blog header structure with contact-specific content
+   ============================================================================ */
+
+.contact-header {
+  background-color: #000000;
+  padding: 60px 0 0 0; // Remove bottom padding
+  position: relative;
+  overflow: hidden;
+  
+  &__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+  }
+  
+  &__content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    min-height: 300px;
+    
+    @media (max-width: 959px) {
+      grid-template-columns: 1fr;
+      gap: 40px;
+      min-height: auto;
+    }
+  }
+  
+  &__left-column {
+    z-index: 2;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    
+    @media (max-width: 959px) {
+      order: 1;
+      padding: 2rem 0;
+      align-items: center;
+      text-align: center;
+      justify-content: center;
+    }
+  }
+  
+  &__right-column {
+    z-index: 2;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    height: 100%;
+    
+    @media (max-width: 959px) {
+      order: 2;
+      height: auto;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 0;
+      text-align: center;
+    }
+  }
+  
+  &__title {
+    color: #ffffff;
+    font-size: 3.75rem;
+    font-family: 'Poppins', Arial, sans-serif;
+    line-height: 1.25;
+    font-weight: 600;
+    margin-bottom: 0;
+    margin-top: -3rem; // Move title up to align with first line of description
+    
+    @media (max-width: 1199px) {
+      font-size: 3rem;
+    }
+    
+    @media (max-width: 959px) {
+      margin-top: 0; // Reset on mobile when centered
+    }
+    
+    @media (max-width: 479px) {
+      font-size: 2rem;
+    }
+  }
+  
+  &__description {
+    color: #ffffff;
+    font-size: 1.125rem;
+    font-family: 'Poppins', Arial, sans-serif;
+    line-height: 1.55;
+    font-weight: 400;
+    margin-bottom: 2rem;
+    text-align: left;
+    z-index: 2;
+    position: relative;
+    
+    @media (max-width: 959px) {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    
+    @media (max-width: 639px) {
+      font-size: 1rem;
+    }
+    
+    @media (max-width: 479px) {
+      font-size: 0.875rem;
+    }
+    
+    p {
+      margin: 0;
+      
+      strong {
+        font-weight: 700;
+      }
+    }
+  }
+  
+  // Union SVG positioning (matches blog)
+  &__union {
+    position: absolute;
+    top: -130px;
+    right: -50px;
+    width: 580px;
+    height: 448px;
+    z-index: 1;
+    opacity: 0.8;
+    
+    @media (max-width: 1199px) {
+      width: 500px;
+      height: 400px;
+      top: -100px;
+    }
+    
+    @media (max-width: 959px) {
+      position: relative;
+      top: 0;
+      right: 0;
+      width: 300px;
+      height: 250px;
+      margin: 0 auto;
+    }
+    
+    @media (max-width: 479px) {
+      width: 250px;
+      height: 200px;
+    }
+  }
+  
+  // Circle positioning (matches blog)
+  &__circle {
+    position: absolute;
+    
+    &--main {
+      top: -200px;
+      right: 150px;
+      width: 500px;
+      height: 500px;
+      z-index: 1;
+      opacity: 0.75;
+      
+      @media (max-width: 1199px) {
+        width: 400px;
+        height: 400px;
+        top: -150px;
+      }
+      
+      @media (max-width: 959px) {
+        position: relative;
+        top: 0;
+        right: 0;
+        width: 200px;
+        height: 200px;
+        margin: 1rem auto;
+      }
+      
+      @media (max-width: 479px) {
+        width: 150px;
+        height: 150px;
+      }
+    }
+  }
+  
+  // Divider (matches blog structure but extends full height)
+  &__divider {
+    position: absolute;
+    background-color: #ffffff;
+    z-index: 3;
+    
+    // Vertical divider on desktop - extends full height of section
+    @media (min-width: 960px) {
+      top: -10rem;
+      left: 50%;
+      width: 1px;
+      height: calc(100% + 20rem);
+      transform: translateX(-50%);
+    }
+    
+    // Horizontal divider on mobile
+    @media (max-width: 959px) {
+      top: 50%;
+      left: 20px;
+      right: 20px;
+      width: calc(100% - 40px);
+      height: 1px;
+      transform: translateY(-50%);
+    }
+  }
+}
+
+// Bottom border styling (matches blog)
+.bottom-border {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 100vw;
+  height: 1px;
+  background-color: #ffffff;
+  z-index: 3;
+  transform: translateX(-50%);
+}

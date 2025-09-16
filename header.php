@@ -52,7 +52,7 @@
                     <a href="/testimonials" class="nav-link <?php echo is_page('testimonials') ? 'active' : ''; ?>" style="position: absolute; left: 240px; top: 0; width: 150px; height: 60px; color: #ffffff; text-decoration: none; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700; font-family: Inter, sans-serif; font-size: 14px; display: flex; align-items: center; justify-content: center; box-sizing: border-box; border-right: 1px solid #ffffff; background-color: transparent;">TESTIMONIALS</a>
                     
                     <!-- REQUEST A DEMO Button - Cell 4 -->
-                    <a href="/reach-out" class="nav-link cta-nav <?php echo is_page('reach-out') ? 'active' : ''; ?>" style="position: absolute; left: 390px; top: 0; width: 200px; height: 60px; color: #FFB03F; text-decoration: none; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700; font-family: Inter, sans-serif; font-size: 14px; display: flex; align-items: center; justify-content: center; box-sizing: border-box; background-color: transparent;">REQUEST A DEMO</a>
+                    <a href="/contact" class="nav-link cta-nav <?php echo is_page('contact') ? 'active' : ''; ?>" style="position: absolute; left: 390px; top: 0; width: 200px; height: 60px; color: #FFB03F; text-decoration: none; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700; font-family: Inter, sans-serif; font-size: 14px; display: flex; align-items: center; justify-content: center; box-sizing: border-box; background-color: transparent;">REQUEST A DEMO</a>
                 </div>
                 
                 <!-- Mobile menu toggle -->
@@ -72,7 +72,7 @@
                 <a href="<?php echo home_url('/'); ?>" class="mobile-nav-link" style="display: block; color: #ffffff; text-decoration: none; padding: 15px 0; border-bottom: 1px solid #333; text-transform: uppercase;">HOME</a>
                 <a href="/blog" class="mobile-nav-link" style="display: block; color: #ffffff; text-decoration: none; padding: 15px 0; border-bottom: 1px solid #333; text-transform: uppercase;">BLOG</a>
                 <a href="/testimonials" class="mobile-nav-link" style="display: block; color: #ffffff; text-decoration: none; padding: 15px 0; border-bottom: 1px solid #333; text-transform: uppercase;">TESTIMONIALS</a>
-                <a href="/reach-out" class="mobile-nav-link cta" style="display: block; color: #FFB03F; text-decoration: none; padding: 15px 0; text-transform: uppercase; font-weight: 600;">REQUEST A DEMO</a>
+                <a href="/contact" class="mobile-nav-link cta" style="display: block; color: #FFB03F; text-decoration: none; padding: 15px 0; text-transform: uppercase; font-weight: 600;">REQUEST A DEMO</a>
             </div>
         </div>
     </nav>
