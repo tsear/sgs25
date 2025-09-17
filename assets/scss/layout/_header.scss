@@ -1,207 +1,286 @@
-// Header styles
+// Header Navigation - Excel-style Grid Recreation
+// Using proper SCSS variables and mixins
 
+// Site Header
 .site-header {
+  background-color: $color-black;
   position: fixed;
   top: 0;
-  left: 0;
-  right: 0;
+  width: 100%;
   z-index: $z-fixed;
-  background-color: $header-bg;
-  border-bottom: 1px solid $color-white;
+  height: $header-height;
   
-  .header-container {
-    @include container;
-    @include flex-between;
-    height: $header-height;
+  // Full-width top border
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-color: $color-white;
+  }
+  
+  // Full-width bottom border
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-color: $color-white;
   }
 }
 
-// Logo
-.site-logo {
-  display: flex;
-  align-items: center;
+.header-container {
+  // Override container to stretch full viewport width
+  width: 100vw;
+  max-width: none;
+  margin: 0;
+  padding: 0; // Remove padding, use positioning instead
+  position: relative;
+  height: $header-height;
+}
+
+// Logo Cell - Home link functionality
+// Site Branding (Logo)
+.site-branding {
+  position: absolute;
+  left: 33px; // 33px from left edge for visual continuation effect
+  top: 50%;
+  transform: translateY(-50%);
   
-  img {
-    height: 33px;
-    width: auto;
-  }
-  
-  @include respond-to(sm) {
-    img {
+  .logo-cell {
+    width: 150px;
+    height: $header-height;
+    border: 1px solid $color-white;
+    border-bottom: none; // Remove bottom border since it's handled by site-header::after
+    border-top: none; // Remove top border since it's handled by site-header::before
+    @include flex-center;
+    background-color: transparent;
+    transition: background-color $transition-fast;
+    
+    &:hover {
+      background-color: rgba($color-white, 0.05);
+    }
+    
+    .site-logo img {
       height: 28px;
     }
   }
 }
 
-// Desktop Navigation
+// Navigation Menu - 8 equal-width cells with dropdowns
 .main-navigation {
-  display: flex;
-  align-items: center;
+  position: absolute;
+  right: 33px; // 33px from right edge for visual continuation effect
+  top: 50%;
+  transform: translateY(-50%);
   
-  @include respond-to(lg) {
+  // Hide on smaller screens - show hamburger instead
+  @include respond-to(xl) {
     display: none;
   }
   
   .nav-menu {
-    display: flex;
-    align-items: center;
-    gap: $spacing-lg;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
-  
-  .nav-item {
-    a {
-      display: block;
-      padding: $spacing-md 0;
+    position: relative;
+    width: 800px; // 8 cells × 100px each
+    height: $header-height;
+    border: 1px solid $color-white;
+    border-bottom: none; // Remove bottom border since it's handled by site-header::after
+    border-top: none; // Remove top border since it's handled by site-header::before
+    
+    // Base nav link styles
+    %nav-link-base {
+      position: absolute;
+      top: 0;
+      width: 100px; // Equal width for all cells
+      height: $header-height;
       color: $color-white;
-      font-size: $font-size-sm;
-      font-weight: $font-weight-semibold;
+      text-decoration: none;
       text-transform: uppercase;
-      transition: color $transition-fast;
+      letter-spacing: 0.5px;
+      font-weight: $font-weight-medium;
+      font-family: $font-primary;
+      font-size: 12px;
+      @include flex-center;
+      box-sizing: border-box;
+      background-color: transparent;
+      transition: background-color $transition-fast;
       
-      &:hover,
-      &:focus,
-      &.current-menu-item {
-        color: $color-secondary;
+      // Remove browser default focus outline
+      outline: none;
+      
+      &:hover {
+        background-color: rgba($color-white, 0.1);
       }
-    }
-    
-    &.cta-button a {
-      color: $color-secondary;
       
-      &:hover,
       &:focus {
-        color: $color-white;
+        background-color: rgba($color-white, 0.1);
+        box-shadow: inset 0 0 0 2px rgba($color-white, 0.3);
+      }
+      
+      &.active {
+        background-color: rgba($color-white, 0.1);
+      }
+      
+      // Vertical divider - contained within cell height
+      &::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 1px;
+        bottom: 1px;
+        width: 1px;
+        background-color: $color-white;
+      }
+      
+      // Remove divider from last cell
+      &:last-child::after {
+        display: none;
+      }
+    }
+    
+    // Contact button - Cell 1 (subtle yellow highlight)
+    .nav-link-contact {
+      @extend %nav-link-base;
+      left: 0;
+      color: $color-accent; // Yellow text
+      
+      &:hover {
+        background-color: rgba($color-accent, 0.1);
+      }
+    }
+    
+    // About button - Cell 2
+    .nav-link-about {
+      @extend %nav-link-base;
+      left: 100px;
+    }
+    
+    // Blog button - Cell 3
+    .nav-link-blog {
+      @extend %nav-link-base;
+      left: 200px;
+    }
+    
+    // Product button - Cell 4
+    .nav-link-product {
+      @extend %nav-link-base;
+      left: 300px;
+    }
+    
+    // Resources button - Cell 5
+    .nav-link-resources {
+      @extend %nav-link-base;
+      left: 400px;
+    }
+    
+    // Industries button - Cell 6
+    .nav-link-industries {
+      @extend %nav-link-base;
+      left: 500px;
+    }
+    
+    // Solutions button - Cell 7
+    .nav-link-solutions {
+      @extend %nav-link-base;
+      left: 600px;
+    }
+    
+    // Support button - Cell 8 (no right divider)
+    .nav-link-support {
+      @extend %nav-link-base;
+      left: 700px;
+      
+      &::after {
+        display: none;
       }
     }
   }
-}
-
-// Mobile menu toggle
-.mobile-menu-toggle {
-  display: none;
-  width: 28px;
-  height: 20px;
-  position: relative;
-  cursor: pointer;
-  z-index: $z-modal;
   
-  @include respond-to(lg) {
-    display: block;
-  }
-  
-  span {
-    display: block;
-    position: absolute;
-    width: 100%;
-    height: 3px;
-    background-color: $color-white;
-    transition: all $transition-fast;
+  // Mobile menu toggle
+  .mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: $color-white;
+    font-size: $font-size-lg;
+    cursor: pointer;
     
-    &:nth-child(1) { top: 0; }
-    &:nth-child(2) { top: 8px; }
-    &:nth-child(3) { top: 16px; }
-  }
-  
-  &.active {
-    span {
-      &:nth-child(1) {
-        top: 8px;
-        transform: rotate(45deg);
-      }
-      
-      &:nth-child(2) {
-        opacity: 0;
-      }
-      
-      &:nth-child(3) {
-        top: 8px;
-        transform: rotate(-45deg);
-      }
+    .hamburger-line {
+      display: block;
+      width: 25px;
+      height: 3px;
+      background: $color-white;
+      margin: 5px 0;
+      transition: $transition-fast;
+    }
+    
+    // Show mobile toggle on smaller screens
+    @include respond-to(xl) {
+      display: block;
     }
   }
 }
 
 // Mobile Navigation
 .mobile-navigation {
+  display: none;
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: $color-black;
-  z-index: $z-modal-backdrop;
-  transform: translateX(-100%);
-  transition: transform $transition-normal;
+  top: $header-height;
+  width: 100%;
+  background: $header-bg;
+  z-index: $z-dropdown;
   
   &.active {
-    transform: translateX(0);
+    display: block;
   }
   
   .mobile-nav-content {
-    padding-top: calc(#{$header-height} + #{$spacing-lg});
-    padding-left: $spacing-lg;
-    padding-right: $spacing-lg;
-  }
-  
-  .mobile-nav-menu {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+    padding: $spacing-md;
     
-    .nav-item {
-      margin-bottom: $spacing-lg;
-      
-      a {
+    .mobile-nav-menu {
+      .mobile-nav-link {
         display: block;
         color: $color-white;
-        font-size: $font-size-2xl;
-        font-weight: $font-weight-regular;
+        text-decoration: none;
+        padding: $spacing-md 0;
+        border-bottom: 1px solid $color-gray-dark;
+        text-transform: uppercase;
+        font-family: $font-primary;
         transition: color $transition-fast;
         
-        &:hover,
-        &:focus,
-        &.current-menu-item {
-          color: $color-secondary;
+        &:hover {
+          color: $color-accent;
         }
-      }
-    }
-  }
-  
-  .mobile-social-links {
-    position: absolute;
-    bottom: $spacing-4xl;
-    left: $spacing-lg;
-    
-    .social-links {
-      display: flex;
-      gap: $spacing-md;
-      
-      a {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 40px;
-        height: 40px;
-        border: 1px solid $color-white;
-        color: $color-white;
-        transition: all $transition-fast;
         
-        &:hover,
-        &:focus {
-          background-color: $color-white;
-          color: $color-black;
+        &.contact {
+          color: $color-accent;
+          font-weight: $font-weight-semibold;
         }
       }
     }
   }
 }
 
-// Header animation on scroll
-.site-header {
-  &.scrolled {
-    box-shadow: $shadow-sm;
+// Responsive behavior - adjust container for new navigation width
+@include respond-to(xl) {
+  .header-container {
+    padding: 0 $spacing-md; // Use standard mobile padding for mobile hamburger menu
+  }
+  
+  .main-navigation .nav-menu {
+    display: none;
+  }
+  
+  .site-branding .logo-cell {
+    width: auto;
+    border: none;
+    
+    .site-logo img {
+      height: 24px;
+    }
   }
 }

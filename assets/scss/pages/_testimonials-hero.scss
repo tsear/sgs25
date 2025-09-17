@@ -1,0 +1,202 @@
+// =============================================================================
+// Testimonials Header Component  
+// Based on blog-header structure with testimonials-specific content
+// =============================================================================
+
+.testimonials-header {
+  background-color: #000000;
+  padding: 60px 0 0 0; // Remove bottom padding
+  position: relative;
+  overflow: hidden;
+  
+  &__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+  }
+  
+  &__content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: stretch;
+    min-height: 300px;
+    
+    @media (max-width: 959px) {
+      grid-template-columns: 1fr;
+      gap: 40px;
+      min-height: auto;
+    }
+  }
+  
+  &__left-column {
+    z-index: 2;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    
+    @media (max-width: 959px) {
+      order: 1;
+      padding: 2rem 0;
+      align-items: center;
+      text-align: center;
+    }
+  }
+  
+  &__right-column {
+    z-index: 2;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    
+    @media (max-width: 959px) {
+      order: 2;
+      height: auto;
+      align-items: flex-start;
+      justify-content: flex-start;
+      padding: 2rem 0;
+    }
+  }
+  
+  &__title {
+    color: #ffffff;
+    font-size: 3.75rem;
+    font-family: 'Poppins', Arial, sans-serif;
+    line-height: 1.25;
+    font-weight: 600;
+    margin-bottom: 0;
+    
+    @media (max-width: 1199px) {
+      font-size: 3rem;
+    }
+    
+    @media (max-width: 479px) {
+      font-size: 2rem;
+    }
+  }
+  
+  &__description {
+    color: #ffffff;
+    font-size: 1.125rem;
+    font-family: 'Poppins', Arial, sans-serif;
+    line-height: 1.55;
+    font-weight: 400;
+    margin-bottom: 0;
+    text-align: left;
+    
+    @media (max-width: 959px) {
+      text-align: center;
+      font-size: 1rem;
+    }
+    
+    @media (max-width: 479px) {
+      font-size: 0.9rem;
+      line-height: 1.4;
+    }
+    
+    p {
+      margin: 0 0 1rem 0;
+      
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    
+    strong {
+      font-weight: 600;
+    }
+  }
+  
+  // Graphics (same pattern as blog and contact)
+  &__circle {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 1;
+    
+    &--main {
+      width: 500px;
+      height: 500px;
+      top: -200px;
+      right: -100px;
+      opacity: 0.8;
+      
+      @media (max-width: 1199px) {
+        width: 400px;
+        height: 400px;
+        top: -150px;
+        right: -50px;
+      }
+      
+      @media (max-width: 959px) {
+        width: 300px;
+        height: 300px;
+        top: -100px;
+        right: 50%;
+        transform: translateX(50%);
+      }
+      
+      @media (max-width: 479px) {
+        width: 250px;
+        height: 250px;
+        top: -80px;
+      }
+    }
+  }
+  
+  &__union {
+    position: absolute;
+    top: -100px;
+    right: 100px;
+    width: 580px;
+    height: auto;
+    z-index: 1;
+    opacity: 0.9;
+    pointer-events: none;
+    
+    @media (max-width: 1199px) {
+      width: 480px;
+      top: -80px;
+      right: 50px;
+    }
+    
+    @media (max-width: 959px) {
+      width: 400px;
+      top: -60px;
+      right: 50%;
+      transform: translateX(50%);
+    }
+    
+    @media (max-width: 479px) {
+      width: 320px;
+      top: -40px;
+    }
+  }
+  
+  // Divider line (same as blog/contact)
+  &__divider {
+    position: absolute;
+    background-color: #ffffff;
+    z-index: 1;
+    
+    @media (min-width: 960px) {
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 1px;
+      height: 100%;
+    }
+    
+    @media (max-width: 959px) {
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      width: 100%;
+      height: 1px;
+    }
+  }
+}
