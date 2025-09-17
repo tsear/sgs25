@@ -39,29 +39,29 @@
             <!-- Navigation Menu - 8 Equal Cells -->
             <nav id="site-navigation" class="main-navigation">
                 <div class="nav-menu">
-                    <!-- Contact Button - Cell 1 (yellow highlight) -->
-                    <a href="<?php echo home_url('/contact'); ?>" class="nav-link-contact <?php echo is_page('contact') ? 'active' : ''; ?>">CONTACT</a>
-                    
-                    <!-- About Button - Cell 2 -->
+                    <!-- About Button - Cell 1 -->
                     <a href="<?php echo home_url('/about'); ?>" class="nav-link-about <?php echo is_page('about') ? 'active' : ''; ?>">ABOUT</a>
                     
-                    <!-- Blog Button - Cell 3 -->
-                    <a href="<?php echo home_url('/blog'); ?>" class="nav-link-blog <?php echo is_page('blog') ? 'active' : ''; ?>">BLOG</a>
-                    
-                    <!-- Product Button - Cell 4 -->
+                    <!-- Product Button - Cell 2 -->
                     <a href="<?php echo home_url('/product'); ?>" class="nav-link-product <?php echo is_page('product') ? 'active' : ''; ?>">PRODUCT</a>
                     
-                    <!-- Resources Button - Cell 5 -->
-                    <a href="<?php echo home_url('/resources'); ?>" class="nav-link-resources <?php echo is_page('resources') ? 'active' : ''; ?>">RESOURCES</a>
-                    
-                    <!-- Industries Button - Cell 6 -->
-                    <a href="<?php echo home_url('/industries'); ?>" class="nav-link-industries <?php echo is_page('industries') ? 'active' : ''; ?>">INDUSTRIES</a>
-                    
-                    <!-- Solutions Button - Cell 7 -->
+                    <!-- Solutions Button - Cell 3 -->
                     <a href="<?php echo home_url('/solutions'); ?>" class="nav-link-solutions <?php echo is_page('solutions') ? 'active' : ''; ?>">SOLUTIONS</a>
                     
-                    <!-- Support Button - Cell 8 -->
-                    <a href="<?php echo home_url('/support'); ?>" class="nav-link-support <?php echo is_page('support') ? 'active' : ''; ?>">SUPPORT</a>
+                    <!-- Industries Button - Cell 4 -->
+                    <a href="<?php echo home_url('/industries'); ?>" class="nav-link-industries <?php echo is_page('industries') ? 'active' : ''; ?>">INDUSTRIES</a>
+                    
+                    <!-- Success Stories Button - Cell 5 -->
+                    <a href="<?php echo home_url('/success-stories'); ?>" class="nav-link-success-stories <?php echo is_page('success-stories') ? 'active' : ''; ?>">SUCCESS STORIES</a>
+                    
+                    <!-- Grants Button - Cell 6 -->
+                    <a href="<?php echo home_url('/grants'); ?>" class="nav-link-grants <?php echo is_page('grants') ? 'active' : ''; ?>">GRANTS</a>
+                    
+                    <!-- Blog Button - Cell 7 -->
+                    <a href="<?php echo home_url('/blog'); ?>" class="nav-link-blog <?php echo is_page('blog') ? 'active' : ''; ?>">BLOG</a>
+                    
+                    <!-- Contact Button - Cell 8 (yellow highlight) -->
+                    <a href="<?php echo home_url('/contact'); ?>" class="nav-link-contact <?php echo is_page('contact') ? 'active' : ''; ?>">CONTACT</a>
                 </div>
                 
                 <!-- Mobile menu toggle -->
@@ -79,14 +79,14 @@
         <div class="mobile-nav-content">
             <div class="mobile-nav-menu">
                 <a href="<?php echo home_url('/'); ?>" class="mobile-nav-link">HOME</a>
-                <a href="<?php echo home_url('/contact'); ?>" class="mobile-nav-link contact">CONTACT</a>
                 <a href="<?php echo home_url('/about'); ?>" class="mobile-nav-link">ABOUT</a>
-                <a href="<?php echo home_url('/blog'); ?>" class="mobile-nav-link">BLOG</a>
                 <a href="<?php echo home_url('/product'); ?>" class="mobile-nav-link">PRODUCT</a>
-                <a href="<?php echo home_url('/resources'); ?>" class="mobile-nav-link">RESOURCES</a>
-                <a href="<?php echo home_url('/industries'); ?>" class="mobile-nav-link">INDUSTRIES</a>
                 <a href="<?php echo home_url('/solutions'); ?>" class="mobile-nav-link">SOLUTIONS</a>
-                <a href="<?php echo home_url('/support'); ?>" class="mobile-nav-link">SUPPORT</a>
+                <a href="<?php echo home_url('/industries'); ?>" class="mobile-nav-link">INDUSTRIES</a>
+                <a href="<?php echo home_url('/success-stories'); ?>" class="mobile-nav-link">SUCCESS STORIES</a>
+                <a href="<?php echo home_url('/grants'); ?>" class="mobile-nav-link">GRANTS</a>
+                <a href="<?php echo home_url('/blog'); ?>" class="mobile-nav-link">BLOG</a>
+                <a href="<?php echo home_url('/contact'); ?>" class="mobile-nav-link contact">CONTACT</a>
             </div>
         </div>
     </nav>

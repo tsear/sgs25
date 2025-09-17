@@ -48,9 +48,9 @@
           <span class="quote-org">ClearWater Conservancy</span>
         </footer>
         <div class="request-demo-button">
-          <a href="/testimonials" class="request-demo-btn">ALL TESTIMONIALS</a>
+          <a href="<?php echo home_url('/testimonials'); ?>" class="request-demo-btn">ALL TESTIMONIALS</a>
           <span class="arrow-square">
-            <a href="/testimonials">
+            <a href="<?php echo home_url('/testimonials'); ?>">
               <img src="<?php echo get_template_directory_uri(); ?>/assets/images/tild3965-6330-4137-a638-623161636534__vector.svg" alt="arrow" />
             </a>
           </span>

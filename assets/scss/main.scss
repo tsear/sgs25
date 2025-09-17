@@ -29,12 +29,17 @@ Text Domain: sgs
 @import 'layout/header';
 @import 'layout/footer';
 @import 'layout/grid';
-@import 'layout/trusted-organizations';
-@import 'layout/financial-compliance';
-@import 'layout/mission-separator';
-@import 'layout/video-features';
-@import 'layout/features-section';
-@import 'layout/testimonial-video';
+
+// ==========================================================================
+// SECTIONS
+// ==========================================================================
+@import 'sections/trusted-organizations';
+@import 'sections/financial-compliance';
+@import 'sections/mission-separator';
+@import 'sections/video-features';
+@import 'sections/features-section';
+@import 'sections/testimonial-video-section';
+@import 'sections/final-cta';
 
 // ==========================================================================
 // COMPONENTS
@@ -43,8 +48,6 @@ Text Domain: sgs
 @import 'components/cards';
 @import 'components/forms';
 @import 'components/hero';
-@import 'components/features';
-@import 'components/blog-hero';
 @import 'components/newsletter-form';
 @import 'components/search-form';
 @import 'components/search-results';
@@ -57,7 +60,7 @@ Text Domain: sgs
 // ==========================================================================
 // PAGES
 // ==========================================================================
-@import 'pages/blog-archive';
+@import 'pages/blog-hero';
 @import 'pages/contact-hero';
 @import 'pages/contact-form';
 @import 'pages/testimonials-hero';

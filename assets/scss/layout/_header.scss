@@ -85,7 +85,7 @@
   
   .nav-menu {
     position: relative;
-    width: 800px; // 8 cells × 100px each
+    width: 810px; // 7 cells × 100px + 1 cell × 110px = 810px
     height: $header-height;
     border: 1px solid $color-white;
     border-bottom: none; // Remove bottom border since it's handled by site-header::after
@@ -142,57 +142,59 @@
       }
     }
     
-    // Contact button - Cell 1 (subtle yellow highlight)
-    .nav-link-contact {
+    // About button - Cell 1
+    .nav-link-about {
       @extend %nav-link-base;
       left: 0;
+    }
+    
+    // Product button - Cell 2
+    .nav-link-product {
+      @extend %nav-link-base;
+      left: 100px;
+    }
+    
+    // Solutions button - Cell 3
+    .nav-link-solutions {
+      @extend %nav-link-base;
+      left: 200px;
+    }
+    
+    // Industries button - Cell 4
+    .nav-link-industries {
+      @extend %nav-link-base;
+      left: 300px;
+    }
+    
+    // Success Stories button - Cell 5 (wider cell)
+    .nav-link-success-stories {
+      @extend %nav-link-base;
+      left: 400px;
+      width: 110px; // Wider cell for longer text
+      font-size: 10px; // Slightly smaller to fit "SUCCESS STORIES"
+    }
+    
+    // Grants button - Cell 6
+    .nav-link-grants {
+      @extend %nav-link-base;
+      left: 510px; // Adjusted for wider success stories cell (400 + 110)
+    }
+    
+    // Blog button - Cell 7
+    .nav-link-blog {
+      @extend %nav-link-base;
+      left: 610px; // Adjusted for wider success stories cell (510 + 100)
+    }
+    
+    // Contact button - Cell 8 (subtle yellow highlight, no right divider)
+    .nav-link-contact {
+      @extend %nav-link-base;
+      left: 710px; // Adjusted for wider success stories cell (610 + 100)
       color: $color-accent; // Yellow text
       
       &:hover {
         background-color: rgba($color-accent, 0.1);
       }
-    }
-    
-    // About button - Cell 2
-    .nav-link-about {
-      @extend %nav-link-base;
-      left: 100px;
-    }
-    
-    // Blog button - Cell 3
-    .nav-link-blog {
-      @extend %nav-link-base;
-      left: 200px;
-    }
-    
-    // Product button - Cell 4
-    .nav-link-product {
-      @extend %nav-link-base;
-      left: 300px;
-    }
-    
-    // Resources button - Cell 5
-    .nav-link-resources {
-      @extend %nav-link-base;
-      left: 400px;
-    }
-    
-    // Industries button - Cell 6
-    .nav-link-industries {
-      @extend %nav-link-base;
-      left: 500px;
-    }
-    
-    // Solutions button - Cell 7
-    .nav-link-solutions {
-      @extend %nav-link-base;
-      left: 600px;
-    }
-    
-    // Support button - Cell 8 (no right divider)
-    .nav-link-support {
-      @extend %nav-link-base;
-      left: 700px;
       
       &::after {
         display: none;

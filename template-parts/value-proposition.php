@@ -25,11 +25,11 @@
         
         <!-- CTA Button -->
         <div class="request-demo-button" style="position: absolute; top: 394px; left: 0px; z-index: 3;">
-            <a href="/reach-out" class="request-demo-btn">REQUEST A DEMO</a>
+            <a href="<?php echo home_url('/contact'); ?>" class="request-demo-btn">REQUEST A DEMO</a>
             
             <!-- Arrow Square -->
             <div class="arrow-square">
-                <a href="/reach-out">
+                <a href="<?php echo home_url('/contact'); ?>">
                     <!-- Arrow Icon -->
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/images/tild3965-6330-4137-a638-623161636534__vector.svg" alt="Arrow" />
                 </a>
