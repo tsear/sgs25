@@ -1,0 +1,80 @@
+/* ===================================================================
+   GRANTS NO RESULTS STYLES
+   Styles for the no results state in grants
+   =================================================================== */
+
+.grants-content .no-results {
+  text-align: center;
+  padding: 60px 20px;
+  
+  .no-results__icon {
+    color: #D1D5DB;
+    margin-bottom: 24px;
+    
+    svg {
+      width: 64px;
+      height: 64px;
+    }
+  }
+  
+  .no-results__title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #1F2937;
+    margin-bottom: 16px;
+  }
+  
+  .no-results__message {
+    color: #6B7280;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 32px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .no-results__suggestions {
+    margin-bottom: 32px;
+    
+    .no-results__suggestions-title {
+      font-size: 18px;
+      font-weight: 600;
+      color: #374151;
+      margin-bottom: 16px;
+    }
+    
+    .no-results__suggestions-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      color: #6B7280;
+      
+      li {
+        margin-bottom: 8px;
+        
+        &:before {
+          content: "•";
+          color: #FFBC41;
+          margin-right: 8px;
+        }
+      }
+    }
+  }
+  
+  .no-results__button {
+    display: inline-block;
+    background: linear-gradient(135deg, #FFBC41 0%, #FFD700 100%);
+    color: white;
+    text-decoration: none;
+    padding: 16px 32px;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(255, 188, 65, 0.3);
+    }
+  }
+}
