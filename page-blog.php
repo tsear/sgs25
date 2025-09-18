@@ -7,11 +7,17 @@ Template Name: Blog Page
  * Custom page template that displays blog posts
  */
 
-get_header();
+get_header(); ?>
 
-get_template_part('template-parts/blog/blog-header');
-get_template_part('template-parts/blog/search-form');
-get_template_part('template-parts/blog/post-grid');
+<main id="main" class="site-main blog-page">
+    
+    <?php get_template_part('template-parts/blog/blog-hero'); ?>
+    
+    <?php get_template_part('template-parts/blog/search-form'); ?>
+    
+    <?php get_template_part('template-parts/blog/post-grid'); ?>
 
-get_footer();
+</main>
+
+<?php get_footer();
 ?>
