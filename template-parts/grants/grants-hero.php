@@ -15,10 +15,15 @@
                 </h1>
             </div>
             
-            <!-- Right Column: Description -->
+            <!-- Right Column: Description and Graphics -->
             <div class="grants-header__right-column">
                 <div class="grants-header__description">
                     <p>Discover funding opportunities that align with your mission. Browse current grants, track deadlines, and find the resources you need to make your vision a reality.</p>
+                </div>
+                
+                <!-- Circle graphic -->
+                <div class="grants-header__circle grants-header__circle--main">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/yellow-circle.png" alt="" style="width: 100%; height: 100%; object-fit: cover;" />
                 </div>
             </div>
             

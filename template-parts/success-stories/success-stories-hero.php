@@ -15,10 +15,15 @@
                 </h1>
             </div>
             
-            <!-- Right Column: Description -->
+            <!-- Right Column: Description and Graphics -->
             <div class="success-stories-header__right-column">
                 <div class="success-stories-header__description">
                     <p>See how organizations like yours have transformed their grant management and achieved remarkable results. Real stories, real impact, real inspiration.</p>
+                </div>
+                
+                <!-- Circle graphic -->
+                <div class="success-stories-header__circle success-stories-header__circle--main">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/blue-circle.png" alt="" style="width: 100%; height: 100%; object-fit: cover;" />
                 </div>
             </div>
             

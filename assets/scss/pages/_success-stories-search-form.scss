@@ -1,0 +1,222 @@
+/* ============================================================================
+   Success Stories Search Form Component
+   Based on grants search form with success stories-specific styling
+   ============================================================================ */
+
+.success-stories-search {
+  background-color: #000000;
+  padding: 60px 0;
+  position: relative;
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  &__form {
+    width: 100%;
+  }
+  
+  &__row {
+    display: grid;
+    grid-template-columns: 2fr 1fr auto;
+    gap: 20px;
+    align-items: end;
+    
+    @media (max-width: 959px) {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+  }
+  
+  &__field {
+    display: flex;
+    flex-direction: column;
+    
+    &--search {
+      position: relative;
+    }
+    
+    &--category {
+      position: relative;
+    }
+    
+    &--submit {
+      @media (max-width: 959px) {
+        order: 3;
+      }
+    }
+  }
+  
+  &__label {
+    color: #ffffff;
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-bottom: 8px;
+    font-family: 'Poppins', Arial, sans-serif;
+  }
+  
+  &__input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  
+  &__input {
+    width: 100%;
+    padding: 12px 50px 12px 16px;
+    border: 2px solid $color-brand-blue;
+    border-radius: 8px;
+    background-color: #000000;
+    color: #ffffff;
+    font-size: 1rem;
+    font-family: 'Poppins', Arial, sans-serif;
+    transition: all 0.3s ease;
+    
+    &:focus {
+      outline: none;
+      border-color: lighten($color-brand-blue, 20%);
+      box-shadow: 0 0 0 3px rgba($color-brand-blue, 0.1);
+    }
+    
+    &::placeholder {
+      color: #888888;
+    }
+  }
+  
+  &__submit {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: $color-brand-blue;
+    cursor: pointer;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.3s ease;
+    
+    &:hover {
+      color: lighten($color-brand-blue, 20%);
+    }
+    
+    &:focus {
+      outline: none;
+      color: lighten($color-brand-blue, 20%);
+    }
+  }
+  
+  &__select-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  
+  &__select {
+    width: 100%;
+    padding: 12px 40px 12px 16px;
+    border: 2px solid $color-brand-blue;
+    border-radius: 8px;
+    background-color: #000000;
+    color: #ffffff;
+    font-size: 1rem;
+    font-family: 'Poppins', Arial, sans-serif;
+    cursor: pointer;
+    appearance: none;
+    transition: all 0.3s ease;
+    
+    &:focus {
+      outline: none;
+      border-color: lighten($color-brand-blue, 20%);
+      box-shadow: 0 0 0 3px rgba($color-brand-blue, 0.1);
+    }
+    
+    option {
+      background-color: #000000;
+      color: #ffffff;
+    }
+  }
+  
+  &__select-icon {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: $color-brand-blue;
+    pointer-events: none;
+  }
+  
+  &__button {
+    padding: 12px 24px;
+    background-color: $color-brand-blue;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: 'Poppins', Arial, sans-serif;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    
+    &:hover {
+      background: lighten($color-brand-blue, 10%);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba($color-brand-blue, 0.3);
+    }
+    
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0 3px rgba($color-brand-blue, 0.3);
+    }
+    
+    &:active {
+      transform: translateY(0);
+    }
+    
+    @media (max-width: 959px) {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+  
+  &__clear {
+    margin-top: 16px;
+    text-align: center;
+    
+    @media (max-width: 959px) {
+      margin-top: 20px;
+    }
+  }
+  
+  &__clear-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #888888;
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-family: 'Poppins', Arial, sans-serif;
+    transition: color 0.3s ease;
+    
+    &:hover {
+      color: #ffffff;
+    }
+    
+    &:focus {
+      outline: none;
+      color: #ffffff;
+    }
+    
+    svg {
+      flex-shrink: 0;
+    }
+  }
+}

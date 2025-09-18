@@ -1,0 +1,211 @@
+/* ============================================================================
+   Success Story Card Component
+   Based on grant card with success stories-specific styling
+   ============================================================================ */
+
+.success-story-card {
+  background-color: #111111;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border: 1px solid #222222;
+  height: 100%;
+  
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 32px rgba($color-brand-blue, 0.15);
+    border-color: rgba($color-brand-blue, 0.3);
+  }
+  
+  &__inner {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  &__image {
+    position: relative;
+    overflow: hidden;
+    height: 200px;
+    
+    @media (max-width: 479px) {
+      height: 180px;
+    }
+  }
+  
+  &__image-link {
+    display: block;
+    width: 100%;
+    height: 100%;
+    
+    &:focus {
+      outline: 2px solid $color-brand-blue;
+      outline-offset: 2px;
+    }
+  }
+  
+  &__thumbnail {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    
+    .success-story-card:hover & {
+      transform: scale(1.05);
+    }
+  }
+  
+  &__content {
+    padding: 24px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    
+    @media (max-width: 479px) {
+      padding: 20px;
+    }
+  }
+  
+  &__organization {
+    color: $color-brand-blue;
+    font-size: 0.875rem;
+    font-weight: 600;
+    font-family: 'Poppins', Arial, sans-serif;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  
+  &__title {
+    margin: 0 0 12px 0;
+    
+    @media (max-width: 479px) {
+      margin-bottom: 10px;
+    }
+  }
+  
+  &__title-link {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.25rem;
+    font-weight: 600;
+    font-family: 'Poppins', Arial, sans-serif;
+    line-height: 1.4;
+    transition: color 0.3s ease;
+    
+    &:hover {
+      color: $color-brand-blue;
+    }
+    
+    &:focus {
+      outline: none;
+      color: $color-brand-blue;
+    }
+    
+    @media (max-width: 479px) {
+      font-size: 1.125rem;
+    }
+  }
+  
+  &__excerpt {
+    color: #cccccc;
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    margin-bottom: 16px;
+    font-family: 'Poppins', Arial, sans-serif;
+    flex-grow: 1;
+    
+    @media (max-width: 479px) {
+      font-size: 0.875rem;
+      margin-bottom: 14px;
+    }
+  }
+  
+  &__meta {
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #222222;
+    
+    @media (max-width: 479px) {
+      margin-bottom: 14px;
+      padding-bottom: 14px;
+    }
+  }
+  
+  &__grant-amount,
+  &__outcome {
+    color: #888888;
+    font-size: 0.8125rem;
+    font-family: 'Poppins', Arial, sans-serif;
+    margin-bottom: 6px;
+    
+    strong {
+      color: #ffffff;
+      font-weight: 600;
+    }
+  }
+  
+  &__date {
+    color: #666666;
+    font-size: 0.75rem;
+    font-family: 'Poppins', Arial, sans-serif;
+    margin-top: 8px;
+  }
+  
+  &__categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 16px;
+    
+    @media (max-width: 479px) {
+      margin-bottom: 14px;
+    }
+  }
+  
+  &__category {
+    background-color: rgba($color-brand-blue, 0.1);
+    color: $color-brand-blue;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    font-family: 'Poppins', Arial, sans-serif;
+    border: 1px solid rgba($color-brand-blue, 0.2);
+  }
+  
+  &__footer {
+    margin-top: auto;
+  }
+  
+  &__read-more {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: $color-brand-blue;
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 600;
+    font-family: 'Poppins', Arial, sans-serif;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      color: lighten($color-brand-blue, 15%);
+      gap: 12px;
+    }
+    
+    &:focus {
+      outline: none;
+      color: lighten($color-brand-blue, 15%);
+    }
+    
+    svg {
+      flex-shrink: 0;
+      transition: transform 0.3s ease;
+    }
+    
+    &:hover svg {
+      transform: translateX(4px);
+    }
+  }
+}

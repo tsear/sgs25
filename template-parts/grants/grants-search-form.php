@@ -97,5 +97,5 @@ if (is_wp_error($grant_categories) || empty($grant_categories)) {
     </div>
     
     <!-- Bottom Border -->
-    <div class="bottom-border" style="position: absolute; bottom: 0; left: -360px; width: 1920px; height: 1px; background-color: #ffffff; z-index: 3;"></div>
+    <div class="bottom-border" style="position: absolute; bottom: 0; left: 50%; width: 100vw; height: 1px; background-color: #ffffff; z-index: 3; transform: translateX(-50%);"></div>
 </div>
