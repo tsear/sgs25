@@ -131,6 +131,7 @@
 .blog-show-more {
   text-align: center;
   margin: 3rem 0;
+  padding-bottom: 3rem; // Ensure consistent bottom spacing
   transition: opacity 0.3s ease;
   
   // Ensure consistent spacing on all pages including archives
@@ -138,6 +139,7 @@
   body.tag &,
   body.author & {
     margin: 3rem 0; // Same spacing as main blog page
+    padding-bottom: 3rem; // Explicit bottom padding
   }
   
   &__btn {

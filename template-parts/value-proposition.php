@@ -9,7 +9,7 @@
     <div class="value-prop-container" style="width: 100%; height: 100%; position: relative; max-width: 1200px; margin: 0 auto;">
         
         <!-- Top Border -->
-        <div class="top-border" style="position: absolute; top: 0; left: -360px; width: 1920px; height: 1px; background-color: #ffffff; z-index: 3;"></div>
+        <div class="top-border" style="position: absolute; top: 0; left: 50%; width: 100vw; height: 1px; background-color: #ffffff; z-index: 3; transform: translateX(-50%);"></div>
         
         <!-- Grid Background with Fish Eye Effect - ONLY behind left content -->
         <div class="value-prop-grid" style="position: absolute; top: 0; left: 0; width: 480px; height: 486px; z-index: 1; opacity: 1;">
@@ -52,7 +52,7 @@
         </div>
         
         <!-- Bottom Border -->
-        <div class="bottom-border" style="position: absolute; top: 485px; left: -350px; width: 1920px; height: 1px; background-color: #ffffff; z-index: 3;"></div>
+        <div class="bottom-border" style="position: absolute; top: 485px; left: 50%; width: 100vw; height: 1px; background-color: #ffffff; z-index: 3; transform: translateX(-50%);"></div>
         
     </div>
 </section>

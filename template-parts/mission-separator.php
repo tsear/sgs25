@@ -21,10 +21,10 @@
     <div class="mission-separator__container" style="width: 100%; height: 100%; position: relative; max-width: 1200px; margin: 0 auto;">
         
         <!-- Top Border -->
-        <div class="top-border" style="position: absolute; top: 0; left: -360px; width: 1920px; height: 1px; background-color: #ffffff; z-index: 3;"></div>
+        <div class="top-border" style="position: absolute; top: 0; left: 50%; width: 100vw; height: 1px; background-color: #ffffff; z-index: 3; transform: translateX(-50%);"></div>
         
         <!-- Bottom Border -->
-        <div class="bottom-border" style="position: absolute; bottom: 0; left: -360px; width: 1920px; height: 1px; background-color: #ffffff; z-index: 3;"></div>
+        <div class="bottom-border" style="position: absolute; bottom: 0; left: 50%; width: 100vw; height: 1px; background-color: #ffffff; z-index: 3; transform: translateX(-50%);"></div>
         
         <!-- Vertical Divider -->
         <div class="vertical-divider" style="position: absolute; top: 0; left: 25%; width: 1px; height: 100%; background-color: #ffffff; z-index: 3;"></div>
