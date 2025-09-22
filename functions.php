@@ -133,4 +133,38 @@ remove_action('wp_head', 'wp_shortlink_wp_head');
 // Security enhancements
 add_filter('xmlrpc_enabled', '__return_false');
 remove_action('wp_head', 'wp_resource_hints', 2);
+
+// Flush rewrite rules on theme activation and when post types are registered
+add_action('after_switch_theme', 'sgs_flush_rewrite_rules');
+add_action('init', 'sgs_flush_rewrite_rules_on_init', 20);
+
+function sgs_flush_rewrite_rules() {
+    // Make sure our post types are registered first
+    if (function_exists('sgs_register_post_types')) {
+        sgs_register_post_types();
+    }
+    if (function_exists('sgs_register_taxonomies')) {
+        sgs_register_taxonomies();
+    }
+    
+    // Flush rewrite rules
+    flush_rewrite_rules();
+}
+
+function sgs_flush_rewrite_rules_on_init() {
+    // Only flush if needed (e.g., if a flag is set)
+    if (get_option('sgs_flush_rewrite_rules')) {
+        flush_rewrite_rules();
+        delete_option('sgs_flush_rewrite_rules');
+    }
+}
+
+// Set flag to flush rewrite rules when post types are updated
+add_action('init', function() {
+    $post_types_version = get_option('sgs_post_types_version', '0');
+    if (version_compare($post_types_version, SGS_THEME_VERSION, '<')) {
+        update_option('sgs_flush_rewrite_rules', true);
+        update_option('sgs_post_types_version', SGS_THEME_VERSION);
+    }
+}, 15);
 ?>

@@ -127,5 +127,30 @@ function sgs_register_taxonomies() {
         'rewrite'           => array('slug' => 'funding-amount'),
         'show_in_rest'      => true,
     ));
+
+    // Success Story Categories
+    register_taxonomy('success_story_category', 'success_story', array(
+        'labels' => array(
+            'name'              => __('Success Story Categories', 'sgs'),
+            'singular_name'     => __('Success Story Category', 'sgs'),
+            'search_items'      => __('Search Story Categories', 'sgs'),
+            'all_items'         => __('All Story Categories', 'sgs'),
+            'parent_item'       => __('Parent Story Category', 'sgs'),
+            'parent_item_colon' => __('Parent Story Category:', 'sgs'),
+            'edit_item'         => __('Edit Story Category', 'sgs'),
+            'update_item'       => __('Update Story Category', 'sgs'),
+            'add_new_item'      => __('Add New Story Category', 'sgs'),
+            'new_item_name'     => __('New Story Category Name', 'sgs'),
+            'menu_name'         => __('Story Categories', 'sgs'),
+        ),
+        'hierarchical'      => true,
+        'public'            => true,
+        'publicly_queryable' => true,
+        'show_ui'           => true,
+        'show_admin_column' => true,
+        'query_var'         => true,
+        'rewrite'           => array('slug' => 'success-story-category'),
+        'show_in_rest'      => true,
+    ));
 }
 add_action('init', 'sgs_register_taxonomies');

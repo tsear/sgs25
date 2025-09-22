@@ -30,6 +30,9 @@ if (is_wp_error($grant_categories) || empty($grant_categories)) {
     <div class="container">
         <div class="grants-search-form">
             <form method="get" class="grants-search__form" role="search">
+                <!-- Hidden field to specify post type for search -->
+                <input type="hidden" name="post_type" value="grant_opportunity">
+                
                 <div class="grants-search__row">
                     <!-- Search Input -->
                     <div class="grants-search__field grants-search__field--search">

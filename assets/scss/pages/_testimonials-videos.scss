@@ -126,8 +126,8 @@
     animation-delay: 2s;
   }
 
-  // Vertical separator line
-  &::after {
+  // Vertical separator line - only for testimonials page sections
+  .testimonials-videos &::after {
     content: '';
     position: absolute;
     top: 1px;

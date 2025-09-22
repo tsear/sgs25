@@ -273,8 +273,8 @@
   .testimonial-video {
     position: absolute;
     z-index: 3;
-    top: 59px;
-    left: calc(50% - 600px + 20px);
+    top: calc(50% - 184px); // Vertically center the 368px video in the section
+    left: calc(50% - 600px + 300px - 314px); // Center in left column: start of left column + half column width - half video width
     width: 629px;
     height: 368px;
     border-radius: 0px;
@@ -282,26 +282,27 @@
     opacity: 0.9;
     
     @media screen and (max-width: 1199px) {
-      top: 111px;
-      left: calc(50% - 480px + 10px);
+      top: calc(50% - 132px); // Vertically center the 265px video
+      left: calc(50% - 480px + 240px - 233px); // Center in left column for 960px layout
       width: 466px;
       height: 265px;
     }
     
     @media screen and (max-width: 959px) {
-      top: 49px;
-      left: calc(50% - 320px + 87px);
+      top: calc(50% - 132px); // Vertically center the 265px video (same height as 1199px)
+      left: calc(50% - 320px + 160px - 233px); // Center in left column for 640px layout
     }
     
     @media screen and (max-width: 639px) {
-      left: calc(50% - 240px + 14px);
+      top: calc(50% - 126px); // Vertically center the 252px video
+      left: calc(50% - 240px + 120px - 226px); // Center in left column for 480px layout
       width: 452px;
       height: 252px;
     }
     
     @media screen and (max-width: 479px) {
-      top: 28px;
-      left: calc(50% - 160px + 10px);
+      top: calc(50% - 95px); // Vertically center the 190px video
+      left: calc(50% - 160px + 80px - 148px); // Center in left column for 320px layout
       width: 297px;
       height: 190px;
     }

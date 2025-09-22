@@ -40,10 +40,15 @@
         <div class="vertical-divider" style="position: absolute; top: 1px; left: 480px; width: 1px; height: 486px; background-color: #ffffff; z-index: 3;"></div>
         
         <!-- Video Section -->
-        <div class="video-section" style="position: absolute; top: 56px; left: 565px; width: 635px; height: 375px; z-index: 3; overflow: hidden;">
-            <div style="width: 100%; height: 100%; background-color: #222; display: flex; align-items: center; justify-content: center; color: #fff; font-family: 'Poppins', Arial, sans-serif;">
-                <p>No video with supported format and MIME type found.</p>
-            </div>
+        <div class="video-section" style="position: absolute; top: 56px; left: 565px; width: 635px; height: 375px; z-index: 3; overflow: hidden; border-radius: 8px;">
+            <iframe 
+                src="https://www.youtube.com/embed/EKd71-iF-10" 
+                title="Smart Grant Solutions Demo Video" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                allowfullscreen
+                style="width: 100%; height: 100%; border: none; display: block;">
+            </iframe>
         </div>
         
         <!-- Animated Element -->

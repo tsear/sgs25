@@ -108,9 +108,9 @@ class SGSTheme {
     
     initTypedAnimation() {
         // Initialize typed animation if element exists
-        const typedElement = document.querySelector('.typewriter-text');
+        const typedElement = document.querySelector('#hero-typed-text');
         if (typedElement) {
-            this.typedAnimation = new TypedAnimation('.typewriter-text');
+            this.typedAnimation = new TypedAnimation('#hero-typed-text');
         }
     }
     

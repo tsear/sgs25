@@ -30,6 +30,9 @@ if (is_wp_error($story_categories) || empty($story_categories)) {
     <div class="container">
         <div class="success-stories-search-form">
             <form method="get" class="success-stories-search__form" role="search">
+                <!-- Hidden field to specify post type for search -->
+                <input type="hidden" name="post_type" value="success_story">
+                
                 <div class="success-stories-search__row">
                     <!-- Search Input -->
                     <div class="success-stories-search__field success-stories-search__field--search">

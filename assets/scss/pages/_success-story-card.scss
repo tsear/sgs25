@@ -10,6 +10,9 @@
   transition: all 0.3s ease;
   border: 1px solid #222222;
   height: 100%;
+  width: 100%;
+  max-width: 380px;
+  justify-self: start;
   
   &:hover {
     transform: translateY(-4px);
