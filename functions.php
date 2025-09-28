@@ -47,23 +47,21 @@ function sgs_theme_setup() {
 // Enqueue scripts and styles
 add_action('wp_enqueue_scripts', 'sgs_enqueue_assets');
 function sgs_enqueue_assets() {
-    // Enqueue Tilda CSS files for 1:1 recreation
-    wp_enqueue_style('tilda-grid', SGS_THEME_URI . '/assets/css/tilda-grid-3.0.min.css', array(), SGS_THEME_VERSION);
-    wp_enqueue_style('tilda-blocks-main', SGS_THEME_URI . '/assets/css/tilda-blocks-page68194609.min.css', array(), SGS_THEME_VERSION);
-    wp_enqueue_style('tilda-animation', SGS_THEME_URI . '/assets/css/tilda-animation-2.0.min.css', array(), SGS_THEME_VERSION);
-    
-    // Enqueue our compiled SASS (for additional styling)
-    wp_enqueue_style('sgs-style', get_stylesheet_uri(), array(), SGS_THEME_VERSION);
+    // Enqueue our compiled SASS (will be deferred by critical CSS system)
+    wp_enqueue_style('smartgrantsolutions-style', get_stylesheet_uri(), array(), SGS_THEME_VERSION);
     
     // Enqueue fonts (Poppins for hero, DM Sans for content)
     wp_enqueue_style('sgs-fonts', 'https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap', array(), null);
     
     // Enqueue JavaScript - Use bundled version
     wp_enqueue_script('sgs-main', SGS_THEME_URI . '/assets/js/dist/main.bundle.js', array(), SGS_THEME_VERSION, true);
-    wp_enqueue_script('sgs-typed-animation', SGS_THEME_URI . '/assets/js/modules/typed-animation.js', array(), SGS_THEME_VERSION, true);
-    wp_enqueue_script('sgs-trusted-orgs-carousel', SGS_THEME_URI . '/assets/js/modules/trusted-organizations-carousel.js', array(), SGS_THEME_VERSION, true);
-    wp_enqueue_script('sgs-video-features', SGS_THEME_URI . '/assets/js/modules/video-features.js', array('jquery'), SGS_THEME_VERSION, true);
-    wp_enqueue_script('sgs-rocket-animations', SGS_THEME_URI . '/assets/js/modules/rocket-animations.js', array(), SGS_THEME_VERSION, true);
+    
+    // Homepage-specific scripts
+    if (is_front_page() || is_home()) {
+        wp_enqueue_script('sgs-typed-animation', SGS_THEME_URI . '/assets/js/modules/typed-animation.js', array(), SGS_THEME_VERSION, true);
+        wp_enqueue_script('sgs-trusted-orgs-carousel', SGS_THEME_URI . '/assets/js/modules/trusted-organizations-carousel.js', array(), SGS_THEME_VERSION, true);
+        wp_enqueue_script('sgs-video-features', SGS_THEME_URI . '/assets/js/modules/video-features.js', array('jquery'), SGS_THEME_VERSION, true);
+    }
     
     // Localize script for AJAX
     wp_localize_script('sgs-main', 'sgs_ajax', array(
@@ -77,6 +75,7 @@ require_once SGS_THEME_DIR . '/inc/customizer.php';
 require_once SGS_THEME_DIR . '/inc/post-types.php';
 require_once SGS_THEME_DIR . '/inc/theme-options.php';
 require_once SGS_THEME_DIR . '/inc/ajax-handlers.php';
+require_once SGS_THEME_DIR . '/inc/critical-css.php';
 
 // Widget areas
 add_action('widgets_init', 'sgs_register_widgets');

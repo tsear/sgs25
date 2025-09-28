@@ -4,7 +4,8 @@
  */
 
 $search_query = get_search_query();
-$is_search = !empty($search_query);
+$category_filter = isset($_GET['category']) ? sanitize_text_field($_GET['category']) : '';
+$is_search = !empty($search_query) || !empty($category_filter);
 ?>
 
 <div class="no-results">
@@ -17,10 +18,16 @@ $is_search = !empty($search_query);
                 </svg>
             </div>
             
-            <h2 class="no-results__title">No results found</h2>
+            <h2 class="no-results__title">No articles found</h2>
             
             <p class="no-results__message">
-                Sorry, we couldn't find any articles matching <strong>"<?php echo esc_html($search_query); ?>"</strong>.
+                <?php if (!empty($search_query) && !empty($category_filter)) : ?>
+                    Sorry, we couldn't find any articles matching <strong>"<?php echo esc_html($search_query); ?>"</strong> in the <strong><?php echo esc_html($category_filter); ?></strong> category.
+                <?php elseif (!empty($search_query)) : ?>
+                    Sorry, we couldn't find any articles matching <strong>"<?php echo esc_html($search_query); ?>"</strong>.
+                <?php elseif (!empty($category_filter)) : ?>
+                    Sorry, we couldn't find any articles in the <strong><?php echo esc_html($category_filter); ?></strong> category.
+                <?php endif; ?>
             </p>
             
             <div class="no-results__suggestions">

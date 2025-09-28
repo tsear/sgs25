@@ -1,7 +1,7 @@
 <?php
 /**
- * Template part for search results
- * Displays search results with the same layout as blog posts grid
+ * Template part for blog search results
+ * Displays search results specifically for blog posts
  */
 
 // Get search query and category filter
@@ -20,7 +20,13 @@ $search_args = array(
 
 // Add category filter if category is selected
 if (!empty($category_filter)) {
-    $search_args['category_name'] = $category_filter;
+    $search_args['tax_query'] = array(
+        array(
+            'taxonomy' => 'category',
+            'field'    => 'slug',
+            'terms'    => $category_filter,
+        ),
+    );
 }
 
 // Get search results
@@ -37,9 +43,9 @@ $posts_per_load = 6; // Show 6 posts initially, then 6 more on each "Show More" 
             <div class="search-results-info">
                 <h2>Search Results for "<?php echo esc_html($search_query); ?>"
                     <?php if (!empty($category_filter)) : ?>
-                        <?php $category = get_category_by_slug($category_filter); ?>
+                        <?php $category = get_term_by('slug', $category_filter, 'category'); ?>
                         <?php if ($category) : ?>
-                            in <span style="color: #d81259;"><?php echo esc_html($category->name); ?></span>
+                            in <span style="color: #fcaf3d;"><?php echo esc_html($category->name); ?></span>
                         <?php endif; ?>
                     <?php endif; ?>
                 </h2>
@@ -76,17 +82,9 @@ $posts_per_load = 6; // Show 6 posts initially, then 6 more on each "Show More" 
             <?php endif; ?>
             
         <?php else : ?>
-            <!-- No search results found -->
-            <div class="no-search-results">
-                <h2>No results found for "<?php echo esc_html($search_query); ?>"</h2>
-                <p>Sorry, we couldn't find any posts matching your search. Try different keywords or browse our latest posts.</p>
-                <a href="<?php echo get_permalink(get_page_by_path('blog')); ?>" class="btn-primary">Browse All Posts</a>
-            </div>
+            <?php get_template_part('template-parts/blog/no-results'); ?>
         <?php endif; ?>
     </div>
-    
-    <!-- Bottom Border -->
-    <div class="bottom-border" style="position: absolute; bottom: 0; left: -360px; width: 1920px; height: 1px; background-color: #ffffff; z-index: 3;"></div>
 </section>
 
 <?php wp_reset_postdata(); ?>

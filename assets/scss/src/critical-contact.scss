@@ -1,0 +1,24 @@
+// Critical CSS for Contact Page
+// Everything for now - single page load
+
+// Core foundation
+@import '../abstracts/variables';
+@import '../abstracts/mixins';
+@import '../base/reset';
+@import '../base/typography';
+
+// Layout
+@import '../layout/header';
+@import '../layout/footer';
+
+// Above-the-fold sections
+@import '../pages/contact-hero';
+@import '../pages/contact-form';
+
+// Essential components
+@import '../components/buttons';
+@import '../components/forms';
+
+// Additional sections for contact page
+@import '../sections/mission-separator';
+@import '../sections/trusted-organizations';

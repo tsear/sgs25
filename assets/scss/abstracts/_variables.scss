@@ -1,15 +1,20 @@
 // Variables - Smart Grant Solutions Theme (1:1 Tilda Match)
 // Brand Colors - Exact from Tilda export
 $color-black: #000000;
-// Colors
-$color-primary: #0066cc;
-$color-secondary: #ff6b35;
 $color-brand-pink: #d81259;    // SGS Brand Pink - CTA buttons
 $color-brand-yellow: #FFBC41;  // SGS Brand Yellow
 $color-brand-blue: #016BA6;    // SGS Brand Blue
+
+// SVG Container Widths for different screen sizes
+$svg-width-desktop: 800px;
+$svg-width-tablet: 600px;
+$svg-width-mobile: 450px;
+$svg-width-small: 300px;
+
+// Colors
+$color-primary: #0066cc;
+$color-secondary: #ff6b35;
 $color-success: #10b981;
-$color-warning: #f59e0b;
-$color-danger: #ef4444;
 $color-error: #ef4444;
 $color-accent: #fcb03e;       // Orange text highlights
 $color-white: #ffffff;
@@ -36,12 +41,10 @@ $font-family-primary: $font-primary;
 $font-family-secondary: $font-secondary;
 
 // Font weights
-$font-weight-light: 300;
 $font-weight-regular: 400;
 $font-weight-medium: 500;
 $font-weight-semibold: 600;
 $font-weight-bold: 700;
-$font-weight-extrabold: 800;
 
 // Font sizes
 $font-size-xs: 12px;
@@ -75,40 +78,12 @@ $spacing-4xl: 90px;
 $spacing-5xl: 120px;
 $spacing-6xl: 150px;
 
-// Spacing sizes map for utility generation
-$spacing-sizes: (
-  xs: $spacing-xs,
-  sm: $spacing-sm,
-  md: $spacing-md,
-  lg: $spacing-lg,
-  xl: $spacing-xl,
-  "2xl": $spacing-2xl,
-  "3xl": $spacing-3xl,
-  "4xl": $spacing-4xl,
-  "5xl": $spacing-5xl,
-  "6xl": $spacing-6xl
-);
-
 // Breakpoints
 $breakpoint-xs: 320px;
 $breakpoint-sm: 480px;
 $breakpoint-md: 640px;
 $breakpoint-lg: 960px;
 $breakpoint-xl: 1200px;
-
-// Container
-$container-max-width: 1200px;
-$container-padding: 20px;
-
-// Grid
-$grid-columns: 12;
-$grid-gap: 20px;
-
-// Border radius
-$border-radius-sm: 2px;
-$border-radius-md: 4px;
-$border-radius-lg: 8px;
-$border-radius-full: 50%;
 
 // Shadows
 $shadow-sm: 0px 2px 3px rgba(0, 11, 48, 0.25);
@@ -117,27 +92,14 @@ $shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
 
 // Transitions
 $transition-fast: 0.2s ease-in-out;
-$transition-normal: 0.3s ease-in-out;
-$transition-slow: 0.5s ease-in-out;
 
 // Z-index layers
+$z-fixed: 100;
 $z-dropdown: 1000;
-$z-sticky: 1020;
-$z-fixed: 1030;
-$z-modal-backdrop: 1040;
-$z-modal: 1050;
-$z-popover: 1060;
-$z-tooltip: 1070;
 
 // Header
 $header-height: 60px;
 $header-bg: $color-black;
-
-// Button sizes
-$btn-height-sm: 35px;
-$btn-height-md: 45px;
-$btn-height-lg: 55px;
-$btn-padding: 15px 30px;
 
 // Form elements
 $input-height: 45px;
@@ -158,8 +120,4 @@ $grid-breakpoints: (
   xl: 1200px
 );
 
-// Transitions
-$transition-fast: 0.3s ease;
-$transition-normal: 0.5s ease;
-$transition-slow: 0.8s ease;
 $input-border: $color-black;

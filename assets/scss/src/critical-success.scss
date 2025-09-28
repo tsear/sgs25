@@ -1,0 +1,19 @@
+// Critical CSS for Success Stories Pages
+// Success stories main page + success story archives + taxonomy pages
+
+// Core foundation
+@import '../abstracts/variables';
+@import '../abstracts/mixins';
+@import '../base/reset';
+@import '../base/typography';
+
+// Layout
+@import '../layout/header';
+
+// Above-the-fold sections
+@import '../pages/success-stories-hero';       // Success stories hero
+@import '../pages/success-stories-search-form'; // Success stories search
+
+// Essential components
+@import '../components/buttons';
+@import '../components/forms';

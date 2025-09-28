@@ -1,0 +1,22 @@
+<svg width="1537" height="240" viewBox="0 0 1537 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g filter="url(#filter0_f_2499_10863)">
+<ellipse cx="298" cy="120.001" rx="198" ry="20" fill="#016BA6"/>
+</g>
+<g clip-path="url(#clip0_2499_10863)">
+<path d="M1485.06 115.941L1479.06 115.939M1485.06 123.938L1479.06 123.942M1502.06 136.942L1509.06 127.942L1493.06 127.942L1493.06 136.942L1502.06 136.942ZM1502.06 102.943L1509.06 111.94L1493.06 111.94L1493.06 102.94L1502.06 102.943Z" stroke="white" stroke-width="4" stroke-linecap="square"/>
+<path d="M1509.06 111.941L1493.06 111.94M1493.06 111.94L1493.06 127.94M1493.06 111.94L1516.43 111.94C1518.53 111.94 1520.61 112.354 1522.55 113.158C1524.49 113.962 1526.26 115.14 1527.74 116.626L1531.06 119.941L1527.75 123.255C1526.26 124.741 1524.5 125.919 1522.56 126.723C1520.61 127.527 1518.53 127.941 1516.43 127.941L1493.06 127.94M1493.06 127.94L1509.06 127.94" stroke="white" stroke-width="4" stroke-linecap="square"/>
+</g>
+<rect x="1469" y="117" width="6" height="6" transform="rotate(90 1469 117)" fill="#FFBC41"/>
+<rect x="1459" y="117" width="6" height="6" transform="rotate(90 1459 117)" fill="#D81259"/>
+<rect x="1445" y="117" width="6.00004" height="953" transform="rotate(90 1445 117)" fill="#016BA6"/>
+<defs>
+<filter id="filter0_f_2499_10863" x="0" y="0.000976562" width="596" height="240" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="50" result="effect1_foregroundBlur_2499_10863"/>
+</filter>
+<clipPath id="clip0_2499_10863">
+<rect width="48" height="48" fill="white" transform="translate(1503.06 86) rotate(45)"/>
+</clipPath>
+</defs>
+</svg>

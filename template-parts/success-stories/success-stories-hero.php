@@ -1,37 +1,26 @@
 <?php
 /**
  * Success Stories Hero Section
- * Based on contact header structure with success stories-specific content
+ * Rocket trail design with proper alignment
  */
 ?>
 
 <section class="success-stories-header">
-    <div class="success-stories-header__container">
-        <div class="success-stories-header__content">
-            <!-- Left Column: Title Only -->
-            <div class="success-stories-header__left-column">
-                <h1 class="success-stories-header__title">
-                    <strong style="color: #ffffff;"><em>Success Stories</em></strong>
-                </h1>
-            </div>
-            
-            <!-- Right Column: Description and Graphics -->
-            <div class="success-stories-header__right-column">
-                <div class="success-stories-header__description">
-                    <p>See how organizations like yours have transformed their grant management and achieved remarkable results. Real stories, real impact, real inspiration.</p>
-                </div>
-                
-                <!-- Circle graphic -->
-                <div class="success-stories-header__circle success-stories-header__circle--main">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/blue-circle.png" alt="" style="width: 100%; height: 100%; object-fit: cover;" />
-                </div>
-            </div>
-            
-            <!-- Divider (Vertical on desktop, horizontal on mobile) -->
-            <div class="success-stories-header__divider"></div>
-            
-            <!-- Bottom Border -->
-            <div class="bottom-border" style="position: absolute; bottom: 0; left: 50%; width: 100vw; height: 1px; background-color: #ffffff; z-index: 3; transform: translateX(-50%);"></div>
+    <div class="success-stories-header__container">    
+    
+        <!-- Title -->
+        <div class="success-stories-header__title-frame">
+            <h1 class="success-stories-header__title">Testimonials</h1>
+        </div>
+        
+        <!-- SVG Container -->
+        <div class="success-stories-header__svg-container">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/group-18.svg" alt="" />
+        </div>
+        
+        <!-- Description -->
+        <div class="success-stories-header__description">
+            <p>Navigating the nonprofit world means juggling big missions with tight resources, and smart grant management can be the difference between vision and impact. Here, we unpack best-practice tools, stories, and strategies to help organizations win and steward funding with confidence.</p>
         </div>
     </div>
 </section>

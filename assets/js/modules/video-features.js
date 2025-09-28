@@ -24,6 +24,7 @@
             this.setupVideoControls();
             this.setupRocketInteractions();
             this.setupConnectionAnimations();
+            this.setupExhaustFlameAnimations();
         }
 
         setupIntersectionObserver() {
@@ -231,6 +232,72 @@
 
         unpreviewVideoCard(index) {
             this.videoCards.eq(index).removeClass('preview-state');
+        }
+
+        setupExhaustFlameAnimations() {
+            const exhaustFlames = document.querySelectorAll('.exhaust-flame');
+            
+            if (exhaustFlames.length === 0) {
+                return;
+            }
+
+            // Set initial state - invisible
+            exhaustFlames.forEach(flame => {
+                flame.style.opacity = '0';
+                flame.style.transition = 'opacity 2s ease-out';
+            });
+
+            // Set up Intersection Observer for scroll-triggered animations
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px 0px -100px 0px', // Same trigger area as rockets
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && !entry.target.classList.contains('exhaust-animated')) {
+                        // Add animated class to prevent re-triggering
+                        entry.target.classList.add('exhaust-animated');
+                        
+                        // 3-second delay to let rockets fade in first
+                        setTimeout(() => {
+                            // Fade in exhaust flames
+                            exhaustFlames.forEach((flame, index) => {
+                                flame.style.opacity = '1';
+                                
+                                // Start rotation animations
+                                this.startExhaustRotation(flame);
+                            });
+                        }, 3000);
+                    }
+                });
+            }, observerOptions);
+
+            // Observe the first exhaust flame (both will trigger together)
+            if (exhaustFlames.length > 0) {
+                observer.observe(exhaustFlames[0]);
+            }
+        }
+
+        startExhaustRotation(flame) {
+            let rotation = 0;
+            const isLeft = flame.classList.contains('exhaust-flame-left');
+            const maxRotation = 15; // degrees
+            const speed = 0.02; // rotation speed
+            
+            const animate = () => {
+                // Calculate rotation using sine wave for smooth back-and-forth motion
+                const rotationValue = Math.sin(rotation) * maxRotation;
+                const direction = isLeft ? -1 : 1; // Left rotates negative, right rotates positive
+                
+                flame.style.transform = `rotate(${rotationValue * direction}deg)`;
+                
+                rotation += speed;
+                requestAnimationFrame(animate);
+            };
+            
+            animate();
         }
     }
 

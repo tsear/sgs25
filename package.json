@@ -2,16 +2,20 @@
   "name": "smartgrantsolutions-theme",
   "version": "1.0.0",
   "description": "1:1 WordPress recreation of Smart Grant Solutions Tilda website",
+  "type": "module",
   "main": "assets/js/main.js",
   "scripts": {
     "sass": "sass assets/scss/main.scss:style.css --watch --style=compressed --source-map",
     "sass-dev": "sass assets/scss/main.scss:style.css --watch --style=expanded --source-map",
     "build-css": "sass assets/scss/main.scss:style.css --style=compressed --no-source-map",
     "build-css-dev": "sass assets/scss/main.scss:style.css --style=expanded --source-map",
+    "build-critical": "sass assets/scss/src/critical-home.scss:assets/scss/dist/critical-home.css assets/scss/src/critical-blog.scss:assets/scss/dist/critical-blog.css assets/scss/src/critical-grants.scss:assets/scss/dist/critical-grants.css assets/scss/src/critical-success.scss:assets/scss/dist/critical-success.css assets/scss/src/critical-contact.scss:assets/scss/dist/critical-contact.css --style=compressed --no-source-map",
+    "build-critical-dev": "sass assets/scss/src/critical-home.scss:assets/scss/dist/critical-home.css assets/scss/src/critical-blog.scss:assets/scss/dist/critical-blog.css assets/scss/src/critical-grants.scss:assets/scss/dist/critical-grants.css assets/scss/src/critical-success.scss:assets/scss/dist/critical-success.css assets/scss/src/critical-contact.scss:assets/scss/dist/critical-contact.css --style=expanded --source-map",
+    "watch-critical": "sass assets/scss/src/:assets/scss/dist/ --watch --style=expanded --source-map",
     "build-js": "rollup -c",
     "build-js-watch": "rollup -c --watch",
-    "build": "npm run build-css && npm run build-js",
-    "build-dev": "npm run build-css-dev && npm run build-js",
+    "build": "npm run build-css && npm run build-critical && npm run build-js",
+    "build-dev": "npm run build-css-dev && npm run build-critical-dev && npm run build-js",
     "watch": "npm run sass-dev"
   },
   "devDependencies": {

@@ -1,0 +1,19 @@
+// Critical CSS for Homepage
+// Only above-the-fold content: hero + value-proposition
+
+// Core foundation
+@import '../abstracts/variables';
+@import '../abstracts/mixins';
+@import '../base/reset';
+@import '../base/typography';
+
+// Layout
+@import '../layout/header';
+
+// Above-the-fold sections
+@import '../components/hero';                  // Homepage hero
+@import '../sections/value-proposition';      // Value prop section
+
+// Essential components
+@import '../components/buttons';
+@import '../components/forms';

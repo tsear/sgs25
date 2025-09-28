@@ -1,66 +1,74 @@
 <?php
 /**
- * Template part for displaying no success stories found message
+ * Template part for displaying no search results or no success stories
  */
 
-$search_query = isset($_GET['s']) ? sanitize_text_field($_GET['s']) : '';
+$search_query = get_search_query();
 $category_filter = isset($_GET['success_story_category']) ? sanitize_text_field($_GET['success_story_category']) : '';
-$has_filters = !empty($search_query) || !empty($category_filter);
+$is_search = !empty($search_query) || !empty($category_filter);
 ?>
 
-<div class="success-stories-no-results">
-    <div class="success-stories-no-results__content">
-        <div class="success-stories-no-results__icon">
-            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="12" cy="12" r="10" stroke="#6B7280" stroke-width="2"/>
-                <path d="M16 16L12 12L16 8" stroke="#6B7280" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M8 12H16" stroke="#6B7280" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-        </div>
-
-        <h3 class="success-stories-no-results__title">
-            <?php if ($has_filters): ?>
-                No success stories match your search
-            <?php else: ?>
-                No success stories found
-            <?php endif; ?>
-        </h3>
-
-        <p class="success-stories-no-results__description">
-            <?php if ($has_filters): ?>
-                We couldn't find any success stories matching your current filters. Try adjusting your search terms or clearing your filters to see more results.
-            <?php else: ?>
-                There are currently no success stories available. Please check back later for inspiring stories from our community.
-            <?php endif; ?>
-        </p>
-
-        <div class="success-stories-no-results__actions">
-            <?php if ($has_filters): ?>
-                <a href="<?php echo esc_url(remove_query_arg(array('s', 'success_story_category'))); ?>" class="success-stories-no-results__clear-button">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                    Clear all filters
-                </a>
-            <?php endif; ?>
-
-            <a href="<?php echo esc_url(home_url('/grants')); ?>" class="success-stories-no-results__browse-button">
-                Browse Grant Opportunities
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<div class="no-results">
+    <div class="no-results__content">
+        <?php if ($is_search) : ?>
+            <div class="no-results__icon">
+                <svg width="64" height="64" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 21L16.514 16.506L21 21ZM19 10.5C19 15.194 15.194 19 10.5 19C5.806 19 2 15.194 2 10.5C2 5.806 5.806 2 10.5 2C15.194 2 19 5.806 19 10.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M8 8L13 13M13 8L8 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
-            </a>
-        </div>
-
-        <?php if ($has_filters): ?>
-            <div class="success-stories-no-results__suggestions">
-                <h4 class="success-stories-no-results__suggestions-title">Search suggestions:</h4>
-                <ul class="success-stories-no-results__suggestions-list">
-                    <li>Try using broader search terms</li>
+            </div>
+            
+            <h2 class="no-results__title">No success stories found</h2>
+            
+            <p class="no-results__message">
+                <?php if (!empty($search_query) && !empty($category_filter)) : ?>
+                    Sorry, we couldn't find any success stories matching <strong>"<?php echo esc_html($search_query); ?>"</strong> in the <strong><?php echo esc_html($category_filter); ?></strong> category.
+                <?php elseif (!empty($search_query)) : ?>
+                    Sorry, we couldn't find any success stories matching <strong>"<?php echo esc_html($search_query); ?>"</strong>.
+                <?php elseif (!empty($category_filter)) : ?>
+                    Sorry, we couldn't find any success stories in the <strong><?php echo esc_html($category_filter); ?></strong> category.
+                <?php endif; ?>
+            </p>
+            
+            <div class="no-results__suggestions">
+                <h3 class="no-results__suggestions-title">Try these suggestions:</h3>
+                <ul class="no-results__suggestions-list">
                     <li>Check your spelling</li>
-                    <li>Remove category filters</li>
-                    <li>Use different keywords related to your organization type</li>
+                    <li>Use more general keywords</li>
+                    <li>Try different search terms</li>
+                    <li>Browse all success stories below</li>
                 </ul>
+            </div>
+            
+            <div class="no-results__actions">
+                <?php 
+                $success_stories_page_id = get_page_by_path('success-stories');
+                $success_stories_url = $success_stories_page_id ? get_permalink($success_stories_page_id) : home_url('/success-stories/');
+                ?>
+                <a href="<?php echo esc_url($success_stories_url); ?>" class="no-results__button">
+                    View All Success Stories
+                </a>
+            </div>
+            
+        <?php else : ?>
+            <div class="no-results__icon">
+                <svg width="64" height="64" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L3.09 8.26L12 14L20.91 8.26L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M3.09 15.74L12 22L20.91 15.74" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M3.09 8.26L12 14.52L20.91 8.26" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            
+            <h2 class="no-results__title">No success stories yet</h2>
+            
+            <p class="no-results__message">
+                We haven't published any success stories yet, but we're working on sharing inspiring stories from our community!
+            </p>
+            
+            <div class="no-results__actions">
+                <a href="<?php echo esc_url(home_url()); ?>" class="no-results__button">
+                    Back to Home
+                </a>
             </div>
         <?php endif; ?>
     </div>

@@ -1,0 +1,252 @@
+// =============================================================================
+// Blog Post Card - Standardized to match grants card structure
+// =============================================================================
+
+.post-card {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border: 1px solid #F3F4F6;
+  width: 100%;
+  max-width: 380px;
+  justify-self: start;
+  
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+    border-color: #d81259; // Blog brand color
+  }
+}
+
+.post-card__link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.post-card__image {
+  aspect-ratio: 16/9;
+  overflow: hidden;
+  
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+}
+
+.post-card:hover .post-card__image img {
+  transform: scale(1.05);
+}
+
+.post-card__content {
+  padding: 24px;
+}
+
+.post-card__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 16px;
+  font-size: 14px;
+}
+
+.post-card__date {
+  color: #6B7280;
+  font-weight: 500;
+}
+
+.post-card__author {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #6B7280;
+  font-size: 14px;
+  
+  svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+.post-card__title {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 12px;
+  color: #1F2937;
+}
+
+.post-card__excerpt {
+  color: #6B7280;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.post-card__categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.post-card__category {
+  background: rgba(216, 18, 89, 0.1); // Blog brand color
+  color: #d81259;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+  border: 1px solid rgba(216, 18, 89, 0.2);
+}
+
+.post-card__footer {
+  margin-top: auto;
+  padding-top: 16px;
+  border-top: 1px solid #F3F4F6;
+}
+
+.post-card__cta {
+  background: #d81259; // Blog brand color
+  color: white;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: background-color 0.3s ease;
+  
+  &:hover {
+    background: darken(#d81259, 10%);
+    color: white;
+  }
+  
+  svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+// Grid layout for blog archive
+.blog-posts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+  
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  // Extra bottom padding for archive pages (category/tag/author pages)
+  // Only add padding when there's NO show more button
+  body.category &,
+  body.tag &,
+  body.author & {
+    padding-bottom: 0; // Remove extra padding since show more button handles spacing
+  }
+}
+
+// Hidden posts that will be revealed with show-more
+.blog-post-hidden {
+  display: none;
+}
+
+// Animation for posts being revealed
+.blog-post-revealing {
+  animation: fadeInUp 0.3s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Show More Button Section
+.blog-show-more {
+  text-align: center;
+  margin: 3rem 0;
+  padding-bottom: 3rem; // Ensure consistent bottom spacing
+  transition: opacity 0.3s ease;
+  
+  // Ensure consistent spacing on all pages including archives
+  body.category &,
+  body.tag &,
+  body.author & {
+    margin: 3rem 0; // Same spacing as main blog page
+    padding-bottom: 3rem; // Explicit bottom padding
+  }
+  
+  &__btn {
+    background: #d81259;
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(#d81259, 0.3);
+      background: darken(#d81259, 10%);
+    }
+    
+    &:active {
+      transform: translateY(0);
+    }
+    
+    &:disabled {
+      cursor: not-allowed;
+      opacity: 0.7;
+    }
+  }
+  
+  &__text {
+    transition: opacity 0.3s ease;
+  }
+  
+  &__loader {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    svg {
+      width: 20px;
+      height: 20px;
+      animation: spin 1s linear infinite;
+    }
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

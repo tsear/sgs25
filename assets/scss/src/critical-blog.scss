@@ -1,0 +1,19 @@
+// Critical CSS for Blog Pages
+// Blog main page + blog archives (categories, tags, author)
+
+// Core foundation
+@import '../abstracts/variables';
+@import '../abstracts/mixins';
+@import '../base/reset';
+@import '../base/typography';
+
+// Layout
+@import '../layout/header';
+
+// Above-the-fold sections
+@import '../pages/blog-hero';         // Blog page hero
+@import '../pages/blog-search-form';  // Search functionality
+
+// Essential components
+@import '../components/buttons';
+@import '../components/forms';

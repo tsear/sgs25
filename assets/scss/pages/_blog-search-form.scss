@@ -1,10 +1,10 @@
 /* ===================================================================
-   SUCCESS STORIES SEARCH FORM STYLES
-   Styles for the success stories search and filtering functionality
+   BLOG SEARCH FORM STYLES
+   Styles for the blog search and filtering functionality
    =================================================================== */
 
-.success-stories-search {
-  background: linear-gradient(135deg, $color-brand-blue 0%, #0080CC 100%);
+.blog-search {
+  background: linear-gradient(135deg, $color-brand-pink 0%, #ff1a6b 100%);
   padding: 60px 0;
   position: relative;
   
@@ -15,7 +15,7 @@
   }
 }
 
-.success-stories-search-form {
+.blog-search-form {
   background: rgba(255, 255, 255, 0.95);
   border-radius: 16px;
   padding: 40px;
@@ -23,8 +23,8 @@
   backdrop-filter: blur(10px);
 }
 
-.success-stories-search__form {
-  .success-stories-search__row {
+.blog-search__form {
+  .blog-search__row {
     display: grid;
     grid-template-columns: 1fr 280px 160px;
     gap: 24px;
@@ -37,7 +37,7 @@
   }
 }
 
-.success-stories-search__field {
+.blog-search__field {
   &--search {
     @media (max-width: 768px) {
       order: 1;
@@ -57,7 +57,7 @@
   }
 }
 
-.success-stories-search__label {
+.blog-search__label {
   display: block;
   font-weight: 600;
   color: #333;
@@ -65,10 +65,10 @@
   font-size: 14px;
 }
 
-.success-stories-search__input-wrapper {
+.blog-search__input-wrapper {
   position: relative;
   
-  .success-stories-search__input {
+  .blog-search__input {
     width: 100%;
     padding: 16px 50px 16px 20px;
     border: 2px solid #E5E7EB;
@@ -79,7 +79,7 @@
     
     &:focus {
       outline: none;
-      border-color: $color-brand-blue;
+      border-color: $color-brand-pink;
       box-shadow: 0 0 0 3px rgba(255, 188, 65, 0.1);
     }
     
@@ -88,7 +88,7 @@
     }
   }
   
-  .success-stories-search__submit {
+  .blog-search__submit {
     position: absolute;
     right: 12px;
     top: 50%;
@@ -102,16 +102,16 @@
     transition: all 0.2s ease;
     
     &:hover {
-      color: $color-brand-blue;
+      color: $color-brand-pink;
       background: rgba(255, 188, 65, 0.1);
     }
   }
 }
 
-.success-stories-search__select-wrapper {
+.blog-search__select-wrapper {
   position: relative;
   
-  .success-stories-search__select {
+  .blog-search__select {
     width: 100%;
     padding: 16px 40px 16px 20px;
     border: 2px solid #E5E7EB;
@@ -124,12 +124,12 @@
     
     &:focus {
       outline: none;
-      border-color: $color-brand-blue;
+      border-color: $color-brand-pink;
       box-shadow: 0 0 0 3px rgba(255, 188, 65, 0.1);
     }
   }
   
-  .success-stories-search__select-arrow {
+  .blog-search__select-arrow {
     position: absolute;
     right: 16px;
     top: 50%;
@@ -139,10 +139,10 @@
   }
 }
 
-.success-stories-search__button {
+.blog-search__button {
   width: 100%;
   padding: 16px 24px;
-  background: linear-gradient(135deg, $color-brand-blue 0%, #FFD700 100%);
+  background: linear-gradient(135deg, $color-brand-pink 0%, #FFD700 100%);
   color: white;
   border: none;
   border-radius: 12px;
@@ -157,11 +157,11 @@
   }
 }
 
-.success-stories-search__clear {
+.blog-search__clear {
   margin-top: 20px;
   text-align: center;
   
-  .success-stories-search__clear-link {
+  .blog-search__clear-link {
     display: inline-flex;
     align-items: center;
     gap: 8px;
@@ -173,7 +173,7 @@
     transition: all 0.2s ease;
     
     &:hover {
-      color: $color-brand-blue;
+      color: $color-brand-pink;
       background: rgba(255, 188, 65, 0.1);
     }
     

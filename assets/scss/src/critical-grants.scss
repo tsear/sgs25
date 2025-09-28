@@ -1,0 +1,19 @@
+// Critical CSS for Grants Pages
+// Grants main page + grants archives + grants taxonomy pages
+
+// Core foundation
+@import '../abstracts/variables';
+@import '../abstracts/mixins';
+@import '../base/reset';
+@import '../base/typography';
+
+// Layout
+@import '../layout/header';
+
+// Above-the-fold sections
+@import '../pages/grants-hero';       // Grants page hero
+@import '../pages/grants-search-form'; // Grants search functionality
+
+// Essential components
+@import '../components/buttons';
+@import '../components/forms';
