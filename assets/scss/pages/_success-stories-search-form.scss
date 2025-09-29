@@ -8,6 +8,21 @@
   padding: 60px 0;
   position: relative;
   
+  // Full-bleed bottom white line anchored to section bottom
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: auto;
+    transform: none;
+    height: 1px;
+    background-color: #ffffff;
+    pointer-events: none;
+    z-index: 3;
+  }
+  
   .container {
     max-width: 1200px;
     margin: 0 auto;

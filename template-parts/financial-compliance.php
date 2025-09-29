@@ -44,14 +44,13 @@
         </div>
         
         <!-- Vertical Divider -->
-        <div class="vertical-divider"></div>
+        <div class="vertical-divider" style="position: absolute; top: 0; left: 50%; width: 1px; height: 100%; background-color: #ffffff; z-index: 3; transform: translateX(-50%);"></div>
         
         <!-- Background Grid Image -->
         <!-- Page Indicator -->
         <div class="page-indicator">1/4</div>
         
-        <!-- Bottom Border -->
-        <div class="bottom-border"></div>
+    <!-- Bottom Border handled by CSS pseudo-element in main.css -->
         
     </div>
     

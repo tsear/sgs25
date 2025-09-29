@@ -129,8 +129,7 @@ if ($stories_query->have_posts()) {
         <?php endif; ?>
     </div>
     
-    <!-- Bottom Border -->
-    <div class="bottom-border" style="position: absolute; bottom: 0; left: 50%; width: 100vw; height: 1px; background-color: #ffffff; z-index: 3; transform: translateX(-50%);"></div>
+    <!-- Bottom border handled by .success-stories-grid::after in CSS -->
 </div>
 
 <?php wp_reset_postdata(); ?>

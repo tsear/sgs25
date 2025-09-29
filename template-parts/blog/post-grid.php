@@ -71,6 +71,5 @@ $posts_per_load = 6; // Show 6 posts initially, then 6 more on each "Show More" 
         <?php endif; ?>
     </div>
     
-    <!-- Bottom Border -->
-    <div class="bottom-border" style="position: absolute; bottom: 0; left: 50%; width: 100vw; height: 1px; background-color: #ffffff; z-index: 3; transform: translateX(-50%);"></div>
+    <!-- Bottom border handled by .blog-content::after in CSS -->
 </section>

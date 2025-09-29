@@ -1,0 +1,78 @@
+/* ===================================================================
+   BLOG CONTENT STYLES
+   Styles for the blog content grid layout and show more functionality
+   =================================================================== */
+
+.blog-content {
+  padding: 80px 0;
+  background: #000000;
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+}
+
+.blog-posts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+  margin-bottom: 40px;
+  
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+.blog-post-item {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.3s ease;
+  
+  &.blog-post-hidden {
+    display: none;
+  }
+  
+  &.blog-post-loading {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+}
+
+/* Show More Button
+   ========================================== */
+.blog-show-more {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.blog-show-more__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: transparent;
+  border: 2px solid #ffffff;
+  color: #ffffff;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    background-color: #ffffff;
+    color: #000000;
+  }
+  
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+.blog-show-more__loader {
+  color: inherit;
+}

@@ -22,7 +22,7 @@ if (is_wp_error($story_categories)) {
 }
 ?>
 
-<div class="success-stories-search" style="position: relative;">
+<div class="success-stories-search" style="position: relative; padding-bottom: 20px;">
     <div class="container">
         <div class="success-stories-search-form">
             <form method="get" class="success-stories-search__form" role="search">
@@ -95,6 +95,5 @@ if (is_wp_error($story_categories)) {
         </div>
     </div>
     
-    <!-- Bottom Border -->
-    <div class="bottom-border" style="position: absolute; bottom: 0; left: 50%; width: 100vw; height: 1px; background-color: #ffffff; z-index: 3; transform: translateX(-50%);"></div>
+    <!-- Bottom border handled by .success-stories-search::after in CSS -->
 </div>

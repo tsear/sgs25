@@ -26,7 +26,7 @@ if (is_wp_error($grant_categories) || empty($grant_categories)) {
 }
 ?>
 
-<div class="grants-search" style="position: relative;">
+<div class="grants-search" style="position: relative; padding-bottom: 20px;">
     <div class="container">
         <div class="grants-search-form">
             <form method="get" class="grants-search__form" role="search">
@@ -99,6 +99,5 @@ if (is_wp_error($grant_categories) || empty($grant_categories)) {
         </div>
     </div>
     
-    <!-- Bottom Border -->
-    <div class="bottom-border" style="position: absolute; bottom: 0; left: 50%; width: 100vw; height: 1px; background-color: #ffffff; z-index: 3; transform: translateX(-50%);"></div>
+    <!-- Bottom border handled by .grants-search::after in CSS -->
 </div>

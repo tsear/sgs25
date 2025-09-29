@@ -16,7 +16,7 @@ $blog_categories = get_categories(array(
 ));
 ?>
 
-<div class="blog-search" style="position: relative;">
+<div class="blog-search" style="position: relative; padding-bottom: 20px;">
     <div class="container">
         <div class="blog-search-form">
             <form method="get" class="blog-search__form" role="search">
@@ -89,6 +89,5 @@ $blog_categories = get_categories(array(
         </div>
     </div>
     
-    <!-- Bottom Border -->
-    <div class="bottom-border" style="position: absolute; bottom: 0; left: 50%; width: 100vw; height: 1px; background-color: #ffffff; z-index: 3; transform: translateX(-50%);"></div>
+    <!-- Bottom border handled by .blog-search::after in CSS -->
 </div>

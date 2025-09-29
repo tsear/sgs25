@@ -1,9 +1,9 @@
 /* ===================================================================
-   GRANTS GRID STYLES
-   Styles for the grants grid layout and show more functionality
+   BLOG GRID STYLES
+   Styles for the blog grid layout and show more functionality
    =================================================================== */
 
-.grants-content {
+.blog-content {
   padding: 80px 0;
   background: #000000;
   position: relative;
@@ -30,7 +30,7 @@
   }
 }
 
-.grants-posts-grid {
+.blog-posts-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 30px;
@@ -42,16 +42,16 @@
   }
 }
 
-.grants-post-item {
+.blog-post-item {
   opacity: 1;
   transform: translateY(0);
   transition: all 0.3s ease;
   
-  &.grants-post-hidden {
+  &.blog-post-hidden {
     display: none;
   }
   
-  &.grants-post-loading {
+  &.blog-post-loading {
     opacity: 0;
     transform: translateY(20px);
   }
@@ -59,54 +59,36 @@
 
 /* Show More Button
    ========================================== */
-.grants-show-more {
+.blog-show-more {
   text-align: center;
   margin-top: 40px;
 }
 
-.grants-show-more__btn {
+.blog-show-more__btn {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
-  background: linear-gradient(135deg, #FFBC41 0%, #FFD700 100%);
-  color: white;
-  border: none;
-  padding: 16px 32px;
-  border-radius: 50px;
-  font-weight: 600;
+  gap: 10px;
+  background: transparent;
+  border: 2px solid #ffffff;
+  color: #ffffff;
+  padding: 12px 24px;
   font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
   cursor: pointer;
   transition: all 0.3s ease;
   
   &:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(255, 188, 65, 0.3);
+    background-color: #ffffff;
+    color: #000000;
   }
   
   &:disabled {
-    opacity: 0.6;
+    opacity: 0.5;
     cursor: not-allowed;
-    
-    &:hover {
-      transform: none;
-      box-shadow: none;
-    }
   }
 }
 
-.grants-show-more__loader {
-  color: white;
-  
-  svg {
-    animation: spin 2s linear infinite;
-  }
-}
-
-@keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.blog-show-more__loader {
+  color: inherit;
 }

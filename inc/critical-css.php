@@ -40,8 +40,12 @@ class SGS_Critical_CSS {
                     // Mark which critical CSS was loaded (for debugging)
                     echo '<!-- Critical CSS loaded: ' . $critical_css_file . ' -->' . "\n";
                     
-                    // Add deferred main CSS loading
-                    $main_css_url = get_stylesheet_uri();
+                    // Add deferred main CSS loading with cache-busting version
+                    $main_css_path = get_stylesheet_directory() . '/style.css';
+                    $main_css_url  = get_stylesheet_uri();
+                    $version_param = file_exists($main_css_path) ? filemtime($main_css_path) : SGS_THEME_VERSION;
+                    $main_css_url  = add_query_arg('ver', $version_param, $main_css_url);
+
                     echo '<link rel="preload" href="' . esc_url($main_css_url) . '" as="style" onload="this.onload=null;this.rel=\'stylesheet\'">' . "\n";
                     echo '<noscript><link rel="stylesheet" href="' . esc_url($main_css_url) . '"></noscript>' . "\n";
                 }
@@ -55,9 +59,9 @@ class SGS_Critical_CSS {
      * @return string|false Critical CSS filename (without extension) or false
      */
     private static function get_critical_css_file() {
-        // Homepage - using minimal critical CSS for performance
+        // Homepage
         if (is_front_page()) {
-            return 'critical-home-minimal';
+            return 'critical-home';
         }
         
         // Blog pages (main blog, categories, tags, author, search)
