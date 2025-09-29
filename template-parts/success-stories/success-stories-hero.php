@@ -15,7 +15,7 @@
         
         <!-- SVG Container -->
         <div class="success-stories-header__svg-container">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/group-18.svg" alt="" />
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/blue-rocket-div.svg" alt="" />
         </div>
         
         <!-- Description -->

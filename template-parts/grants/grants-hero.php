@@ -1,37 +1,25 @@
 <?php
 /**
- * Grants Hero Section
- * Based on contact header structure with grants-specific content
+ * Grants Hero Section (mirrors Success Stories hero structure)
  */
 ?>
 
 <section class="grants-header">
     <div class="grants-header__container">
-        <div class="grants-header__content">
-            <!-- Left Column: Title Only -->
-            <div class="grants-header__left-column">
-                <h1 class="grants-header__title">
-                    <strong style="color: #ffffff;"><em>Grant Opportunities</em></strong>
-                </h1>
-            </div>
-            
-            <!-- Right Column: Description and Graphics -->
-            <div class="grants-header__right-column">
-                <div class="grants-header__description">
-                    <p>Discover funding opportunities that align with your mission. Browse current grants, track deadlines, and find the resources you need to make your vision a reality.</p>
-                </div>
-                
-                <!-- Circle graphic -->
-                <div class="grants-header__circle grants-header__circle--main">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/yellow-circle.png" alt="" style="width: 100%; height: 100%; object-fit: cover;" />
-                </div>
-            </div>
-            
-            <!-- Divider (Vertical on desktop, horizontal on mobile) -->
-            <div class="grants-header__divider"></div>
-            
-            <!-- Bottom Border -->
-            <div class="bottom-border" style="position: absolute; bottom: 0; left: 50%; width: 100vw; height: 1px; background-color: #ffffff; z-index: 3; transform: translateX(-50%);"></div>
+        
+        <!-- Title -->
+        <div class="grants-header__title-frame">
+            <h1 class="grants-header__title">Grant Opportunities</h1>
+        </div>
+        
+        <!-- SVG Container -->
+        <div class="grants-header__svg-container">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/yellow-rocket-div.svg" alt="" />
+        </div>
+        
+        <!-- Description -->
+        <div class="grants-header__description">
+            <p>Discover funding opportunities that align with your mission. Browse current grants, track deadlines, and find the resources you need to make your vision a reality.</p>
         </div>
     </div>
 </section>

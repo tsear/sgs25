@@ -5,7 +5,7 @@
 
 .blog-search {
   background: linear-gradient(135deg, $color-brand-pink 0%, #ff1a6b 100%);
-  padding: 60px 0;
+  padding: 60px 0; // bottom space handled by form margin
   position: relative;
   
   // Full-bleed bottom white line anchored to section bottom
@@ -36,6 +36,7 @@
   padding: 40px;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(10px);
+  margin-bottom: 50px; // gap to bottom border
 }
 
 .blog-search__form {
