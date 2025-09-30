@@ -42,6 +42,8 @@ $_GET['success_story_category'] = $current_category->slug;
     
     <?php get_template_part('template-parts/success-stories/success-stories-search-form'); ?>
     <?php get_template_part('template-parts/success-stories/success-stories-grid'); ?>
+
+    <?php get_template_part('template-parts/newsletter-signup'); ?>
 </main>
 
 <?php get_footer(); ?>

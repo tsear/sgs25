@@ -19,7 +19,7 @@ $blog_categories = get_categories(array(
 <div class="blog-search" style="position: relative; padding-bottom: 20px;">
     <div class="container">
         <div class="blog-search-form">
-            <form method="get" class="blog-search__form" role="search">
+            <form method="get" class="blog-search__form" role="search" action="<?php echo esc_url(home_url('/')); ?>">
                 <!-- Hidden field to specify post type for search -->
                 <input type="hidden" name="post_type" value="post">
                 

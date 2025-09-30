@@ -23,6 +23,7 @@ if ($post_type === 'success_story') {
     get_template_part('template-parts/success-stories/success-stories-hero');
     get_template_part('template-parts/success-stories/success-stories-search-form');
     get_template_part('template-parts/success-stories/success-stories-search-results');
+    get_template_part('template-parts/newsletter-signup');
     get_footer();
     return;
 }

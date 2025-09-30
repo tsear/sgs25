@@ -14,6 +14,8 @@ get_header(); ?>
     
     <?php get_template_part('template-parts/grants/grants-grid'); ?>
 
+    <?php get_template_part('template-parts/newsletter-signup'); ?>
+
 </main>
 
 <?php get_footer(); ?>

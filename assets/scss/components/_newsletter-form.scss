@@ -1,87 +1,114 @@
 // =============================================================================
-// Newsletter Form Component
+// Newsletter Form Component (Global, reused everywhere)
+// Matches Figma spec: black band, white top/bottom borders, 100px min height
 // =============================================================================
 
 .newsletter-form {
-  padding-bottom: 20px;
-  
+  box-sizing: border-box;
+  position: relative;
+  width: 100%;
+  min-height: 100px;
+  background: #000000;
+  border-top: 1px solid #ffffff;
+  border-bottom: 1px solid #ffffff;
+  display: flex;
+  align-items: center;
+
+  // Align inner container horizontally
+  > .container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+
   &__form {
     display: flex;
-    flex-direction: column;
-    gap: 1.25rem;
-    max-width: 420px;
-    
-    @media (max-width: 479px) {
-      max-width: 270px;
-    }
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
   }
-  
+
+  // Label + input grouped inline
   &__field {
     display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px; // spacing between label and input
   }
-  
+
   &__label {
     color: #ffffff;
-    font-size: 1.25rem;
     font-family: 'Poppins', Arial, sans-serif;
     font-weight: 600;
-    
-    @media (max-width: 479px) {
-      font-size: 1.125rem;
-    }
+    font-size: 24px;
+    line-height: 18px; // 75% as per Figma
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
   }
-  
+
   &__input {
+    box-sizing: border-box;
+    width: 266px;
     height: 45px;
-    padding: 0 1rem;
-    background-color: #ffffff;
-    border: none;
+    padding: 8px 20px;
+    background-color: #000000;
+    border: 1px solid #ffffff;
     border-radius: 0;
-    color: #000000;
-    font-size: 1rem;
+    color: #ffffff;
+    font-size: 16px;
     font-family: 'Poppins', Arial, sans-serif;
     font-weight: 400;
-    
-    @media (max-width: 479px) {
-      font-size: 0.875rem;
-    }
-    
-    &::placeholder {
-      color: #666666;
-    }
-    
+
+    &::placeholder { color: #cccccc; }
+
     &:focus {
-      outline: 2px solid #d81259;
+      outline: 2px solid #ffffff;
       outline-offset: 0;
     }
   }
-  
+
   &__button {
+    width: 165px;
     height: 45px;
-    background-color: #d81259;
-    color: #ffffff;
+    padding: 10px 32px;
+    background-color: #ffffff;
+    color: #000000;
     border: none;
     border-radius: 0;
-    font-size: 1rem;
     font-family: 'Poppins', Arial, sans-serif;
-    font-weight: 600;
+    font-style: italic;
+    font-weight: 800;
+    font-size: 18px;
+    line-height: 25px; // per Figma
     text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
-    transition: background-color 0.2s ease;
-    
-    @media (max-width: 479px) {
-      font-size: 0.875rem;
-    }
-    
-    &:hover {
-      background-color: #b01048;
-    }
-    
-    &:focus {
-      outline: 2px solid #ffffff;
-      outline-offset: 2px;
-    }
+
+    &:focus { outline: 2px solid #ffffff; outline-offset: 2px; }
+  }
+
+  &__message {
+    margin-top: 8px;
+    color: #ffffff;
+    font-family: 'Poppins', Arial, sans-serif;
+    font-size: 15px;
+    min-height: 20px;
+    &--success { color: #36d399; }
+    &--error { color: #ff6b6b; }
+    &--info { color: #facc15; }
+  }
+
+  // Responsive: stack on narrow screens
+  @media (max-width: 768px) {
+    > .container { align-items: stretch; }
+    &__form { flex-direction: column; align-items: stretch; gap: 12px; }
+    &__field { flex-direction: column; align-items: stretch; gap: 8px; }
+    &__label { white-space: normal; }
+    &__input { width: 100%; }
+    &__button { width: 100%; }
   }
 }

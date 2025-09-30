@@ -5,6 +5,7 @@
 
 import BlogShowMore from './modules/blog-showmore.js';
 import BlogSearch from './modules/blog-search.js';
+import initNewsletter from './modules/newsletter.js';
 
 /**
  * Typed Animation Class
@@ -103,6 +104,7 @@ class SGSTheme {
     init() {
         this.initTypedAnimation();
         this.initBlogModules();
+    this.initNewsletter();
         this.addCustomStyles();
     }
     
@@ -118,6 +120,11 @@ class SGSTheme {
         // Initialize blog functionality
         this.blogShowMore = new BlogShowMore();
         this.blogSearch = new BlogSearch();
+    }
+    
+    initNewsletter() {
+        // Initialize HubSpot newsletter if container exists
+        initNewsletter();
     }
     
     addCustomStyles() {

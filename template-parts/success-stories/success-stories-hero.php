@@ -20,7 +20,7 @@
         
         <!-- Description -->
         <div class="success-stories-header__description">
-            <p>Navigating the nonprofit world means juggling big missions with tight resources, and smart grant management can be the difference between vision and impact. Here, we unpack best-practice tools, stories, and strategies to help organizations win and steward funding with confidence.</p>
+            <p>Find out for yourself how our clients have transformed their grant management processes and achieved remarkable outcomes.</p>
         </div>
     </div>
 </section>

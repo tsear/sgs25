@@ -14,6 +14,8 @@ get_header(); ?>
     
     <?php get_template_part('template-parts/success-stories/success-stories-grid'); ?>
 
+    <?php get_template_part('template-parts/newsletter-signup'); ?>
+
 </main>
 
 <?php get_footer(); ?>

@@ -82,7 +82,7 @@ $posts_per_load = 6; // Show 6 posts initially, then 6 more on each "Show More" 
             <?php endif; ?>
             
         <?php else : ?>
-            <?php get_template_part('template-parts/success-stories/no-results'); ?>
+            <?php get_template_part('template-parts/success-stories/success-stories-no-results'); ?>
         <?php endif; ?>
     </div>
 </section>

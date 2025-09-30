@@ -67,6 +67,18 @@ function sgs_enqueue_assets() {
     wp_localize_script('sgs-main', 'sgs_ajax', array(
         'ajax_url' => admin_url('admin-ajax.php'),
         'nonce' => wp_create_nonce('sgs_nonce'),
+        'hubspot' => array(
+            'portalId' => function_exists('sgs_get_hubspot_portal_id') ? sgs_get_hubspot_portal_id() : '',
+            'forms' => array(
+                'newsletter' => function_exists('sgs_get_hubspot_form_id') ? sgs_get_hubspot_form_id('newsletter') : '',
+                'contact' => function_exists('sgs_get_hubspot_form_id') ? sgs_get_hubspot_form_id('contact') : '',
+                'grant' => function_exists('sgs_get_hubspot_form_id') ? sgs_get_hubspot_form_id('grant') : '',
+            ),
+            'context' => array(
+                'pageUri' => esc_url_raw(home_url(add_query_arg(array(), $_SERVER['REQUEST_URI']))),
+                'pageName' => wp_get_document_title(),
+            )
+        )
     ));
 }
 
