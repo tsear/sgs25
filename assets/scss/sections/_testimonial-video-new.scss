@@ -1,0 +1,208 @@
+/* =========================================================================
+     Testimonial Video Section (Direct copy from financial compliance structure)
+     ========================================================================= */
+
+.testimonial-video-section {
+    box-sizing: border-box;
+    background: #000000;
+    border-width: 1px 0px;
+    border-style: solid;
+    border-color: #FFFFFF;
+    position: relative;
+    width: 100%;
+    isolation: isolate;
+    padding: 72px 0; // natural vertical rhythm
+}
+
+.testimonial-video-container {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    position: relative;
+    max-width: $container-max-width;
+    margin: 0 auto;
+    padding: 0 $container-padding;
+}
+
+.testimonial-video__grid {
+    display: flex;
+    gap: 48px;
+    align-items: stretch; // equal height columns
+    flex-wrap: wrap;
+
+    @media (max-width: 960px) {
+        gap: 24px;
+    }
+}
+
+.testimonial-video__left,
+.testimonial-video__right {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    flex: 1 1 0;
+    min-width: 260px;
+}
+
+.testimonial-video__right {
+    align-items: center;
+    text-align: center;
+}
+
+.testimonial-video__title-frame {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    padding: 0;
+    gap: 16px;
+}
+
+.testimonial-video__title {
+    font-family: 'Poppins', Arial, sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 1.05;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    margin: 0;
+    @media (max-width: 1024px) { font-size: 40px; }
+    @media (max-width: 768px)  { font-size: 34px; }
+    @media (max-width: 480px)  { font-size: 28px; }
+}
+
+.testimonial-video__svg-container {
+    width: clamp(240px, 40vw, 600px);
+    height: 50px;
+    position: relative;
+    overflow: visible;
+    img { width: 100%; height: auto; object-fit: contain; }
+}
+
+.testimonial-video__description {
+    max-width: 640px;
+    p {
+        font-family: 'Poppins', Arial, sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 150%;
+        color: #FFFFFF;
+        margin: 0;
+        @media (max-width: 768px) { font-size: 16px; line-height: 140%; }
+        @media (max-width: 480px) { font-size: 14px; line-height: 130%; }
+    }
+}
+
+/* =========================================================================
+     Testimonial Video Slider (adapted from financial compliance RSS structure)
+     ========================================================================= */
+
+.testimonial-video__slider {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.testimonial-slide {
+    display: none;
+    
+    &.is-active {
+        display: block;
+    }
+}
+
+.testimonial-slide__video {
+    width: 100%;
+    aspect-ratio: 16/9;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 16px;
+    
+    .video-iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
+}
+
+.testimonial-slide__meta {
+    text-align: left;
+}
+
+.testimonial-slide__quote {
+    font-family: 'Poppins', Arial, sans-serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.4;
+    color: #FFFFFF;
+    margin-bottom: 12px;
+    
+    @media (max-width: 768px) {
+        font-size: 14px;
+    }
+}
+
+.testimonial-slide__attribution {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    
+    span {
+        font-family: 'Poppins', Arial, sans-serif;
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.8);
+    }
+    
+    .testimonial-slide__author {
+        font-weight: 600;
+        color: #FFFFFF;
+    }
+}
+
+/* Browse All Button (copied from financial compliance) */
+.testimonial-video__browse-all {
+    position: absolute;
+    bottom: -45px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+.browse-all-btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: transparent;
+    color: #FFFFFF;
+    text-decoration: none;
+    font-family: 'Poppins', Arial, sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border: 2px solid #FFFFFF;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    
+    &:hover {
+        background-color: #FFFFFF;
+        color: #000000;
+    }
+}
+
+/* Page Indicator (copied from financial compliance) */
+.page-indicator {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    font-family: 'Poppins', Arial, sans-serif;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.6);
+    font-weight: 400;
+}

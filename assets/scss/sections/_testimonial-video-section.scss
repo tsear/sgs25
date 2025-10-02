@@ -1,331 +1,192 @@
-
-// _testimonial-video.scss
-// Elizabeth Crisfield testimonial video section - Exact Tilda Recreation (rec1176888166)
-// Pixel-perfect match to original Tilda design
+/* =========================================================================
+     Testimonial Video Section (Direct copy from financial compliance structure)
+     ========================================================================= */
 
 .testimonial-video-section {
-  position: relative;
-  width: 100%;
-  height: 486px;
-  background-color: #000000;
-  overflow: visible;
-  
-  @media screen and (max-width: 959px) {
-    height: 686px;
-  }
-  
-  @media screen and (max-width: 639px) {
-    height: 666px;
-  }
-  
-  @media screen and (max-width: 479px) {
-    height: 500px;
-  }
-
-  // Background decorative ellipse (elem 1746401491587)
-  .ellipse-decoration {
-    position: absolute;
-    z-index: 3;
-    top: -91px;
-    left: calc(50% - 600px + 880px);
-    width: 500px;
-    height: auto;
-    opacity: 0.75;
-    
-    @media screen and (max-width: 1199px) {
-      top: -270px;
-      left: calc(50% - 480px + 662px);
-    }
-    
-    @media screen and (max-width: 959px) {
-      top: 128px;
-      left: calc(50% - 320px + 218px);
-    }
-    
-    @media screen and (max-width: 639px) {
-      top: 86px;
-      left: calc(50% - 240px + 173px);
-    }
-    
-    @media screen and (max-width: 479px) {
-      top: -15px;
-      left: calc(50% - 160px + -190px);
-    }
-    
-    .ellipse-img {
-      width: 100%;
-      height: auto;
-    }
-  }
-
-  // Union background graphic (elem 1746325956265)
-  .union-background {
-    position: absolute;
-    z-index: 3;
-    top: 0px;
-    left: calc(50% - 600px + 700px);
-    width: 500px;
-    height: 486px;
-    
-    @media screen and (max-width: 1199px) {
-      left: calc(50% - 480px + 492px);
-    }
-    
-    @media screen and (max-width: 959px) {
-      top: 284px;
-      left: calc(50% - 320px + 70px);
-    }
-    
-    @media screen and (max-width: 639px) {
-      top: 287px;
-      left: calc(50% - 240px + -9px);
-    }
-    
-    @media screen and (max-width: 479px) {
-      top: 109px;
-      left: calc(50% - 160px + 0px);
-      width: 320px;
-    }
-    
-    .union-img {
-      width: 100%;
-      height: auto;
-    }
-  }
-
-  // Border lines
-  .border-line {
-    position: absolute;
-    z-index: 3;
-    background-color: #ffffff;
-    
-    &.border-line-top {
-      top: 0px;
-      left: calc(50% - 600px + -360px);
-      width: 1920px;
-      height: 1px;
-    }
-    
-    &.border-line-bottom {
-      top: 485px;
-      left: calc(50% - 600px + -360px);
-      width: 1920px;
-      height: 1px;
-      
-      @media screen and (max-width: 959px) {
-        top: 685px;
-      }
-      
-      @media screen and (max-width: 639px) {
-        top: 665px;
-      }
-      
-      @media screen and (max-width: 479px) {
-        top: 499px;
-      }
-    }
-  }
-
-  // Vertical separator line (elem 1746325912058)
-  .separator-line {
-    position: absolute;
-    z-index: 3;
-    top: 1px;
-    left: calc(50% - 600px + 720px);
-    width: 1px;
-    height: 486px;
-    background-color: #ffffff;
-    
-    @media screen and (max-width: 1199px) {
-      top: 0px;
-      left: calc(50% - 480px + 514px);
-    }
-    
-    @media screen and (max-width: 959px) {
-      left: calc(50% - 320px + 695px);
-    }
-    
-    @media screen and (max-width: 479px) {
-      top: 20px;
-      left: calc(50% - 160px + 319px);
-      height: 550px;
-      opacity: 0;
-    }
-  }
-
-  .testimonial-container {
+    box-sizing: border-box;
+    background: #000000;
+    border-width: 1px 0px;
+    border-style: solid;
+    border-color: #FFFFFF;
     position: relative;
-    height: 100%;
-    z-index: 4;
-  }
+    width: 100%;
+    isolation: isolate;
+    padding: 72px 0; // natural vertical rhythm
+}
 
-  // Quote content area - flexbox container for proper stacking - moved higher to align quote at top
-  .testimonial-video-quote {
-    position: absolute;
-    z-index: 3;
-    top: 60px; // Moved up from 200px to position quote at the top
-    left: calc(50% - 600px + 760px);
-    width: 400px;
-    height: 350px; // Give container height so flexbox can distribute space
+.testimonial-video-container {
     display: flex;
     flex-direction: column;
-    gap: 20px; // Nice spacing between elements
-    
-    @media screen and (max-width: 1199px) {
-      top: 80px; // Moved up from 220px
-      left: calc(50% - 480px + 530px);
-      width: 350px;
-      height: 320px;
-    }
-    
-    @media screen and (max-width: 959px) {
-      top: 350px; // Moved up from 450px
-      left: calc(50% - 320px + 89px);
-      width: 300px;
-      height: 280px;
-    }
-    
-    @media screen and (max-width: 639px) {
-      top: 320px; // Moved up from 450px
-      left: calc(50% - 240px + 14px);
-      width: 280px;
-      height: 280px;
-    }
-    
-    @media screen and (max-width: 479px) {
-      top: 240px; // Moved up from 280px
-      left: calc(50% - 160px + 10px);
-      width: 250px;
-      height: 220px;
-    }
+    gap: 32px;
+    position: relative;
+    max-width: $container-max-width;
+    margin: 0 auto;
+    padding: 0 $container-padding;
+}
 
-    // Blockquote wrapper
-    .testimonial-quote {
-      display: flex;
-      flex-direction: column;
-      margin: 0; // Remove default blockquote margins
-      padding: 0; // Remove default blockquote padding
-      height: 100%; // Take full height of parent
+.testimonial-video__grid {
+    display: flex;
+    gap: 48px;
+    align-items: stretch; // equal height columns
+    flex-wrap: wrap;
 
-      // Quote text styling - bold and positioned at top
-      .quote-text {
-        color: #ffffff;
-        font-size: 28px;
+    @media (max-width: 960px) {
+        gap: 24px;
+    }
+}
+
+.testimonial-video__left,
+.testimonial-video__right {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    flex: 1 1 0;
+    min-width: 260px;
+}
+
+.testimonial-video__right {
+    align-items: center;
+    text-align: center;
+}
+
+.testimonial-video__title-frame {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    padding: 0;
+    gap: 16px;
+}
+
+.testimonial-video__title {
+    font-family: 'Poppins', Arial, sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 1.05;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    margin: 0;
+    @media (max-width: 1024px) { font-size: 40px; }
+    @media (max-width: 768px)  { font-size: 34px; }
+    @media (max-width: 480px)  { font-size: 28px; }
+}
+
+.testimonial-video__svg-container {
+    width: clamp(240px, 40vw, 600px);
+    height: 50px;
+    position: relative;
+    overflow: visible;
+    img { width: 100%; height: auto; object-fit: contain; }
+}
+
+.testimonial-video__description {
+    max-width: 640px;
+    p {
         font-family: 'Poppins', Arial, sans-serif;
-        line-height: 1.2;
-        font-weight: 700; // Bold weight for the quote
-        text-align: left;
-        
-        @media screen and (max-width: 1199px) {
-          font-size: 24px;
-        }
-        
-        @media screen and (max-width: 959px) {
-          font-size: 22px;
-        }
-        
-        @media screen and (max-width: 639px) {
-          font-size: 20px;
-        }
-        
-        @media screen and (max-width: 479px) {
-          font-size: 16px;
-        }
-      }
-
-      // Quote text - stays at top (natural position)
-      // (styling already defined above)
-
-      // Attribution - push to bottom with auto margin
-      .quote-attribution {
-        color: #ffffff; // White text instead of pink
-        font-size: 12px; // Much smaller than the 28px quote text
-        font-family: 'Poppins', Arial, sans-serif;
-        line-height: 1.1;
-        font-weight: 700; // Based on original Tilda design - entire attribution is bold
-        margin: 0; // Remove default footer margins
-        margin-top: auto; // Push attribution (and button after it) to bottom
-        
-        @media screen and (max-width: 479px) {
-          font-size: 10px;
-        }
-
-        // Individual styling for name, title, organization - all bold in original Tilda design
-        .quote-author {
-          font-weight: 700; // Name is bold
-        }
-        
-        .quote-title,
-        .quote-org {
-          font-weight: 700; // Title and org also bold to match original
-        }
-      }
-
-      // Button positioning - flows naturally after attribution
-      .request-demo-button {
-        align-self: flex-start; // Align to left of container
-        margin-top: 20px; // Space between attribution and button
-      }
+        font-style: normal;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 150%;
+        color: #FFFFFF;
+        margin: 0;
+        @media (max-width: 768px) { font-size: 16px; line-height: 140%; }
+        @media (max-width: 480px) { font-size: 14px; line-height: 130%; }
     }
-  }
+}
 
-  // Video section (elem 1746326577962)
-  .testimonial-video {
-    position: absolute;
-    z-index: 3;
-    top: calc(50% - 184px); // Vertically center the 368px video in the section
-    left: calc(50% - 600px + 300px - 314px); // Center in left column: start of left column + half column width - half video width
-    width: 629px;
-    height: 368px;
-    border-radius: 0px;
+/* =========================================================================
+     Testimonial Video Slider (adapted from financial compliance RSS structure)
+     ========================================================================= */
+
+.testimonial-video__slider {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.testimonial-slide {
+    display: none;
+    
+    &.is-active {
+        display: block;
+    }
+}
+
+.testimonial-slide__video {
+    width: 100%;
+    aspect-ratio: 16/9;
+    border-radius: 8px;
     overflow: hidden;
-    opacity: 0.9;
+    margin-bottom: 16px;
     
-    @media screen and (max-width: 1199px) {
-      top: calc(50% - 132px); // Vertically center the 265px video
-      left: calc(50% - 480px + 240px - 233px); // Center in left column for 960px layout
-      width: 466px;
-      height: 265px;
-    }
-    
-    @media screen and (max-width: 959px) {
-      top: calc(50% - 132px); // Vertically center the 265px video (same height as 1199px)
-      left: calc(50% - 320px + 160px - 233px); // Center in left column for 640px layout
-    }
-    
-    @media screen and (max-width: 639px) {
-      top: calc(50% - 126px); // Vertically center the 252px video
-      left: calc(50% - 240px + 120px - 226px); // Center in left column for 480px layout
-      width: 452px;
-      height: 252px;
-    }
-    
-    @media screen and (max-width: 479px) {
-      top: calc(50% - 95px); // Vertically center the 190px video
-      left: calc(50% - 160px + 80px - 148px); // Center in left column for 320px layout
-      width: 297px;
-      height: 190px;
-    }
-    
-    .video-wrapper {
-      width: 100%;
-      height: 100%;
-      
-      .video-iframe {
+    .video-iframe {
         width: 100%;
         height: 100%;
         border: none;
-        display: block;
-      }
     }
-  }
+}
 
-  .testimonial-content {
-    position: relative;
-    z-index: 4;
-  }
+.testimonial-slide__meta {
+    text-align: left;
+}
 
-  
+.testimonial-slide__quote {
+    font-family: 'Poppins', Arial, sans-serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.4;
+    color: #FFFFFF;
+    margin-bottom: 12px;
+    
+    @media (max-width: 768px) {
+        font-size: 14px;
+    }
+}
 
+.testimonial-slide__attribution {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    
+    span {
+        font-family: 'Poppins', Arial, sans-serif;
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.8);
+    }
+    
+    .testimonial-slide__author {
+        font-weight: 600;
+        color: #FFFFFF;
+    }
+}
 
+// Browse All Button - positioned in left column
+.testimonial-video__browse-all {
+    margin-top: 24px;
+    
+    .browse-all-btn {
+        display: inline-block;
+        padding: 6px 12px;
+        background: transparent;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        border-radius: 4px;
+        color: #ffffff;
+        font-size: 12px;
+        font-family: 'Poppins', Arial, sans-serif;
+        font-weight: 500;
+        text-decoration: none;
+        transition: all 0.2s ease;
+        
+        &:hover {
+            border-color: #ffffff;
+            background: rgba(255, 255, 255, 0.1);
+            text-decoration: none;
+        }
+    }
 }

@@ -1,61 +1,83 @@
 <?php
 /**
- * Template part for displaying the mission separator section
- *
- * @package sgs25
+ * Mission Separator Section (EXACT copy from Financial Compliance)
+ * Left: title + rocket SVG (mirrors post-type hero styling)  
+ * Right: blurb + CTA
  */
 ?>
 
-<!-- Mission Separator Section -->
-<section class="mission-separator" style="height: 210px; background-color: #000000; position: relative;">
-    <!-- Union SVG Background - From left edge to 25% of viewport -->
-    <div class="mission-separator__grid" style="position: absolute; top: 0; left: 0; width: 25vw; height: 100%; z-index: 1; overflow: hidden;">
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/tild6535-3966-4638-a265-393438636538__union.svg" alt="" style="width: 100%; height: 100%; object-fit: cover;" />
-    </div>
-
-    <!-- Ellipse Background - Bottom left corner of left column -->
-    <div class="mission-separator__ellipse" style="position: absolute; bottom: 0; left: 0; width: 25vw; height: 100%; z-index: 1; overflow: hidden; pointer-events: none;">
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/tild6162-6461-4233-b730-396261356134__ellipse_13_1.png" alt="" style="position: absolute; bottom: -100px; left: 0px; width: 400px; height: 400px; object-fit: contain;" />
-    </div>
-
-    <div class="mission-separator__container" style="width: 100%; height: 100%; position: relative; max-width: 1200px; margin: 0 auto;">
-        
-        <!-- Top Border -->
-        <div class="top-border" style="position: absolute; top: 0; left: 50%; width: 100vw; height: 1px; background-color: #ffffff; z-index: 3; transform: translateX(-50%);"></div>
-        
-        <!-- Bottom Border -->
-        <div class="bottom-border" style="position: absolute; top: 209px; left: 50%; width: 100vw; height: 1px; background-color: #ffffff; z-index: 3; transform: translateX(-50%);"></div>
-        
-        <!-- Vertical Divider -->
-        <div class="vertical-divider" style="position: absolute; top: 0; left: 25%; width: 1px; height: 100%; background-color: #ffffff; z-index: 3;"></div>
-        
-        <!-- Main Title -->
-        <div class="mission-title" style="position: absolute; top: 50%; left: 20px; transform: translateY(-50%); width: calc(25% - 40px); z-index: 3; color: #ffffff; font-size: 32px; font-family: 'Poppins', Arial, sans-serif; line-height: 1.25; font-weight: 900;">
-            Our Mission is<br>to Fuel Yours
-        </div>
-        
-        <!-- Right Content: Bullets + Button in a row -->
-        <div class="mission-attributes" style="position: absolute; top: 50%; left: calc(25% + 50px); transform: translateY(-50%); display: flex; align-items: center; gap: 40px; z-index: 3;">
-            <!-- Bullet Points -->
-            <div class="mission-bullets" style="color: #ffffff; font-family: 'Poppins', Arial, sans-serif; font-size: 18px; font-weight: 600; line-height: 1.35;">
-                <p style="margin: 0 0 4px 0;">Eliminate Spreadsheets.</p>
-                <p style="margin: 0 0 4px 0;">Ensure Compliance.</p>
-                <p style="margin: 0;">Drive Strategy.</p>
+<section class="mission-separator-section">
+    <div class="mission-separator-container">
+        <div class="mission-separator__grid">
+            <!-- Left Column: RSS Slideshow -->
+            <div class="mission-separator__left">
+                <?php 
+                // Recent grants slideshow (3 latest)
+                $ms_recent_posts = new WP_Query([
+                    'post_type'           => 'grant_opportunity',
+                    'posts_per_page'      => 3,
+                    'ignore_sticky_posts' => true,
+                    'no_found_rows'       => true,
+                    'post_status'         => 'publish',
+                ]);
+                if ($ms_recent_posts->have_posts()) : ?>
+                    <div class="mission-separator__slider" data-ms-slider aria-label="Recent grant opportunities">
+                        <button class="ms-nav ms-nav--prev" aria-label="Previous grant">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+                            </svg>
+                        </button>
+                        <button class="ms-nav ms-nav--next" aria-label="Next grant">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+                            </svg>
+                        </button>
+                        <?php $i = 0; while ($ms_recent_posts->have_posts()) : $ms_recent_posts->the_post(); $i++; ?>
+                            <?php 
+                              $thumb = get_the_post_thumbnail_url(get_the_ID(), 'large');
+                              if (!$thumb) {
+                                  $thumb = get_template_directory_uri() . '/assets/images/blue-circle.png';
+                              }
+                            ?>
+                            <article class="ms-slide<?php echo $i === 1 ? ' is-active' : ''; ?>">
+                                <a class="ms-slide__image" href="<?php echo esc_url(get_permalink()); ?>">
+                                    <img src="<?php echo esc_url($thumb); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" />
+                                </a>
+                                <div class="ms-slide__meta">
+                                    <a class="ms-slide__title" href="<?php echo esc_url(get_permalink()); ?>"><?php echo esc_html(get_the_title()); ?></a>
+                                    <div class="ms-slide__byline">
+                                        <span class="ms-slide__date"><?php echo esc_html(get_the_date('M j, Y')); ?></span>
+                                    </div>
+                                </div>
+                            </article>
+                        <?php endwhile; ?>
+                        
+                        <!-- Browse All Button -->
+                        <div class="mission-separator__browse-all">
+                            <a href="<?php echo home_url('/grants'); ?>" class="browse-all-btn">Browse All</a>
+                        </div>
+                    </div>
+                    <?php wp_reset_postdata(); ?>
+                <?php endif; ?>
             </div>
-            
-            <!-- CTA Button -->
-            <div class="request-demo-button">
-                <a href="<?php echo home_url('/contact'); ?>" class="request-demo-btn">REQUEST A DEMO</a>
-                
-                <!-- Arrow Square -->
-                <div class="arrow-square">
-                    <a href="<?php echo home_url('/contact'); ?>">
-                        <!-- Arrow Icon -->
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/tild3965-6330-4137-a638-623161636534__vector.svg" alt="Arrow" />
-                    </a>
+
+            <!-- Right Column: Title + SVG + Description -->
+            <div class="mission-separator__right">
+                <div class="mission-separator__title-frame">
+                    <h2 class="mission-separator__title">Our Mission is to Fuel Yours</h2>
+                </div>
+                <div class="mission-separator__svg-container">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/yellow-rocket-div.svg" alt="" />
+                </div>
+                <div class="mission-separator__description">
+                    <p class="compliance-description">
+                        Find potential funding in our Grant Repository and rely on us to simplify management once the dollars arrive.
+                    </p>
                 </div>
             </div>
         </div>
-        
+
+        <!-- Optional: page indicator retained if used elsewhere -->
+        <div class="page-indicator">1/4</div>
     </div>
 </section>

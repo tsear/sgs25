@@ -37,48 +37,40 @@
         <!-- Card 1: Strategic Insights -->
         <div class="video-card">
             <div class="video-wrapper">
-                <video controls>
-                    <source src="https://tappa.tech/videos/scenario-planning.mp4" type="video/mp4">
-                </video>
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/strategic-resource-management.gif" alt="Strategic Resource Management" class="feature-gif">
             </div>
             <div class="card-content">
-                <p>Budgeting is the cornerstone of compliance, and MissionGranted's powerful budgeting and scenario planning tools provide a comprehensive view of how funding sources work together to support organizational goals - empowering teams to continually adapt to change, allocate resources effectively, and make bold, strategic decisions that maximize mission impact.</p>
+                <p>Budgeting keeps you compliant, and MissionGranted keeps it simple. Our tools pull all your funding sources into one clear view so you can see how they work together, plan for what-ifs, adjust when things change, and make confident decisions that move your mission forward.</p>
             </div>
         </div>
 
         <!-- Card 2: Automation -->
         <div class="video-card">
             <div class="video-wrapper">
-                <video controls>
-                    <source src="https://tappa.tech/videos/grant-management.mp4" type="video/mp4">
-                </video>
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/automation-over-spreadsheets.gif" alt="Automation Over Spreadsheets" class="feature-gif">
             </div>
             <div class="card-content">
-                <p>MissionGranted automates essential, yet labor-intensive, compliance tasks currently managed in spreadsheets like indirect cost allocations and personnel distributions, reducing potential costly errors and saving time. By simplifying compliance without sacrificing depth, MissionGranted enhances your team's internal capacity and helps them navigate complex processes.</p>
+                <p>MissionGranted takes the messy compliance work you’re stuck doing in spreadsheets—like indirect costs and payroll splits—and automates it. That means fewer mistakes, less wasted time, and more capacity for your team to focus on the bigger picture.</p>
             </div>
         </div>
 
         <!-- Card 3: Compliance -->
         <div class="video-card">
             <div class="video-wrapper">
-                <video controls>
-                    <source src="https://tappa.tech/videos/compliance.mp4" type="video/mp4">
-                </video>
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/simplified-compliance.gif" alt="Simplified Compliance" class="feature-gif">
             </div>
             <div class="card-content">
-                <p>MissionGranted is not just a tool, but a proactive, intelligence-driven partner, helping organizations stay ahead of compliance challenges while adhering to stringent regulations and managing finite resources. By providing risk alerts and strategic recommendations around budget and actual expense management, organizations can align funding with dynamic program needs and goals.</p>
+                <p>MissionGranted works alongside your team to spot compliance risks early and offer clear guidance on budgets and spending. With smarter alerts and recommendations, you can align funding to shifting program needs, stay compliant, and make the most of limited resources.</p>
             </div>
         </div>
 
         <!-- Card 4: Best Practices -->
         <div class="video-card">
             <div class="video-wrapper">
-                <video controls>
-                    <source src="https://tappa.tech/videos/cost-allocation.mp4" type="video/mp4">
-                </video>
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/audit-ready-data.gif" alt="Audit Ready Data" class="feature-gif">
             </div>
             <div class="card-content">
-                <p>Specifically designed for social impact organizations managing grants through a customer-driven product development approach, MissionGranted features an intuitive interface paired with embedded financial management best practices and real-time compliance education, helping to ensure accuracy, build confidence, and empower teams to meet regulatory requirements with ease.</p>
+                <p>Built for social impact organizations, MissionGranted combines an easy-to-use interface with built-in financial best practices and real-time compliance guidance. It keeps your numbers accurate, your team confident, and your organization ready to meet requirements without the stress.</p>
             </div>
         </div>
     </div>

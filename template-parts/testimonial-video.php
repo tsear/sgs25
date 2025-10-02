@@ -1,61 +1,61 @@
-<?php 
+<?php
 /**
- * Testimonial Video Section - Exact recreation of Tilda section rec1176888166
+ * Testimonial Video Section (two equal columns)
+ * Left: title + icon SVG + quote
+ * Right: YouTube video + CTA button
  */
 ?>
-<section class="testimonial-video-section" data-rec="1176888166">
-  
-  <!-- Background decorative ellipse -->
-  <div class="ellipse-decoration" data-elem-id="1746401491587">
-    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/tild6162-6461-4233-b730-396261356134__ellipse_13_1.png" alt="" class="ellipse-img">
-  </div>
-  
-  <!-- Union background graphic -->
-  <div class="union-background" data-elem-id="1746325956265">
-    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/tild6535-3966-4638-a265-393438636538__union.svg" alt="" class="union-img">
-  </div>
-  
-  <!-- Top border line -->
-  <div class="border-line border-line-top" data-elem-id="1746325850996"></div>
-  
-  <!-- Bottom border line -->
-  <div class="border-line border-line-bottom" data-elem-id="1746325876211"></div>
-  
-  <!-- Vertical separator line -->
-  <div class="separator-line" data-elem-id="1746325912058"></div>
-  
-  <div class="testimonial-container">
-    
-    <!-- Video Section -->
-    <div class="testimonial-video" data-elem-id="1746326577962">
-      <div class="video-wrapper">
-        <iframe 
-          src="https://www.youtube.com/embed/6KxLH0yfloM" 
-          title="Clearwater Conservancy Review of Grant Management" 
-          frameborder="0" 
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-          allowfullscreen
-          class="video-iframe">
-        </iframe>
-      </div>
-    </div>
-    <div class="testimonial-video-quote">
-      <blockquote class="testimonial-quote">
-        <span class="quote-text">“MissionGranted addressed all of the things I was looking for in a Grant management system”</span>
-        <footer class="quote-attribution">
-          <span class="quote-author">Elizabeth Crisfield</span><br>
-          <span class="quote-title">Executive Director</span><br>
-          <span class="quote-org">ClearWater Conservancy</span>
-        </footer>
-        <div class="request-demo-button">
-          <a href="<?php echo home_url('/testimonials'); ?>" class="request-demo-btn">ALL TESTIMONIALS</a>
-          <span class="arrow-square">
-            <a href="<?php echo home_url('/testimonials'); ?>">
-              <img src="<?php echo get_template_directory_uri(); ?>/assets/images/tild3965-6330-4137-a638-623161636534__vector.svg" alt="arrow" />
-            </a>
-          </span>
+
+<section class="testimonial-video-section">
+    <div class="testimonial-video-container">
+        <div class="testimonial-video__grid">
+            <!-- Left Column: Title + SVG + Quote -->
+            <div class="testimonial-video__left">
+                <div class="testimonial-video__title-frame">
+                    <h2 class="testimonial-video__title">What Our Clients Say</h2>
+                </div>
+                <div class="testimonial-video__svg-container">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/blue-rocket-div.svg" alt="" />
+                </div>
+                <div class="testimonial-video__description">
+                    <p class="testimonial-description">
+                        Real feedback from organizations transforming their grant management.
+                    </p>
+                </div>
+                
+                <!-- Browse All Button -->
+                <div class="testimonial-video__browse-all">
+                    <a href="<?php echo home_url('/testimonials'); ?>" class="browse-all-btn">Browse All</a>
+                </div>
+            </div>
+
+            <!-- Right Column: Video + CTA -->
+            <div class="testimonial-video__right">
+                                <div class="testimonial-video__slider" data-testimonial-slider aria-label="Client testimonial video">
+                    
+                    <div class="testimonial-slide is-active">
+                        <div class="testimonial-slide__video">
+                            <iframe 
+                                src="https://www.youtube.com/embed/6KxLH0yfloM" 
+                                title="Clearwater Conservancy Review of Grant Management" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                allowfullscreen
+                                class="video-iframe">
+                            </iframe>
+                        </div>
+                        <div class="testimonial-slide__meta">
+                            <div class="testimonial-slide__quote">"MissionGranted addressed all of the things I was looking for in a Grant management system"</div>
+                            <div class="testimonial-slide__attribution">
+                                <span class="testimonial-slide__author">Elizabeth Crisfield</span>
+                                <span class="testimonial-slide__title">Executive Director</span>
+                                <span class="testimonial-slide__org">ClearWater Conservancy</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </blockquote>
     </div>
-  </div>
+</section>
 </section>

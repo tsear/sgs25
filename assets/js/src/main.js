@@ -6,6 +6,10 @@
 import BlogShowMore from './modules/blog-showmore.js';
 import BlogSearch from './modules/blog-search.js';
 import initNewsletter from './modules/newsletter.js';
+import FinancialComplianceSlider from './modules/rss-feed-fincom.js';
+import ValuePropAnimations from './modules/value-prop-animations.js';
+import MissionGrantsSlider from './modules/rss-feed-mission-div.js';
+import RocketAnimation from './modules/rocket-animation.js';
 
 /**
  * Typed Animation Class
@@ -104,7 +108,9 @@ class SGSTheme {
     init() {
         this.initTypedAnimation();
         this.initBlogModules();
-    this.initNewsletter();
+        this.initNewsletter();
+        this.initFinancialCompliance();
+        this.initMissionGrants();
         this.addCustomStyles();
     }
     
@@ -120,6 +126,16 @@ class SGSTheme {
         // Initialize blog functionality
         this.blogShowMore = new BlogShowMore();
         this.blogSearch = new BlogSearch();
+    }
+    
+    initFinancialCompliance() {
+        // Initialize Financial Compliance RSS slideshow
+        this.financialComplianceSlider = new FinancialComplianceSlider();
+    }
+    
+    initMissionGrants() {
+        // Initialize Mission Grants RSS slideshow
+        this.missionGrantsSlider = new MissionGrantsSlider();
     }
     
     initNewsletter() {
@@ -142,12 +158,12 @@ class SGSTheme {
             document.head.appendChild(style);
         }
     }
+
 }
 
 // Initialize when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
     const sgsTheme = new SGSTheme();
-    
     // Make globally available for debugging
     window.SGSTheme = sgsTheme;
 });

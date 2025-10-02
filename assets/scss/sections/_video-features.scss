@@ -187,10 +187,15 @@
       position: absolute;
       width: 890px;
       height: 340px;
-      border: 1px solid #ffffff;
-      border-radius: 0;
+      border: 1px solid transparent; // Default transparent border
+      border-radius: 8px; // Rounded corners
       background: #ffffff;
       box-sizing: border-box;
+      transition: border-color 0.3s ease; // Smooth transition
+      
+      &:hover {
+        border: 2px solid #d81259; // Thicker pinkish-red border on hover
+      }
 
       &:nth-child(1) {
         top: 86px;
@@ -220,6 +225,16 @@
           height: 100%;
           border-radius: 0;
           opacity: 0.9;
+        }
+        
+        .feature-gif {
+          width: auto;
+          height: 100%;
+          max-width: 100%;
+          border-radius: 0;
+          opacity: 0.9;
+          object-fit: cover;
+          object-position: left center;
         }
       }
 

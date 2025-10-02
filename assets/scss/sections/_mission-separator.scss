@@ -1,69 +1,250 @@
-// Mission Separator Section - Uses inline styles like value proposition
-.mission-separator {
-    .mission-attributes {
-        right: 50px !important;
-        justify-content: space-between !important;
-        gap: 0 !important;
-        align-items: center !important;
+/* =========================================================================
+     Mission Separator Section (EXACT copy from Financial Compliance)
+     ========================================================================= */
+
+.mission-separator-section {
+    box-sizing: border-box;
+    background: #000000;
+    border-width: 1px 0px;
+    border-style: solid;
+    border-color: #FFFFFF;
+    position: relative;
+    width: 100%;
+    isolation: isolate;
+    padding: 72px 0; // natural vertical rhythm
+}
+
+.mission-separator-container {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.mission-separator__grid {
+    display: flex;
+    gap: 48px;
+    align-items: stretch; // equal height columns
+    flex-wrap: wrap;
+
+    @media (max-width: 960px) {
+        gap: 24px;
+    }
+}
+
+.mission-separator__left,
+.mission-separator__right {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    flex: 1 1 0;
+    min-width: 260px;
+}
+
+.mission-separator__right {
+    align-items: flex-end;
+    text-align: right;
+}
+
+.mission-separator__title-frame {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    padding: 0;
+    gap: 16px;
+}
+
+.mission-separator__title {
+    font-family: 'Poppins', Arial, sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 1.05;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    margin: 0;
+    @media (max-width: 1024px) { font-size: 40px; }
+    @media (max-width: 768px)  { font-size: 34px; }
+    @media (max-width: 480px)  { font-size: 28px; }
+}
+
+.mission-separator__svg-container {
+    width: clamp(240px, 40vw, 600px);
+    height: 50px;
+    position: relative;
+    overflow: visible;
+    img { 
+        width: 100%; 
+        height: auto; 
+        object-fit: contain;
+        transform: rotate(180deg);
+    }
+}
+
+.mission-separator__description {
+    max-width: 640px;
+    p {
+        font-family: 'Poppins', Arial, sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 150%;
+        color: #FFFFFF;
+        margin: 0;
+        @media (max-width: 768px) { font-size: 16px; line-height: 140%; }
+        @media (max-width: 480px) { font-size: 14px; line-height: 130%; }
+    }
+}
+
+.mission-separator__actions {
+    display: flex;
+    gap: 0;
+    justify-content: center;
+    width: 100%;
+    margin-top: auto; // push to bottom of column
+}
+
+// Compact feed - now in left column  
+.mission-separator__slider {
+    width: 70%; // reduced from 100% by 30%
+    margin-bottom: 16px;
+    position: relative;
+    min-height: 100px; // reduced from 140px by ~30%
+    padding-left: 0; // Remove left padding since it's now in left column
+    padding-top: 20px;
+
+    .ms-slide {
+        display: none;
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
         
-        .request-demo-button {
-            align-self: center;
+        &.is-active { 
+            display: block; 
+            opacity: 1;
         }
     }
-    // Responsive height adjustments
-    @media (max-width: 1199px) {
-        height: 280px !important;
-        
-        .mission-separator__grid {
-            height: 280px !important;
-        }
-        
-        .vertical-divider {
-            height: 100% !important;
+
+    .ms-slide__image {
+        display: block;
+        width: 100%;
+        height: 180px; // Standard 16:9 aspect ratio height for thumbnails
+        border-radius: 6px;
+        overflow: hidden;
+        position: relative;
+
+        img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; // Ensures consistent cropping and aspect ratio
         }
     }
+
+    // Navigation arrows - clean white arrows only
+    .ms-nav {
+        position: absolute;
+        top: calc(20px + 30%); // Account for top padding + position relative to image
+        transform: translateY(-50%);
+        background: none;
+        border: none;
+        width: 16px;
+        height: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        z-index: 10;
+        transition: all 0.2s ease;
+
+        &:hover {
+            transform: translateY(-50%) scale(1.2);
+        }
+
+        &.ms-nav--prev {
+            left: -25px; // Position outside left edge since no padding
+        }
+
+        &.ms-nav--next {
+            right: -40px; // Outside right edge of slider content
+        }
+
+        svg {
+            width: 16px;
+            height: 16px;
+            fill: #ffffff;
+            filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3));
+        }
+    }
+
+    .ms-slide__meta {
+        margin-top: 8px;
+    }
+
+    .ms-slide__title {
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 16px;
+        line-height: 1.35;
+        display: block;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 100%;
+        text-align: left;
+        &:hover { text-decoration: underline; }
+    }
+
+    .ms-slide__byline {
+        margin-top: 2px;
+        color: rgba(255,255,255,0.75);
+        font-size: 12px;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+}
+
+// Browse All Button - positioned absolutely to not affect container height
+.mission-separator__browse-all {
+    position: absolute;
+    bottom: -45px; // Increased from -30px to give 5px more space
+    left: 0;
+    width: 70%; // Match the slider width
+    padding-left: 0; // Remove any inherited padding
     
-    @media (max-width: 959px) {
-        height: 460px !important;
+    .browse-all-btn {
+        display: inline-block;
+        padding: 6px 12px;
+        background: transparent;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        border-radius: 4px;
+        color: #ffffff;
+        font-size: 12px;
+        font-family: 'Poppins', Arial, sans-serif;
+        font-weight: 500;
+        text-decoration: none;
+        transition: all 0.2s ease;
         
-        .mission-separator__grid {
-            display: none !important;
-        }
-        
-        .vertical-divider {
-            display: none !important;
-        }
-        
-        .mission-title {
-            position: relative !important;
-            top: auto !important;
-            left: auto !important;
-            transform: none !important;
-            width: auto !important;
-            text-align: center !important;
-            margin-bottom: 40px !important;
-        }
-        
-        .mission-attributes {
-            position: relative !important;
-            top: auto !important;
-            left: auto !important;
-            transform: none !important;
-            flex-direction: column !important;
-            gap: 30px !important;
-            text-align: center !important;
+        &:hover {
+            border-color: #ffffff;
+            background: rgba(255, 255, 255, 0.1);
+            text-decoration: none;
         }
     }
-    
-    @media (max-width: 479px) {
-        height: 380px !important;
-        
-        .mission-title {
-            font-size: 24px !important;
-        }
-        
-        .mission-bullets {
-            font-size: 14px !important;
-        }
-    }
+}
+
+// Page indicator retained (if used)
+.page-indicator {
+    position: absolute;
+    bottom: -40px;
+    right: 48px;
+    color: #000000;
+    font-size: 12px;
+    font-family: 'Poppins', Arial, sans-serif;
+    font-weight: 400;
+    line-height: 1.55;
+    z-index: 3;
 }

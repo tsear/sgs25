@@ -1,0 +1,54 @@
+/* =========================================================================
+     Page Breaker Component - Horizontal Section Divider
+     Based on Figma Frame 8 specifications
+     ========================================================================= */
+
+.page-breaker {
+    box-sizing: border-box;
+    width: 100%;
+    background: #FFBC41; // SGS Brand Yellow
+    position: relative;
+    border-bottom: 1px solid #FFFFFF; // White bottom border
+    
+    // Remove absolute positioning from Figma and make it flow naturally
+    display: flex;
+    align-items: center;
+    min-height: 100px;
+    padding: 24px 0;
+}
+
+.page-breaker__container {
+    position: relative;
+    max-width: $container-max-width;
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    padding: 0 36px;
+    
+    @media (max-width: 768px) {
+        padding: 0 20px;
+    }
+}
+
+.page-breaker__graphic {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.3s ease-out;
+    will-change: transform;
+    
+    img {
+        height: 60px;
+        width: auto;
+        display: block;
+        
+        @media (max-width: 768px) {
+            height: 40px;
+        }
+        
+        @media (max-width: 480px) {
+            height: 32px;
+        }
+    }
+}
