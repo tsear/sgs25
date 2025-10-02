@@ -1,0 +1,420 @@
+/* =========================================================================
+   About Philosophy Section - Mission, values, and approach
+   ========================================================================= */
+
+.about-philosophy {
+    background-color: transparent;
+    padding: 20px 0 60px 0;
+    position: relative;
+    z-index: 2;
+    
+    @media (max-width: 768px) {
+        padding: 20px 0 40px 0;
+    }
+}
+
+.about-philosophy__header {
+    text-align: center;
+    margin-bottom: 60px;
+    
+    @media (max-width: 768px) {
+        margin-bottom: 40px;
+    }
+}
+
+.about-philosophy__title {
+    font-family: 'Poppins', Arial, sans-serif;
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 1.1;
+    color: #ffffff;
+    margin: 0 0 32px 0;
+    
+    @media (max-width: 1024px) {
+        font-size: 48px;
+    }
+    
+    @media (max-width: 768px) {
+        font-size: 36px;
+    }
+    
+    @media (max-width: 480px) {
+        font-size: 28px;
+    }
+}
+
+.about-philosophy__lead {
+    font-family: 'Poppins', Arial, sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    padding: 0 20px;
+    
+    @media (max-width: 768px) {
+        font-size: 18px;
+        padding: 0 15px;
+    }
+}
+
+.about-philosophy__content {
+    margin-top: 60px;
+    
+    @media (max-width: 768px) {
+        margin-top: 40px;
+    }
+}
+
+// White divider lines - full width across screen
+.about-divider {
+    height: 2px;
+    background-color: #ffffff;
+    position: relative;
+    
+    // Full width technique that works inside containers
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100vw;
+        right: -100vw;
+        height: 2px;
+        background-color: #ffffff;
+    }
+    
+    // Top divider (before header)
+    &--top {
+        margin: 0 0 60px 0;
+        
+        @media (max-width: 768px) {
+            margin-bottom: 40px;
+        }
+    }
+    
+    // Middle divider (before content blocks)
+    &--middle {
+        margin: 60px 0;
+        
+        @media (max-width: 768px) {
+            margin: 40px 0;
+        }
+    }
+    
+    // Bottom divider (after philosophy)
+    &--bottom {
+        margin: 60px 0 0 0;
+        
+        @media (max-width: 768px) {
+            margin-top: 40px;
+        }
+    }
+}
+
+// Belief blocks
+.belief-block {
+    margin-bottom: 60px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+    padding: 0 20px;
+    
+    @media (max-width: 768px) {
+        margin-bottom: 50px;
+        padding: 0 15px;
+    }
+    
+    &:last-child {
+        margin-bottom: 0;
+    }
+}.belief-block__title {
+    font-family: 'Poppins', Arial, sans-serif;
+    font-size: 36px;
+    font-weight: 600;
+    color: #ffffff;
+    margin: 0 0 24px 0;
+    text-align: left;
+    
+    @media (max-width: 768px) {
+        font-size: 28px;
+    }
+}
+
+.belief-block__text {
+    font-family: 'Poppins', Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0 0 20px 0;
+    text-align: left;
+    
+    @media (max-width: 768px) {
+        font-size: 16px;
+        line-height: 1.6;
+    }
+    
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+// Team stats
+.team-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 24px;
+    margin-top: 32px;
+    padding: 32px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    
+    @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        margin-top: 24px;
+        padding: 24px 0;
+    }
+}
+
+.team-stat {
+    text-align: center;
+    
+    @media (max-width: 768px) {
+        text-align: left;
+    }
+}
+
+.team-stat__number {
+    display: block;
+    font-family: 'Poppins', Arial, sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: $color-brand-blue;
+    margin-bottom: 8px;
+    
+    @media (max-width: 768px) {
+        font-size: 28px;
+    }
+}
+
+.team-stat__label {
+    font-family: 'Poppins', Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.7);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+// Features grid
+.team-features {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+    margin-top: 32px;
+}
+
+.team-feature {
+    padding: 24px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 6px;
+    
+    &:hover {
+        border-color: rgba($color-brand-blue, 0.2);
+    }
+}
+
+.team-feature__title {
+    font-family: 'Poppins', Arial, sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: $color-brand-blue;
+    margin: 0 0 12px 0;
+}
+
+.team-feature__text {
+    font-family: 'Poppins', Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0;
+}
+
+// Mission statement
+.mission-statement {
+    margin: 80px 20px;
+    background: rgba($color-brand-blue, 0.1);
+    border: 1px solid rgba($color-brand-blue, 0.2);
+    border-radius: 8px;
+    padding: 40px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    
+    @media (max-width: 768px) {
+        margin: 60px 15px;
+        padding: 30px;
+    }
+}.mission-statement__title {
+    font-family: 'Poppins', Arial, sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: $color-brand-blue;
+    margin: 0 0 24px 0;
+    text-align: center;
+    
+    @media (max-width: 768px) {
+        font-size: 28px;
+    }
+}
+
+.mission-statement__text {
+    font-family: 'Poppins', Arial, sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+    text-align: left;
+    
+    @media (max-width: 768px) {
+        font-size: 18px;
+        line-height: 1.5;
+    }
+}
+
+// Philosophy quote section
+.philosophy-quote {
+    margin-top: 80px;
+    
+    @media (max-width: 768px) {
+        margin-top: 60px;
+    }
+}
+
+.philosophy-quote__title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.philosophy-quote__content {
+    text-align: left;
+}
+
+.quote-block {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: left;
+    padding: 0 20px;
+    
+    @media (max-width: 768px) {
+        padding: 0 15px;
+    }
+    
+    &__text {
+        font-size: 28px;
+        font-weight: 500;
+        line-height: 1.4;
+        color: #ffffff;
+        margin-bottom: 20px;
+        font-style: italic;
+        text-align: left;
+        
+        @media (max-width: 768px) {
+            font-size: 24px;
+        }
+    }
+    
+    &__author {
+        font-size: 16px;
+        font-weight: 600;
+        color: $color-brand-blue;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        text-align: left;
+    }
+}
+
+// Philosophy CTA Section
+.philosophy-cta {
+    margin: 80px 0;
+    text-align: center;
+    background: linear-gradient(135deg, rgba($color-brand-blue, 0.1), rgba($color-brand-blue, 0.05));
+    border: 1px solid rgba($color-brand-blue, 0.2);
+    border-radius: 12px;
+    padding: 60px 40px;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    
+    @media (max-width: 768px) {
+        margin: 60px 15px;
+        padding: 40px 30px;
+    }
+}
+
+.philosophy-cta__title {
+    font-size: 32px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 16px;
+    
+    @media (max-width: 768px) {
+        font-size: 28px;
+    }
+}
+
+.philosophy-cta__text {
+    font-size: 18px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 32px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.philosophy-cta__actions {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+    
+    .btn {
+        min-width: 200px;
+        
+        @media (max-width: 480px) {
+            width: 100%;
+            min-width: auto;
+        }
+    }
+}
+
+// Brand highlighting
+.brand-blue {
+    color: $color-brand-blue;
+}
+
+// Fade animations
+.fade-column {
+    opacity: 1;
+    transform: translateY(0);
+    
+    &.animate-in {
+        animation: fadeInUp 0.8s ease-out forwards;
+    }
+    
+    &[data-delay="0"] {
+        animation-delay: 0.2s;
+    }
+    
+    &[data-delay="1"] {
+        animation-delay: 0.4s;
+    }
+}

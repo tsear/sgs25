@@ -14,7 +14,7 @@
         
         <div class="value-prop__column value-prop__column--cta fade-column" data-delay="1">
             <p class="value-prop__subtitle">Learn more about our products & services</p>
-            <a href="<?php echo home_url('/grants'); ?>" class="value-prop__button">View Products</a>
+            <a href="<?php echo home_url('/product'); ?>" class="value-prop__button">View Products</a>
         </div>
     </div>
     

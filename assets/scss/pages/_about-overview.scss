@@ -1,0 +1,329 @@
+/* =========================================================================
+   About Story Section - Company journey and origins
+   ========================================================================= */
+
+.about-story {
+    background-color: transparent;
+    padding: 60px 0 60px 0;
+    position: relative;
+    z-index: 2;
+    
+    @media (max-width: 768px) {
+        padding: 40px 0 40px 0;
+    }
+}
+
+.about-story__header {
+    text-align: center;
+    margin-bottom: 0;
+    
+    @media (max-width: 768px) {
+        margin-bottom: 0;
+    }
+}
+
+.about-story__title {
+    font-family: 'Poppins', Arial, sans-serif;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #ffffff;
+    margin: 0 0 24px 0;
+    
+    @media (max-width: 1024px) {
+        font-size: 40px;
+    }
+    
+    @media (max-width: 768px) {
+        font-size: 32px;
+    }
+    
+    @media (max-width: 480px) {
+        font-size: 28px;
+    }
+}
+
+.about-story__subtitle {
+    font-family: 'Poppins', Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    
+    @media (max-width: 768px) {
+        font-size: 16px;
+    }
+}
+
+.about-story__content {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+// Story Sections
+.story-section {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 60px;
+    align-items: start;
+    margin-bottom: 80px;
+    
+    @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        margin-bottom: 60px;
+    }
+    
+    &:last-child {
+        margin-bottom: 0;
+    }
+    
+    // Alternate layout for even sections
+    &--mission {
+        grid-template-columns: 1fr 2fr;
+        
+        @media (max-width: 768px) {
+            grid-template-columns: 1fr;
+            
+            .story-section__visual {
+                order: -1;
+            }
+        }
+    }
+}
+
+.story-section__title {
+    font-family: 'Poppins', Arial, sans-serif;
+    font-size: 32px;
+    font-weight: 600;
+    color: $color-brand-blue;
+    margin: 0 0 24px 0;
+    
+    @media (max-width: 768px) {
+        font-size: 28px;
+    }
+}
+
+.story-section__paragraph {
+    font-family: 'Poppins', Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0 0 20px 0;
+    
+    @media (max-width: 768px) {
+        font-size: 16px;
+        line-height: 1.6;
+    }
+    
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.story-section__visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+// Story Stats
+.story-stat {
+    background: rgba($color-brand-blue, 0.1);
+    border: 2px solid rgba($color-brand-blue, 0.3);
+    border-radius: 12px;
+    padding: 40px 30px;
+    text-align: center;
+    transition: all 0.3s ease;
+    
+    @media (max-width: 768px) {
+        padding: 30px 20px;
+    }
+    
+    &:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 40px rgba($color-brand-blue, 0.2);
+    }
+}
+
+.story-stat__number {
+    display: block;
+    font-family: 'Poppins', Arial, sans-serif;
+    font-size: 48px;
+    font-weight: 700;
+    color: $color-brand-blue;
+    margin-bottom: 12px;
+    
+    @media (max-width: 768px) {
+        font-size: 36px;
+    }
+}
+
+.story-stat__label {
+    font-family: 'Poppins', Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.8);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    
+    @media (max-width: 768px) {
+        font-size: 14px;
+    }
+}
+
+// Story Impact Stats
+.story-impact {
+    margin: 80px 0;
+    text-align: center;
+    
+    @media (max-width: 768px) {
+        margin: 60px 0;
+    }
+}
+
+.story-impact__header {
+    margin-bottom: 40px;
+}
+
+.story-impact__title {
+    font-size: 32px;
+    font-weight: 700;
+    color: #ffffff;
+    
+    @media (max-width: 768px) {
+        font-size: 28px;
+    }
+}
+
+.story-impact__stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+    
+    @media (max-width: 768px) {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+    
+    @media (max-width: 480px) {
+        grid-template-columns: 1fr;
+    }
+}
+
+.impact-stat {
+    background: rgba($color-brand-blue, 0.1);
+    border: 1px solid rgba($color-brand-blue, 0.2);
+    border-radius: 8px;
+    padding: 30px 20px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    
+    &:hover {
+        transform: translateY(-5px);
+        border-color: rgba($color-brand-blue, 0.4);
+    }
+}
+
+.impact-stat__number {
+    font-size: 48px;
+    font-weight: 700;
+    color: $color-brand-blue;
+    display: block;
+    margin-bottom: 8px;
+    
+    @media (max-width: 768px) {
+        font-size: 40px;
+    }
+}
+
+.impact-stat__label {
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.8);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+// Story CTA Section
+.story-cta {
+    margin: 80px 0;
+    text-align: center;
+    background: linear-gradient(135deg, rgba($color-brand-blue, 0.15), rgba($color-brand-blue, 0.05));
+    border: 2px solid rgba($color-brand-blue, 0.3);
+    border-radius: 12px;
+    padding: 60px 40px;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    
+    @media (max-width: 768px) {
+        margin: 60px 15px;
+        padding: 40px 30px;
+    }
+}
+
+.story-cta__title {
+    font-size: 36px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 16px;
+    
+    @media (max-width: 768px) {
+        font-size: 28px;
+    }
+}
+
+.story-cta__text {
+    font-size: 18px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 32px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.story-cta__actions {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+    
+    .btn {
+        min-width: 220px;
+        
+        @media (max-width: 480px) {
+            width: 100%;
+            min-width: auto;
+        }
+    }
+}
+
+// Brand highlighting
+.brand-blue {
+    color: $color-brand-blue;
+}
+
+// Fade animations
+.fade-column {
+    opacity: 1;
+    transform: translateY(0);
+    
+    &.animate-in {
+        animation: fadeInUp 0.8s ease-out forwards;
+    }
+    
+    &[data-delay="0"] {
+        animation-delay: 0.2s;
+    }
+    
+    &[data-delay="1"] {
+        animation-delay: 0.4s;
+    }
+}
