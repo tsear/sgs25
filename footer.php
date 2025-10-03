@@ -9,28 +9,158 @@
         </div>
     </section>
 
-    <footer id="colophon" class="site-footer" style="background-color: #000000; padding: 40px 0; border-top: 1px solid #333;">
-        <div class="footer-container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
-            <div class="footer-content" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;">
-                <!-- Logo -->
-                <div class="footer-logo">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/sgs-logo-footer.png" alt="Smart Grant Solutions" style="height: 35px;" />
-                </div>
+    <footer id="colophon" class="site-footer">
+        
+        <!-- Footer Top Section -->
+        <div class="footer-top">
+            <div class="footer-content">
                 
-                <!-- Navigation Links matching header -->
-                <div class="footer-nav" style="display: flex; gap: 30px; align-items: center;">
-                    <a href="<?php echo home_url('/'); ?>" style="color: #ffffff; text-decoration: none; font-family: 'Inter', sans-serif; font-size: 14px; text-transform: uppercase; letter-spacing: 0.5px;">HOME</a>
-                    <a href="<?php echo home_url('/blog'); ?>" style="color: #ffffff; text-decoration: none; font-family: 'Inter', sans-serif; font-size: 14px; text-transform: uppercase; letter-spacing: 0.5px;">BLOG</a>
-                    <a href="<?php echo home_url('/testimonials'); ?>" style="color: #ffffff; text-decoration: none; font-family: 'Inter', sans-serif; font-size: 14px; text-transform: uppercase; letter-spacing: 0.5px;">TESTIMONIALS</a>
-                    <a href="<?php echo home_url('/contact'); ?>" style="color: #FFB03F; text-decoration: none; font-family: 'Inter', sans-serif; font-size: 14px; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600;">REQUEST A DEMO</a>
+                <!-- About Section -->
+                <div class="footer-section footer-about">
+                    <div class="footer-logo">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/sgs-logo-footer.png" alt="Smart Grant Solutions" />
+                    </div>
+                    <p class="footer-description">
+                        Democratizing access to grant funding by eliminating administrative barriers and building genuine partnerships that amplify organizational impact.
+                    </p>
+                    <div class="footer-contact">
+                        <div class="contact-item">
+                            <span class="icon">📧</span>
+                            <span>hello@smartgrantsolutions.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <span class="icon">📞</span>
+                            <span>(555) 123-4567</span>
+                        </div>
+                    </div>
+                    <?php get_template_part('template-parts/footer-badge-carousel'); ?>
                 </div>
-                
-                <!-- Copyright -->
-                <div class="footer-copyright" style="color: #666666; font-family: 'Inter', sans-serif; font-size: 12px;">
+
+                <!-- Quick Links -->
+                <div class="footer-section footer-links">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-menu">
+                        <li><a href="<?php echo home_url('/'); ?>">Home</a></li>
+                        <li><a href="<?php echo home_url('/about'); ?>">About</a></li>
+                        <li><a href="<?php echo home_url('/product'); ?>">Product</a></li>
+                        <li><a href="<?php echo home_url('/industries'); ?>">Industries</a></li>
+                        <li><a href="<?php echo home_url('/success-stories'); ?>">Success Stories</a></li>
+                        <li><a href="<?php echo home_url('/grants'); ?>">Grant Opportunities</a></li>
+                    </ul>
+                </div>
+
+                <!-- Read More -->
+                <div class="footer-section footer-services">
+                    <h4>READ MORE:</h4>
+                    <ul class="service-list">
+                        <?php
+                        // Get first 3 success story categories
+                        $success_categories = get_terms(array(
+                            'taxonomy' => 'success_story_category',
+                            'hide_empty' => true,
+                            'number' => 3,
+                            'orderby' => 'count',
+                            'order' => 'DESC'
+                        ));
+                        
+                        if (!is_wp_error($success_categories) && !empty($success_categories)) {
+                            foreach ($success_categories as $category) {
+                                $term_link = get_term_link($category);
+                                if (!is_wp_error($term_link)) {
+                                    echo '<li><a href="' . esc_url($term_link) . '">' . esc_html($category->name) . '</a></li>';
+                                }
+                            }
+                        }
+                        
+                        // Get first 3 grant categories
+                        $grant_categories = get_terms(array(
+                            'taxonomy' => 'grant_category',
+                            'hide_empty' => true,
+                            'number' => 3,
+                            'orderby' => 'count',
+                            'order' => 'DESC'
+                        ));
+                        
+                        if (!is_wp_error($grant_categories) && !empty($grant_categories)) {
+                            foreach ($grant_categories as $category) {
+                                $term_link = get_term_link($category);
+                                if (!is_wp_error($term_link)) {
+                                    echo '<li><a href="' . esc_url($term_link) . '">' . esc_html($category->name) . '</a></li>';
+                                }
+                            }
+                        }
+                        
+                        // Get first 3 blog categories
+                        $blog_categories = get_categories(array(
+                            'hide_empty' => true,
+                            'number' => 3,
+                            'orderby' => 'count',
+                            'order' => 'DESC'
+                        ));
+                        
+                        if (!is_wp_error($blog_categories) && !empty($blog_categories)) {
+                            foreach ($blog_categories as $category) {
+                                $term_link = get_category_link($category);
+                                if (!is_wp_error($term_link)) {
+                                    echo '<li><a href="' . esc_url($term_link) . '">' . esc_html($category->name) . '</a></li>';
+                                }
+                            }
+                        }
+                        ?>
+                    </ul>
+                </div>
+
+                <!-- Resources & Contact -->
+                <div class="footer-section footer-newsletter">
+                    <h4>Stay Connected</h4>
+                    <p>Get insights on grant funding trends and opportunities.</p>
+                    <div class="newsletter-form">
+                        <div class="form-group">
+                            <input type="email" placeholder="you@here.co" required>
+                            <button type="submit" class="btn-submit">Subscribe</button>
+                        </div>
+                    </div>
+                    <div class="footer-extra-links">
+                        <a href="<?php echo home_url('/blog'); ?>">Blog</a>
+                        <a href="<?php echo home_url('/testimonials'); ?>">Testimonials</a>
+                        <a href="<?php echo home_url('/contact'); ?>">Contact</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Footer Bottom Section -->
+        <div class="footer-bottom">
+            <div class="footer-bottom-content">
+                <div class="copyright">
                     &copy; <?php echo date('Y'); ?> Smart Grant Solutions. All rights reserved.
+                    <a href="/privacy-policy">Privacy Policy</a> | 
+                    <a href="/terms-of-service">Terms of Service</a>
+                </div>
+                
+                <div class="footer-social">
+                    <div class="social-links">
+                        <a href="#" aria-label="LinkedIn" title="LinkedIn">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Twitter" title="Twitter">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Facebook" title="Facebook">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
+        
     </footer><!-- #colophon -->
 
 </div><!-- #page -->
