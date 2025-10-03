@@ -48,7 +48,7 @@
     font-size: 20px;
     font-weight: 400;
     line-height: 1.6;
-    color: rgba(255, 255, 255, 0.8);
+    color: #ffffff;
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
@@ -149,7 +149,7 @@
     font-size: 18px;
     font-weight: 400;
     line-height: 1.7;
-    color: rgba(255, 255, 255, 0.9);
+    color: #ffffff;
     margin: 0 0 20px 0;
     text-align: left;
     
@@ -206,7 +206,7 @@
     font-family: 'Poppins', Arial, sans-serif;
     font-size: 14px;
     font-weight: 500;
-    color: rgba(255, 255, 255, 0.7);
+    color: #ffffff;
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
@@ -243,15 +243,15 @@
     font-size: 16px;
     font-weight: 400;
     line-height: 1.5;
-    color: rgba(255, 255, 255, 0.8);
+    color: #ffffff;
     margin: 0;
 }
 
 // Mission statement
 .mission-statement {
     margin: 80px 20px;
-    background: rgba($color-brand-blue, 0.1);
-    border: 1px solid rgba($color-brand-blue, 0.2);
+    background: rgba($color-brand-blue, 0.2);
+    border: 1px solid rgba($color-brand-blue, 0.4);
     border-radius: 8px;
     padding: 40px;
     max-width: 1200px;
@@ -280,7 +280,7 @@
     font-size: 20px;
     font-weight: 400;
     line-height: 1.6;
-    color: rgba(255, 255, 255, 0.9);
+    color: #ffffff;
     text-align: left;
     
     @media (max-width: 768px) {
@@ -345,8 +345,8 @@
 .philosophy-cta {
     margin: 80px 0;
     text-align: center;
-    background: linear-gradient(135deg, rgba($color-brand-blue, 0.1), rgba($color-brand-blue, 0.05));
-    border: 1px solid rgba($color-brand-blue, 0.2);
+    background: linear-gradient(135deg, rgba($color-brand-blue, 0.2), rgba($color-brand-blue, 0.1));
+    border: 1px solid rgba($color-brand-blue, 0.4);
     border-radius: 12px;
     padding: 60px 40px;
     max-width: 1000px;
@@ -373,7 +373,7 @@
 .philosophy-cta__text {
     font-size: 18px;
     line-height: 1.6;
-    color: rgba(255, 255, 255, 0.8);
+    color: #ffffff;
     margin-bottom: 32px;
     max-width: 600px;
     margin-left: auto;

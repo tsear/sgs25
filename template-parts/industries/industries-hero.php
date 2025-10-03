@@ -14,7 +14,7 @@
         
         <!-- SVG Container -->
         <div class="industries-header__svg-container">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/yellow-rocket-div.svg" alt="" />
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/red-rocket-div.svg" alt="" />
         </div>
         
         <!-- Description -->

@@ -1,0 +1,324 @@
+/* =========================================================================
+   Industries Overview Section
+   ========================================================================= */
+
+.industries-overview {
+  padding: 80px 0;
+  background: $color-black;
+  position: relative;
+  
+  &__header {
+    text-align: center;
+    margin-bottom: 60px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  &__title {
+    font-family: $font-tertiary;
+    font-size: 48px;
+    font-weight: $font-weight-bold;
+    line-height: 1.2;
+    color: $color-white;
+    margin-bottom: 24px;
+    
+    .brand-pink {
+      color: $color-brand-pink;
+    }
+    
+    @media (max-width: 768px) {
+      font-size: 36px;
+    }
+  }
+  
+  &__lead {
+    font-size: 18px;
+    line-height: 1.6;
+    color: $color-white;
+    opacity: 0.9;
+    margin: 0;
+  }
+  
+  &__stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin-bottom: 80px;
+    
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+      gap: 32px;
+      margin-bottom: 60px;
+    }
+  }
+  
+  &__value {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+  }
+  
+  // Full-width white line at bottom
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-color: $color-white;
+  }
+}
+
+.stat-item {
+  text-align: center;
+  
+  &__number {
+    display: block;
+    font-family: $font-tertiary;
+    font-size: 48px;
+    font-weight: $font-weight-bold;
+    color: $color-brand-pink;
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  
+  &__label {
+    font-size: 16px;
+    color: $color-white;
+    opacity: 0.8;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: $font-weight-medium;
+  }
+}
+
+.value-block {
+  text-align: center;
+  
+  &__title {
+    font-family: $font-tertiary;
+    font-size: 24px;
+    font-weight: $font-weight-bold;
+    color: $color-white;
+    margin-bottom: 16px;
+  }
+  
+  &__text {
+    font-size: 16px;
+    line-height: 1.6;
+    color: $color-white;
+    opacity: 0.9;
+    margin: 0;
+  }
+}
+
+/* =========================================================================
+   Industries Sectors Section
+   ========================================================================= */
+
+.industries-sectors {
+  padding: 80px 0;
+  background: $color-black;
+  position: relative;
+  
+  &__header {
+    text-align: center;
+    margin-bottom: 60px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  &__title {
+    font-family: $font-tertiary;
+    font-size: 48px;
+    font-weight: $font-weight-bold;
+    line-height: 1.2;
+    color: $color-white;
+    margin-bottom: 24px;
+    
+    .brand-pink {
+      color: $color-brand-pink;
+    }
+    
+    @media (max-width: 768px) {
+      font-size: 36px;
+    }
+  }
+  
+  &__lead {
+    font-size: 18px;
+    line-height: 1.6;
+    color: $color-white;
+    opacity: 0.9;
+    margin: 0;
+  }
+  
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    
+    @media (max-width: 1024px) {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+  }
+  
+  // Full-width white line at bottom
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-color: $color-white;
+  }
+}
+
+.sector-card {
+  background: $color-white;
+  border-radius: 12px;
+  padding: 40px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: all $transition-fast;
+  border-top: 4px solid transparent;
+  
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  }
+  
+  &--nonprofits {
+    border-top-color: $color-brand-pink;
+    
+    .sector-card__icon {
+      color: $color-brand-pink;
+    }
+  }
+  
+  &--government {
+    border-top-color: $color-brand-blue;
+    
+    .sector-card__icon {
+      color: $color-brand-blue;
+    }
+  }
+  
+  &--grantmakers {
+    border-top-color: $color-brand-yellow;
+    
+    .sector-card__icon {
+      color: $color-brand-yellow;
+    }
+  }
+  
+  &__icon {
+    margin-bottom: 24px;
+    
+    svg {
+      width: 48px;
+      height: 48px;
+    }
+  }
+  
+  &__title {
+    font-family: $font-tertiary;
+    font-size: 28px;
+    font-weight: $font-weight-bold;
+    color: $color-black;
+    margin-bottom: 8px;
+  }
+  
+  &__subtitle {
+    font-size: 16px;
+    color: $color-brand-pink;
+    font-weight: $font-weight-medium;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 16px;
+  }
+  
+  &__description {
+    font-size: 16px;
+    line-height: 1.6;
+    color: $color-gray;
+    margin-bottom: 32px;
+  }
+  
+  &__features {
+    margin-bottom: 32px;
+    
+    h4 {
+      font-size: 18px;
+      font-weight: $font-weight-bold;
+      color: $color-black;
+      margin-bottom: 16px;
+    }
+  }
+  
+  &__expertise {
+    padding-top: 24px;
+    border-top: 1px solid $color-gray-200;
+    
+    h4 {
+      font-size: 16px;
+      font-weight: $font-weight-bold;
+      color: $color-black;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    
+    p {
+      font-size: 14px;
+      line-height: 1.6;
+      color: $color-gray;
+      margin: 0;
+    }
+  }
+}
+
+.feature-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  
+  li {
+    position: relative;
+    padding-left: 24px;
+    margin-bottom: 12px;
+    font-size: 15px;
+    color: $color-gray;
+    
+    &::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: $color-brand-pink;
+      font-weight: $font-weight-bold;
+    }
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+
+
+/* =========================================================================
+   Brand Pink Utility Class
+   ========================================================================= */
+
+.brand-pink {
+  color: $color-brand-pink;
+}

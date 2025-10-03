@@ -286,13 +286,13 @@ hr {
 }
 .main-navigation .nav-menu {
   position: relative;
-  width: 810px;
+  width: 710px;
   height: 60px;
   border: 1px solid #ffffff;
   border-bottom: none;
   border-top: none;
 }
-.main-navigation .nav-menu .nav-link-contact, .main-navigation .nav-menu .nav-link-blog, .main-navigation .nav-menu .nav-link-grants, .main-navigation .nav-menu .nav-link-success-stories, .main-navigation .nav-menu .nav-link-industries, .main-navigation .nav-menu .nav-link-solutions, .main-navigation .nav-menu .nav-link-product, .main-navigation .nav-menu .nav-link-about {
+.main-navigation .nav-menu .nav-link-contact, .main-navigation .nav-menu .nav-link-blog, .main-navigation .nav-menu .nav-link-grants, .main-navigation .nav-menu .nav-link-success-stories, .main-navigation .nav-menu .nav-link-industries, .main-navigation .nav-menu .nav-link-product, .main-navigation .nav-menu .nav-link-about {
   position: absolute;
   top: 0;
   width: 100px;
@@ -312,17 +312,17 @@ hr {
   transition: background-color 0.2s ease-in-out;
   outline: none;
 }
-.main-navigation .nav-menu .nav-link-contact:hover, .main-navigation .nav-menu .nav-link-blog:hover, .main-navigation .nav-menu .nav-link-grants:hover, .main-navigation .nav-menu .nav-link-success-stories:hover, .main-navigation .nav-menu .nav-link-industries:hover, .main-navigation .nav-menu .nav-link-solutions:hover, .main-navigation .nav-menu .nav-link-product:hover, .main-navigation .nav-menu .nav-link-about:hover {
+.main-navigation .nav-menu .nav-link-contact:hover, .main-navigation .nav-menu .nav-link-blog:hover, .main-navigation .nav-menu .nav-link-grants:hover, .main-navigation .nav-menu .nav-link-success-stories:hover, .main-navigation .nav-menu .nav-link-industries:hover, .main-navigation .nav-menu .nav-link-product:hover, .main-navigation .nav-menu .nav-link-about:hover {
   background-color: rgba(255, 255, 255, 0.1);
 }
-.main-navigation .nav-menu .nav-link-contact:focus, .main-navigation .nav-menu .nav-link-blog:focus, .main-navigation .nav-menu .nav-link-grants:focus, .main-navigation .nav-menu .nav-link-success-stories:focus, .main-navigation .nav-menu .nav-link-industries:focus, .main-navigation .nav-menu .nav-link-solutions:focus, .main-navigation .nav-menu .nav-link-product:focus, .main-navigation .nav-menu .nav-link-about:focus {
+.main-navigation .nav-menu .nav-link-contact:focus, .main-navigation .nav-menu .nav-link-blog:focus, .main-navigation .nav-menu .nav-link-grants:focus, .main-navigation .nav-menu .nav-link-success-stories:focus, .main-navigation .nav-menu .nav-link-industries:focus, .main-navigation .nav-menu .nav-link-product:focus, .main-navigation .nav-menu .nav-link-about:focus {
   background-color: rgba(255, 255, 255, 0.1);
   box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.3);
 }
-.main-navigation .nav-menu .active.nav-link-contact, .main-navigation .nav-menu .active.nav-link-blog, .main-navigation .nav-menu .active.nav-link-grants, .main-navigation .nav-menu .active.nav-link-success-stories, .main-navigation .nav-menu .active.nav-link-industries, .main-navigation .nav-menu .active.nav-link-solutions, .main-navigation .nav-menu .active.nav-link-product, .main-navigation .nav-menu .active.nav-link-about {
+.main-navigation .nav-menu .active.nav-link-contact, .main-navigation .nav-menu .active.nav-link-blog, .main-navigation .nav-menu .active.nav-link-grants, .main-navigation .nav-menu .active.nav-link-success-stories, .main-navigation .nav-menu .active.nav-link-industries, .main-navigation .nav-menu .active.nav-link-product, .main-navigation .nav-menu .active.nav-link-about {
   background-color: rgba(255, 255, 255, 0.1);
 }
-.main-navigation .nav-menu .nav-link-contact::after, .main-navigation .nav-menu .nav-link-blog::after, .main-navigation .nav-menu .nav-link-grants::after, .main-navigation .nav-menu .nav-link-success-stories::after, .main-navigation .nav-menu .nav-link-industries::after, .main-navigation .nav-menu .nav-link-solutions::after, .main-navigation .nav-menu .nav-link-product::after, .main-navigation .nav-menu .nav-link-about::after {
+.main-navigation .nav-menu .nav-link-contact::after, .main-navigation .nav-menu .nav-link-blog::after, .main-navigation .nav-menu .nav-link-grants::after, .main-navigation .nav-menu .nav-link-success-stories::after, .main-navigation .nav-menu .nav-link-industries::after, .main-navigation .nav-menu .nav-link-product::after, .main-navigation .nav-menu .nav-link-about::after {
   content: "";
   position: absolute;
   right: 0;
@@ -331,7 +331,7 @@ hr {
   width: 1px;
   background-color: #ffffff;
 }
-.main-navigation .nav-menu .nav-link-contact:last-child::after, .main-navigation .nav-menu .nav-link-blog:last-child::after, .main-navigation .nav-menu .nav-link-grants:last-child::after, .main-navigation .nav-menu .nav-link-success-stories:last-child::after, .main-navigation .nav-menu .nav-link-industries:last-child::after, .main-navigation .nav-menu .nav-link-solutions:last-child::after, .main-navigation .nav-menu .nav-link-product:last-child::after, .main-navigation .nav-menu .nav-link-about:last-child::after {
+.main-navigation .nav-menu .nav-link-contact:last-child::after, .main-navigation .nav-menu .nav-link-blog:last-child::after, .main-navigation .nav-menu .nav-link-grants:last-child::after, .main-navigation .nav-menu .nav-link-success-stories:last-child::after, .main-navigation .nav-menu .nav-link-industries:last-child::after, .main-navigation .nav-menu .nav-link-product:last-child::after, .main-navigation .nav-menu .nav-link-about:last-child::after {
   display: none;
 }
 .main-navigation .nav-menu .nav-link-about {
@@ -340,25 +340,22 @@ hr {
 .main-navigation .nav-menu .nav-link-product {
   left: 100px;
 }
-.main-navigation .nav-menu .nav-link-solutions {
+.main-navigation .nav-menu .nav-link-industries {
   left: 200px;
 }
-.main-navigation .nav-menu .nav-link-industries {
-  left: 300px;
-}
 .main-navigation .nav-menu .nav-link-success-stories {
-  left: 400px;
+  left: 300px;
   width: 110px;
   font-size: 10px;
 }
 .main-navigation .nav-menu .nav-link-grants {
-  left: 510px;
+  left: 410px;
 }
 .main-navigation .nav-menu .nav-link-blog {
-  left: 610px;
+  left: 510px;
 }
 .main-navigation .nav-menu .nav-link-contact {
-  left: 710px;
+  left: 610px;
   color: #fcb03e;
 }
 .main-navigation .nav-menu .nav-link-contact:hover {

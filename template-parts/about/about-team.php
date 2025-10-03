@@ -20,6 +20,22 @@
         <!-- White Divider Line - Middle -->
         <div class="about-divider about-divider--middle"></div>
 
+        <!-- Mission Statement -->
+        <div class="mission-statement">
+            <div class="mission-statement__content">
+                <h3 class="mission-statement__title">Our Mission</h3>
+                <p class="mission-statement__text">To democratize access to grant funding by eliminating administrative barriers, providing transparent processes, and building genuine partnerships that amplify organizational impact.</p>
+            </div>
+        </div>
+
+        <!-- Philosophy Quote -->
+        <div class="philosophy-quote">
+            <blockquote class="quote-block">
+                <p class="quote-block__text">"When we remove barriers to funding, we unlock unlimited potential for social innovation. Every administrative obstacle we eliminate creates space for one more brilliant idea to change the world."</p>
+                <cite class="quote-block__author">— Smart Grant Solutions Team</cite>
+            </blockquote>
+        </div>
+
         <!-- Core Beliefs -->
         <div class="about-philosophy__content">
             
@@ -56,22 +72,6 @@
                     <a href="/success-stories" class="btn btn--outline btn--large">View Success Stories</a>
                 </div>
             </div>
-        </div>
-
-        <!-- Mission Statement -->
-        <div class="mission-statement">
-            <div class="mission-statement__content">
-                <h3 class="mission-statement__title">Our Mission</h3>
-                <p class="mission-statement__text">To democratize access to grant funding by eliminating administrative barriers, providing transparent processes, and building genuine partnerships that amplify organizational impact.</p>
-            </div>
-        </div>
-
-        <!-- Philosophy Quote -->
-        <div class="philosophy-quote">
-            <blockquote class="quote-block">
-                <p class="quote-block__text">"When we remove barriers to funding, we unlock unlimited potential for social innovation. Every administrative obstacle we eliminate creates space for one more brilliant idea to change the world."</p>
-                <cite class="quote-block__author">— Smart Grant Solutions Team</cite>
-            </blockquote>
         </div>
 
     </div>

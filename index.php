@@ -29,8 +29,6 @@ get_header();
 
     <?php get_template_part('template-parts/video-features'); ?>
 
-    <?php get_template_part('template-parts/trusted-organizations'); ?>
-
     <?php get_template_part('template-parts/mission-separator'); ?>
 
     <?php get_template_part('template-parts/features-section'); ?>

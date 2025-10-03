@@ -48,14 +48,10 @@
     font-size: 18px;
     font-weight: 400;
     line-height: 1.5;
-    color: rgba(255, 255, 255, 0.8);
-    max-width: 600px;
+    color: #ffffff;
+    max-width: 800px;
     margin-left: auto;
     margin-right: auto;
-    
-    @media (max-width: 768px) {
-        font-size: 16px;
-    }
 }
 
 .about-story__content {
@@ -109,23 +105,16 @@
 
 .story-section__paragraph {
     font-family: 'Poppins', Arial, sans-serif;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 400;
-    line-height: 1.7;
-    color: rgba(255, 255, 255, 0.9);
-    margin: 0 0 20px 0;
-    
-    @media (max-width: 768px) {
-        font-size: 16px;
-        line-height: 1.6;
-    }
+    line-height: 1.6;
+    color: #ffffff;
+    margin: 0 0 16px 0;
     
     &:last-child {
         margin-bottom: 0;
     }
-}
-
-.story-section__visual {
+}.story-section__visual {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -167,7 +156,7 @@
     font-family: 'Poppins', Arial, sans-serif;
     font-size: 16px;
     font-weight: 500;
-    color: rgba(255, 255, 255, 0.8);
+    color: #ffffff;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     
@@ -218,15 +207,15 @@
 }
 
 .impact-stat {
-    background: rgba($color-brand-blue, 0.1);
-    border: 1px solid rgba($color-brand-blue, 0.2);
+    background: rgba($color-brand-blue, 0.2);
+    border: 1px solid rgba($color-brand-blue, 0.4);
     border-radius: 8px;
     padding: 30px 20px;
     transition: transform 0.3s ease, border-color 0.3s ease;
     
     &:hover {
         transform: translateY(-5px);
-        border-color: rgba($color-brand-blue, 0.4);
+        border-color: rgba($color-brand-blue, 0.6);
     }
 }
 
@@ -245,7 +234,7 @@
 .impact-stat__label {
     font-size: 14px;
     font-weight: 500;
-    color: rgba(255, 255, 255, 0.8);
+    color: #ffffff;
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
@@ -254,8 +243,8 @@
 .story-cta {
     margin: 80px 0;
     text-align: center;
-    background: linear-gradient(135deg, rgba($color-brand-blue, 0.15), rgba($color-brand-blue, 0.05));
-    border: 2px solid rgba($color-brand-blue, 0.3);
+    background: linear-gradient(135deg, rgba($color-brand-blue, 0.25), rgba($color-brand-blue, 0.15));
+    border: 2px solid rgba($color-brand-blue, 0.5);
     border-radius: 12px;
     padding: 60px 40px;
     max-width: 1000px;
@@ -282,7 +271,7 @@
 .story-cta__text {
     font-size: 18px;
     line-height: 1.6;
-    color: rgba(255, 255, 255, 0.9);
+    color: #ffffff;
     margin-bottom: 32px;
     max-width: 600px;
     margin-left: auto;

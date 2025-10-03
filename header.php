@@ -36,19 +36,16 @@
                 </div>
             </div>
 
-            <!-- Navigation Menu - 8 Equal Cells -->
+            <!-- Navigation Menu - 7 Equal Cells -->
             <nav id="site-navigation" class="main-navigation">
                 <div class="nav-menu">
-                    <!-- About Button - Cell 1 -->
+                    <!-- About Button - Cell 2 -->
                     <a href="<?php echo home_url('/about'); ?>" class="nav-link-about <?php echo is_page('about') ? 'active' : ''; ?>">ABOUT</a>
                     
-                    <!-- Product Button - Cell 2 -->
+                    <!-- Product Button - Cell 3 -->
                     <a href="<?php echo home_url('/product'); ?>" class="nav-link-product <?php echo is_page('product') ? 'active' : ''; ?>">PRODUCT</a>
                     
-                    <!-- Solutions Button - Cell 3 -->
-                    <a href="<?php echo home_url('/solutions'); ?>" class="nav-link-solutions <?php echo is_page('solutions') ? 'active' : ''; ?>">SOLUTIONS</a>
-                    
-                    <!-- Industries Button - Cell 4 -->
+                    <!-- Industries Button - Cell 5 -->
                     <a href="<?php echo home_url('/industries'); ?>" class="nav-link-industries <?php echo is_page('industries') ? 'active' : ''; ?>">INDUSTRIES</a>
                     
                     <!-- Success Stories Button - Cell 5 -->
@@ -81,7 +78,6 @@
                 <a href="<?php echo home_url('/'); ?>" class="mobile-nav-link">HOME</a>
                 <a href="<?php echo home_url('/about'); ?>" class="mobile-nav-link">ABOUT</a>
                 <a href="<?php echo home_url('/product'); ?>" class="mobile-nav-link">PRODUCT</a>
-                <a href="<?php echo home_url('/solutions'); ?>" class="mobile-nav-link">SOLUTIONS</a>
                 <a href="<?php echo home_url('/industries'); ?>" class="mobile-nav-link">INDUSTRIES</a>
                 <a href="<?php echo home_url('/success-stories'); ?>" class="mobile-nav-link">SUCCESS STORIES</a>
                 <a href="<?php echo home_url('/grants'); ?>" class="mobile-nav-link">GRANTS</a>

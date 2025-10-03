@@ -85,7 +85,7 @@
   
   .nav-menu {
     position: relative;
-    width: 810px; // 7 cells × 100px + 1 cell × 110px = 810px
+    width: 710px; // 6 cells × 100px + 1 cell × 110px = 710px
     height: $header-height;
     border: 1px solid $color-white;
     border-bottom: none; // Remove bottom border since it's handled by site-header::after
@@ -154,42 +154,36 @@
       left: 100px;
     }
     
-    // Solutions button - Cell 3
-    .nav-link-solutions {
+    // Industries button - Cell 3
+    .nav-link-industries {
       @extend %nav-link-base;
       left: 200px;
     }
     
-    // Industries button - Cell 4
-    .nav-link-industries {
-      @extend %nav-link-base;
-      left: 300px;
-    }
-    
-    // Success Stories button - Cell 5 (wider cell)
+    // Success Stories button - Cell 4 (wider cell)
     .nav-link-success-stories {
       @extend %nav-link-base;
-      left: 400px;
+      left: 300px;
       width: 110px; // Wider cell for longer text
       font-size: 10px; // Slightly smaller to fit "SUCCESS STORIES"
     }
     
-    // Grants button - Cell 6
+    // Grants button - Cell 5
     .nav-link-grants {
       @extend %nav-link-base;
-      left: 510px; // Adjusted for wider success stories cell (400 + 110)
+      left: 410px; // Adjusted for wider success stories cell (300 + 110)
     }
     
-    // Blog button - Cell 7
+    // Blog button - Cell 6
     .nav-link-blog {
       @extend %nav-link-base;
-      left: 610px; // Adjusted for wider success stories cell (510 + 100)
+      left: 510px; // Adjusted for wider success stories cell (410 + 100)
     }
     
-    // Contact button - Cell 8 (subtle yellow highlight, no right divider)
+    // Contact button - Cell 7 (subtle yellow highlight, no right divider)
     .nav-link-contact {
       @extend %nav-link-base;
-      left: 710px; // Adjusted for wider success stories cell (610 + 100)
+      left: 610px; // Adjusted for wider success stories cell (510 + 100)
       color: $color-accent; // Yellow text
       
       &:hover {

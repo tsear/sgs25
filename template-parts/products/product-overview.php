@@ -36,7 +36,7 @@
             <!-- Consulting Services -->
             <div class="product-card product-card--consulting fade-column" data-delay="1">
                 <div class="product-card__icon">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/yellow-rocket-div.svg" alt="Consulting Services" />
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/tild3335-3634-4964-b535-343262343165__group_1000011348.svg" alt="Consulting Services" />
                 </div>
                 <h3 class="product-card__title">Expert Consulting</h3>
                 <p class="product-card__subtitle">Full Lifecycle Support</p>

@@ -48,8 +48,7 @@
     font-size: 20px;
     font-weight: 400;
     line-height: 1.6;
-    color: rgba(255, 255, 255, 0.8);
-    margin: 0;
+    color: #ffffff;
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
@@ -152,11 +151,12 @@
     font-size: 18px;
     font-weight: 400;
     line-height: 1.7;
-    color: rgba(255, 255, 255, 0.9);
-    margin: 0 0 24px 0;
+    color: #ffffff;
+    margin: 0 0 20px 0;
+    text-align: left;
     
     @media (max-width: 768px) {
-        font-size: 17px;
+        font-size: 16px;
         line-height: 1.6;
     }
     
@@ -200,7 +200,7 @@
     font-family: 'Poppins', Arial, sans-serif;
     font-size: 14px;
     font-weight: 500;
-    color: rgba(255, 255, 255, 0.7);
+    color: #ffffff;
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
@@ -215,9 +215,14 @@
 
 .approach-feature {
     padding: 24px;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 6px;
+    transition: border-color 0.3s ease;
+    
+    &:hover {
+        border-color: rgba($color-brand-yellow, 0.4);
+    }
 }
 
 .approach-feature__title {
@@ -233,7 +238,7 @@
     font-size: 16px;
     font-weight: 400;
     line-height: 1.5;
-    color: rgba(255, 255, 255, 0.8);
+    color: #ffffff;
     margin: 0;
 }
 
@@ -293,13 +298,14 @@
     }
 }
 
-.approach-cta__text {
-    font-family: 'Poppins', Arial, sans-serif;
+.cta-approach__text {
     font-size: 18px;
-    font-weight: 400;
-    line-height: 1.5;
-    color: rgba(255, 255, 255, 0.8);
-    margin: 0 0 32px 0;
+    line-height: 1.6;
+    color: #ffffff;
+    margin-bottom: 32px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .approach-cta__button {
