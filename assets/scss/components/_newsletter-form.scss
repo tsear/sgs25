@@ -112,3 +112,35 @@
     &__button { width: 100%; }
   }
 }
+
+// Footer-specific newsletter form styles
+.footer-newsletter {
+  .newsletter-form {
+    border: none;
+    background: transparent;
+    min-height: auto;
+    padding: 0;
+    
+    .form-group {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      position: relative;
+      margin-bottom: 0;
+    }
+
+    .newsletter-message {
+      margin-top: 10px;
+      font-size: 14px;
+      color: #ffffff;
+      
+      &.success {
+        color: #36d399;
+      }
+      
+      &.error {
+        color: #ff6b6b;
+      }
+    }
+  }
+}

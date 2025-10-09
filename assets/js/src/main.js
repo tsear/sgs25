@@ -10,6 +10,8 @@ import FinancialComplianceSlider from './modules/rss-feed-fincom.js';
 import ValuePropAnimations from './modules/value-prop-animations.js';
 import MissionGrantsSlider from './modules/rss-feed-mission-div.js';
 import RocketAnimation from './modules/rocket-animation.js';
+import './modules/hubspot-tracking.js';
+import './footer-badge-carousel.js';
 
 /**
  * Typed Animation Class

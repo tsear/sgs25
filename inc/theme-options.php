@@ -41,6 +41,9 @@ function sgs_theme_options_page() {
     update_option('sgs_hubspot_contact_form_id', sanitize_text_field($_POST['sgs_hubspot_contact_form_id']));
     update_option('sgs_hubspot_grant_form_id', sanitize_text_field($_POST['sgs_hubspot_grant_form_id']));
         
+        // Save footer badges
+        sgs_save_footer_badges();
+        
         echo '<div class="notice notice-success is-dismissible"><p>' . __('Settings saved.', 'sgs') . '</p></div>';
     }
 
@@ -152,6 +155,44 @@ function sgs_theme_options_page() {
                         <p class="description"><?php _e('Custom text to display in the footer.', 'sgs'); ?></p>
                     </td>
                 </tr>
+                
+                <tr>
+                    <th scope="row">
+                        <label><?php _e('Footer Badges', 'sgs'); ?></label>
+                    </th>
+                    <td>
+                        <div id="footer-badges-container">
+                            <?php 
+                            $badges = sgs_get_footer_badges();
+                            echo '<!-- DEBUG: Retrieved ' . count($badges) . ' badges from database -->';
+                            if (empty($badges)) {
+                                // Default badges
+                                $badges = [
+                                    [
+                                        'image' => get_template_directory_uri() . '/assets/images/get-app.png',
+                                        'alt' => 'GetApp Recognition',
+                                        'link' => '',
+                                        'enabled' => true
+                                    ],
+                                    [
+                                        'image' => get_template_directory_uri() . '/assets/images/software-advice.png',
+                                        'alt' => 'Software Advice Badge',
+                                        'link' => '',
+                                        'enabled' => true
+                                    ]
+                                ];
+                            }
+                            
+                            foreach ($badges as $index => $badge) {
+                                sgs_render_badge_row($badge, $index);
+                            }
+                            ?>
+                        </div>
+                        <button type="button" id="add-badge" class="button"><?php _e('Add Badge', 'sgs'); ?></button>
+                        <p class="description"><?php _e('Manage badges displayed in the footer carousel. Images will auto-rotate every 4 seconds.', 'sgs'); ?></p>
+                        <?php wp_nonce_field('sgs_footer_badges_action', 'sgs_footer_badges_nonce'); ?>
+                    </td>
+                </tr>
             </table>
             
             <?php submit_button(); ?>
@@ -200,3 +241,109 @@ function sgs_get_hubspot_form_id($key) {
     );
     return isset($map[$key]) ? $map[$key] : '';
 }
+
+/**
+ * Footer Badge Management Functions
+ */
+
+/**
+ * Save footer badges from admin form
+ */
+function sgs_save_footer_badges() {
+    if (!isset($_POST['sgs_footer_badges_nonce']) || 
+        !wp_verify_nonce($_POST['sgs_footer_badges_nonce'], 'sgs_footer_badges_action')) {
+        error_log('Badge save failed: Nonce verification failed');
+        return;
+    }
+    
+    $badges = [];
+    
+    if (isset($_POST['badge_image']) && is_array($_POST['badge_image'])) {
+        error_log('Processing ' . count($_POST['badge_image']) . ' badge images from POST');
+        foreach ($_POST['badge_image'] as $index => $image_url) {
+            error_log("Badge $index: Image URL = '$image_url'");
+            if (!empty($image_url)) {
+                $badge_data = [
+                    'image' => esc_url_raw($image_url),
+                    'alt' => sanitize_text_field($_POST['badge_alt'][$index] ?? ''),
+                    'link' => esc_url_raw($_POST['badge_link'][$index] ?? ''),
+                    'enabled' => isset($_POST['badge_enabled'][$index]) && $_POST['badge_enabled'][$index] == '1'
+                ];
+                $badges[] = $badge_data;
+                error_log("Badge $index saved: " . print_r($badge_data, true));
+            } else {
+                error_log("Badge $index skipped: empty image URL");
+            }
+        }
+    } else {
+        error_log('No badge_image POST data found');
+    }
+    
+    error_log('POST data for badges: ' . print_r($_POST, true));
+    
+    update_option('sgs_footer_badges', $badges);
+    error_log('Footer badges saved: ' . count($badges) . ' badges');
+    error_log('Badge data: ' . print_r($badges, true));
+}
+
+/**
+ * Get footer badges
+ */
+function sgs_get_footer_badges() {
+    return get_option('sgs_footer_badges', []);
+}
+
+/**
+ * Render a single badge row in admin
+ */
+function sgs_render_badge_row($badge = [], $index = 0) {
+    $image = $badge['image'] ?? '';
+    $alt = $badge['alt'] ?? '';
+    $link = $badge['link'] ?? '';
+    $enabled = $badge['enabled'] ?? true;
+    ?>
+    <div class="badge-row" data-index="<?php echo $index; ?>">
+        <div class="badge-preview">
+            <?php if ($image) : ?>
+                <img src="<?php echo esc_url($image); ?>" alt="<?php echo esc_attr($alt); ?>" style="max-width: 60px; max-height: 40px; object-fit: contain;">
+            <?php else : ?>
+                <div class="no-image"><?php _e('No image selected', 'sgs'); ?></div>
+            <?php endif; ?>
+        </div>
+        
+        <div class="badge-fields">
+            <input type="hidden" name="badge_image[<?php echo $index; ?>]" value="<?php echo esc_attr($image); ?>" class="badge-image-url">
+            
+            <label><?php _e('Alt Text:', 'sgs'); ?></label>
+            <input type="text" name="badge_alt[<?php echo $index; ?>]" value="<?php echo esc_attr($alt); ?>" placeholder="Badge description">
+            
+            <label><?php _e('Link URL (optional):', 'sgs'); ?></label>
+            <input type="url" name="badge_link[<?php echo $index; ?>]" value="<?php echo esc_attr($link); ?>" placeholder="https://">
+            
+            <label>
+                <input type="checkbox" name="badge_enabled[<?php echo $index; ?>]" value="1" <?php checked($enabled); ?>>
+                <?php _e('Enabled', 'sgs'); ?>
+            </label>
+        </div>
+        
+        <div class="badge-actions">
+            <button type="button" class="button select-image"><?php _e('Select Image', 'sgs'); ?></button>
+            <button type="button" class="button remove-badge"><?php _e('Remove', 'sgs'); ?></button>
+        </div>
+    </div>
+    <?php
+}
+
+/**
+ * Add admin scripts for badge management
+ */
+function sgs_admin_scripts($hook) {
+    if ($hook !== 'appearance_page_sgs-theme-options') {
+        return;
+    }
+    
+    wp_enqueue_media();
+    wp_enqueue_script('sgs-admin-badges', get_template_directory_uri() . '/assets/js/admin-badges.js', ['jquery'], '1.0.0', true);
+    wp_enqueue_style('sgs-admin-badges', get_template_directory_uri() . '/assets/css/admin-badges.css', [], '1.0.0');
+}
+add_action('admin_enqueue_scripts', 'sgs_admin_scripts');

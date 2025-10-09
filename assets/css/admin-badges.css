@@ -1,0 +1,152 @@
+/**
+ * Footer Badge Management - Admin Styles
+ */
+
+#footer-badges-container {
+    border: 1px solid #ddd;
+    padding: 15px;
+    background: #f9f9f9;
+    margin-bottom: 10px;
+}
+
+.badge-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 15px;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.badge-row:last-child {
+    margin-bottom: 0;
+}
+
+.badge-preview {
+    min-width: 80px;
+    width: 80px;
+    height: 60px;
+    border: 2px dashed #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f8f8f8;
+    border-radius: 4px;
+    cursor: move;
+}
+
+.badge-preview img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.badge-preview .no-image {
+    font-size: 11px;
+    color: #666;
+    text-align: center;
+    line-height: 1.2;
+}
+
+.badge-fields {
+    flex: 1;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 8px 12px;
+    align-items: center;
+}
+
+.badge-fields label {
+    font-weight: 600;
+    font-size: 13px;
+    margin: 0;
+}
+
+.badge-fields input[type="text"],
+.badge-fields input[type="url"] {
+    width: 100%;
+    max-width: 300px;
+}
+
+.badge-fields input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+.badge-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 100px;
+}
+
+.badge-actions .button {
+    font-size: 12px;
+    padding: 4px 8px;
+    height: auto;
+    line-height: 1.4;
+}
+
+.badge-actions .remove-badge {
+    color: #d63638;
+    border-color: #d63638;
+}
+
+.badge-actions .remove-badge:hover {
+    background: #d63638;
+    color: white;
+}
+
+/* Sortable placeholder */
+.badge-placeholder {
+    height: 60px;
+    background: #e8f4fd;
+    border: 2px dashed #0073aa;
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
+
+/* Add badge button */
+#add-badge {
+    background: #0073aa;
+    color: white;
+    border-color: #0073aa;
+    margin-bottom: 10px;
+}
+
+#add-badge:hover {
+    background: #005a87;
+    border-color: #005a87;
+}
+
+/* Responsive adjustments */
+@media (max-width: 782px) {
+    .badge-row {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .badge-preview {
+        align-self: flex-start;
+    }
+    
+    .badge-fields {
+        grid-template-columns: 1fr;
+        gap: 5px;
+    }
+    
+    .badge-fields label {
+        margin-top: 8px;
+    }
+    
+    .badge-fields label:first-child {
+        margin-top: 0;
+    }
+    
+    .badge-actions {
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+}

@@ -15,6 +15,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     
+    <!-- Start of HubSpot Embed Code -->
+    <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/44675524.js"></script>
+    <!-- End of HubSpot Embed Code -->
+    
     <?php wp_head(); ?>
 </head>
 
@@ -79,7 +83,7 @@
                 <a href="<?php echo home_url('/about'); ?>" class="mobile-nav-link">ABOUT</a>
                 <a href="<?php echo home_url('/product'); ?>" class="mobile-nav-link">PRODUCT</a>
                 <a href="<?php echo home_url('/industries'); ?>" class="mobile-nav-link">INDUSTRIES</a>
-                <a href="<?php echo home_url('/success-stories'); ?>" class="mobile-nav-link">SUCCESS STORIES</a>
+                <a href="<?php echo home_url('/success-stories'); ?>" class="mobile-nav-link">TESTIMONIALS</a>
                 <a href="<?php echo home_url('/grants'); ?>" class="mobile-nav-link">GRANTS</a>
                 <a href="<?php echo home_url('/blog'); ?>" class="mobile-nav-link">BLOG</a>
                 <a href="<?php echo home_url('/contact'); ?>" class="mobile-nav-link contact">CONTACT</a>

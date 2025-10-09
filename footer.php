@@ -114,12 +114,12 @@
                 <div class="footer-section footer-newsletter">
                     <h4>Stay Connected</h4>
                     <p>Get insights on grant funding trends and opportunities.</p>
-                    <div class="newsletter-form">
+                    <form class="newsletter-form">
                         <div class="form-group">
-                            <input type="email" placeholder="you@here.co" required>
+                            <input type="email" name="email" placeholder="you@here.co" required>
                             <button type="submit" class="btn-submit">Subscribe</button>
                         </div>
-                    </div>
+                    </form>
                     <div class="footer-extra-links">
                         <a href="<?php echo home_url('/blog'); ?>">Blog</a>
                         <a href="<?php echo home_url('/testimonials'); ?>">Testimonials</a>

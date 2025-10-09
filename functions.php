@@ -178,4 +178,40 @@ add_action('init', function() {
         update_option('sgs_post_types_version', SGS_THEME_VERSION);
     }
 }, 15);
+
+/**
+ * Get footer read more categories dynamically
+ * Gets first 9 categories total from all post types combined
+ */
+function sgs_get_footer_categories() {
+    global $wpdb;
+    
+    // Get ALL categories from all taxonomies, ordered by count, limit 9
+    $all_terms = $wpdb->get_results("
+        SELECT t.term_id, t.name, t.slug, tt.taxonomy, tt.count 
+        FROM {$wpdb->terms} t 
+        INNER JOIN {$wpdb->term_taxonomy} tt ON t.term_id = tt.term_id 
+        WHERE tt.taxonomy IN ('success_story_category', 'grant_category', 'category') 
+        AND tt.count > 0 
+        ORDER BY tt.count DESC 
+        LIMIT 9
+    ");
+    
+    $categories = array();
+    
+    if ($all_terms) {
+        foreach ($all_terms as $term) {
+            $term_link = get_term_link($term->term_id, $term->taxonomy);
+            if (!is_wp_error($term_link)) {
+                $categories[] = array(
+                    'name' => $term->name,
+                    'url' => $term_link,
+                    'type' => $term->taxonomy
+                );
+            }
+        }
+    }
+    
+    return $categories;
+}
 ?>
