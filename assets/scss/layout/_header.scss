@@ -85,7 +85,7 @@
   
   .nav-menu {
     position: relative;
-    width: 730px; // 6 cells × 100px + 1 cell × 120px = 720px + 10px buffer = 730px
+    width: 720px; // 6 cells × 100px + 1 cell × 120px = 720px exactly
     height: $header-height;
     border: 1px solid $color-white;
     border-bottom: none; // Remove bottom border since it's handled by site-header::after
