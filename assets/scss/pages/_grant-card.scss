@@ -1,7 +1,6 @@
-/* ===================================================================
-   GRANT CARD STYLES
-   Styles for individual grant opportunity cards
-   =================================================================== */
+// =============================================================================
+// Grant Card - Standardized to match blog card structure
+// =============================================================================
 
 .grant-card {
   background: white;
@@ -17,7 +16,7 @@
   &:hover {
     transform: translateY(-4px);
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
-    border-color: #FFBC41;
+    border-color: $color-brand-yellow; // Grant brand color
   }
 }
 
@@ -55,6 +54,11 @@
   font-size: 14px;
 }
 
+.grant-card__date {
+  color: #6B7280;
+  font-weight: 500;
+}
+
 .grant-card__deadline {
   display: inline-flex;
   align-items: center;
@@ -68,18 +72,9 @@
   }
 }
 
-.grant-card__date {
-  color: #6B7280;
-  font-weight: 500;
-}
-
 .grant-card__amount {
-  background: linear-gradient(135deg, #FFBC41 0%, #FFD700 100%);
-  color: white;
-  padding: 4px 12px;
-  border-radius: 20px;
+  color: $color-brand-yellow;
   font-weight: 600;
-  font-size: 12px;
 }
 
 .grant-card__title {
@@ -114,14 +109,60 @@
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
+  margin-bottom: 16px;
 }
 
 .grant-card__category {
-  background: rgba(255, 188, 65, 0.1);
-  color: #FFBC41;
+  background: rgba($color-brand-yellow, 0.1); // Grant brand color
+  color: $color-brand-yellow;
   padding: 4px 12px;
   border-radius: 20px;
   font-size: 12px;
   font-weight: 500;
-  border: 1px solid rgba(255, 188, 65, 0.2);
+  border: 1px solid rgba($color-brand-yellow, 0.2);
+}
+
+.grant-card__footer {
+  margin-top: auto;
+  padding-top: 16px;
+  border-top: 1px solid #F3F4F6;
+}
+
+.grant-card__read-more {
+  background: $color-brand-yellow; // Grant brand color
+  color: white;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: background-color 0.3s ease;
+  
+  &:hover {
+    background: darken($color-brand-yellow, 10%);
+    color: white;
+  }
+  
+  svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+// Mobile responsiveness
+@media (max-width: 768px) {
+  .grant-card {
+    max-width: 100%;
+  }
+  
+  .grant-card__content {
+    padding: 20px;
+  }
+  
+  .grant-card__title {
+    font-size: 18px;
+  }
 }

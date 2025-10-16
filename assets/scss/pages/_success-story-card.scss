@@ -1,214 +1,155 @@
-/* ============================================================================
-   Success Story Card Component
-   Based on grant card with success stories-specific styling
-   ============================================================================ */
+// =============================================================================
+// Success Story Card - Standardized to match blog card structure
+// =============================================================================
 
 .success-story-card {
-  background-color: #111111;
-  border-radius: 12px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   overflow: hidden;
   transition: all 0.3s ease;
-  border: 1px solid #222222;
-  height: 100%;
+  border: 1px solid #F3F4F6;
   width: 100%;
   max-width: 380px;
   justify-self: start;
   
   &:hover {
     transform: translateY(-4px);
-    box-shadow: 0 8px 32px rgba($color-brand-blue, 0.15);
-    border-color: rgba($color-brand-blue, 0.3);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+    border-color: $color-brand-blue; // Success story brand color
   }
+}
+
+.success-story-card__link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.success-story-card__image {
+  aspect-ratio: 16/9;
+  overflow: hidden;
   
-  &__inner {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  &__image {
-    position: relative;
-    overflow: hidden;
-    height: 200px;
-    
-    @media (max-width: 479px) {
-      height: 180px;
-    }
-  }
-  
-  &__image-link {
-    display: block;
-    width: 100%;
-    height: 100%;
-    
-    &:focus {
-      outline: 2px solid $color-brand-blue;
-      outline-offset: 2px;
-    }
-  }
-  
-  &__thumbnail {
+  img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform 0.3s ease;
-    
-    .success-story-card:hover & {
-      transform: scale(1.05);
-    }
+  }
+}
+
+.success-story-card:hover .success-story-card__image img {
+  transform: scale(1.05);
+}
+
+.success-story-card__content {
+  padding: 24px;
+}
+
+.success-story-card__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 16px;
+  font-size: 14px;
+}
+
+.success-story-card__date {
+  color: #6B7280;
+  font-weight: 500;
+}
+
+.success-story-card__amount {
+  color: $color-brand-blue;
+  font-weight: 600;
+}
+
+.success-story-card__title {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 12px;
+  color: #1F2937;
+}
+
+.success-story-card__organization {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #6B7280;
+  font-size: 14px;
+  margin-bottom: 12px;
+  
+  svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+.success-story-card__excerpt {
+  color: #6B7280;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.success-story-card__categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.success-story-card__category {
+  background: rgba($color-brand-blue, 0.1); // Success story brand color
+  color: $color-brand-blue;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+  border: 1px solid rgba($color-brand-blue, 0.2);
+}
+
+.success-story-card__footer {
+  margin-top: auto;
+  padding-top: 16px;
+  border-top: 1px solid #F3F4F6;
+}
+
+.success-story-card__read-more {
+  background: $color-brand-blue; // Success story brand color
+  color: white;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: background-color 0.3s ease;
+  
+  &:hover {
+    background: darken($color-brand-blue, 10%);
+    color: white;
   }
   
-  &__content {
-    padding: 24px;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    
-    @media (max-width: 479px) {
-      padding: 20px;
-    }
+  svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+// Mobile responsiveness
+@media (max-width: 768px) {
+  .success-story-card {
+    max-width: 100%;
   }
   
-  &__organization {
-    color: $color-brand-blue;
-    font-size: 0.875rem;
-    font-weight: 600;
-    font-family: 'Poppins', Arial, sans-serif;
-    margin-bottom: 8px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+  .success-story-card__content {
+    padding: 20px;
   }
   
-  &__title {
-    margin: 0 0 12px 0;
-    
-    @media (max-width: 479px) {
-      margin-bottom: 10px;
-    }
-  }
-  
-  &__title-link {
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 1.25rem;
-    font-weight: 600;
-    font-family: 'Poppins', Arial, sans-serif;
-    line-height: 1.4;
-    transition: color 0.3s ease;
-    
-    &:hover {
-      color: $color-brand-blue;
-    }
-    
-    &:focus {
-      outline: none;
-      color: $color-brand-blue;
-    }
-    
-    @media (max-width: 479px) {
-      font-size: 1.125rem;
-    }
-  }
-  
-  &__excerpt {
-    color: #cccccc;
-    font-size: 0.9375rem;
-    line-height: 1.6;
-    margin-bottom: 16px;
-    font-family: 'Poppins', Arial, sans-serif;
-    flex-grow: 1;
-    
-    @media (max-width: 479px) {
-      font-size: 0.875rem;
-      margin-bottom: 14px;
-    }
-  }
-  
-  &__meta {
-    margin-bottom: 16px;
-    padding-bottom: 16px;
-    border-bottom: 1px solid #222222;
-    
-    @media (max-width: 479px) {
-      margin-bottom: 14px;
-      padding-bottom: 14px;
-    }
-  }
-  
-  &__grant-amount,
-  &__outcome {
-    color: #888888;
-    font-size: 0.8125rem;
-    font-family: 'Poppins', Arial, sans-serif;
-    margin-bottom: 6px;
-    
-    strong {
-      color: #ffffff;
-      font-weight: 600;
-    }
-  }
-  
-  &__date {
-    color: #666666;
-    font-size: 0.75rem;
-    font-family: 'Poppins', Arial, sans-serif;
-    margin-top: 8px;
-  }
-  
-  &__categories {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 16px;
-    
-    @media (max-width: 479px) {
-      margin-bottom: 14px;
-    }
-  }
-  
-  &__category {
-    background-color: rgba($color-brand-blue, 0.1);
-    color: $color-brand-blue;
-    padding: 4px 8px;
-    border-radius: 4px;
-    font-size: 0.75rem;
-    font-weight: 500;
-    font-family: 'Poppins', Arial, sans-serif;
-    border: 1px solid rgba($color-brand-blue, 0.2);
-  }
-  
-  &__footer {
-    margin-top: auto;
-  }
-  
-  &__read-more {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    color: $color-brand-blue;
-    text-decoration: none;
-    font-size: 0.875rem;
-    font-weight: 600;
-    font-family: 'Poppins', Arial, sans-serif;
-    transition: all 0.3s ease;
-    
-    &:hover {
-      color: lighten($color-brand-blue, 15%);
-      gap: 12px;
-    }
-    
-    &:focus {
-      outline: none;
-      color: lighten($color-brand-blue, 15%);
-    }
-    
-    svg {
-      flex-shrink: 0;
-      transition: transform 0.3s ease;
-    }
-    
-    &:hover svg {
-      transform: translateX(4px);
-    }
+  .success-story-card__title {
+    font-size: 18px;
   }
 }

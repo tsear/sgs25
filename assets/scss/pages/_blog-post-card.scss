@@ -16,7 +16,7 @@
   &:hover {
     transform: translateY(-4px);
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
-    border-color: #d81259; // Blog brand color
+    border-color: $color-brand-pink; // Blog brand color
   }
 }
 
@@ -72,6 +72,20 @@
   }
 }
 
+.post-card__organization {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #6B7280;
+  font-size: 14px;
+  margin-bottom: 12px;
+  
+  svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
 .post-card__title {
   font-size: 20px;
   font-weight: 700;
@@ -94,13 +108,13 @@
 }
 
 .post-card__category {
-  background: rgba(216, 18, 89, 0.1); // Blog brand color
-  color: #d81259;
+  background: rgba($color-brand-pink, 0.1); // Blog brand color
+  color: $color-brand-pink;
   padding: 4px 12px;
   border-radius: 20px;
   font-size: 12px;
   font-weight: 500;
-  border: 1px solid rgba(216, 18, 89, 0.2);
+  border: 1px solid rgba($color-brand-pink, 0.2);
 }
 
 .post-card__footer {
@@ -109,8 +123,8 @@
   border-top: 1px solid #F3F4F6;
 }
 
-.post-card__cta {
-  background: #d81259; // Blog brand color
+.post-card__read-more {
+  background: $color-brand-pink; // Blog brand color
   color: white;
   padding: 8px 16px;
   border-radius: 8px;
@@ -123,7 +137,7 @@
   transition: background-color 0.3s ease;
   
   &:hover {
-    background: darken(#d81259, 10%);
+    background: darken($color-brand-pink, 10%);
     color: white;
   }
   
@@ -194,7 +208,7 @@
   }
   
   &__btn {
-    background: #d81259;
+    background: $color-brand-pink;
     color: white;
     border: none;
     padding: 1rem 2rem;
@@ -209,8 +223,8 @@
     
     &:hover {
       transform: translateY(-2px);
-      box-shadow: 0 8px 25px rgba(#d81259, 0.3);
-      background: darken(#d81259, 10%);
+      box-shadow: 0 8px 25px rgba($color-brand-pink, 0.3);
+      background: darken($color-brand-pink, 10%);
     }
     
     &:active {

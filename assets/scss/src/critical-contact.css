@@ -286,7 +286,7 @@ hr {
 }
 .main-navigation .nav-menu {
   position: relative;
-  width: 710px;
+  width: 730px;
   height: 60px;
   border: 1px solid #ffffff;
   border-bottom: none;
@@ -345,17 +345,16 @@ hr {
 }
 .main-navigation .nav-menu .nav-link-success-stories {
   left: 300px;
-  width: 110px;
-  font-size: 10px;
+  width: 120px;
 }
 .main-navigation .nav-menu .nav-link-grants {
-  left: 410px;
+  left: 420px;
 }
 .main-navigation .nav-menu .nav-link-blog {
-  left: 510px;
+  left: 520px;
 }
 .main-navigation .nav-menu .nav-link-contact {
-  left: 610px;
+  left: 620px;
   color: #fcb03e;
 }
 .main-navigation .nav-menu .nav-link-contact:hover {

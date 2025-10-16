@@ -15,8 +15,20 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     
+    <!-- HubSpot Configuration -->
+    <script type="text/javascript">
+        window.sgsHubSpotConfig = {
+            portalId: '<?php echo esc_js(get_option('sgs_hubspot_portal_id', '44675524')); ?>',
+            forms: {
+                newsletter: '<?php echo esc_js(get_option('sgs_hubspot_newsletter_form_id', '32a6e78d-b7b9-4e1d-82fb-31693b40260a')); ?>',
+                contact: '<?php echo esc_js(get_option('sgs_hubspot_contact_form_id', '')); ?>',
+                grant: '<?php echo esc_js(get_option('sgs_hubspot_grant_form_id', '')); ?>'
+            }
+        };
+    </script>
+    
     <!-- Start of HubSpot Embed Code -->
-    <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/44675524.js"></script>
+    <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/<?php echo esc_js(get_option('sgs_hubspot_portal_id', '44675524')); ?>.js"></script>
     <!-- End of HubSpot Embed Code -->
     
     <?php wp_head(); ?>
@@ -53,7 +65,7 @@
                     <a href="<?php echo home_url('/industries'); ?>" class="nav-link-industries <?php echo is_page('industries') ? 'active' : ''; ?>">INDUSTRIES</a>
                     
                     <!-- Success Stories Button - Cell 5 -->
-                    <a href="<?php echo home_url('/success-stories'); ?>" class="nav-link-success-stories <?php echo is_page('success-stories') ? 'active' : ''; ?>">SUCCESS STORIES</a>
+                    <a href="<?php echo home_url('/success-stories'); ?>" class="nav-link-success-stories <?php echo is_page('success-stories') ? 'active' : ''; ?>">TESTIMONIALS</a>
                     
                     <!-- Grants Button - Cell 6 -->
                     <a href="<?php echo home_url('/grants'); ?>" class="nav-link-grants <?php echo is_page('grants') ? 'active' : ''; ?>">GRANTS</a>
