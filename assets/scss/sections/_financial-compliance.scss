@@ -12,6 +12,11 @@
     width: 100%;
     isolation: isolate;
     padding: 72px 0; // natural vertical rhythm
+    
+    // Mobile optimization - normalized padding
+    @media (max-width: 768px) {
+        padding: 60px 0;
+    }
 }
 
 .financial-compliance-container {
@@ -33,6 +38,12 @@
     @media (max-width: 960px) {
         gap: 24px;
     }
+    
+    // Mobile optimization - consistent layout across all three sections
+    @media (max-width: 768px) {
+        flex-direction: column;
+        gap: 32px;
+    }
 }
 
 .financial-compliance__left,
@@ -42,11 +53,25 @@
     gap: 24px;
     flex: 1 1 0;
     min-width: 260px;
+    
+    // Mobile optimization - normalize layout and order
+    @media (max-width: 768px) {
+        align-items: center;
+        text-align: center;
+        gap: 20px;
+        min-height: auto;
+        padding: 0 20px;
+    }
 }
 
 .financial-compliance__right {
     align-items: center;
     text-align: center;
+    
+    // Mobile optimization - ensure RSS/video embed follows the standard order
+    @media (max-width: 768px) {
+        order: 2; // RSS/video content comes after title section
+    }
 }
 
 .financial-compliance__title-frame {
@@ -110,6 +135,14 @@
     min-height: 100px; // reduced from 140px by ~30%
     padding-left: 75px;
     padding-top: 20px;
+    
+    // Mobile optimization - remove left padding that pushes slider offline
+    @media (max-width: 768px) {
+        padding-left: 0;
+        padding-right: 0;
+        width: 100%;
+        margin: 0 auto;
+    }
 
     .fc-slide {
         display: none;
@@ -159,10 +192,20 @@
 
         &.fc-nav--prev {
             left: 35px; // Account for 75px left padding, position outside image
+            
+            // Mobile optimization - adjust for no left padding
+            @media (max-width: 768px) {
+                left: -30px;
+            }
         }
 
         &.fc-nav--next {
             right: -40px; // Outside right edge of slider content
+            
+            // Mobile optimization - adjust positioning
+            @media (max-width: 768px) {
+                right: -30px;
+            }
         }
 
         svg {
@@ -186,7 +229,7 @@
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
-        max-width: 100%;
+        max-width: 240px; // Limit to ~35 characters at 16px font size
         text-align: left;
         &:hover { text-decoration: underline; }
     }
@@ -208,6 +251,18 @@
     left: 0;
     width: 70%; // Match the slider width
     padding-left: 0; // Remove any inherited padding
+    z-index: 10; // Ensure it appears above other elements
+    
+    // Mobile optimization - fix positioning and ensure visibility
+    @media (max-width: 768px) {
+        position: relative;
+        bottom: auto;
+        left: auto;
+        width: 100%;
+        margin-top: 16px;
+        text-align: center;
+        z-index: 15; // Higher z-index for mobile to ensure visibility
+    }
     
     .browse-all-btn {
         display: inline-block;

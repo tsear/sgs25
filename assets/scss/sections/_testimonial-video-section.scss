@@ -12,6 +12,11 @@
     width: 100%;
     isolation: isolate;
     padding: 72px 0; // natural vertical rhythm
+    
+    // Mobile optimization - normalized padding
+    @media (max-width: 768px) {
+        padding: 60px 0;
+    }
 }
 
 .testimonial-video-container {
@@ -33,6 +38,13 @@
     @media (max-width: 960px) {
         gap: 24px;
     }
+    
+    // Mobile optimization - consistent layout across all three sections
+    @media (max-width: 768px) {
+        flex-direction: column;
+        gap: 32px;
+        padding: 40px 0;
+    }
 }
 
 .testimonial-video__left,
@@ -42,11 +54,25 @@
     gap: 24px;
     flex: 1 1 0;
     min-width: 260px;
+    
+    // Mobile optimization - normalize layout and order
+    @media (max-width: 768px) {
+        align-items: center;
+        text-align: center;
+        gap: 20px;
+        min-height: auto;
+        padding: 0 20px;
+    }
 }
 
 .testimonial-video__right {
     align-items: center;
     text-align: center;
+    
+    // Mobile optimization - ensure video content follows the standard order
+    @media (max-width: 768px) {
+        order: 2; // Video content comes after title section
+    }
 }
 
 .testimonial-video__title-frame {

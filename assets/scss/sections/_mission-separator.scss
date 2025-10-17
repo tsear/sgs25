@@ -12,6 +12,11 @@
     width: 100%;
     isolation: isolate;
     padding: 72px 0; // natural vertical rhythm
+    
+    // Mobile optimization - normalized padding
+    @media (max-width: 768px) {
+        padding: 60px 0;
+    }
 }
 
 .mission-separator-container {
@@ -33,6 +38,12 @@
     @media (max-width: 960px) {
         gap: 24px;
     }
+    
+    // Mobile optimization - consistent layout across all three sections
+    @media (max-width: 768px) {
+        flex-direction: column;
+        gap: 32px;
+    }
 }
 
 .mission-separator__left,
@@ -42,11 +53,44 @@
     gap: 24px;
     flex: 1 1 0;
     min-width: 260px;
+    
+    // Mobile optimization - normalize layout and order
+    @media (max-width: 768px) {
+        align-items: center;
+        text-align: center;
+        gap: 20px;
+        min-height: auto;
+        padding: 0 20px;
+    }
 }
 
 .mission-separator__right {
     align-items: flex-end;
     text-align: right;
+    
+    // Mobile optimization - title section comes first, centered
+    @media (max-width: 768px) {
+        order: 1;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+// Mobile-specific ordering for left column (RSS feed)
+.mission-separator__left {
+    // Mobile optimization - RSS feed goes BENEATH the title/blurb
+    @media (max-width: 768px) {
+        order: 2; // RSS feed appears after title section on mobile
+    }
+}
+
+.mission-separator__left {
+    // Mobile optimization - RSS feed comes after title section
+    @media (max-width: 768px) {
+        order: 2;
+        align-items: center;
+        text-align: center;
+    }
 }
 
 .mission-separator__title-frame {
@@ -192,7 +236,7 @@
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
-        max-width: 100%;
+        max-width: 240px; // Limit to ~35 characters at 16px font size
         text-align: left;
         &:hover { text-decoration: underline; }
     }
@@ -214,6 +258,18 @@
     left: 0;
     width: 70%; // Match the slider width
     padding-left: 0; // Remove any inherited padding
+    z-index: 10; // Ensure it appears above other elements
+    
+    // Mobile optimization - fix positioning and ensure visibility
+    @media (max-width: 768px) {
+        position: relative;
+        bottom: auto;
+        left: auto;
+        width: 100%;
+        margin-top: 16px;
+        text-align: center;
+        z-index: 15; // Higher z-index for mobile to ensure visibility
+    }
     
     .browse-all-btn {
         display: inline-block;

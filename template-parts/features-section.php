@@ -1,10 +1,6 @@
 <?php
 /**
- * Template part for displaying the 5-                        <div class="card-icon">
-                            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/' . $feature['icon']); ?>" 
-                                 alt="<?php echo esc_attr($feature['alt']); ?>"
-                                 loading="lazy">
-                        </div>features section
+ * Template part for displaying the features section
  * 
  * Showcases the key platform capabilities in a horizontal card layout
  *
@@ -72,6 +68,48 @@ $image_base_url = get_template_directory_uri() . '/assets/images/';
                     </div>
                 </div>
             <?php endforeach; ?>
+        </div>
+        
+        <!-- Features CTA -->
+        <div class="features-section__cta">
+            <div class="features-cta__content">
+                <div class="features-cta__badge">🚀 Join 500+ Organizations</div>
+                <h3 class="features-cta__title">
+                    Turn Grant <span class="highlight">Complexity</span> into 
+                    <span class="highlight">Competitive Advantage</span>
+                </h3>
+                <p class="features-cta__description">
+                    From healthcare nonprofits securing $2M+ in federal funding to tech startups landing SBIR grants—our platform adapts to your industry's unique requirements. Stop chasing grants. Start winning them systematically.
+                </p>
+                <div class="features-cta__buttons">
+                    <a href="<?php echo esc_url(home_url('/industries')); ?>" class="features-cta__button features-cta__button--primary">
+                        <span>Explore Your Industry</span>
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
+                        </svg>
+                    </a>
+                    <a href="<?php echo esc_url(home_url('/demo')); ?>" class="features-cta__button features-cta__button--secondary">
+                        <span>See It In Action</span>
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M8 5v14l11-7z"/>
+                        </svg>
+                    </a>
+                </div>
+                <div class="features-cta__stats">
+                    <div class="features-cta__stat">
+                        <span class="stat-number">$47M+</span>
+                        <span class="stat-label">Grants Secured</span>
+                    </div>
+                    <div class="features-cta__stat">
+                        <span class="stat-number">78%</span>
+                        <span class="stat-label">Success Rate</span>
+                    </div>
+                    <div class="features-cta__stat">
+                        <span class="stat-number">60%</span>
+                        <span class="stat-label">Time Saved</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>

@@ -1,15 +1,16 @@
 @charset "UTF-8";
-/*
+/*!
 Theme Name: Smart Grant Solutions
 Description: Custom WordPress theme for Smart Grant Solutions - MissionGranted platform. Modular, scalable theme built without theme.json for maximum flexibility.
 Version: 1.0.0
 Author: Tyler Sear
 Text Domain: sgs
+License: GPL v2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+
+Smart Grant Solutions WordPress Theme
+Custom SCSS Architecture
 */
-/*!
- * Smart Grant Solutions WordPress Theme
- * Custom SCSS Architecture
- */
 * {
   box-sizing: border-box;
 }
@@ -3559,11 +3560,33 @@ hr {
 }
 @media (max-width: 639px) {
   .feature-cards-container {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
   }
   .feature-cards-container .feature-card:nth-child(5) {
-    max-width: 100%;
+    grid-column: 1/-1;
+    max-width: 60%;
+    margin: 0 auto;
+  }
+}
+@media (max-width: 768px) {
+  .feature-cards-container {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 24px !important;
+  }
+  .feature-cards-container .feature-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: 280px !important;
+    margin: 0 !important;
+  }
+  .feature-cards-container .feature-card .card-content {
+    padding: 24px;
+  }
+  .feature-cards-container .feature-card:nth-child(5) {
+    max-width: 100% !important;
+    grid-column: auto !important;
   }
 }
 
@@ -3597,6 +3620,169 @@ hr {
     flex: 1 1 100%;
     max-width: 400px;
   }
+}
+
+.features-section__cta {
+  margin-top: 75px;
+  padding: 75px 45px;
+  background: linear-gradient(135deg, rgba(216, 18, 89, 0.15), rgba(1, 107, 166, 0.1));
+  border: 2px solid rgba(216, 18, 89, 0.3);
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+}
+@media (max-width: 639px) {
+  .features-section__cta {
+    padding: 60px 30px;
+    margin-top: 60px;
+  }
+}
+.features-section__cta::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 20% 80%, rgba(216, 18, 89, 0.1) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(1, 107, 166, 0.1) 0%, transparent 50%);
+  z-index: 0;
+}
+.features-section__cta .features-cta__content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+.features-section__cta .features-cta__badge {
+  display: inline-block;
+  background: #d81259;
+  color: #ffffff;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 20px;
+}
+.features-section__cta .features-cta__title {
+  font-family: "Poppins", Arial, sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+@media (max-width: 639px) {
+  .features-section__cta .features-cta__title {
+    font-size: 26px;
+  }
+}
+.features-section__cta .features-cta__title .highlight {
+  color: #d81259;
+}
+.features-section__cta .features-cta__description {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 45px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+@media (max-width: 639px) {
+  .features-section__cta .features-cta__description {
+    font-size: 16px;
+  }
+}
+.features-section__cta .features-cta__buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+@media (max-width: 479px) {
+  .features-section__cta .features-cta__buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.features-section__cta .features-cta__button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 32px;
+  text-decoration: none;
+  font-family: "Poppins", Arial, sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+.features-section__cta .features-cta__button--primary {
+  background: linear-gradient(135deg, #d81259 0%, rgb(168.9230769231, 14.0769230769, 69.6025641026) 100%);
+  color: #ffffff;
+  border: 2px solid #d81259;
+}
+.features-section__cta .features-cta__button--primary:hover {
+  background: linear-gradient(135deg, rgb(192.4615384615, 16.0384615385, 79.3012820513) 0%, rgb(145.3846153846, 12.1153846154, 59.9038461538) 100%);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(216, 18, 89, 0.4);
+}
+.features-section__cta .features-cta__button--secondary {
+  background: transparent;
+  color: #ffffff;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+.features-section__cta .features-cta__button--secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: #ffffff;
+  transform: translateY(-3px);
+}
+.features-section__cta .features-cta__button svg {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.3s ease;
+}
+.features-section__cta .features-cta__button:hover svg {
+  transform: translateX(4px);
+}
+@media (max-width: 479px) {
+  .features-section__cta .features-cta__button {
+    width: 280px;
+    justify-content: center;
+  }
+}
+.features-section__cta .features-cta__stats {
+  margin-top: 45px;
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+}
+@media (max-width: 639px) {
+  .features-section__cta .features-cta__stats {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+}
+.features-section__cta .features-cta__stat {
+  text-align: center;
+}
+.features-section__cta .features-cta__stat .stat-number {
+  display: block;
+  font-size: 24px;
+  font-weight: 700;
+  color: #d81259;
+  margin-bottom: 4px;
+}
+.features-section__cta .features-cta__stat .stat-label {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.8);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .form-group {
