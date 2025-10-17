@@ -63,6 +63,13 @@
     @media (max-width: 1024px) { font-size: 72px; line-height: 76px; width: auto; height: auto; }
     @media (max-width: 768px)  { font-size: 48px; line-height: 52px; }
     @media (max-width: 480px)  { font-size: 36px; line-height: 40px; }
+    
+    .mobile-break {
+      display: none;
+      @media (max-width: 640px) {
+        display: block;
+      }
+    }
   }
 
   &__svg-container {

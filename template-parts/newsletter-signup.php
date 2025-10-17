@@ -9,7 +9,7 @@
     <div class="container">
         <form class="newsletter-form__form" novalidate>
             <div class="newsletter-form__field">
-                <label class="newsletter-form__label" for="newsletter-email">Subscribe to our newsletter</label>
+                <label class="newsletter-form__label" for="newsletter-email">SUBSCRIBE TO OUR NEWSLETTER</label>
                 <input
                     class="newsletter-form__input"
                     type="email"
