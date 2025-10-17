@@ -12,6 +12,8 @@ get_header(); ?>
     
     <?php get_template_part('template-parts/contact/contact-form'); ?>
 
+    <?php get_template_part('template-parts/contact/contact-cta'); ?>
+
 </main>
 
 <?php get_footer(); ?>
