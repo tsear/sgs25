@@ -8,14 +8,17 @@
     <div class="hero-container" style="width: 100%; height: 100%; position: relative; margin: 0; padding: 0; top: 0;">
         
         
-        <!-- MissionGranted Logo (100px from left) -->
-        <div class="hero-logo" style="position: absolute; top: 120px; left: 100px; width: 550px; z-index: 10;">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/tild3138-3430-4561-a363-396335613866__property_1default.svg" alt="MissionGranted" style="width: 100%; height: auto; display: block;" />
-        </div>
-        
-        <!-- "IS" text (aligned with logo) -->
-        <div class="hero-is-text" style="position: absolute; top: 122px; left: 670px; width: 60px; z-index: 10; color: #ffffff; font-size: 62px; font-family: 'Poppins', Arial, sans-serif; line-height: 1; font-weight: 800;">
-            IS
+        <!-- Logo + IS Text Container (for mobile layout) -->
+        <div class="hero-logo-line">
+            <!-- MissionGranted Logo (100px from left) -->
+            <div class="hero-logo" style="position: absolute; top: 120px; left: 100px; width: 550px; z-index: 10;">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/tild3138-3430-4561-a363-396335613866__property_1default.svg" alt="MissionGranted" style="width: 100%; height: auto; display: block;" />
+            </div>
+            
+            <!-- "IS" text (aligned with logo) -->
+            <div class="hero-is-text" style="position: absolute; top: 122px; left: 670px; width: 60px; z-index: 10; color: #ffffff; font-size: 62px; font-family: 'Poppins', Arial, sans-serif; line-height: 1; font-weight: 800;">
+                IS
+            </div>
         </div>
         
         <!-- Typewriter Text (under logo) -->
@@ -25,6 +28,10 @@
         
         
     </div>
+    
+    <!-- SGS Logo (mobile only) - Outside container to position relative to full section -->
+    <img class="hero-sgs-logo" src="<?php echo get_template_directory_uri(); ?>/assets/images/tild3832-6632-4035-b932-353234353234__sgs_logo.svg" alt="Smart Grant Solutions" />
+    
 </section>
 
 
