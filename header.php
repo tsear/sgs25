@@ -52,7 +52,7 @@
                 </div>
             </div>
 
-            <!-- Navigation Menu - 7 Equal Cells -->
+            <!-- Desktop Navigation Menu -->
             <nav id="site-navigation" class="main-navigation">
                 <div class="nav-menu">
                     <!-- About Button - Cell 2 -->
@@ -76,29 +76,35 @@
                     <!-- Contact Button - Cell 8 (yellow highlight) -->
                     <a href="<?php echo home_url('/contact'); ?>" class="nav-link-contact <?php echo is_page('contact') ? 'active' : ''; ?>">CONTACT</a>
                 </div>
-                
-                <!-- Mobile menu toggle -->
-                <button class="mobile-menu-toggle" aria-controls="mobile-navigation" aria-expanded="false">
-                    <span class="hamburger-line"></span>
-                    <span class="hamburger-line"></span>
-                    <span class="hamburger-line"></span>
-                </button>
             </nav>
+            
+            <!-- Mobile Hamburger Menu - SEPARATE FROM MAIN NAV -->
+            <div class="mobile-menu-container">
+                <button class="mobile-hamburger" id="mobile-hamburger" aria-label="Toggle mobile menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
         </div>
     </header>
 
-    <!-- Mobile Navigation -->
-    <nav class="mobile-navigation" id="mobile-navigation">
+    <!-- Mobile Navigation Overlay -->
+    <div class="mobile-nav-overlay" id="mobile-nav-overlay">
         <div class="mobile-nav-content">
-            <div class="mobile-nav-menu">
-                <a href="<?php echo home_url('/'); ?>" class="mobile-nav-link">HOME</a>
-                <a href="<?php echo home_url('/about'); ?>" class="mobile-nav-link">ABOUT</a>
-                <a href="<?php echo home_url('/product'); ?>" class="mobile-nav-link">PRODUCT</a>
-                <a href="<?php echo home_url('/industries'); ?>" class="mobile-nav-link">INDUSTRIES</a>
-                <a href="<?php echo home_url('/success-stories'); ?>" class="mobile-nav-link">TESTIMONIALS</a>
-                <a href="<?php echo home_url('/grants'); ?>" class="mobile-nav-link">GRANTS</a>
-                <a href="<?php echo home_url('/blog'); ?>" class="mobile-nav-link">BLOG</a>
-                <a href="<?php echo home_url('/contact'); ?>" class="mobile-nav-link contact">CONTACT</a>
+            <div class="mobile-nav-header">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/tild3832-6632-4035-b932-353234353234__sgs_logo.svg" alt="Smart Grant Solutions" class="mobile-logo" />
+                <button class="mobile-nav-close" id="mobile-nav-close">&times;</button>
             </div>
+            <nav class="mobile-nav-menu">
+                <a href="<?php echo home_url('/about'); ?>" class="mobile-nav-link <?php echo is_page('about') ? 'active' : ''; ?>">ABOUT</a>
+                <a href="<?php echo home_url('/product'); ?>" class="mobile-nav-link <?php echo is_page('product') ? 'active' : ''; ?>">PRODUCT</a>
+                <a href="<?php echo home_url('/industries'); ?>" class="mobile-nav-link <?php echo is_page('industries') ? 'active' : ''; ?>">INDUSTRIES</a>
+                <a href="<?php echo home_url('/success-stories'); ?>" class="mobile-nav-link <?php echo is_page('success-stories') ? 'active' : ''; ?>">TESTIMONIALS</a>
+                <a href="<?php echo home_url('/grants'); ?>" class="mobile-nav-link <?php echo is_page('grants') ? 'active' : ''; ?>">GRANTS</a>
+                <a href="<?php echo home_url('/blog'); ?>" class="mobile-nav-link <?php echo is_page('blog') ? 'active' : ''; ?>">BLOG</a>
+                <a href="<?php echo home_url('/contact'); ?>" class="mobile-nav-link <?php echo is_page('contact') ? 'active' : ''; ?>">CONTACT</a>
+            </nav>
         </div>
-    </nav>
+    </div>
+

@@ -78,12 +78,11 @@
   top: 50%;
   transform: translateY(-50%);
   
-  // Hide on smaller screens - show hamburger instead
-  @include respond-to(xl) {
-    display: none;
-  }
-  
   .nav-menu {
+    // Hide nav menu on smaller screens - show hamburger instead
+    @include respond-to(xl) {
+      display: none;
+    }
     position: relative;
     width: 720px; // 6 cells × 100px + 1 cell × 120px = 720px exactly
     height: $header-height;
@@ -195,27 +194,150 @@
     }
   }
   
-  // Mobile menu toggle
-  .mobile-menu-toggle {
-    display: none;
-    background: none;
-    border: none;
-    color: $color-white;
-    font-size: $font-size-lg;
-    cursor: pointer;
+  // Hide desktop nav on mobile
+  @include respond-to(xl) {
+    .nav-menu {
+      display: none;
+    }
+  }
+}
+
+// SIMPLE MOBILE HAMBURGER MENU CONTAINER
+.mobile-menu-container {
+  display: none;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 9999;
+  
+  @include respond-to(xl) {
+    display: block;
+  }
+}
+
+// SIMPLE HAMBURGER BUTTON
+.mobile-hamburger {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  width: 44px;
+  height: 44px;
+  position: relative;
+  z-index: 10000;
+  
+  span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: #fff;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+    position: relative;
+  }
+  
+  &:hover span {
+    background: #ffbc41;
+  }
+  
+  // Animation when menu is open
+  &.active span:nth-child(1) {
+    transform: rotate(45deg) translate(8px, 8px);
+  }
+  
+  &.active span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  &.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(8px, -8px);
+  }
+}
+
+// MOBILE NAVIGATION OVERLAY
+.mobile-nav-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.95);
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  
+  &.active {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .mobile-nav-content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+  }
+  
+  .mobile-nav-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     
-    .hamburger-line {
-      display: block;
-      width: 25px;
-      height: 3px;
-      background: $color-white;
-      margin: 5px 0;
-      transition: $transition-fast;
+    .mobile-logo {
+      height: 32px;
     }
     
-    // Show mobile toggle on smaller screens
-    @include respond-to(xl) {
-      display: block;
+    .mobile-nav-close {
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 32px;
+      cursor: pointer;
+      padding: 0;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      
+      &:hover {
+        color: #ffbc41;
+      }
+    }
+  }
+  
+  .mobile-nav-menu {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    padding: 40px 0;
+    
+    .mobile-nav-link {
+      color: #fff;
+      text-decoration: none;
+      font-size: 24px;
+      font-weight: 600;
+      font-family: $font-primary;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 15px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.3s ease;
+      
+      &:hover {
+        color: #ffbc41;
+        padding-left: 20px;
+      }
+      
+      &.active {
+        color: #ffbc41;
+      }
     }
   }
 }
