@@ -42,6 +42,7 @@
             <div class="card-content">
                 <p>Budgeting keeps you compliant, and MissionGranted keeps it simple. Our tools pull all your funding sources into one clear view so you can see how they work together, plan for what-ifs, adjust when things change, and make confident decisions that move your mission forward.</p>
             </div>
+            <a href="#" class="video-card__read-more">Read More</a>
         </div>
 
         <!-- Card 2: Automation -->
@@ -52,6 +53,7 @@
             <div class="card-content">
                 <p>MissionGranted takes the messy compliance work you’re stuck doing in spreadsheets—like indirect costs and payroll splits—and automates it. That means fewer mistakes, less wasted time, and more capacity for your team to focus on the bigger picture.</p>
             </div>
+            <a href="#" class="video-card__read-more">Read More</a>
         </div>
 
         <!-- Card 3: Compliance -->
@@ -62,6 +64,7 @@
             <div class="card-content">
                 <p>MissionGranted works alongside your team to spot compliance risks early and offer clear guidance on budgets and spending. With smarter alerts and recommendations, you can align funding to shifting program needs, stay compliant, and make the most of limited resources.</p>
             </div>
+            <a href="#" class="video-card__read-more">Read More</a>
         </div>
 
         <!-- Card 4: Best Practices -->
@@ -72,6 +75,7 @@
             <div class="card-content">
                 <p>Built for social impact organizations, MissionGranted combines an easy-to-use interface with built-in financial best practices and real-time compliance guidance. It keeps your numbers accurate, your team confident, and your organization ready to meet requirements without the stress.</p>
             </div>
+            <a href="#" class="video-card__read-more">Read More</a>
         </div>
     </div>
 </section>

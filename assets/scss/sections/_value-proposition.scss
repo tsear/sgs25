@@ -57,6 +57,7 @@
         text-align: center; // Center align text within the right column
         position: relative;
         z-index: 5; // Ensure CTA column is above other elements
+        display: flex; // Ensure flexbox for true vertical centering
         
         @media (max-width: 960px) {
             grid-column: 1 / -1;
@@ -104,13 +105,13 @@
 
 .value-prop__button {
     display: inline-block;
-    padding: 12px 24px;
+    padding: 16px 32px; // Larger padding for desktop
     background-color: #FFBC41; // SGS Brand Yellow
     color: #000000;
     text-decoration: none;
     font-family: 'Poppins', Arial, sans-serif;
     font-weight: 600;
-    font-size: 14px;
+    font-size: 16px; // Larger font size for desktop
     text-transform: uppercase;
     letter-spacing: 0.5px;
     border-radius: 4px;
@@ -118,6 +119,11 @@
     position: relative;
     z-index: 10; // Ensure button is above other elements
     cursor: pointer;
+    
+    @media (max-width: 768px) {
+        padding: 12px 24px; // Smaller on mobile
+        font-size: 14px; // Smaller font on mobile
+    }
     
     &:hover {
         background-color: #D81259; // SGS Brand Pink on hover

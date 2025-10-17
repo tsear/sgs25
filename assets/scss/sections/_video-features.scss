@@ -257,6 +257,30 @@
           margin: 0;
         }
       }
+
+      .video-card__read-more {
+        position: absolute;
+        bottom: 15px;
+        right: 15px;
+        background: #D81259;
+        color: white;
+        padding: 6px 12px;
+        border-radius: 4px;
+        font-size: 12px;
+        font-weight: 600;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        transition: all 0.3s ease;
+        z-index: 10;
+        
+        &:hover {
+          background: darken(#D81259, 10%);
+          color: white;
+          transform: translateY(-1px);
+        }
+      }
     }
   }
   
