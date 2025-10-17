@@ -60,9 +60,14 @@ class RocketAnimation {
     }
 }
 
-// Initialize when DOM is ready
+// Initialize when DOM is ready - only if elements exist
 document.addEventListener('DOMContentLoaded', () => {
-    new RocketAnimation();
+    const rocketSection = document.querySelector('.rocket-section');
+    const rocketElement = document.querySelector('.rocket');
+    
+    if (rocketSection && rocketElement) {
+        new RocketAnimation();
+    }
 });
 
 export default RocketAnimation;

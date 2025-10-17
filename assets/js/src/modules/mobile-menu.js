@@ -14,6 +14,8 @@ class MobileMenu {
         
         console.log('Hamburger element:', this.hamburger);
         console.log('Overlay element:', this.overlay);
+        console.log('Close button element:', this.closeBtn);
+        console.log('Is mobile device:', /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent));
         
         this.init();
     }
@@ -25,15 +27,31 @@ class MobileMenu {
     }
     
     bindEvents() {
-        // Open menu when hamburger is clicked
-        this.hamburger.addEventListener('click', () => {
-            console.log('Hamburger clicked!');
+        // Open menu when hamburger is clicked or touched
+        const handleHamburgerActivation = (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            console.log('Hamburger activated!', e.type);
             this.openMenu();
-        });
+        };
+        
+        // Use only touchstart for mobile devices, click for others
+        if ('ontouchstart' in window) {
+            this.hamburger.addEventListener('touchstart', handleHamburgerActivation, { passive: false });
+        } else {
+            this.hamburger.addEventListener('click', handleHamburgerActivation);
+        }
         
         // Close menu when close button is clicked
         if (this.closeBtn) {
-            this.closeBtn.addEventListener('click', () => this.closeMenu());
+            const handleCloseActivation = (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                this.closeMenu();
+            };
+            
+            this.closeBtn.addEventListener('click', handleCloseActivation);
+            this.closeBtn.addEventListener('touchstart', handleCloseActivation, { passive: false });
         }
         
         // Close menu when overlay background is clicked

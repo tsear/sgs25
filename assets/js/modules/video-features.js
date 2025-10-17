@@ -301,9 +301,15 @@
         }
     }
 
-    // Initialize when DOM is ready
+    // Initialize when DOM is ready - with error handling
     $(document).ready(function() {
-        new VideoFeaturesController();
+        try {
+            if ($('.video-features-section').length > 0) {
+                new VideoFeaturesController();
+            }
+        } catch (error) {
+            console.log('Video features initialization failed:', error);
+        }
     });
 
     // Handle window resize

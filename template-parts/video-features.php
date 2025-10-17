@@ -35,9 +35,9 @@
     <!-- Video Cards Container -->
     <div class="video-cards-container">
         <!-- Card 1: Strategic Insights -->
-        <div class="video-card">
+        <div class="video-card" data-card-index="1">
             <div class="video-wrapper">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/strategic-resource-management.gif" alt="Strategic Resource Management" class="feature-gif">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/strategic-resource-management.gif" alt="Strategic Resource Management" class="feature-gif" loading="eager">
             </div>
             <div class="card-content">
                 <p>Budgeting keeps you compliant, and MissionGranted keeps it simple. Our tools pull all your funding sources into one clear view so you can see how they work together, plan for what-ifs, adjust when things change, and make confident decisions that move your mission forward.</p>

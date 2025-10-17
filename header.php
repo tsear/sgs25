@@ -80,7 +80,7 @@
             
             <!-- Mobile Hamburger Menu - SEPARATE FROM MAIN NAV -->
             <div class="mobile-menu-container">
-                <button class="mobile-hamburger" id="mobile-hamburger" aria-label="Toggle mobile menu">
+                <button class="mobile-hamburger" id="mobile-hamburger" aria-label="Toggle mobile menu" data-hs-ignore="true">
                     <span></span>
                     <span></span>
                     <span></span>
