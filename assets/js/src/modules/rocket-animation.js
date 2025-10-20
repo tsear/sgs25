@@ -1,9 +1,23 @@
 /**
  * Rocket Animation - Scroll-triggered rocket movement across page breaker
+ * Mobile-optimized: Only runs on desktop devices for performance
  */
 
 class RocketAnimation {
     constructor() {
+        // Mobile detection - skip animation on mobile devices
+        this.isMobile = this.detectMobile();
+        
+        // Check if video-features section has mobile-optimized class
+        this.videoSection = document.querySelector('.video-features-section');
+        this.isMobileOptimized = this.videoSection && this.videoSection.classList.contains('mobile-optimized');
+        
+        // Skip initialization on mobile or mobile-optimized sections
+        if (this.isMobile || this.isMobileOptimized) {
+            console.log('Rocket animation skipped for mobile optimization');
+            return;
+        }
+        
         this.rocketSection = document.querySelector('[data-rocket-section]');
         this.rocketElement = document.querySelector('[data-rocket-element]');
         
@@ -12,6 +26,11 @@ class RocketAnimation {
         }
         
         this.init();
+    }
+    
+    detectMobile() {
+        return window.innerWidth <= 768 || 
+               /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
     }
     
     init() {

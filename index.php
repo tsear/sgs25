@@ -35,6 +35,8 @@ get_header();
 
     <?php get_template_part('template-parts/testimonial-video'); ?>
 
+    <?php get_template_part('template-parts/funnel-cta'); ?>
+
 </main>
 
 <?php get_footer(); ?>

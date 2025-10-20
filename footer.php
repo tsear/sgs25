@@ -1,3 +1,4 @@
+    <?php if (!is_front_page()): ?>
     <!-- Final CTA Section matching Tilda -->
     <section class="final-cta-section" style="background-color: #000000; padding: 75px 0; text-align: center;">
         <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
@@ -8,6 +9,7 @@
             </div>
         </div>
     </section>
+    <?php endif; ?>
 
     <footer id="colophon" class="site-footer">
         

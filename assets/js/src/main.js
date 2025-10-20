@@ -138,8 +138,9 @@ class SGSTheme {
     }
     
     initMissionGrants() {
-        // Initialize Mission Grants RSS slideshow
-        this.missionGrantsSlider = new MissionGrantsSlider();
+        // Initialize Mission Grants RSS feed slider
+        console.log('Initializing Mission Grants slider...');
+        new MissionGrantsSlider();
     }
     
     initNewsletter() {
