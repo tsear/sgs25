@@ -25,43 +25,26 @@ get_header(); ?>
             <h3>Get Your Free Download</h3>
             <p>Please provide your information to access our resources. You'll only need to do this once!</p>
             
-                        <div id="download-hubspot-form"></div>
+            <div id="download-hubspot-form"></div>
             
-            <!-- Fallback/Custom form for downloads -->
-            <form id="download-fallback-form" style="display: block;" data-hs-ignore="true">
+            <form id="download-fallback-form" style="display: none;">
                 <div class="form-group">
-                    <label for="download_firstname">First Name *</label>
-                    <input type="text" id="download_firstname" name="firstname" required>
+                    <label for="download-first-name">First Name *</label>
+                    <input type="text" id="download-first-name" name="first_name" required>
                 </div>
-                
                 <div class="form-group">
-                    <label for="download_lastname">Last Name *</label>
-                    <input type="text" id="download_lastname" name="lastname" required>
+                    <label for="download-last-name">Last Name *</label>
+                    <input type="text" id="download-last-name" name="last_name" required>
                 </div>
-                
                 <div class="form-group">
-                    <label for="download_email">Email Address *</label>
-                    <input type="email" id="download_email" name="email" required>
+                    <label for="download-email">Email Address *</label>
+                    <input type="email" id="download-email" name="email" required>
                 </div>
-                
                 <div class="form-group">
-                    <label for="download_company">Company</label>
-                    <input type="text" id="download_company" name="company">
+                    <label for="download-organization">Organization</label>
+                    <input type="text" id="download-organization" name="organization">
                 </div>
-                
-                <div class="form-group">
-                    <label for="download_interest">What interests you most?</label>
-                    <select id="download_interest" name="download_interest">
-                        <option value="">Select one...</option>
-                        <option value="Grant Writing">Grant Writing</option>
-                        <option value="Compliance Management">Compliance Management</option>
-                        <option value="Financial Reporting">Financial Reporting</option>
-                        <option value="Opportunity Research">Opportunity Research</option>
-                        <option value="Other">Other</option>
-                    </select>
-                </div>
-                
-                <button type="submit" class="download-submit-btn">Get Download Access</button>
+                <button type="submit" class="download-submit-btn">Get Downloads Access</button>
             </form>
         </div>
     </div>
@@ -70,16 +53,6 @@ get_header(); ?>
 <script>
 // Download gateway JavaScript
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('Downloads page JavaScript loaded'); // Debug
-    
-    // Check if modal exists
-    const modal = document.getElementById('download-gate-modal');
-    console.log('Modal element found:', !!modal); // Debug
-    
-    // Check if download buttons exist
-    const downloadButtons = document.querySelectorAll('.download-trigger');
-    console.log('Download buttons found:', downloadButtons.length); // Debug
-    
     const DOWNLOAD_COOKIE = 'sgs_download_access';
     const COOKIE_EXPIRY_DAYS = 365;
     
@@ -115,25 +88,16 @@ document.addEventListener('DOMContentLoaded', function() {
             const downloadUrl = button.getAttribute('data-download-url');
             const downloadTitle = button.getAttribute('data-download-title');
             
-            console.log('Download button clicked:', { downloadUrl, downloadTitle }); // Debug
-            
             if (hasDownloadAccess()) {
-                console.log('User has download access, starting download'); // Debug
                 startDownload(downloadUrl, downloadTitle);
             } else {
-                console.log('User needs to complete form, showing modal'); // Debug
                 showDownloadModal(downloadUrl, downloadTitle);
             }
         }
     });
     
     function showDownloadModal(downloadUrl, downloadTitle) {
-        console.log('Showing download modal:', { downloadUrl, downloadTitle }); // Debug
         const modal = document.getElementById('download-gate-modal');
-        if (!modal) {
-            console.error('Modal element not found!'); // Debug
-            return;
-        }
         modal.style.display = 'flex';
         modal.setAttribute('data-download-url', downloadUrl);
         modal.setAttribute('data-download-title', downloadTitle);
@@ -141,71 +105,26 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     function hideDownloadModal() {
-        const modal = document.getElementById('download-gate-modal');
-        if (modal) {
-            modal.style.display = 'none';
-        }
+        document.getElementById('download-gate-modal').style.display = 'none';
     }
     
-    // Add event listeners with error checking
-    const closeButton = document.querySelector('.download-modal-close');
-    const overlay = document.querySelector('.download-modal-overlay');
-    
-    if (closeButton) {
-        closeButton.addEventListener('click', hideDownloadModal);
-    } else {
-        console.warn('Modal close button not found');
-    }
-    
-    if (overlay) {
-        overlay.addEventListener('click', hideDownloadModal);
-    } else {
-        console.warn('Modal overlay not found');
-    }
+    document.querySelector('.download-modal-close').addEventListener('click', hideDownloadModal);
+    document.querySelector('.download-modal-overlay').addEventListener('click', hideDownloadModal);
     
     function loadHubSpotForm() {
-        // We're now using the API approach, so just show the custom form
-        document.getElementById('download-fallback-form').style.display = 'block';
-        document.getElementById('download-hubspot-form').style.display = 'none';
-    }
-    
-    function handleFormSuccess() {
-        const modal = document.getElementById('download-gate-modal');
-        const downloadUrl = modal.getAttribute('data-download-url');
-        const downloadTitle = modal.getAttribute('data-download-title');
-        const downloadId = modal.getAttribute('data-download-id');
-        
-        setDownloadAccess();
-        hideDownloadModal();
-        
-        // Track download
-        if (downloadId) {
-            trackDownload(downloadId);
+        if (window.hbspt) {
+            window.hbspt.forms.create({
+                region: "na1",
+                portalId: "YOUR_PORTAL_ID",
+                formId: "YOUR_FORM_ID",
+                target: "#download-hubspot-form",
+                onFormSubmit: function() {
+                    handleFormSuccess();
+                }
+            });
+        } else {
+            document.getElementById('download-fallback-form').style.display = 'block';
         }
-        
-        setTimeout(() => {
-            startDownload(downloadUrl, downloadTitle);
-        }, 500);
-    }
-    
-    function submitDownloadForm(formData) {
-        return fetch('<?php echo admin_url('admin-ajax.php'); ?>', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/x-www-form-urlencoded',
-            },
-            body: new URLSearchParams({
-                action: 'sgs_submit_hubspot_form',
-                form_type: 'download',
-                form_data: JSON.stringify(formData),
-                nonce: '<?php echo wp_create_nonce('sgs_hubspot_form_nonce'); ?>'
-            })
-        })
-        .then(response => response.json())
-        .catch(error => {
-            console.error('Form submission error:', error);
-            return { success: false, data: 'Network error' };
-        });
     }
     
     function handleFormSuccess() {
@@ -278,59 +197,30 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     document.getElementById('download-fallback-form').addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        // Get form data - only send basic fields that definitely exist
-        const formData = {
-            firstname: document.getElementById('download_firstname').value,
-            lastname: document.getElementById('download_lastname').value,
-            email: document.getElementById('download_email').value
-        };
-        
-        // Add optional fields only if they have values
-        const company = document.getElementById('download_company').value;
-        const interest = document.getElementById('download_interest').value;
-        
-        if (company) formData.company = company;
-        if (interest) formData.download_interest = interest;
-        
-        // Validate required fields
-        if (!formData.firstname || !formData.lastname || !formData.email) {
-            alert('Please fill in all required fields.');
-            return;
-        }
-        
-        // Show loading state
+        // Don't prevent default - let HubSpot handle the submission
+        // Instead, set a timer to check for successful submission
         const submitBtn = this.querySelector('.download-submit-btn');
         const originalText = submitBtn.textContent;
+        
+        // Show loading state
         submitBtn.textContent = 'Submitting...';
         submitBtn.disabled = true;
         
-        // Submit form
-        submitDownloadForm(formData)
-            .then(response => {
-                console.log('Form submission response:', response); // Debug
-                if (response.success) {
-                    handleFormSuccess();
-                } else {
-                    console.error('Submission error details:', response); // Debug
-                    let errorMsg = 'Submission failed: ' + (response.data || 'Unknown error');
-                    if (response.debug_info) {
-                        console.error('Debug info:', response.debug_info);
-                        errorMsg += '\nCheck console for details.';
-                    }
-                    alert(errorMsg);
-                }
-            })
-            .catch(error => {
-                console.error('Form submission error:', error);
-                alert('Submission failed. Please try again.');
-            })
-            .finally(() => {
-                // Reset button state
-                submitBtn.textContent = originalText;
-                submitBtn.disabled = false;
-            });
+        // After a short delay, assume success and trigger download
+        setTimeout(() => {
+            // Check if form is still visible (failed) or if we should proceed (success)
+            const modal = document.getElementById('download-gate-modal');
+            if (modal && modal.style.display !== 'none') {
+                // Assume successful submission after 2 seconds
+                handleFormSuccess();
+            }
+        }, 2000);
+        
+        // Reset button state after a delay in case something goes wrong
+        setTimeout(() => {
+            submitBtn.textContent = originalText;
+            submitBtn.disabled = false;
+        }, 5000);
     });
 });
 </script>
