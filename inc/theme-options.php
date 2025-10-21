@@ -40,6 +40,7 @@ function sgs_theme_options_page() {
     update_option('sgs_hubspot_newsletter_form_id', sanitize_text_field($_POST['sgs_hubspot_newsletter_form_id']));
     update_option('sgs_hubspot_contact_form_id', sanitize_text_field($_POST['sgs_hubspot_contact_form_id']));
     update_option('sgs_hubspot_grant_form_id', sanitize_text_field($_POST['sgs_hubspot_grant_form_id']));
+    update_option('sgs_hubspot_download_form_id', sanitize_text_field($_POST['sgs_hubspot_download_form_id']));
         
         // Save footer badges
         sgs_save_footer_badges();
@@ -57,6 +58,7 @@ function sgs_theme_options_page() {
     $hubspot_newsletter_form_id = get_option('sgs_hubspot_newsletter_form_id', '');
     $hubspot_contact_form_id = get_option('sgs_hubspot_contact_form_id', '');
     $hubspot_grant_form_id = get_option('sgs_hubspot_grant_form_id', '');
+    $hubspot_download_form_id = get_option('sgs_hubspot_download_form_id', '');
     ?>
     <div class="wrap">
         <h1><?php _e('Theme Options', 'sgs'); ?></h1>
@@ -99,6 +101,15 @@ function sgs_theme_options_page() {
                     </th>
                     <td>
                         <input type="text" id="sgs_hubspot_grant_form_id" name="sgs_hubspot_grant_form_id" value="<?php echo esc_attr($hubspot_grant_form_id); ?>" class="regular-text" />
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        <label for="sgs_hubspot_download_form_id"><?php _e('Downloads Gate Form ID (GUID)', 'sgs'); ?></label>
+                    </th>
+                    <td>
+                        <input type="text" id="sgs_hubspot_download_form_id" name="sgs_hubspot_download_form_id" value="<?php echo esc_attr($hubspot_download_form_id); ?>" class="regular-text" />
+                        <p class="description"><?php _e('HubSpot form used for the download gate modal. Create a dedicated form for download lead capture.', 'sgs'); ?></p>
                     </td>
                 </tr>
                 <tr>
@@ -238,6 +249,7 @@ function sgs_get_hubspot_form_id($key) {
         'newsletter' => get_option('sgs_hubspot_newsletter_form_id', ''),
         'contact' => get_option('sgs_hubspot_contact_form_id', ''),
         'grant' => get_option('sgs_hubspot_grant_form_id', ''),
+        'download' => get_option('sgs_hubspot_download_form_id', ''),
     );
     return isset($map[$key]) ? $map[$key] : '';
 }

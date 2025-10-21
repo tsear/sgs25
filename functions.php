@@ -73,6 +73,7 @@ function sgs_enqueue_assets() {
                 'newsletter' => function_exists('sgs_get_hubspot_form_id') ? sgs_get_hubspot_form_id('newsletter') : '',
                 'contact' => function_exists('sgs_get_hubspot_form_id') ? sgs_get_hubspot_form_id('contact') : '',
                 'grant' => function_exists('sgs_get_hubspot_form_id') ? sgs_get_hubspot_form_id('grant') : '',
+                'download' => function_exists('sgs_get_hubspot_form_id') ? sgs_get_hubspot_form_id('download') : '',
             ),
             'context' => array(
                 'pageUri' => esc_url_raw(home_url(add_query_arg(array(), $_SERVER['REQUEST_URI']))),
@@ -88,6 +89,7 @@ require_once SGS_THEME_DIR . '/inc/post-types.php';
 require_once SGS_THEME_DIR . '/inc/theme-options.php';
 require_once SGS_THEME_DIR . '/inc/ajax-handlers.php';
 require_once SGS_THEME_DIR . '/inc/critical-css.php';
+require_once SGS_THEME_DIR . '/inc/hubspot-api.php';
 
 // Widget areas
 add_action('widgets_init', 'sgs_register_widgets');
