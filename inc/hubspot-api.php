@@ -88,7 +88,7 @@ class SGS_HubSpot_API {
                 'required_fields' => array('firstname', 'lastname', 'email', 'company')
             ),
             'download' => array(
-                'form_id' => get_option('sgs_hubspot_download_form_id', ''),
+                'form_id' => get_option('sgs_hubspot_download_form_id', '') ?: get_option('sgs_hubspot_contact_form_id', ''),
                 'context' => array(
                     'pageUri' => wp_get_referer() ?: home_url('/downloads'),
                     'pageName' => 'Download Gate'
@@ -111,22 +111,19 @@ class SGS_HubSpot_API {
             );
         }
         
-        // Format data for HubSpot API
+        // Format data for HubSpot API - simplified format
         $fields = array();
         foreach ($form_data as $name => $value) {
-            $fields[] = array(
-                'name' => $name,
-                'value' => sanitize_text_field($value)
-            );
+            if (!empty($value)) { // Only send non-empty values
+                $fields[] = array(
+                    'name' => $name,
+                    'value' => sanitize_text_field($value)
+                );
+            }
         }
         
         $submission_data = array(
-            'fields' => $fields,
-            'context' => array_merge(array(
-                'pageUri' => home_url($_SERVER['REQUEST_URI']),
-                'pageName' => wp_get_document_title(),
-                'hutk' => isset($_COOKIE['hubspotutk']) ? $_COOKIE['hubspotutk'] : ''
-            ), $context)
+            'fields' => $fields
         );
         
         // Make API request
@@ -155,9 +152,26 @@ class SGS_HubSpot_API {
                 'data' => json_decode($response_body, true)
             );
         } else {
+            // Log detailed error for debugging
+            error_log('HubSpot API Error: ' . $response_code);
+            error_log('Response Body: ' . $response_body);
+            error_log('Submission Data: ' . json_encode($submission_data));
+            
+            $error_data = json_decode($response_body, true);
+            $error_message = 'Submission failed: ' . $response_code;
+            
+            if ($error_data && isset($error_data['message'])) {
+                $error_message .= ' - ' . $error_data['message'];
+            }
+            
             return array(
                 'success' => false,
-                'message' => 'Submission failed: ' . $response_code
+                'message' => $error_message,
+                'debug_info' => array(
+                    'response_code' => $response_code,
+                    'response_body' => $response_body,
+                    'sent_data' => $submission_data
+                )
             );
         }
     }

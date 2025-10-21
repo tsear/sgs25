@@ -28,7 +28,7 @@ get_header(); ?>
                         <div id="download-hubspot-form"></div>
             
             <!-- Fallback/Custom form for downloads -->
-            <form id="download-fallback-form" style="display: block;">
+            <form id="download-fallback-form" style="display: block;" data-hs-ignore="true">
                 <div class="form-group">
                     <label for="download_firstname">First Name *</label>
                     <input type="text" id="download_firstname" name="firstname" required>
@@ -280,14 +280,19 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('download-fallback-form').addEventListener('submit', function(e) {
         e.preventDefault();
         
-        // Get form data
+        // Get form data - only send basic fields that definitely exist
         const formData = {
             firstname: document.getElementById('download_firstname').value,
             lastname: document.getElementById('download_lastname').value,
-            email: document.getElementById('download_email').value,
-            company: document.getElementById('download_company').value,
-            download_interest: document.getElementById('download_interest').value
+            email: document.getElementById('download_email').value
         };
+        
+        // Add optional fields only if they have values
+        const company = document.getElementById('download_company').value;
+        const interest = document.getElementById('download_interest').value;
+        
+        if (company) formData.company = company;
+        if (interest) formData.download_interest = interest;
         
         // Validate required fields
         if (!formData.firstname || !formData.lastname || !formData.email) {
@@ -304,10 +309,17 @@ document.addEventListener('DOMContentLoaded', function() {
         // Submit form
         submitDownloadForm(formData)
             .then(response => {
+                console.log('Form submission response:', response); // Debug
                 if (response.success) {
                     handleFormSuccess();
                 } else {
-                    alert('Submission failed: ' + (response.data || 'Unknown error'));
+                    console.error('Submission error details:', response); // Debug
+                    let errorMsg = 'Submission failed: ' + (response.data || 'Unknown error');
+                    if (response.debug_info) {
+                        console.error('Debug info:', response.debug_info);
+                        errorMsg += '\nCheck console for details.';
+                    }
+                    alert(errorMsg);
                 }
             })
             .catch(error => {
