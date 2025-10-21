@@ -11,6 +11,7 @@ import ValuePropAnimations from './modules/value-prop-animations.js';
 import MissionGrantsSlider from './modules/rss-feed-mission-div.js';
 import RocketAnimation from './modules/rocket-animation.js';
 import initMobileMenu from './modules/mobile-menu.js';
+import DownloadsGateway from './modules/downloads.js';
 import './modules/hubspot-tracking.js';
 import './footer-badge-carousel.js';
 
@@ -115,6 +116,7 @@ class SGSTheme {
         this.initFinancialCompliance();
         this.initMissionGrants();
         this.initMobileMenu();
+        this.initDownloads();
         this.addCustomStyles();
     }
     
@@ -152,6 +154,12 @@ class SGSTheme {
         // Initialize mobile menu functionality
         console.log('Initializing mobile menu...');
         initMobileMenu();
+    }
+    
+    initDownloads() {
+        // Initialize downloads gateway
+        console.log('Initializing downloads gateway...');
+        this.downloadsGateway = new DownloadsGateway();
     }
     
     addCustomStyles() {
