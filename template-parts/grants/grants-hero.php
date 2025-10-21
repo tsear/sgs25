@@ -9,7 +9,7 @@
         
         <!-- Title -->
         <div class="grants-header__title-frame">
-            <h1 class="grants-header__title">Grant<br class="mobile-break">Opportunities</h1>
+            <h1 class="grants-header__title">Grant<br>Opportunities</h1>
         </div>
         
         <!-- SVG Container -->

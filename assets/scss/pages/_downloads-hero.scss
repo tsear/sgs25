@@ -1,8 +1,8 @@
 /* =========================================================================
-   Grants Header (mirrors Success Stories hero)
+   Downloads Header (mirrors Success Stories hero)
    ========================================================================= */
 
-.grants-header {
+.downloads-header {
   box-sizing: border-box;
   background: #000000;
   border-width: 1px 0px;
@@ -60,9 +60,21 @@
     flex: none;
     order: 0;
     flex-grow: 0;
-    @media (max-width: 1024px) { font-size: 72px; line-height: 76px; width: auto; height: auto; }
-    @media (max-width: 768px)  { font-size: 48px; line-height: 52px; }
-    @media (max-width: 480px)  { font-size: 36px; line-height: 40px; }
+    
+    @media (max-width: 1024px) { 
+      font-size: 72px; 
+      line-height: 76px; 
+      width: auto; 
+      height: auto; 
+    }
+    @media (max-width: 768px)  { 
+      font-size: 48px; 
+      line-height: 52px; 
+    }
+    @media (max-width: 480px)  { 
+      font-size: 36px; 
+      line-height: 40px; 
+    }
   }
 
   &__svg-container {
@@ -74,7 +86,12 @@
     @media (max-width: 1024px) { width: $svg-width-tablet; left: -85px; }
     @media (max-width: 768px)  { width: $svg-width-mobile; left: -45px; }
     @media (max-width: 480px)  { width: $svg-width-small; left: -25px; }
-    img { width: 100%; height: auto; object-fit: contain; }
+    
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
   }
 
   &__description {
@@ -84,6 +101,7 @@
     order: 2;
     flex-grow: 0;
     @media (max-width: 768px) { width: 100%; }
+    
     p {
       font-family: 'Poppins', Arial, sans-serif;
       font-style: normal;

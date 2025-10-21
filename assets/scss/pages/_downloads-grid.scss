@@ -1,0 +1,108 @@
+/* ===================================================================
+   DOWNLOADS GRID STYLES
+   Styles for the downloads grid layout and show more functionality
+   =================================================================== */
+
+.downloads-content {
+  padding: 80px 0;
+  background: #000000;
+  position: relative;
+  
+  // Full-bleed bottom white line anchored to section bottom
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: auto;
+    transform: none;
+    height: 1px;
+    background-color: #ffffff;
+    pointer-events: none;
+    z-index: 3;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+}
+
+.downloads-posts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+  margin-bottom: 40px;
+  
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+.downloads-post-item {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.3s ease;
+  
+  &.downloads-post-hidden {
+    display: none;
+  }
+}
+
+.downloads-show-more {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.downloads-show-more__btn {
+  background: linear-gradient(135deg, #3B82F6 0%, #1D4ED8 100%);
+  color: white;
+  border: none;
+  padding: 16px 32px;
+  border-radius: 8px;
+  font-family: 'Inter', Arial, sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  
+  &:hover {
+    background: linear-gradient(135deg, #1D4ED8 0%, #1E40AF 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
+  }
+  
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+  }
+}
+
+.downloads-show-more__text {
+  transition: opacity 0.3s ease;
+}
+
+.downloads-show-more__loader {
+  display: none;
+  
+  .downloads-show-more__btn:disabled & {
+    display: flex;
+  }
+  
+  svg {
+    animation: spin 1s linear infinite;
+  }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}

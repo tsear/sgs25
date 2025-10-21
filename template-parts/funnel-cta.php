@@ -15,7 +15,7 @@ $resources = [
         'description' => 'Master the minutiae of MissionGranted with our comprehensive guide to advanced grant management strategies.',
         'type' => 'PDF Guide',
         'icon' => 'document-text',
-        'download_url' => '#', // Replace with actual download URL
+        'download_url' => home_url('/downloads'),
         'featured' => false
     ],
     [
@@ -23,7 +23,7 @@ $resources = [
         'description' => 'Free essential checklist for managing financial grants and ensuring compliance.',
         'type' => 'Checklist',
         'icon' => 'clipboard-check',
-        'download_url' => '#', // Replace with actual download URL
+        'download_url' => home_url('/downloads'),
         'featured' => false
     ],
     [
@@ -31,7 +31,7 @@ $resources = [
         'description' => 'Best free resources and templates for tracking and managing grant opportunities.',
         'type' => 'Template',
         'icon' => 'table',
-        'download_url' => '#', // Replace with actual download URL
+        'download_url' => home_url('/downloads'),
         'featured' => false
     ]
 ];

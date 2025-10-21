@@ -1,0 +1,80 @@
+/* ===================================================================
+   DOWNLOADS NO RESULTS STYLES
+   Styles for when no downloads are found
+   =================================================================== */
+
+.no-results {
+  padding: 80px 20px;
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+  
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
+  
+  &__icon {
+    width: 64px;
+    height: 64px;
+    color: #9CA3AF;
+    
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  
+  &__title {
+    font-size: 32px;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin: 0;
+    
+    @media (max-width: 768px) {
+      font-size: 24px;
+    }
+  }
+  
+  &__message {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #D1D5DB;
+    margin: 0;
+    
+    strong {
+      color: #FFFFFF;
+    }
+  }
+  
+  &__actions {
+    margin-top: 16px;
+  }
+  
+  &__reset-btn,
+  &__contact-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, #3B82F6 0%, #1D4ED8 100%);
+    color: white;
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      background: linear-gradient(135deg, #1D4ED8 0%, #1E40AF 100%);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+    }
+    
+    svg {
+      flex-shrink: 0;
+    }
+  }
+}

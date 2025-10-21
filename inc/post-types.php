@@ -73,6 +73,36 @@ function sgs_register_post_types() {
         'supports'            => array('title', 'editor', 'excerpt', 'thumbnail', 'custom-fields'),
         'show_in_rest'        => true,
     ));
+
+    // Downloadable Content Post Type
+    register_post_type('downloadable_content', array(
+        'labels' => array(
+            'name'               => __('Downloads', 'sgs'),
+            'singular_name'      => __('Download', 'sgs'),
+            'menu_name'          => __('Downloads', 'sgs'),
+            'add_new'            => __('Add New', 'sgs'),
+            'add_new_item'       => __('Add New Download', 'sgs'),
+            'edit_item'          => __('Edit Download', 'sgs'),
+            'new_item'           => __('New Download', 'sgs'),
+            'view_item'          => __('View Download', 'sgs'),
+            'search_items'       => __('Search Downloads', 'sgs'),
+            'not_found'          => __('No downloads found', 'sgs'),
+            'not_found_in_trash' => __('No downloads found in Trash', 'sgs'),
+        ),
+        'public'              => true,
+        'publicly_queryable'  => true,
+        'show_ui'             => true,
+        'show_in_menu'        => true,
+        'query_var'           => true,
+        'rewrite'             => array('slug' => 'downloads'),
+        'capability_type'     => 'post',
+        'has_archive'         => true,
+        'hierarchical'        => false,
+        'menu_position'       => 25,
+        'menu_icon'           => 'dashicons-download',
+        'supports'            => array('title', 'editor', 'excerpt', 'thumbnail', 'custom-fields'),
+        'show_in_rest'        => true,
+    ));
 }
 add_action('init', 'sgs_register_post_types');
 
@@ -150,6 +180,31 @@ function sgs_register_taxonomies() {
         'show_admin_column' => true,
         'query_var'         => true,
         'rewrite'           => array('slug' => 'success-story-category'),
+        'show_in_rest'      => true,
+    ));
+
+    // Download Categories
+    register_taxonomy('download_category', 'downloadable_content', array(
+        'labels' => array(
+            'name'              => __('Download Categories', 'sgs'),
+            'singular_name'     => __('Download Category', 'sgs'),
+            'search_items'      => __('Search Download Categories', 'sgs'),
+            'all_items'         => __('All Download Categories', 'sgs'),
+            'parent_item'       => __('Parent Download Category', 'sgs'),
+            'parent_item_colon' => __('Parent Download Category:', 'sgs'),
+            'edit_item'         => __('Edit Download Category', 'sgs'),
+            'update_item'       => __('Update Download Category', 'sgs'),
+            'add_new_item'      => __('Add New Download Category', 'sgs'),
+            'new_item_name'     => __('New Download Category Name', 'sgs'),
+            'menu_name'         => __('Download Categories', 'sgs'),
+        ),
+        'hierarchical'      => true,
+        'public'            => true,
+        'publicly_queryable' => true,
+        'show_ui'           => true,
+        'show_admin_column' => true,
+        'query_var'         => true,
+        'rewrite'           => array('slug' => 'download-category'),
         'show_in_rest'      => true,
     ));
 }
