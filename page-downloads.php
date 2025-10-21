@@ -131,14 +131,70 @@ document.addEventListener('DOMContentLoaded', function() {
         const modal = document.getElementById('download-gate-modal');
         const downloadUrl = modal.getAttribute('data-download-url');
         const downloadTitle = modal.getAttribute('data-download-title');
+        const downloadId = modal.getAttribute('data-download-id');
         
         setDownloadAccess();
         hideDownloadModal();
+        
+        // Track download
+        if (downloadId) {
+            trackDownload(downloadId);
+        }
         
         setTimeout(() => {
             startDownload(downloadUrl, downloadTitle);
         }, 500);
     }
+    
+    function trackDownload(downloadId) {
+        fetch('<?php echo admin_url('admin-ajax.php'); ?>', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: new URLSearchParams({
+                action: 'sgs_track_download',
+                download_id: downloadId,
+                nonce: '<?php echo wp_create_nonce('sgs_download_nonce'); ?>'
+            })
+        }).catch(error => {
+            console.log('Download tracking failed:', error);
+        });
+    }
+    
+    function showDownloadModal(downloadUrl, downloadTitle, downloadId) {
+        const modal = document.getElementById('download-gate-modal');
+        modal.style.display = 'flex';
+        modal.setAttribute('data-download-url', downloadUrl);
+        modal.setAttribute('data-download-title', downloadTitle);
+        modal.setAttribute('data-download-id', downloadId || '');
+        loadHubSpotForm();
+    }
+    
+    // Update download trigger listeners
+    document.addEventListener('click', function(e) {
+        if (e.target.classList.contains('download-trigger') || e.target.closest('.download-trigger')) {
+            e.preventDefault();
+            const button = e.target.closest('.download-trigger') || e.target;
+            const downloadUrl = button.getAttribute('data-download-url');
+            const downloadTitle = button.getAttribute('data-download-title');
+            const downloadId = button.getAttribute('data-download-id');
+            
+            if (!downloadUrl) {
+                alert('Download file not available');
+                return;
+            }
+            
+            if (hasDownloadAccess()) {
+                if (downloadId) {
+                    trackDownload(downloadId);
+                }
+                startDownload(downloadUrl, downloadTitle);
+            } else {
+                showDownloadModal(downloadUrl, downloadTitle, downloadId);
+            }
+        }
+    });
     
     document.getElementById('download-fallback-form').addEventListener('submit', function(e) {
         e.preventDefault();
