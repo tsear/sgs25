@@ -1,5 +1,6 @@
 import { nodeResolve } from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
+import terser from '@rollup/plugin-terser';
 
 export default {
   input: 'assets/js/src/main.js',
@@ -12,6 +13,15 @@ export default {
     nodeResolve({
       browser: true
     }),
-    commonjs()
+    commonjs(),
+    terser({
+      compress: {
+        drop_console: true, // Remove console.log statements
+        drop_debugger: true
+      },
+      format: {
+        comments: false // Remove comments
+      }
+    })
   ]
 };

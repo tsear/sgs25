@@ -110,14 +110,45 @@ class SGSTheme {
     }
     
     init() {
+        // Always initialize core features
         this.initTypedAnimation();
-        this.initBlogModules();
-        this.initNewsletter();
-        this.initFinancialCompliance();
-        this.initMissionGrants();
         this.initMobileMenu();
-        this.initDownloads();
         this.addCustomStyles();
+        
+        // Conditionally initialize based on page content
+        this.initConditionalModules();
+    }
+    
+    initConditionalModules() {
+        // Blog modules - only on blog/post pages
+        if (document.querySelector('.blog-container, .post-content, .blog-search-container')) {
+            console.log('Initializing blog modules...');
+            this.initBlogModules();
+        }
+        
+        // Newsletter - only if form container exists
+        if (document.querySelector('#newsletter-form, .newsletter-container')) {
+            console.log('Initializing newsletter...');
+            this.initNewsletter();
+        }
+        
+        // Financial Compliance slider - only if slider exists
+        if (document.querySelector('[data-fc-slider]')) {
+            console.log('Initializing financial compliance slider...');
+            this.initFinancialCompliance();
+        }
+        
+        // Mission Grants slider - only if slider exists  
+        if (document.querySelector('[data-mission-slider]')) {
+            console.log('Initializing mission grants slider...');
+            this.initMissionGrants();
+        }
+        
+        // Downloads gateway - only on downloads page
+        if (document.querySelector('#download-gate-modal')) {
+            console.log('Initializing downloads gateway...');
+            this.initDownloads();
+        }
     }
     
     initTypedAnimation() {
@@ -129,25 +160,36 @@ class SGSTheme {
     }
     
     initBlogModules() {
-        // Initialize blog functionality
-        this.blogShowMore = new BlogShowMore();
-        this.blogSearch = new BlogSearch();
+        // Only initialize if blog elements exist
+        if (document.querySelector('.blog-container, .post-content')) {
+            console.log('Blog elements found, initializing modules...');
+            this.blogShowMore = new BlogShowMore();
+            this.blogSearch = new BlogSearch();
+        }
     }
     
     initFinancialCompliance() {
-        // Initialize Financial Compliance RSS slideshow
-        this.financialComplianceSlider = new FinancialComplianceSlider();
+        // Only initialize if slider exists
+        if (document.querySelector('[data-fc-slider]')) {
+            console.log('Financial compliance slider found, initializing...');
+            this.financialComplianceSlider = new FinancialComplianceSlider();
+        }
     }
     
     initMissionGrants() {
-        // Initialize Mission Grants RSS feed slider
-        console.log('Initializing Mission Grants slider...');
-        new MissionGrantsSlider();
+        // Only initialize if slider exists
+        if (document.querySelector('[data-mission-slider]')) {
+            console.log('Mission grants slider found, initializing...');
+            new MissionGrantsSlider();
+        }
     }
     
     initNewsletter() {
-        // Initialize HubSpot newsletter if container exists
-        initNewsletter();
+        // Only initialize if newsletter form exists
+        if (document.querySelector('#newsletter-form, .newsletter-container')) {
+            console.log('Newsletter form found, initializing...');
+            initNewsletter();
+        }
     }
     
     initMobileMenu() {
@@ -157,9 +199,11 @@ class SGSTheme {
     }
     
     initDownloads() {
-        // Initialize downloads gateway
-        console.log('Initializing downloads gateway...');
-        this.downloadsGateway = new DownloadsGateway();
+        // Only initialize if download modal exists
+        if (document.querySelector('#download-gate-modal')) {
+            console.log('Download modal found, initializing downloads gateway...');
+            this.downloadsGateway = new DownloadsGateway();
+        }
     }
     
     addCustomStyles() {
