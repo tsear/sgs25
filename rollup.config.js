@@ -16,7 +16,7 @@ export default {
     commonjs(),
     terser({
       compress: {
-        drop_console: true, // Remove console.log statements
+        drop_console: false, // Keep console.log statements for debugging
         drop_debugger: true
       },
       format: {

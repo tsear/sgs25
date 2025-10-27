@@ -3,6 +3,9 @@
  * Main entry point with modular imports
  */
 
+console.log('🔥🔥🔥 MAIN.JS: File is loading!');
+console.log('🔥🔥🔥 MAIN.JS: Browser is:', navigator.userAgent);
+
 import BlogShowMore from './modules/blog-showmore.js';
 import BlogSearch from './modules/blog-search.js';
 import initNewsletter from './modules/newsletter.js';
@@ -199,10 +202,57 @@ class SGSTheme {
     }
     
     initDownloads() {
-        // Only initialize if download modal exists
-        if (document.querySelector('#download-gate-modal')) {
-            console.log('Download modal found, initializing downloads gateway...');
-            this.downloadsGateway = new DownloadsGateway();
+        console.log('🚀🚀🚀 MAIN.JS: initDownloads called');
+        console.log('🚀🚀🚀 MAIN.JS: Document ready state:', document.readyState);
+        console.log('🚀🚀🚀 MAIN.JS: Looking for modal...');
+        
+        const tryInitialize = () => {
+            const modal = document.querySelector('#download-gate-modal');
+            const triggers = document.querySelectorAll('.download-trigger');
+            
+            console.log('🚀🚀🚀 MAIN.JS: tryInitialize called', {
+                modal: modal,
+                modalExists: !!modal,
+                triggerCount: triggers.length,
+                triggers: triggers,
+                bodyClasses: document.body.className
+            });
+            
+            if (modal) {
+                console.log('🚀🚀🚀 MAIN.JS: Download modal found, initializing downloads gateway...');
+                this.downloadsGateway = new DownloadsGateway();
+                console.log('🚀🚀🚀 MAIN.JS: Downloads gateway created:', this.downloadsGateway);
+                return true;
+            }
+            console.log('🚀🚀🚀 MAIN.JS: Download modal not found yet, will retry...');
+            return false;
+        };
+        
+        // Try immediately first
+        if (!tryInitialize()) {
+            // If not found, retry up to 5 times with increasing delays
+            let attempts = 0;
+            const maxAttempts = 5;
+            
+            const retry = () => {
+                attempts++;
+                console.log(`Download modal retry attempt ${attempts}/${maxAttempts}`);
+                
+                if (tryInitialize()) {
+                    console.log('Download modal found on retry - downloads ready!');
+                    return; // Success!
+                }
+                
+                if (attempts < maxAttempts) {
+                    // Exponential backoff: 100ms, 200ms, 400ms, 800ms, 1600ms
+                    setTimeout(retry, 100 * Math.pow(2, attempts - 1));
+                } else {
+                    console.log('Download modal not found after all retries - downloads unavailable on this page');
+                }
+            };
+            
+            // Start retry sequence
+            setTimeout(retry, 100);
         }
     }
     
@@ -226,7 +276,15 @@ class SGSTheme {
 
 // Initialize when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
+    console.log('🔥🔥🔥 MAIN.JS: DOMContentLoaded fired!');
+    console.log('🔥🔥🔥 MAIN.JS: About to create SGSTheme...');
+    
     const sgsTheme = new SGSTheme();
+    
+    console.log('🔥🔥🔥 MAIN.JS: SGSTheme created:', sgsTheme);
+    
     // Make globally available for debugging
     window.SGSTheme = sgsTheme;
+    
+    console.log('🔥🔥🔥 MAIN.JS: SGSTheme available on window.SGSTheme');
 });
