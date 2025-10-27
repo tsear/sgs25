@@ -146,6 +146,11 @@ export default class DownloadsGateway {
     }
 
     trackDownload(downloadId) {
+        console.log('📊 DOWNLOADS GATEWAY: Tracking download for ID:', downloadId);
+        
+        const nonce = window.sgs_ajax && window.sgs_ajax.nonce ? window.sgs_ajax.nonce : '';
+        console.log('📊 DOWNLOADS GATEWAY: Using nonce:', nonce);
+        
         fetch('/wp-admin/admin-ajax.php', {
             method: 'POST',
             headers: {
@@ -153,10 +158,16 @@ export default class DownloadsGateway {
             },
             body: new URLSearchParams({
                 action: 'sgs_track_download',
-                download_id: downloadId
+                download_id: downloadId,
+                nonce: nonce
             })
-        }).catch(error => {
-            console.log('Download tracking failed:', error);
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('📊 DOWNLOADS GATEWAY: Tracking response:', data);
+        })
+        .catch(error => {
+            console.log('📊 DOWNLOADS GATEWAY: Download tracking failed:', error);
         });
     }
 

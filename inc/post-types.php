@@ -435,7 +435,7 @@ add_action('save_post', 'sgs_save_downloadable_content_meta_box');
  * Track download count
  */
 function sgs_track_download() {
-    if (!isset($_POST['download_id']) || !wp_verify_nonce($_POST['nonce'], 'sgs_download_nonce')) {
+    if (!isset($_POST['download_id']) || !wp_verify_nonce($_POST['nonce'], 'sgs_nonce')) {
         wp_die('Security check failed');
     }
 
