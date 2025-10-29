@@ -11,6 +11,8 @@ get_header(); ?>
     <?php get_template_part('template-parts/products/product-hero'); ?>
     
     <?php get_template_part('template-parts/products/product-overview'); ?>
+
+    <?php get_template_part('template-parts/funnel-cta'); ?>
     
     <?php get_template_part('template-parts/products/product-approach'); ?>
 
