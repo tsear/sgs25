@@ -15,6 +15,7 @@ import MissionGrantsSlider from './modules/rss-feed-mission-div.js';
 import RocketAnimation from './modules/rocket-animation.js';
 import initMobileMenu from './modules/mobile-menu.js';
 import DownloadsGateway from './modules/downloads.js';
+import ContactPage from './modules/contact-page.js';
 import './modules/hubspot-tracking.js';
 import './footer-badge-carousel.js';
 
@@ -152,6 +153,12 @@ class SGSTheme {
             console.log('Initializing downloads gateway...');
             this.initDownloads();
         }
+        
+        // Contact page - only on contact page
+        if (document.querySelector('.page-template-page-contact')) {
+            console.log('Initializing contact page...');
+            this.initContactPage();
+        }
     }
     
     initTypedAnimation() {
@@ -269,6 +276,18 @@ class SGSTheme {
                 }
             `;
             document.head.appendChild(style);
+        }
+    }
+    
+    initContactPage() {
+        // Initialize contact page functionality
+        console.log('Contact page detected, initializing ContactPage module...');
+        
+        try {
+            this.contactPage = new ContactPage();
+            console.log('Contact page module initialized successfully');
+        } catch (error) {
+            console.error('Error initializing contact page:', error);
         }
     }
 

@@ -10,65 +10,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-/**
- * Handle contact form submission
- */
-function sgs_handle_contact_form() {
-    // Verify nonce
-    if (!wp_verify_nonce($_POST['nonce'], 'sgs_nonce')) {
-        wp_die(__('Security check failed', 'sgs'));
-    }
-
-    // Sanitize form data
-    $name = sanitize_text_field($_POST['name']);
-    $email = sanitize_email($_POST['email']);
-    $subject = sanitize_text_field($_POST['subject']);
-    $message = sanitize_textarea_field($_POST['message']);
-
-    // Validate required fields
-    if (empty($name) || empty($email) || empty($message)) {
-        wp_send_json_error(array(
-            'message' => __('Please fill in all required fields.', 'sgs')
-        ));
-    }
-
-    // Validate email
-    if (!is_email($email)) {
-        wp_send_json_error(array(
-            'message' => __('Please enter a valid email address.', 'sgs')
-        ));
-    }
-
-    // Prepare email
-    $to = get_option('admin_email');
-    $email_subject = sprintf(__('Contact Form: %s', 'sgs'), $subject ?: __('New Message', 'sgs'));
-    $email_message = sprintf(
-        __("New contact form submission:\n\nName: %s\nEmail: %s\nSubject: %s\nMessage:\n%s", 'sgs'),
-        $name,
-        $email,
-        $subject,
-        $message
-    );
-    $headers = array(
-        'Content-Type: text/plain; charset=UTF-8',
-        sprintf('Reply-To: %s <%s>', $name, $email)
-    );
-
-    // Send email
-    $sent = wp_mail($to, $email_subject, $email_message, $headers);
-
-    if ($sent) {
-        wp_send_json_success(array(
-            'message' => __('Thank you! Your message has been sent successfully.', 'sgs')
-        ));
-    } else {
-        wp_send_json_error(array(
-            'message' => __('Sorry, there was an error sending your message. Please try again later.', 'sgs')
-        ));
-    }
-}
-add_action('wp_ajax_sgs_contact_form', 'sgs_handle_contact_form');
-add_action('wp_ajax_nopriv_sgs_contact_form', 'sgs_handle_contact_form');
+// Contact form handled by HubSpot embedded forms - no AJAX handler needed
 
 /**
  * Handle newsletter signup

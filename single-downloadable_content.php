@@ -11,6 +11,57 @@ get_header();
     
     <?php while (have_posts()) : the_post(); ?>
         
+        <?php
+        // Check if Elementor is editing this post
+        if (class_exists('\Elementor\Plugin') && \Elementor\Plugin::$instance->documents->get(get_the_ID())->is_built_with_elementor()) {
+            // Let Elementor handle the entire post content
+            the_content();
+        } else {
+            // Use our custom download template for non-Elementor posts
+            ?>
+            
+            <section class="download-hero">
+                <div class="container">
+                    <div class="download-hero-content">
+                        <h1 class="download-title"><?php the_title(); ?></h1>
+                        <div class="download-meta">
+                            <?php $content_type = get_post_meta(get_the_ID(), '_download_content_type', true); ?>
+                            <?php if ($content_type) : ?>
+                                <span class="download-type"><?php echo esc_html(ucfirst($content_type)); ?></span>
+                            <?php endif; ?>
+                            
+                            <?php $file_size = get_post_meta(get_the_ID(), '_download_file_size', true); ?>
+                            <?php if ($file_size) : ?>
+                                <span class="download-size"><?php echo esc_html($file_size); ?></span>
+                            <?php endif; ?>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <?php
+            // Continue with the rest of the original template...
+            ?>
+        
+        <section class="download-hero">
+            <div class="container">
+                <div class="download-hero-content">
+                    <h1 class="download-title"><?php the_title(); ?></h1>
+                    <div class="download-meta">
+                        <?php $content_type = get_post_meta(get_the_ID(), '_download_content_type', true); ?>
+                        <?php if ($content_type) : ?>
+                            <span class="download-type"><?php echo esc_html(ucfirst($content_type)); ?></span>
+                        <?php endif; ?>
+                        
+                        <?php $file_size = get_post_meta(get_the_ID(), '_download_file_size', true); ?>
+                        <?php if ($file_size) : ?>
+                            <span class="download-size"><?php echo esc_html($file_size); ?></span>
+                        <?php endif; ?>
+                    </div>
+                </div>
+            </div>
+        </section><?php } ?>
+        
         <section class="download-hero">
             <div class="container">
                 <div class="download-hero-content">

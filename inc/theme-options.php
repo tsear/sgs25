@@ -91,6 +91,7 @@ function sgs_theme_options_page() {
                     </th>
                     <td>
                         <input type="text" id="sgs_hubspot_contact_form_id" name="sgs_hubspot_contact_form_id" value="<?php echo esc_attr($hubspot_contact_form_id); ?>" class="regular-text" />
+                        <p class="description"><?php _e('Used for embedded HubSpot contact form. Make sure CAPTCHA is enabled in HubSpot form settings.', 'sgs'); ?></p>
                     </td>
                 </tr>
                 <tr>

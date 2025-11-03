@@ -92,12 +92,28 @@
   line-height: 1.3;
   margin-bottom: 12px;
   color: #1F2937;
+  
+  // Fixed height for 3 lines to normalize card heights
+  height: calc(1.3em * 3); // 3 lines at 1.3 line-height
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  line-clamp: 3;
 }
 
 .post-card__excerpt {
   color: #6B7280;
   line-height: 1.6;
   margin-bottom: 16px;
+  
+  // Fixed height for 4 lines to normalize card heights
+  height: calc(1.6em * 4); // 4 lines at 1.6 line-height
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  line-clamp: 4;
 }
 
 .post-card__categories {

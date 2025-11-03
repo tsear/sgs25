@@ -51,6 +51,133 @@
       }
     }
   }
+
+  &__error {
+    text-align: center;
+    color: #ffffff;
+    background-color: rgba(231, 76, 60, 0.1);
+    border: 2px solid #e74c3c;
+    border-radius: 8px;
+    padding: 2rem;
+    margin: 1rem 0;
+
+    p {
+      margin-bottom: 1rem;
+      font-size: 16px;
+      line-height: 1.6;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    strong {
+      color: #e74c3c;
+      font-weight: 700;
+    }
+  }
+}
+
+/* Form Enhancement Styles */
+.form-message-container {
+  margin-bottom: 2rem;
+}
+
+.form-message {
+  padding: 1rem 1.5rem;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  &--loading {
+    background-color: rgba(255, 176, 63, 0.1);
+    border: 1px solid rgba(255, 176, 63, 0.3);
+    color: #ffb03f;
+
+    &::before {
+      content: '';
+      width: 16px;
+      height: 16px;
+      border: 2px solid transparent;
+      border-top: 2px solid currentColor;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+  }
+
+  &--success {
+    background-color: rgba(34, 197, 94, 0.1);
+    border: 1px solid rgba(34, 197, 94, 0.3);
+    color: #22c55e;
+
+    &::before {
+      content: '✓';
+      font-weight: bold;
+    }
+  }
+
+  &--error {
+    background-color: rgba(239, 68, 68, 0.1);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    color: #ef4444;
+
+    &::before {
+      content: '⚠';
+      font-weight: bold;
+    }
+  }
+}
+
+/* Field Error States */
+.hs-form-field {
+  &--error {
+    input, textarea, select {
+      border-color: #ef4444 !important;
+      background-color: rgba(239, 68, 68, 0.1) !important;
+      
+      &:focus {
+        border-color: #ef4444 !important;
+        box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.2) !important;
+      }
+    }
+  }
+}
+
+.field-error-message {
+  display: block;
+  color: #ef4444;
+  font-size: 12px;
+  margin-top: 0.25rem;
+  font-weight: 500;
+}
+
+/* Accessibility Enhancements */
+.required-indicator {
+  color: #ef4444;
+  margin-left: 0.25rem;
+  font-weight: bold;
+}
+
+/* Loading Animation */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Focus Improvements */
+#hubspot-form-contact {
+  .hs-form {
+    input:focus,
+    textarea:focus,
+    select:focus {
+      outline: 2px solid #ffb03f;
+      outline-offset: 2px;
+    }
+  }
 }
 
 /* HubSpot Form Overrides */

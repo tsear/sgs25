@@ -37,7 +37,37 @@ $author = get_the_author();
             <?php endif; ?>
             
             <div class="post-card__excerpt">
-                <?php echo wp_trim_words(get_the_excerpt(), 20, '...'); ?>
+                <?php 
+                // Priority: RankMath → Yoast → WordPress Excerpt → Trimmed content
+                $excerpt = '';
+                
+                // Check RankMath first
+                $rankmath_desc = get_post_meta(get_the_ID(), 'rank_math_description', true);
+                if (!empty($rankmath_desc)) {
+                    $excerpt = $rankmath_desc;
+                }
+                
+                // Fallback to Yoast if RankMath not found
+                if (empty($excerpt)) {
+                    $yoast_desc = get_post_meta(get_the_ID(), '_yoast_wpseo_metadesc', true);
+                    if (!empty($yoast_desc)) {
+                        $excerpt = $yoast_desc;
+                    }
+                }
+                
+                // Fallback to WordPress excerpt
+                if (empty($excerpt)) {
+                    $excerpt = get_the_excerpt();
+                }
+                
+                // Final fallback to trimmed content
+                if (empty($excerpt)) {
+                    $excerpt = wp_trim_words(get_the_content(), 25, '...');
+                }
+                
+                // Display the excerpt (trim to fit our 4-line constraint)
+                echo wp_trim_words($excerpt, 25, '...');
+                ?>
             </div>
             
             <?php 
