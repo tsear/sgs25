@@ -16,6 +16,8 @@ class BlogShowMore {
             this.totalPosts = parseInt(this.showMoreBtn.dataset.totalPosts);
             this.visiblePosts = this.postsPerLoad;
             this.init();
+        } else {
+            console.log('BlogShowMore: Required elements not found');
         }
     }
     

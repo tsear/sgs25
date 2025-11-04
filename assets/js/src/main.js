@@ -125,7 +125,7 @@ class SGSTheme {
     
     initConditionalModules() {
         // Blog modules - only on blog/post pages
-        if (document.querySelector('.blog-container, .post-content, .blog-search-container')) {
+        if (document.querySelector('.blog-content, .blog-container, .post-content, .blog-search-container')) {
             console.log('Initializing blog modules...');
             this.initBlogModules();
         }
@@ -171,8 +171,7 @@ class SGSTheme {
     
     initBlogModules() {
         // Only initialize if blog elements exist
-        if (document.querySelector('.blog-container, .post-content')) {
-            console.log('Blog elements found, initializing modules...');
+        if (document.querySelector('.blog-content, .blog-container, .post-content')) {
             this.blogShowMore = new BlogShowMore();
             this.blogSearch = new BlogSearch();
         }
