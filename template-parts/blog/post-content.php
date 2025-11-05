@@ -33,9 +33,9 @@
                         <h3 class="post-content__author-name">
                             <?php the_author(); ?>
                         </h3>
-                        <div class="post-content__author-bio">
-                            <?php echo get_the_author_meta('description'); ?>
-                        </div>
+                    </div>
+                    <div class="post-content__author-bio">
+                        <?php echo get_the_author_meta('description'); ?>
                     </div>
                 </a>
             </div>

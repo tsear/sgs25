@@ -196,6 +196,7 @@
 
   &__author-link {
     display: flex;
+    flex-wrap: wrap;
     gap: 1.5rem;
     align-items: flex-start;
     text-decoration: none;
@@ -214,10 +215,11 @@
 
   &__author-avatar {
     flex-shrink: 0;
+    align-self: center;
 
     img {
-      width: 80px;
-      height: 80px;
+      width: 60px;
+      height: 60px;
       border-radius: 50%;
       margin: 0;
     }
@@ -225,6 +227,7 @@
 
   &__author-info {
     flex: 1;
+    align-self: center;
   }
 
   &__author-name {
@@ -232,14 +235,23 @@
     font-size: 20px;
     font-weight: 600;
     color: #000000;
-    margin: 0 0 0.5rem 0;
+    margin: 0;
   }
 
   &__author-bio {
     color: #666666;
     font-size: 14px;
     line-height: 1.5;
-    margin: 0;
+    margin: 1rem 0 0 0;
+    flex-basis: 100%;
+  }
+
+  // Desktop specific styles to override mobile
+  @media screen and (min-width: 769px) {
+    &__author-bio {
+      margin: -20px 0 0 0 !important;
+      padding: 0 !important;
+    }
   }
 
   // Responsive Design
@@ -265,13 +277,39 @@
     }
 
     &__author {
-      flex-direction: column;
-      text-align: center;
-      gap: 1rem;
+      &-link {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        align-items: center;
+      }
 
-      &-avatar img {
-        width: 60px;
-        height: 60px;
+      &-avatar {
+        flex-shrink: 0;
+
+        img {
+          width: 60px;
+          height: 60px;
+        }
+      }
+
+      &-info {
+        flex: 1;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+      }
+
+      &-name {
+        margin: 0;
+        flex: 1;
+      }
+
+      &-bio {
+        flex-basis: 100%;
+        width: 100%;
+        margin: 0.25rem 0 0 0;
+        text-align: left;
       }
     }
   }
