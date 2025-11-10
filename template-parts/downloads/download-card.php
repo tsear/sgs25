@@ -75,7 +75,7 @@ $description = $preview_text ?: get_the_excerpt();
 
             <?php if ($display_author) : ?>
                 <div class="download-card__author">
-                    By <?php echo esc_html($display_author); ?>
+                    <?php echo esc_html($display_author); ?>
                 </div>
             <?php endif; ?>
             

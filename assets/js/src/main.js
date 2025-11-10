@@ -129,6 +129,12 @@ class SGSTheme {
             console.log('Initializing blog modules...');
             this.initBlogModules();
         }
+
+        // ✅ Grants page - initialize show more for grants
+        if (document.querySelector('.grants-posts-grid, .grants-show-more')) {
+            console.log('Initializing grants show more...');
+            new BlogShowMore();
+        }
         
         // Newsletter - only if form container exists
         if (document.querySelector('#newsletter-form, .newsletter-container')) {

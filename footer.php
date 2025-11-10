@@ -20,7 +20,7 @@
                 <!-- About Section -->
                 <div class="footer-section footer-about">
                     <div class="footer-logo">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/sgs-logo-footer.png" alt="Smart Grant Solutions" />
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/tild3335-3634-4964-b535-343262343165__group_1000011348.svg" alt="Smart Grant Solutions" />
                     </div>
                     <p class="footer-description">
                         Democratizing access to grant funding by eliminating administrative barriers and building genuine partnerships that amplify organizational impact.

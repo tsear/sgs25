@@ -5,10 +5,10 @@
 ?>
 
 <section id="philosophy" class="about-philosophy">
-    
+
     <!-- White Divider Line - Top -->
     <div class="about-divider about-divider--top"></div>
-    
+
     <div class="container">
         
         <!-- Section Header -->
@@ -16,9 +16,6 @@
             <h2 class="about-philosophy__title">Our <span class="brand-blue">Philosophy</span></h2>
             <p class="about-philosophy__lead">The principles and beliefs that drive everything we do in the grant funding ecosystem.</p>
         </div>
-
-        <!-- White Divider Line - Middle -->
-        <div class="about-divider about-divider--middle"></div>
 
         <!-- Mission Statement -->
         <div class="mission-statement">

@@ -38,11 +38,11 @@
                         <li>Faith-based & cultural institutions</li>
                     </ul>
                 </div>
-
                 <div class="sector-card__expertise">
                     <h4>Specialized Expertise</h4>
                     <p>Board governance, IRS compliance, program evaluation, capacity building, international development protocols, and mission-driven strategic planning.</p>
                 </div>
+                <a href="<?php echo home_url('/nonprofits'); ?>" class="browse-btn-outline">Learn More</a>
             </div>
 
             <!-- Local Government Sector -->
@@ -55,7 +55,7 @@
                 </div>
                 <h3 class="sector-card__title">Local Government</h3>
                 <p class="sector-card__subtitle">Infrastructure to Campaigns</p>
-                <p class="sector-card__description">Everything from large-scale infrastructure projects to mayoral campaigns and community development initiatives—we navigate the complex world of public sector funding.</p>
+                <p class="sector-card__description">Everything from large-scale infrastructure projects to campaigns and community development initiatives—we navigate the complex world of funding.</p>
                 
                 <div class="sector-card__features">
                     <ul class="feature-list">
@@ -71,6 +71,7 @@
                     <h4>Specialized Expertise</h4>
                     <p>Government procurement rules, public accountability standards, campaign finance regulations, municipal budgeting, and stakeholder engagement strategies.</p>
                 </div>
+                <a href="<?php echo home_url('/local-government'); ?>" class="browse-btn-outline">Learn More</a>
             </div>
 
             <!-- Grantmakers Sector -->
@@ -85,11 +86,11 @@
                 </div>
                 <h3 class="sector-card__title">Grantmakers</h3>
                 <p class="sector-card__subtitle">Embedded Partnership</p>
-                <p class="sector-card__description">We work directly with foundations and funding organizations to embed ourselves in their recipients' workflows, maximizing efficiency and impact across the entire funding ecosystem.</p>
+                <p class="sector-card__description">We work directly with funding organizations to embed ourselves in their recipients' workflows, maximizing efficiency and impact across funding ecosystems.</p>
                 
                 <div class="sector-card__features">
                     <ul class="feature-list">
-                        <li>Private foundations & family funds</li>
+                        <li>Private foundations & Heritage Foundations</li>
                         <li>Corporate giving programs</li>
                         <li>Community foundations</li>
                         <li>Government funding agencies</li>
@@ -101,6 +102,7 @@
                     <h4>Specialized Expertise</h4>
                     <p>Due diligence protocols, impact measurement frameworks, capacity assessment tools, and streamlined application management systems that benefit both funders and recipients.</p>
                 </div>
+                <a href="<?php echo home_url('/grantmakers'); ?>" class="browse-btn-outline">Learn More</a>
             </div>
 
         </div>

@@ -7,8 +7,8 @@
 <section id="approach" class="product-approach">
     
     <!-- White Divider Line - Top -->
-    <div class="approach-divider approach-divider--top"></div>
-    
+    <!--<div class="approach-divider approach-divider--top"></div>-->
+
     <div class="container">
         
         <!-- Section Header -->
@@ -18,7 +18,7 @@
         </div>
 
         <!-- White Divider Line - Middle -->
-        <div class="approach-divider approach-divider--middle"></div>
+        <!--<div class="approach-divider approach-divider--middle"></div>-->
 
         <!-- Content Blocks -->
         <div class="product-approach__content">

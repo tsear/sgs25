@@ -14,6 +14,8 @@ get_header(); ?>
     
     <?php get_template_part('template-parts/industries/industries-sectors'); ?>
 
+    <?php get_template_part('template-parts/contact/contact-cta'); ?>
+
 </main>
 
 <?php get_footer(); ?>

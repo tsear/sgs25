@@ -136,5 +136,24 @@
   }
 }
 
+// Global Pink Outline Button Component
+.browse-btn {
+    &-outline {
+        display: inline-flex;
+        align-items: center;
+        padding: 12px 24px;
+        background: transparent;
+        border: 2px solid $color-brand-pink;
+        border-radius: 4px;
+        color: $color-brand-pink;
+        font-weight: 500;
+        text-decoration: none;
+        transition: all 0.3s ease;
 
+        &:hover {
+            background: $color-brand-pink;
+            color: white;
+        }
+    }
+}
 

@@ -30,7 +30,7 @@
                     <li>Compliance monitoring & reporting</li>
                     <li>Award management & budget tracking</li>
                 </ul>
-                <a href="#missiongranted" class="product-card__cta">Learn More</a>
+                <a href="<?php echo home_url('/cloud-software'); ?>" class="product-card__cta">Learn More</a>
             </div>
 
             <!-- Consulting Services -->
@@ -47,7 +47,7 @@
                     <li>Post-award compliance management</li>
                     <li>Financial reporting & audits</li>
                 </ul>
-                <a href="#consulting" class="product-card__cta">Learn More</a>
+                <a href="<?php echo home_url('/consulting-services'); ?>" class="product-card__cta">Learn More</a>
             </div>
 
         </div>

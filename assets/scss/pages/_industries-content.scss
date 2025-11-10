@@ -232,58 +232,106 @@
   
   &__title {
     font-family: $font-tertiary;
-    font-size: 28px;
+    font-size: 1.75rem;
     font-weight: $font-weight-bold;
+    line-height: 1.2;
     color: $color-black;
     margin-bottom: 8px;
+    height: calc(1.75rem * 1.2 * 1); // Exact height for 1 line
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    overflow: hidden;
   }
   
   &__subtitle {
-    font-size: 16px;
+    font-size: 1rem;
+    line-height: 1.4;
     color: $color-brand-pink;
     font-weight: $font-weight-medium;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     margin-bottom: 16px;
+    height: calc(1rem * 1.4 * 2); // Fixed height for exactly 2 lines
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
   }
   
   &__description {
-    font-size: 16px;
+    font-size: 1rem;
     line-height: 1.6;
     color: $color-gray;
     margin-bottom: 32px;
+    height: calc(1rem * 1.6 * 5); // Exact height for 5 lines
+    -webkit-line-clamp: 5;
+    line-clamp: 5;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    overflow: hidden;
   }
   
   &__features {
     margin-bottom: 32px;
     
     h4 {
-      font-size: 18px;
+      font-size: 1.125rem;
       font-weight: $font-weight-bold;
+      line-height: 1.3;
       color: $color-black;
       margin-bottom: 16px;
+      height: calc(1.125rem * 1.3 * 1); // Exact height for 1 line
+      -webkit-line-clamp: 1;
+      line-clamp: 1;
+      -webkit-box-orient: vertical;
+      display: -webkit-box;
+      overflow: hidden;
     }
   }
   
   &__expertise {
     padding-top: 24px;
     border-top: 1px solid $color-gray-200;
+    margin-bottom: 32px; // Add space before the button
     
     h4 {
-      font-size: 16px;
+      font-size: 1rem;
       font-weight: $font-weight-bold;
+      line-height: 1.3;
       color: $color-black;
       margin-bottom: 12px;
       text-transform: uppercase;
       letter-spacing: 0.5px;
+      height: calc(1rem * 1.3 * 1); // Exact height for 1 line
+      -webkit-line-clamp: 1;
+      line-clamp: 1;
+      -webkit-box-orient: vertical;
+      display: -webkit-box;
+      overflow: hidden;
     }
     
     p {
-      font-size: 14px;
+      font-size: 0.875rem;
       line-height: 1.6;
       color: $color-gray;
       margin: 0;
+      height: calc(0.875rem * 1.6 * 4); // Exact height for 4 lines
+      -webkit-line-clamp: 4;
+      line-clamp: 4;
+      -webkit-box-orient: vertical;
+      display: -webkit-box;
+      overflow: hidden;
     }
+  }
+  
+  .browse-btn-outline {
+    display: block;
+    width: fit-content;
+    margin: 0 auto;
+    padding: 12px 32px;
   }
 }
 

@@ -4,7 +4,7 @@
 
 .product-approach {
     background-color: transparent;
-    padding: 20px 0 60px 0;
+    padding: 60px 0 60px 0;
     position: relative;
     z-index: 2;
     
@@ -72,6 +72,7 @@
     background-color: #ffffff;
     position: relative;
     
+    
     // Full width technique that works inside containers
     &::before {
         content: '';
@@ -82,24 +83,24 @@
         height: 2px;
         background-color: #ffffff;
     }
-    
+
     // Top divider (before header)
-    &--top {
+    /*&--top {
         margin: 0 0 60px 0;
         
         @media (max-width: 768px) {
             margin-bottom: 40px;
         }
-    }
+    }*/
     
     // Middle divider (before content blocks)
-    &--middle {
+    /*&--middle {
         margin: 60px 0;
         
         @media (max-width: 768px) {
             margin: 40px 0;
         }
-    }
+    }*/
     
     // Bottom divider (after philosophy)
     &--bottom {

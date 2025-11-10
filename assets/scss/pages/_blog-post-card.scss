@@ -93,11 +93,11 @@
   margin-bottom: 12px;
   color: #1F2937;
   
-  // Fixed height for 3 lines to normalize card heights
-  height: calc(1.3em * 3); // 3 lines at 1.3 line-height
+  // Fixed height for 2 lines to normalize card heights
+  height: calc(1.3em * 2); // 2 lines at 1.3 line-height
   overflow: hidden;
   display: -webkit-box;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   line-clamp: 3;
 }
