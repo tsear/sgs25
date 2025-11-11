@@ -10,6 +10,8 @@ get_header(); ?>
 
     <?php get_template_part('template-parts/local-government/local-government-hero'); ?>
 
+    <?php get_template_part('template-parts/local-government/local-government-content'); ?>
+
 </main>
 
 <?php get_footer(); ?>

@@ -1,0 +1,516 @@
+/* =========================================================================
+   Nonprofit Content Section - MissionGranted + SGS Consulting Story
+   ========================================================================= */
+
+/* =========================================================================
+   The Problem Section
+   ========================================================================= */
+
+.nonprofit-problem {
+  padding: 80px 0;
+  background: $color-black;
+  position: relative;
+  
+  &__header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 40px;
+  }
+  
+  &__title {
+    font-family: $font-tertiary;
+    font-size: 48px;
+    font-weight: $font-weight-bold;
+    line-height: 1.2;
+    color: $color-white;
+    margin-bottom: 16px;
+    
+    .brand-pink {
+      color: $color-brand-pink;
+    }
+    
+    @media (max-width: 768px) {
+      font-size: 36px;
+    }
+  }
+  
+  &__lead {
+    font-size: 20px;
+    line-height: 1.5;
+    color: $color-white;
+    margin: 0;
+    
+    strong {
+      color: $color-brand-pink;
+      font-weight: $font-weight-bold;
+    }
+  }
+  
+  &__content {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
+  &__text {
+    font-size: 18px;
+    line-height: 1.7;
+    color: $color-white;
+    opacity: 0.9;
+    margin-bottom: 24px;
+    
+    &:last-child {
+      margin-bottom: 0;
+      font-weight: $font-weight-medium;
+      opacity: 1;
+    }
+  }
+  
+  // White divider line at bottom
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-color: $color-white;
+  }
+}
+
+/* =========================================================================
+   MissionGranted Solution Section
+   ========================================================================= */
+
+.missiongranted-solution {
+  padding: 80px 0;
+  background: $color-black;
+  position: relative;
+  
+  &__header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 40px;
+  }
+  
+  &__title {
+    font-family: $font-tertiary;
+    font-size: 48px;
+    font-weight: $font-weight-bold;
+    line-height: 1.2;
+    color: $color-white;
+    margin-bottom: 16px;
+    
+    .brand-pink {
+      color: $color-brand-pink;
+    }
+    
+    @media (max-width: 768px) {
+      font-size: 36px;
+    }
+  }
+  
+  &__subtitle {
+    font-size: 18px;
+    line-height: 1.5;
+    color: $color-white;
+    opacity: 0.8;
+    font-style: italic;
+    margin: 0;
+  }
+  
+  &__content {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  
+  &__intro {
+    font-size: 18px;
+    line-height: 1.7;
+    color: $color-white;
+    text-align: center;
+    margin-bottom: 60px;
+  }
+  
+  &__benefits {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin-bottom: 60px;
+    
+    @media (max-width: 968px) {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+  }
+  
+  &__summary {
+    font-size: 20px;
+    line-height: 1.6;
+    color: $color-white;
+    text-align: center;
+    
+    strong {
+      color: $color-brand-pink;
+      font-weight: $font-weight-bold;
+    }
+  }
+  
+  // White divider line at bottom
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-color: $color-white;
+  }
+}
+
+.benefit-item {
+  text-align: center;
+  
+  &__icon {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba($color-brand-pink, 0.1);
+    color: $color-brand-pink;
+  }
+  
+  &__title {
+    font-family: $font-tertiary;
+    font-size: 24px;
+    font-weight: $font-weight-bold;
+    color: $color-white;
+    margin-bottom: 12px;
+  }
+  
+  &__text {
+    font-size: 16px;
+    line-height: 1.6;
+    color: $color-white;
+    opacity: 0.9;
+    margin: 0;
+  }
+}
+
+/* =========================================================================
+   SGS Consulting Section
+   ========================================================================= */
+
+.sgs-consulting {
+  padding: 80px 0;
+  background: $color-black;
+  position: relative;
+  
+  &__header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 40px;
+  }
+  
+  &__title {
+    font-family: $font-tertiary;
+    font-size: 48px;
+    font-weight: $font-weight-bold;
+    line-height: 1.2;
+    color: $color-white;
+    margin-bottom: 16px;
+    
+    .brand-pink {
+      color: $color-brand-pink;
+    }
+    
+    @media (max-width: 768px) {
+      font-size: 36px;
+    }
+  }
+  
+  &__subtitle {
+    font-size: 18px;
+    line-height: 1.5;
+    color: $color-white;
+    opacity: 0.8;
+    margin: 0;
+  }
+  
+  &__content {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  
+  &__intro {
+    font-size: 18px;
+    line-height: 1.7;
+    color: $color-white;
+    text-align: center;
+    margin-bottom: 60px;
+  }
+  
+  &__services {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+    
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  // White divider line at bottom
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-color: $color-white;
+  }
+}
+
+.consulting-card {
+  background: $color-white;
+  border-radius: 8px;
+  padding: 32px;
+  border-left: 4px solid $color-brand-pink;
+  transition: transform $transition-fast;
+  
+  &:hover {
+    transform: translateY(-4px);
+  }
+  
+  &__number {
+    font-family: $font-tertiary;
+    font-size: 14px;
+    font-weight: $font-weight-bold;
+    color: $color-brand-pink;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+  }
+  
+  &__title {
+    font-family: $font-tertiary;
+    font-size: 28px;
+    font-weight: $font-weight-bold;
+    color: $color-black;
+    margin-bottom: 12px;
+  }
+  
+  &__text {
+    font-size: 16px;
+    line-height: 1.6;
+    color: $color-gray;
+    margin: 0;
+  }
+}
+
+/* =========================================================================
+   How It Works Section
+   ========================================================================= */
+
+.how-it-works-nonprofit {
+  padding: 80px 0;
+  background: $color-black;
+  position: relative;
+  
+  &__header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 60px;
+  }
+  
+  &__title {
+    font-family: $font-tertiary;
+    font-size: 48px;
+    font-weight: $font-weight-bold;
+    line-height: 1.2;
+    color: $color-white;
+    margin-bottom: 16px;
+    
+    .brand-pink {
+      color: $color-brand-pink;
+    }
+    
+    @media (max-width: 768px) {
+      font-size: 36px;
+    }
+  }
+  
+  &__lead {
+    font-size: 20px;
+    line-height: 1.5;
+    color: $color-white;
+    margin: 0;
+    font-weight: $font-weight-medium;
+  }
+  
+  &__loop {
+    max-width: 1100px;
+    margin: 0 auto 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    @media (max-width: 968px) {
+      flex-direction: column;
+    }
+  }
+  
+  &__summary {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+    
+    p {
+      font-size: 18px;
+      line-height: 1.7;
+      color: $color-white;
+      margin-bottom: 16px;
+      
+      &:last-child {
+        margin-bottom: 0;
+      }
+      
+      strong {
+        color: $color-brand-pink;
+        font-weight: $font-weight-bold;
+      }
+      
+      &.highlight {
+        font-size: 20px;
+        font-weight: $font-weight-medium;
+        color: $color-brand-pink;
+      }
+    }
+  }
+  
+  // White divider line at bottom
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-color: $color-white;
+  }
+}
+
+.loop-step {
+  flex: 1;
+  text-align: center;
+  
+  @media (max-width: 968px) {
+    margin-bottom: 32px;
+    
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+  
+  &__badge {
+    display: inline-block;
+    padding: 8px 20px;
+    background: $color-brand-pink;
+    color: $color-white;
+    font-size: 14px;
+    font-weight: $font-weight-bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 20px;
+    margin-bottom: 16px;
+  }
+  
+  &__content {
+    padding: 0 16px;
+  }
+  
+  &__title {
+    font-family: $font-tertiary;
+    font-size: 22px;
+    font-weight: $font-weight-bold;
+    color: $color-white;
+    margin-bottom: 8px;
+  }
+  
+  &__text {
+    font-size: 15px;
+    line-height: 1.6;
+    color: $color-white;
+    opacity: 0.85;
+    margin: 0;
+  }
+}
+
+.loop-arrow {
+  color: $color-brand-pink;
+  font-size: 32px;
+  font-weight: $font-weight-bold;
+  margin: 0 16px;
+  flex-shrink: 0;
+  
+  @media (max-width: 968px) {
+    transform: rotate(90deg);
+    margin: 0;
+  }
+}
+
+/* =========================================================================
+   Nonprofit CTA Section
+   ========================================================================= */
+
+.nonprofit-cta {
+  padding: 80px 0;
+  background: $color-black;
+  
+  &__content {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
+  &__title {
+    font-family: $font-tertiary;
+    font-size: 48px;
+    font-weight: $font-weight-bold;
+    line-height: 1.2;
+    color: $color-white;
+    margin-bottom: 24px;
+    
+    .brand-pink {
+      color: $color-brand-pink;
+    }
+    
+    @media (max-width: 768px) {
+      font-size: 36px;
+    }
+  }
+  
+  &__text {
+    font-size: 18px;
+    line-height: 1.6;
+    color: $color-white;
+    opacity: 0.9;
+    margin-bottom: 40px;
+  }
+  
+  &__actions {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    
+    @media (max-width: 768px) {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+}
+
+   

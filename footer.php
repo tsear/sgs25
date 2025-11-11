@@ -1,4 +1,8 @@
-    <?php if (!is_front_page()): ?>
+    <?php 
+    // Hide footer CTA on homepage and industry-specific pages (they have their own CTAs)
+    $hide_footer_cta = is_front_page() || is_page(array('nonprofits', 'grantmakers', 'local-government'));
+    if (!$hide_footer_cta): 
+    ?>
     <!-- Final CTA Section matching Tilda -->
     <section class="final-cta-section" style="background-color: #000000; padding: 75px 0; text-align: center;">
         <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">

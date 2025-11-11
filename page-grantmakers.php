@@ -10,6 +10,8 @@ get_header(); ?>
 
     <?php get_template_part('template-parts/grantmakers/grantmakers-hero'); ?>
 
+    <?php get_template_part('template-parts/grantmakers/grantmakers-content'); ?>
+
 </main>
 
 <?php get_footer(); ?>

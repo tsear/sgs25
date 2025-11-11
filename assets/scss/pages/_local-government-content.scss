@@ -1,0 +1,520 @@
+/* =========================================================================
+   Local Government Content Section - Technical/Operational Focus
+   ========================================================================= */
+
+/* =========================================================================
+   Municipal Complexity - Badge + Centered Intro
+   ========================================================================= */
+
+.municipal-complexity {
+  padding: 80px 0;
+  background: $color-black;
+  position: relative;
+  
+  &__content {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
+  &__title {
+    font-family: $font-tertiary;
+    font-size: 48px;
+    font-weight: $font-weight-bold;
+    line-height: 1.2;
+    color: $color-white;
+    margin-bottom: 20px;
+    
+    .brand-blue {
+      color: $color-brand-blue;
+    }
+    
+    @media (max-width: 768px) {
+      font-size: 36px;
+    }
+  }
+  
+  &__lead {
+    font-size: 20px;
+    line-height: 1.5;
+    color: $color-white;
+    margin-bottom: 32px;
+    font-weight: $font-weight-medium;
+  }
+  
+  &__description {
+    p {
+      font-size: 18px;
+      line-height: 1.7;
+      color: $color-white;
+      opacity: 0.9;
+      margin: 0;
+    }
+  }
+  
+  // White divider line at bottom
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-color: $color-white;
+  }
+}
+
+.complexity-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 24px;
+  background: rgba($color-brand-blue, 0.15);
+  border: 1px solid rgba($color-brand-blue, 0.3);
+  border-radius: 30px;
+  margin-bottom: 32px;
+  
+  &__icon {
+    font-size: 24px;
+  }
+  
+  &__text {
+    font-size: 14px;
+    font-weight: $font-weight-bold;
+    color: $color-brand-blue;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+}
+
+/* =========================================================================
+   Platform Integration - 2x3 Feature Grid
+   ========================================================================= */
+
+.platform-integration {
+  padding: 80px 0;
+  background: $color-black;
+  position: relative;
+  
+  &__title {
+    font-family: $font-tertiary;
+    font-size: 48px;
+    font-weight: $font-weight-bold;
+    line-height: 1.2;
+    color: $color-white;
+    text-align: center;
+    margin-bottom: 60px;
+    
+    .brand-blue {
+      color: $color-brand-blue;
+    }
+    
+    @media (max-width: 768px) {
+      font-size: 36px;
+    }
+  }
+  
+  // White divider line at bottom
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-color: $color-white;
+  }
+}
+
+.integration-features {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.integration-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-bottom: 32px;
+  
+  &:last-child {
+    margin-bottom: 0;
+  }
+  
+  @media (max-width: 968px) {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+.feature-block {
+  background: $color-white;
+  border-radius: 8px;
+  padding: 32px;
+  text-align: center;
+  transition: transform $transition-fast, box-shadow $transition-fast;
+  border-bottom: 3px solid $color-brand-blue;
+  
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba($color-brand-blue, 0.2);
+  }
+  
+  &__icon {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba($color-brand-blue, 0.1);
+    border-radius: 12px;
+    color: $color-brand-blue;
+  }
+  
+  &__title {
+    font-family: $font-tertiary;
+    font-size: 20px;
+    font-weight: $font-weight-bold;
+    color: $color-black;
+    margin-bottom: 10px;
+  }
+  
+  &__text {
+    font-size: 15px;
+    line-height: 1.6;
+    color: $color-gray;
+    margin: 0;
+  }
+}
+
+/* =========================================================================
+   SGS Operational Support - Horizontal Pillars
+   ========================================================================= */
+
+.sgs-operational {
+  padding: 80px 0;
+  background: $color-black;
+  position: relative;
+  
+  &__intro {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto 60px;
+  }
+  
+  &__title {
+    font-family: $font-tertiary;
+    font-size: 48px;
+    font-weight: $font-weight-bold;
+    line-height: 1.2;
+    color: $color-white;
+    margin-bottom: 24px;
+    
+    .brand-blue {
+      color: $color-brand-blue;
+    }
+    
+    @media (max-width: 768px) {
+      font-size: 36px;
+    }
+  }
+  
+  &__subtitle {
+    font-size: 18px;
+    line-height: 1.7;
+    color: $color-white;
+    opacity: 0.9;
+    margin: 0;
+  }
+  
+  &__outcome {
+    text-align: center;
+    max-width: 800px;
+    margin: 60px auto 0;
+    
+    p {
+      font-size: 20px;
+      line-height: 1.6;
+      color: $color-white;
+      margin: 0;
+      
+      strong {
+        color: $color-brand-blue;
+        font-weight: $font-weight-bold;
+      }
+    }
+  }
+  
+  // White divider line at bottom
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-color: $color-white;
+  }
+}
+
+.operational-pillars {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  
+  @media (max-width: 968px) {
+    flex-direction: column;
+    gap: 32px;
+  }
+}
+
+.pillar-item {
+  flex: 1;
+  text-align: center;
+  
+  &__number {
+    width: 50px;
+    height: 50px;
+    margin: 0 auto 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: 3px solid $color-brand-blue;
+    color: $color-brand-blue;
+    font-family: $font-tertiary;
+    font-size: 20px;
+    font-weight: $font-weight-bold;
+    border-radius: 50%;
+  }
+  
+  &__title {
+    font-family: $font-tertiary;
+    font-size: 22px;
+    font-weight: $font-weight-bold;
+    color: $color-white;
+    margin-bottom: 8px;
+  }
+  
+  &__desc {
+    font-size: 15px;
+    line-height: 1.5;
+    color: $color-white;
+    opacity: 0.85;
+    margin: 0;
+  }
+}
+
+.pillar-divider {
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, $color-brand-blue, transparent);
+  flex-shrink: 0;
+  
+  @media (max-width: 968px) {
+    width: 2px;
+    height: 40px;
+    background: linear-gradient(180deg, transparent, $color-brand-blue, transparent);
+  }
+}
+
+/* =========================================================================
+   Municipal Process - Vertical Timeline
+   ========================================================================= */
+
+.municipal-process {
+  padding: 80px 0;
+  background: $color-black;
+  position: relative;
+  
+  &__header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 60px;
+  }
+  
+  &__title {
+    font-family: $font-tertiary;
+    font-size: 48px;
+    font-weight: $font-weight-bold;
+    line-height: 1.2;
+    color: $color-white;
+    margin-bottom: 16px;
+    
+    .brand-blue {
+      color: $color-brand-blue;
+    }
+    
+    @media (max-width: 768px) {
+      font-size: 36px;
+    }
+  }
+  
+  &__lead {
+    font-size: 18px;
+    line-height: 1.5;
+    color: $color-white;
+    opacity: 0.9;
+    margin: 0;
+  }
+  
+  &__guarantee {
+    text-align: center;
+    max-width: 800px;
+    margin: 60px auto 0;
+  }
+  
+  // White divider line at bottom
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-color: $color-white;
+  }
+}
+
+.process-timeline {
+  max-width: 900px;
+  margin: 0 auto;
+  padding-left: 40px;
+  
+  @media (max-width: 768px) {
+    padding-left: 24px;
+  }
+}
+
+.timeline-step {
+  position: relative;
+  padding-bottom: 48px;
+  
+  &--last {
+    padding-bottom: 0;
+  }
+  
+  &__marker {
+    position: absolute;
+    left: -40px;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    @media (max-width: 768px) {
+      left: -24px;
+    }
+  }
+  
+  &__dot {
+    width: 16px;
+    height: 16px;
+    background: $color-brand-blue;
+    border: 3px solid $color-black;
+    border-radius: 50%;
+    position: relative;
+    z-index: 2;
+  }
+  
+  &__line {
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, $color-brand-blue, rgba($color-brand-blue, 0.3));
+    margin-top: -3px;
+  }
+  
+  &__content {
+    padding-left: 24px;
+  }
+  
+  &__title {
+    font-family: $font-tertiary;
+    font-size: 24px;
+    font-weight: $font-weight-bold;
+    color: $color-white;
+    margin-bottom: 8px;
+  }
+  
+  &__text {
+    font-size: 16px;
+    line-height: 1.6;
+    color: $color-white;
+    opacity: 0.85;
+    margin: 0;
+  }
+}
+
+.guarantee-text {
+  font-size: 20px;
+  line-height: 1.6;
+  color: $color-brand-blue;
+  margin: 0;
+  
+  strong {
+    font-weight: $font-weight-bold;
+  }
+}
+
+/* =========================================================================
+   Municipal CTA Section
+   ========================================================================= */
+
+.municipal-cta {
+  padding: 80px 0;
+  background: $color-black;
+  
+  &__content {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
+  &__title {
+    font-family: $font-tertiary;
+    font-size: 48px;
+    font-weight: $font-weight-bold;
+    line-height: 1.2;
+    color: $color-white;
+    margin-bottom: 24px;
+    
+    .brand-blue {
+      color: $color-brand-blue;
+    }
+    
+    @media (max-width: 768px) {
+      font-size: 36px;
+    }
+  }
+  
+  &__text {
+    font-size: 18px;
+    line-height: 1.6;
+    color: $color-white;
+    opacity: 0.9;
+    margin-bottom: 40px;
+  }
+  
+  &__actions {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    
+    @media (max-width: 768px) {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+}
+
+/* =========================================================================
+   Brand Blue Utility Class
+   ========================================================================= */
+
+.brand-blue {
+  color: $color-brand-blue;
+}
