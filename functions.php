@@ -9,6 +9,27 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
+// Check minimum PHP version
+if (version_compare(PHP_VERSION, '7.4', '<')) {
+    add_action('admin_notices', function() {
+        echo '<div class="error"><p><strong>Smart Grant Solutions Theme:</strong> This theme requires PHP 7.4 or higher. You are running PHP ' . PHP_VERSION . '. Please contact your hosting provider to upgrade.</p></div>';
+    });
+    // Prevent theme activation on incompatible PHP versions
+    add_action('after_switch_theme', function() {
+        switch_theme(WP_DEFAULT_THEME);
+    });
+    return;
+}
+
+// Check minimum WordPress version
+global $wp_version;
+if (version_compare($wp_version, '5.0', '<')) {
+    add_action('admin_notices', function() {
+        echo '<div class="error"><p><strong>Smart Grant Solutions Theme:</strong> This theme requires WordPress 5.0 or higher. You are running WordPress ' . $GLOBALS['wp_version'] . '. Please update WordPress.</p></div>';
+    });
+    return;
+}
+
 // Define theme constants
 define('SGS_THEME_VERSION', '1.0.1');
 define('SGS_THEME_URI', get_template_directory_uri());

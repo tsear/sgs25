@@ -1,6 +1,6 @@
     <?php 
-    // Hide footer CTA on homepage and industry-specific pages (they have their own CTAs)
-    $hide_footer_cta = is_front_page() || is_page(array('nonprofits', 'grantmakers', 'local-government'));
+    // Hide footer CTA on homepage, industry pages, and product/service pages (they have their own CTAs)
+    $hide_footer_cta = is_front_page() || is_page(array('nonprofits', 'grantmakers', 'local-government', 'consulting-services', 'cloud-software'));
     if (!$hide_footer_cta): 
     ?>
     <!-- Final CTA Section matching Tilda -->

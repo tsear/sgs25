@@ -1,0 +1,855 @@
+/* =========================================================================
+   Cloud Software Content Section
+   MissionGranted platform - Intelligent financial management
+   ========================================================================= */
+
+/* Intro Section
+   ========================================================================= */
+.cloud-software-intro {
+    padding: 140px 0 100px;
+    background: linear-gradient(180deg, rgba(216, 18, 89, 0.05) 0%, rgba(0, 0, 0, 1) 100%);
+    
+    @media (max-width: $breakpoint-md) {
+        padding: 100px 0 80px;
+    }
+    
+    &__content {
+        max-width: 1000px;
+        margin: 0 auto;
+        text-align: center;
+    }
+    
+    &__badge {
+        display: inline-block;
+        margin-bottom: 24px;
+        
+        span {
+            display: inline-block;
+            padding: 8px 20px;
+            background: linear-gradient(135deg, $color-brand-pink 0%, $color-brand-yellow 100%);
+            color: $color-white;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            border-radius: 24px;
+        }
+    }
+    
+    &__title {
+        font-family: $font-secondary;
+        font-size: 56px;
+        font-weight: 700;
+        color: $color-white;
+        margin-bottom: 32px;
+        line-height: 1.1;
+        
+        @media (max-width: $breakpoint-md) {
+            font-size: 42px;
+        }
+        
+        @media (max-width: $breakpoint-sm) {
+            font-size: 32px;
+        }
+    }
+    
+    &__lead {
+        font-size: 20px;
+        line-height: 1.6;
+        color: rgba(255, 255, 255, 0.85);
+        margin-bottom: 60px;
+        max-width: 900px;
+        margin-left: auto;
+        margin-right: auto;
+        
+        @media (max-width: $breakpoint-md) {
+            font-size: 18px;
+            margin-bottom: 50px;
+        }
+    }
+    
+    &__stats {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 48px;
+        max-width: 900px;
+        margin: 0 auto;
+        
+        @media (max-width: $breakpoint-md) {
+            gap: 32px;
+        }
+        
+        @media (max-width: $breakpoint-sm) {
+            grid-template-columns: 1fr;
+            gap: 32px;
+        }
+    }
+}
+
+/* Stat Item
+   ========================================================================= */
+.stat-item {
+    text-align: center;
+    
+    // Different colors for each stat
+    &:nth-child(1) .stat-item__number {
+        color: $color-brand-pink;
+    }
+    
+    &:nth-child(2) .stat-item__number {
+        color: $color-brand-yellow;
+    }
+    
+    &:nth-child(3) .stat-item__number {
+        color: $color-brand-blue;
+    }
+    
+    &__number {
+        font-family: $font-secondary;
+        font-size: 64px;
+        font-weight: 700;
+        line-height: 1;
+        margin-bottom: 12px;
+        
+        @media (max-width: $breakpoint-md) {
+            font-size: 48px;
+        }
+    }
+    
+    &__label {
+        font-size: 16px;
+        color: rgba(255, 255, 255, 0.7);
+        line-height: 1.4;
+        
+        @media (max-width: $breakpoint-sm) {
+            font-size: 15px;
+        }
+    }
+}
+
+/* Value Proposition Section
+   ========================================================================= */
+.cloud-software-value {
+    padding: 100px 0;
+    background: $color-black;
+    
+    @media (max-width: $breakpoint-md) {
+        padding: 80px 0;
+    }
+    
+    &__header {
+        text-align: center;
+        max-width: 900px;
+        margin: 0 auto 80px;
+        
+        @media (max-width: $breakpoint-md) {
+            margin-bottom: 60px;
+        }
+    }
+    
+    &__title {
+        font-family: $font-secondary;
+        font-size: 42px;
+        font-weight: 700;
+        color: $color-white;
+        margin-bottom: 20px;
+        line-height: 1.2;
+        
+        @media (max-width: $breakpoint-md) {
+            font-size: 32px;
+        }
+    }
+    
+    &__subtitle {
+        font-size: 18px;
+        line-height: 1.6;
+        color: rgba(255, 255, 255, 0.75);
+        
+        @media (max-width: $breakpoint-md) {
+            font-size: 16px;
+        }
+    }
+    
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 32px;
+        
+        @media (max-width: $breakpoint-md) {
+            grid-template-columns: 1fr;
+        }
+    }
+}
+
+/* Value Card
+   ========================================================================= */
+.value-card {
+    background: $color-white;
+    padding: 40px;
+    border-radius: 12px;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    
+    @media (max-width: $breakpoint-sm) {
+        padding: 32px 24px;
+    }
+    
+    // Pink accent for card 1
+    &:nth-child(1) {
+        .value-card__icon {
+            color: $color-brand-pink;
+        }
+        
+        &:hover {
+            border-color: $color-brand-pink;
+            box-shadow: 0 12px 40px rgba(216, 18, 89, 0.2);
+        }
+    }
+    
+    // Yellow accent for card 2
+    &:nth-child(2) {
+        .value-card__icon {
+            color: $color-brand-yellow;
+        }
+        
+        &:hover {
+            border-color: $color-brand-yellow;
+            box-shadow: 0 12px 40px rgba(255, 188, 65, 0.2);
+        }
+    }
+    
+    // Blue accent for card 3
+    &:nth-child(3) {
+        .value-card__icon {
+            color: $color-brand-blue;
+        }
+        
+        &:hover {
+            border-color: $color-brand-blue;
+            box-shadow: 0 12px 40px rgba(1, 107, 166, 0.2);
+        }
+    }
+    
+    // Pink accent for card 4
+    &:nth-child(4) {
+        .value-card__icon {
+            color: $color-brand-pink;
+        }
+        
+        &:hover {
+            border-color: $color-brand-pink;
+            box-shadow: 0 12px 40px rgba(216, 18, 89, 0.2);
+        }
+    }
+    
+    &:hover {
+        transform: translateY(-4px);
+    }
+    
+    &__icon {
+        width: 48px;
+        height: 48px;
+        margin-bottom: 20px;
+        
+        svg {
+            width: 100%;
+            height: 100%;
+        }
+    }
+    
+    &__title {
+        font-family: $font-secondary;
+        font-size: 22px;
+        font-weight: 600;
+        color: $color-black;
+        margin-bottom: 12px;
+        
+        @media (max-width: $breakpoint-sm) {
+            font-size: 20px;
+        }
+    }
+    
+    &__text {
+        font-size: 16px;
+        line-height: 1.6;
+        color: rgba(0, 0, 0, 0.7);
+    }
+}
+
+/* Automation Section
+   ========================================================================= */
+.cloud-software-automation {
+    padding: 100px 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(1, 107, 166, 0.05) 100%);
+    
+    @media (max-width: $breakpoint-md) {
+        padding: 80px 0;
+    }
+    
+    &__header {
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto 80px;
+        
+        @media (max-width: $breakpoint-md) {
+            margin-bottom: 60px;
+        }
+    }
+    
+    &__title {
+        font-family: $font-secondary;
+        font-size: 42px;
+        font-weight: 700;
+        color: $color-white;
+        margin-bottom: 20px;
+        
+        @media (max-width: $breakpoint-md) {
+            font-size: 32px;
+        }
+    }
+    
+    &__subtitle {
+        font-size: 18px;
+        line-height: 1.6;
+        color: rgba(255, 255, 255, 0.75);
+        
+        @media (max-width: $breakpoint-md) {
+            font-size: 16px;
+        }
+    }
+    
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 32px;
+        
+        @media (max-width: $breakpoint-md) {
+            grid-template-columns: 1fr;
+        }
+    }
+}
+
+/* Automation Item
+   ========================================================================= */
+.automation-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+    padding: 32px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    
+    @media (max-width: $breakpoint-sm) {
+        padding: 24px;
+        gap: 20px;
+    }
+    
+    &:hover {
+        background: rgba(255, 255, 255, 0.04);
+        border-color: rgba(255, 255, 255, 0.2);
+        transform: translateX(8px);
+    }
+    
+    &__number {
+        flex-shrink: 0;
+        width: 48px;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: $font-secondary;
+        font-size: 20px;
+        font-weight: 700;
+        color: $color-white;
+        border-radius: 50%;
+        
+        @media (max-width: $breakpoint-sm) {
+            width: 40px;
+            height: 40px;
+            font-size: 18px;
+        }
+    }
+    
+    // Colorful numbers
+    &:nth-child(1) .automation-item__number {
+        background: $color-brand-pink;
+    }
+    
+    &:nth-child(2) .automation-item__number {
+        background: $color-brand-yellow;
+        color: $color-black;
+    }
+    
+    &:nth-child(3) .automation-item__number {
+        background: $color-brand-blue;
+    }
+    
+    &:nth-child(4) .automation-item__number {
+        background: $color-brand-pink;
+    }
+    
+    &:nth-child(5) .automation-item__number {
+        background: $color-brand-yellow;
+        color: $color-black;
+    }
+    
+    &:nth-child(6) .automation-item__number {
+        background: $color-brand-blue;
+    }
+    
+    &__content {
+        flex: 1;
+    }
+    
+    &__title {
+        font-family: $font-secondary;
+        font-size: 20px;
+        font-weight: 600;
+        color: $color-white;
+        margin-bottom: 8px;
+        
+        @media (max-width: $breakpoint-sm) {
+            font-size: 18px;
+        }
+    }
+    
+    &__description {
+        font-size: 15px;
+        line-height: 1.6;
+        color: rgba(255, 255, 255, 0.75);
+    }
+}
+
+/* Audience Section
+   ========================================================================= */
+.cloud-software-audience {
+    padding: 100px 0;
+    background: $color-black;
+    
+    @media (max-width: $breakpoint-md) {
+        padding: 80px 0;
+    }
+    
+    &__split {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 80px;
+        
+        @media (max-width: $breakpoint-lg) {
+            gap: 60px;
+        }
+        
+        @media (max-width: $breakpoint-md) {
+            grid-template-columns: 1fr;
+            gap: 60px;
+        }
+    }
+    
+    &__title {
+        font-family: $font-secondary;
+        font-size: 36px;
+        font-weight: 700;
+        color: $color-white;
+        margin-bottom: 40px;
+        line-height: 1.2;
+        
+        @media (max-width: $breakpoint-md) {
+            font-size: 28px;
+            margin-bottom: 32px;
+        }
+    }
+}
+
+/* Problem List
+   ========================================================================= */
+.problem-list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.problem-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 24px;
+    background: rgba(216, 18, 89, 0.05);
+    border-left: 4px solid $color-brand-pink;
+    border-radius: 8px;
+    
+    &__icon {
+        flex-shrink: 0;
+        font-size: 28px;
+        line-height: 1;
+    }
+    
+    &__content {
+        flex: 1;
+        
+        h4 {
+            font-family: $font-secondary;
+            font-size: 18px;
+            font-weight: 600;
+            color: $color-white;
+            margin-bottom: 8px;
+        }
+        
+        p {
+            font-size: 15px;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.75);
+            margin: 0;
+        }
+    }
+}
+
+/* Benefit List
+   ========================================================================= */
+.benefit-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.benefit-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    
+    &:hover {
+        background: rgba(255, 255, 255, 0.04);
+        transform: translateX(8px);
+    }
+    
+    &__check {
+        flex-shrink: 0;
+        width: 28px;
+        height: 28px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: $color-white;
+        border-radius: 50%;
+        font-weight: 700;
+        font-size: 16px;
+    }
+    
+    // Colorful checks
+    &:nth-child(1) .benefit-item__check {
+        background: $color-brand-blue;
+    }
+    
+    &:nth-child(2) .benefit-item__check {
+        background: $color-brand-yellow;
+        color: $color-black;
+    }
+    
+    &:nth-child(3) .benefit-item__check {
+        background: $color-brand-pink;
+    }
+    
+    &:nth-child(4) .benefit-item__check {
+        background: $color-brand-blue;
+    }
+    
+    &:nth-child(5) .benefit-item__check {
+        background: $color-brand-yellow;
+        color: $color-black;
+    }
+    
+    &__content {
+        flex: 1;
+        
+        h4 {
+            font-family: $font-secondary;
+            font-size: 17px;
+            font-weight: 600;
+            color: $color-white;
+            margin-bottom: 6px;
+        }
+        
+        p {
+            font-size: 15px;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.7);
+            margin: 0;
+        }
+    }
+}
+
+/* Features Section
+   ========================================================================= */
+.cloud-software-features {
+    padding: 100px 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(255, 188, 65, 0.05) 100%);
+    
+    @media (max-width: $breakpoint-md) {
+        padding: 80px 0;
+    }
+    
+    &__header {
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto 80px;
+        
+        @media (max-width: $breakpoint-md) {
+            margin-bottom: 60px;
+        }
+    }
+    
+    &__title {
+        font-family: $font-secondary;
+        font-size: 42px;
+        font-weight: 700;
+        color: $color-white;
+        margin-bottom: 16px;
+        
+        @media (max-width: $breakpoint-md) {
+            font-size: 32px;
+        }
+    }
+    
+    &__subtitle {
+        font-size: 18px;
+        line-height: 1.6;
+        color: rgba(255, 255, 255, 0.75);
+    }
+    
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 32px;
+        
+        @media (max-width: $breakpoint-lg) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        
+        @media (max-width: $breakpoint-sm) {
+            grid-template-columns: 1fr;
+        }
+    }
+}
+
+/* Feature Card
+   ========================================================================= */
+.feature-card {
+    background: $color-white;
+    padding: 32px;
+    border-radius: 12px;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    
+    @media (max-width: $breakpoint-sm) {
+        padding: 28px 24px;
+    }
+    
+    // Alternating hover colors
+    &:nth-child(3n+1):hover {
+        border-color: $color-brand-pink;
+        box-shadow: 0 12px 40px rgba(216, 18, 89, 0.2);
+    }
+    
+    &:nth-child(3n+2):hover {
+        border-color: $color-brand-yellow;
+        box-shadow: 0 12px 40px rgba(255, 188, 65, 0.2);
+    }
+    
+    &:nth-child(3n):hover {
+        border-color: $color-brand-blue;
+        box-shadow: 0 12px 40px rgba(1, 107, 166, 0.2);
+    }
+    
+    &:hover {
+        transform: translateY(-4px);
+    }
+    
+    &__title {
+        font-family: $font-secondary;
+        font-size: 20px;
+        font-weight: 600;
+        color: $color-black;
+        margin-bottom: 12px;
+        
+        @media (max-width: $breakpoint-sm) {
+            font-size: 18px;
+        }
+    }
+    
+    &__text {
+        font-size: 15px;
+        line-height: 1.6;
+        color: rgba(0, 0, 0, 0.7);
+    }
+}
+
+/* Implementation Section
+   ========================================================================= */
+.cloud-software-implementation {
+    padding: 100px 0;
+    background: $color-black;
+    
+    @media (max-width: $breakpoint-md) {
+        padding: 80px 0;
+    }
+    
+    &__content {
+        max-width: 1000px;
+        margin: 0 auto;
+        text-align: center;
+    }
+    
+    &__title {
+        font-family: $font-secondary;
+        font-size: 42px;
+        font-weight: 700;
+        color: $color-white;
+        margin-bottom: 20px;
+        
+        @media (max-width: $breakpoint-md) {
+            font-size: 32px;
+        }
+    }
+    
+    &__lead {
+        font-size: 18px;
+        line-height: 1.6;
+        color: rgba(255, 255, 255, 0.8);
+        margin-bottom: 60px;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+        
+        @media (max-width: $breakpoint-md) {
+            font-size: 16px;
+            margin-bottom: 50px;
+        }
+    }
+    
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 32px;
+        
+        @media (max-width: $breakpoint-lg) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        
+        @media (max-width: $breakpoint-sm) {
+            grid-template-columns: 1fr;
+        }
+    }
+}
+
+/* Implementation Phase
+   ========================================================================= */
+.implementation-phase {
+    padding: 32px 24px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    text-align: center;
+    transition: all 0.3s ease;
+    
+    &:hover {
+        background: rgba(255, 255, 255, 0.04);
+        border-color: rgba(255, 255, 255, 0.2);
+        transform: translateY(-4px);
+    }
+    
+    &__icon {
+        font-size: 48px;
+        margin-bottom: 20px;
+        line-height: 1;
+    }
+    
+    &__title {
+        font-family: $font-secondary;
+        font-size: 20px;
+        font-weight: 600;
+        color: $color-white;
+        margin-bottom: 12px;
+        
+        @media (max-width: $breakpoint-sm) {
+            font-size: 18px;
+        }
+    }
+    
+    &__text {
+        font-size: 15px;
+        line-height: 1.6;
+        color: rgba(255, 255, 255, 0.75);
+    }
+}
+
+/* CTA Section
+   ========================================================================= */
+.cloud-software-cta {
+    padding: 120px 0;
+    background: linear-gradient(180deg, rgba(216, 18, 89, 0.05) 0%, rgba(0, 0, 0, 1) 100%);
+    
+    @media (max-width: $breakpoint-md) {
+        padding: 80px 0;
+    }
+    
+    &__content {
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+    }
+    
+    &__title {
+        font-family: $font-secondary;
+        font-size: 42px;
+        font-weight: 700;
+        color: $color-white;
+        margin-bottom: 24px;
+        
+        @media (max-width: $breakpoint-md) {
+            font-size: 32px;
+        }
+    }
+    
+    &__text {
+        font-size: 18px;
+        line-height: 1.6;
+        color: rgba(255, 255, 255, 0.8);
+        margin-bottom: 40px;
+        
+        @media (max-width: $breakpoint-md) {
+            font-size: 16px;
+            margin-bottom: 32px;
+        }
+    }
+    
+    &__buttons {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+        margin-bottom: 32px;
+    }
+    
+    &__note {
+        font-size: 15px;
+        line-height: 1.6;
+        color: rgba(255, 255, 255, 0.7);
+        padding: 20px 28px;
+        background: rgba(255, 255, 255, 0.02);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 8px;
+        display: inline-block;
+        
+        strong {
+            color: $color-white;
+            font-weight: 600;
+        }
+    }
+}

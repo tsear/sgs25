@@ -10,7 +10,7 @@ get_header(); ?>
 
     <?php get_template_part('template-parts/cloud-software/cloud-software-hero'); ?>
 
-    <?php get_template_part('template-parts/products/product-approach'); ?>
+    <?php get_template_part('template-parts/cloud-software/cloud-software-content'); ?>
 
 </main>
 

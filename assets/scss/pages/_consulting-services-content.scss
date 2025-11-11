@@ -1,0 +1,776 @@
+/* =========================================================================
+   Consulting Services Content Section
+   Professional consulting services for nonprofit organizations
+   ========================================================================= */
+   
+.consulting-services-intro {
+    padding: 120px 0 80px;
+    background: linear-gradient(180deg, rgba(216, 18, 89, 0.03) 0%, rgba(0, 0, 0, 1) 100%);
+    
+    @media (max-width: $breakpoint-md) {
+        padding: 80px 0 60px;
+    }
+    
+    &__content {
+        max-width: 900px;
+        margin: 0 auto;
+        text-align: center;
+    }
+    
+    &__title {
+        font-family: $font-secondary;
+        font-size: 48px;
+        font-weight: 700;
+        color: $color-white;
+        margin-bottom: 32px;
+        line-height: 1.2;
+        
+        @media (max-width: $breakpoint-md) {
+            font-size: 36px;
+            margin-bottom: 24px;
+        }
+        
+        @media (max-width: $breakpoint-sm) {
+            font-size: 28px;
+        }
+    }
+    
+    &__lead {
+        font-size: 20px;
+        line-height: 1.6;
+        color: $color-white;
+        margin-bottom: 24px;
+        font-weight: 400;
+        
+        @media (max-width: $breakpoint-md) {
+            font-size: 18px;
+        }
+    }
+    
+    &__supporting {
+        font-size: 18px;
+        line-height: 1.6;
+        color: rgba(255, 255, 255, 0.8);
+        
+        @media (max-width: $breakpoint-md) {
+            font-size: 16px;
+        }
+    }
+}
+
+/* Core Service Areas Section
+   ========================================================================= */
+.consulting-services-areas {
+    padding: 100px 0;
+    background: $color-black;
+    
+    @media (max-width: $breakpoint-md) {
+        padding: 80px 0;
+    }
+    
+    &__header {
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto 80px;
+        
+        @media (max-width: $breakpoint-md) {
+            margin-bottom: 60px;
+        }
+    }
+    
+    &__title {
+        font-family: $font-secondary;
+        font-size: 42px;
+        font-weight: 700;
+        color: $color-white;
+        margin-bottom: 16px;
+        
+        @media (max-width: $breakpoint-md) {
+            font-size: 32px;
+        }
+    }
+    
+    &__subtitle {
+        font-size: 18px;
+        color: rgba(255, 255, 255, 0.7);
+        line-height: 1.6;
+        
+        @media (max-width: $breakpoint-md) {
+            font-size: 16px;
+        }
+    }
+    
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+        
+        @media (max-width: $breakpoint-md) {
+            grid-template-columns: 1fr;
+            gap: 32px;
+        }
+    }
+}
+
+/* Service Area Card
+   ========================================================================= */
+.service-area-card {
+    background: $color-white;
+    border: 2px solid transparent;
+    border-radius: 12px;
+    padding: 40px;
+    transition: all 0.3s ease;
+    
+    @media (max-width: $breakpoint-sm) {
+        padding: 32px 24px;
+    }
+    
+    // Pink accent for first card
+    &:nth-child(1) {
+        .service-area-card__icon {
+            color: $color-brand-pink;
+        }
+        
+        &:hover {
+            border-color: $color-brand-pink;
+            box-shadow: 0 12px 40px rgba(216, 18, 89, 0.2);
+        }
+        
+        .service-area-card__features li:before {
+            color: $color-brand-pink;
+        }
+    }
+    
+    // Yellow accent for second card
+    &:nth-child(2) {
+        .service-area-card__icon {
+            color: $color-brand-yellow;
+        }
+        
+        &:hover {
+            border-color: $color-brand-yellow;
+            box-shadow: 0 12px 40px rgba(255, 188, 65, 0.2);
+        }
+        
+        .service-area-card__features li:before {
+            color: $color-brand-yellow;
+        }
+    }
+    
+    // Blue accent for third card
+    &:nth-child(3) {
+        .service-area-card__icon {
+            color: $color-brand-blue;
+        }
+        
+        &:hover {
+            border-color: $color-brand-blue;
+            box-shadow: 0 12px 40px rgba(1, 107, 166, 0.2);
+        }
+        
+        .service-area-card__features li:before {
+            color: $color-brand-blue;
+        }
+    }
+    
+    // Pink accent for fourth card
+    &:nth-child(4) {
+        .service-area-card__icon {
+            color: $color-brand-pink;
+        }
+        
+        &:hover {
+            border-color: $color-brand-pink;
+            box-shadow: 0 12px 40px rgba(216, 18, 89, 0.2);
+        }
+        
+        .service-area-card__features li:before {
+            color: $color-brand-pink;
+        }
+    }
+    
+    &:hover {
+        transform: translateY(-4px);
+    }
+    
+    &__icon {
+        width: 64px;
+        height: 64px;
+        margin-bottom: 24px;
+        transition: color 0.3s ease;
+        
+        svg {
+            width: 100%;
+            height: 100%;
+        }
+    }
+    
+    &__title {
+        font-family: $font-secondary;
+        font-size: 24px;
+        font-weight: 600;
+        color: $color-black;
+        margin-bottom: 16px;
+        
+        @media (max-width: $breakpoint-sm) {
+            font-size: 20px;
+        }
+    }
+    
+    &__description {
+        font-size: 16px;
+        line-height: 1.6;
+        color: rgba(0, 0, 0, 0.7);
+        margin-bottom: 24px;
+    }
+    
+    &__features {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        
+        li {
+            position: relative;
+            padding-left: 24px;
+            margin-bottom: 12px;
+            font-size: 15px;
+            color: rgba(0, 0, 0, 0.65);
+            line-height: 1.5;
+            
+            &:before {
+                content: '→';
+                position: absolute;
+                left: 0;
+                font-weight: 600;
+            }
+            
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+/* Why & For Whom Section
+   ========================================================================= */
+.consulting-services-why {
+    padding: 100px 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(216, 18, 89, 0.05) 100%);
+    
+    @media (max-width: $breakpoint-md) {
+        padding: 80px 0;
+    }
+    
+    &__split {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 80px;
+        
+        @media (max-width: $breakpoint-lg) {
+            gap: 60px;
+        }
+        
+        @media (max-width: $breakpoint-md) {
+            grid-template-columns: 1fr;
+            gap: 60px;
+        }
+    }
+    
+    &__label {
+        display: inline-block;
+        font-size: 12px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        color: $color-white;
+        margin-bottom: 16px;
+        padding: 6px 16px;
+        border-radius: 20px;
+    }
+    
+    // Pink label for first block
+    &__block:nth-child(1) .consulting-services-why__label {
+        background: $color-brand-pink;
+    }
+    
+    // Blue label for second block
+    &__block:nth-child(2) .consulting-services-why__label {
+        background: $color-brand-blue;
+    }
+    
+    &__title {
+        font-family: $font-secondary;
+        font-size: 36px;
+        font-weight: 700;
+        color: $color-white;
+        margin-bottom: 24px;
+        line-height: 1.2;
+        
+        @media (max-width: $breakpoint-md) {
+            font-size: 28px;
+        }
+    }
+    
+    &__text {
+        font-size: 16px;
+        line-height: 1.7;
+        color: rgba(255, 255, 255, 0.8);
+        margin-bottom: 20px;
+        
+        &:last-of-type {
+            margin-bottom: 28px;
+        }
+    }
+    
+    &__highlight {
+        padding: 24px;
+        background: rgba(255, 188, 65, 0.08);
+        border-left: 4px solid $color-brand-yellow;
+        border-radius: 8px;
+        font-size: 15px;
+        line-height: 1.6;
+        color: rgba(255, 255, 255, 0.9);
+        
+        strong {
+            color: $color-white;
+            font-weight: 600;
+        }
+    }
+    
+    &__checklist {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        
+        li {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            padding: 20px;
+            margin-bottom: 16px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            
+            &:hover {
+                background: rgba(255, 255, 255, 0.04);
+                border-color: rgba(216, 18, 89, 0.3);
+                transform: translateX(8px);
+            }
+            
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+        
+        .checklist-icon {
+            flex-shrink: 0;
+            width: 28px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: $color-white;
+            border-radius: 50%;
+            font-weight: 700;
+            font-size: 16px;
+        }
+        
+        // Pink for first item
+        &:nth-child(1) .checklist-icon {
+            background: $color-brand-pink;
+        }
+        
+        // Yellow for second item
+        &:nth-child(2) .checklist-icon {
+            background: $color-brand-yellow;
+        }
+        
+        // Blue for third item
+        &:nth-child(3) .checklist-icon {
+            background: $color-brand-blue;
+        }
+        
+        // Pink for fourth item
+        &:nth-child(4) .checklist-icon {
+            background: $color-brand-pink;
+        }
+        
+        // Yellow for fifth item
+        &:nth-child(5) .checklist-icon {
+            background: $color-brand-yellow;
+        }
+        
+        div {
+            flex: 1;
+            font-size: 15px;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.8);
+            
+            strong {
+                display: block;
+                color: $color-white;
+                font-weight: 600;
+                margin-bottom: 4px;
+            }
+        }
+    }
+}
+
+/* Process Section
+   ========================================================================= */
+.consulting-services-process {
+    padding: 100px 0;
+    background: $color-black;
+    
+    @media (max-width: $breakpoint-md) {
+        padding: 80px 0;
+    }
+    
+    &__header {
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto 80px;
+        
+        @media (max-width: $breakpoint-md) {
+            margin-bottom: 60px;
+        }
+    }
+    
+    &__title {
+        font-family: $font-secondary;
+        font-size: 42px;
+        font-weight: 700;
+        color: $color-white;
+        margin-bottom: 16px;
+        
+        @media (max-width: $breakpoint-md) {
+            font-size: 32px;
+        }
+    }
+    
+    &__subtitle {
+        font-size: 18px;
+        color: rgba(255, 255, 255, 0.7);
+        line-height: 1.6;
+    }
+    
+    &__timeline {
+        max-width: 900px;
+        margin: 0 auto;
+        position: relative;
+        
+        // Multi-colored vertical connecting line
+        &:before {
+            content: '';
+            position: absolute;
+            left: 32px;
+            top: 40px;
+            bottom: 40px;
+            width: 2px;
+            background: linear-gradient(180deg, 
+                $color-brand-pink 0%, 
+                $color-brand-pink 25%,
+                $color-brand-yellow 25%,
+                $color-brand-yellow 50%,
+                $color-brand-blue 50%,
+                $color-brand-blue 75%,
+                $color-brand-pink 75%,
+                $color-brand-pink 100%
+            );
+            
+            @media (max-width: $breakpoint-sm) {
+                left: 24px;
+            }
+        }
+    }
+}
+
+/* Process Step
+   ========================================================================= */
+.process-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 32px;
+    margin-bottom: 48px;
+    position: relative;
+    
+    @media (max-width: $breakpoint-sm) {
+        gap: 24px;
+        margin-bottom: 40px;
+    }
+    
+    &:last-child {
+        margin-bottom: 0;
+    }
+    
+    &__number {
+        flex-shrink: 0;
+        width: 64px;
+        height: 64px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: $color-white;
+        font-family: $font-secondary;
+        font-size: 28px;
+        font-weight: 700;
+        border-radius: 50%;
+        position: relative;
+        z-index: 2;
+        
+        @media (max-width: $breakpoint-sm) {
+            width: 48px;
+            height: 48px;
+            font-size: 22px;
+        }
+    }
+    
+    // Pink for step 1
+    &:nth-child(1) .process-step__number {
+        background: linear-gradient(135deg, $color-brand-pink 0%, rgba(216, 18, 89, 0.7) 100%);
+        box-shadow: 0 4px 20px rgba(216, 18, 89, 0.4);
+    }
+    
+    // Yellow for step 2
+    &:nth-child(2) .process-step__number {
+        background: linear-gradient(135deg, $color-brand-yellow 0%, rgba(255, 188, 65, 0.7) 100%);
+        box-shadow: 0 4px 20px rgba(255, 188, 65, 0.4);
+    }
+    
+    // Blue for step 3
+    &:nth-child(3) .process-step__number {
+        background: linear-gradient(135deg, $color-brand-blue 0%, rgba(1, 107, 166, 0.7) 100%);
+        box-shadow: 0 4px 20px rgba(1, 107, 166, 0.4);
+    }
+    
+    // Pink for step 4
+    &:nth-child(4) .process-step__number {
+        background: linear-gradient(135deg, $color-brand-pink 0%, rgba(216, 18, 89, 0.7) 100%);
+        box-shadow: 0 4px 20px rgba(216, 18, 89, 0.4);
+    }
+    
+    &__content {
+        flex: 1;
+        padding-top: 8px;
+        
+        @media (max-width: $breakpoint-sm) {
+            padding-top: 4px;
+        }
+    }
+    
+    &__title {
+        font-family: $font-secondary;
+        font-size: 24px;
+        font-weight: 600;
+        color: $color-white;
+        margin-bottom: 12px;
+        
+        @media (max-width: $breakpoint-sm) {
+            font-size: 20px;
+        }
+    }
+    
+    &__description {
+        font-size: 16px;
+        line-height: 1.7;
+        color: rgba(255, 255, 255, 0.8);
+    }
+}
+
+/* Strengths Section
+   ========================================================================= */
+.consulting-services-strengths {
+    padding: 100px 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(216, 18, 89, 0.03) 100%);
+    
+    @media (max-width: $breakpoint-md) {
+        padding: 80px 0;
+    }
+    
+    &__title {
+        font-family: $font-secondary;
+        font-size: 42px;
+        font-weight: 700;
+        color: $color-white;
+        text-align: center;
+        margin-bottom: 60px;
+        
+        @media (max-width: $breakpoint-md) {
+            font-size: 32px;
+            margin-bottom: 48px;
+        }
+    }
+    
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 32px;
+        
+        @media (max-width: $breakpoint-md) {
+            grid-template-columns: 1fr;
+        }
+    }
+}
+
+/* Strength Card
+   ========================================================================= */
+.strength-card {
+    padding: 40px;
+    background: $color-white;
+    border: 2px solid transparent;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    
+    @media (max-width: $breakpoint-sm) {
+        padding: 32px 24px;
+    }
+    
+    // Pink accent for first card
+    &:nth-child(1) {
+        &:hover {
+            border-color: $color-brand-pink;
+            box-shadow: 0 12px 40px rgba(216, 18, 89, 0.2);
+        }
+    }
+    
+    // Blue accent for second card
+    &:nth-child(2) {
+        &:hover {
+            border-color: $color-brand-blue;
+            box-shadow: 0 12px 40px rgba(1, 107, 166, 0.2);
+        }
+    }
+    
+    // Yellow accent for third card
+    &:nth-child(3) {
+        &:hover {
+            border-color: $color-brand-yellow;
+            box-shadow: 0 12px 40px rgba(255, 188, 65, 0.2);
+        }
+    }
+    
+    // Pink accent for fourth card
+    &:nth-child(4) {
+        &:hover {
+            border-color: $color-brand-pink;
+            box-shadow: 0 12px 40px rgba(216, 18, 89, 0.2);
+        }
+    }
+    
+    &:hover {
+        transform: translateY(-4px);
+    }
+    
+    &__title {
+        font-family: $font-secondary;
+        font-size: 22px;
+        font-weight: 600;
+        color: $color-black;
+        margin-bottom: 16px;
+        
+        @media (max-width: $breakpoint-sm) {
+            font-size: 20px;
+        }
+    }
+    
+    &__text {
+        font-size: 16px;
+        line-height: 1.7;
+        color: rgba(0, 0, 0, 0.7);
+    }
+}
+
+/* Note Section
+   ========================================================================= */
+.consulting-services-note {
+    padding: 60px 0;
+    background: $color-black;
+    
+    &__box {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 40px;
+        background: rgba(255, 255, 255, 0.02);
+        border: 2px solid rgba(1, 107, 166, 0.3);
+        border-radius: 12px;
+        
+        @media (max-width: $breakpoint-sm) {
+            padding: 32px 24px;
+        }
+    }
+    
+    &__title {
+        font-family: $font-secondary;
+        font-size: 24px;
+        font-weight: 600;
+        color: $color-brand-blue;
+        margin-bottom: 16px;
+        
+        @media (max-width: $breakpoint-sm) {
+            font-size: 20px;
+        }
+    }
+    
+    &__text {
+        font-size: 16px;
+        line-height: 1.7;
+        color: rgba(255, 255, 255, 0.85);
+        margin: 0;
+    }
+}
+
+/* CTA Section
+   ========================================================================= */
+.consulting-services-cta {
+    padding: 120px 0;
+    background: linear-gradient(180deg, rgba(216, 18, 89, 0.05) 0%, rgba(0, 0, 0, 1) 100%);
+    
+    @media (max-width: $breakpoint-md) {
+        padding: 80px 0;
+    }
+    
+    &__content {
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+    }
+    
+    &__title {
+        font-family: $font-secondary;
+        font-size: 42px;
+        font-weight: 700;
+        color: $color-white;
+        margin-bottom: 24px;
+        line-height: 1.2;
+        
+        @media (max-width: $breakpoint-md) {
+            font-size: 32px;
+        }
+        
+        @media (max-width: $breakpoint-sm) {
+            font-size: 28px;
+        }
+    }
+    
+    &__text {
+        font-size: 18px;
+        line-height: 1.6;
+        color: rgba(255, 255, 255, 0.8);
+        margin-bottom: 40px;
+        
+        @media (max-width: $breakpoint-md) {
+            font-size: 16px;
+            margin-bottom: 32px;
+        }
+    }
+    
+    &__buttons {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+}
