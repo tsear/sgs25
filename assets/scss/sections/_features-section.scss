@@ -52,6 +52,132 @@
       opacity: 1;
     }
   }
+  
+  // Bottom section with integrations and trial/referral CTAs
+  .features-section__bottom {
+    margin-top: $spacing-2xl;
+    padding-top: $spacing-2xl;
+    border-top: 1px solid rgba($color-white, 0.1);
+  }
+  
+  // Integrations trust bar
+  .integrations-trust {
+    text-align: center;
+    margin-bottom: $spacing-xl;
+    
+    .integrations-label {
+      font-size: 0.875rem;
+      color: rgba($color-white, 0.6);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: $spacing-sm;
+    }
+    
+    .integration-logos {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: $spacing-md;
+      flex-wrap: wrap;
+    }
+    
+    .integration-item {
+      font-size: 1rem;
+      color: $color-white;
+      font-weight: 500;
+      opacity: 0.8;
+      transition: opacity 0.2s ease;
+      
+      &:hover {
+        opacity: 1;
+      }
+    }
+    
+    .integration-divider {
+      color: rgba($color-white, 0.3);
+      font-size: 0.75rem;
+    }
+  }
+  
+  // Trial & Referral Cards
+  .trial-referral-cta {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: $spacing-lg;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
+  .trial-referral-card {
+    background: linear-gradient(135deg, rgba($color-white, 0.05) 0%, rgba($color-white, 0.02) 100%);
+    border: 1px solid rgba($color-white, 0.1);
+    border-radius: 16px;
+    padding: $spacing-xl;
+    text-align: center;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      transform: translateY(-4px);
+      border-color: rgba($color-white, 0.2);
+      box-shadow: 0 12px 32px rgba($color-brand-pink, 0.1);
+    }
+    
+    .trial-icon,
+    .referral-icon {
+      font-size: 2.5rem;
+      margin-bottom: $spacing-md;
+      line-height: 1;
+    }
+    
+    .trial-title,
+    .referral-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: $color-white;
+      margin-bottom: $spacing-sm;
+    }
+    
+    .trial-description,
+    .referral-description {
+      font-size: 0.9rem;
+      color: rgba($color-white, 0.7);
+      line-height: 1.6;
+      margin-bottom: $spacing-lg;
+    }
+    
+    .trial-button,
+    .referral-button {
+      display: inline-block;
+      padding: 12px 32px;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      font-size: 1rem;
+    }
+    
+    .trial-button {
+      background: linear-gradient(135deg, $color-brand-pink 0%, darken($color-brand-pink, 10%) 100%);
+      color: $color-white;
+      
+      &:hover {
+        background: linear-gradient(135deg, lighten($color-brand-pink, 5%) 0%, $color-brand-pink 100%);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba($color-brand-pink, 0.3);
+      }
+    }
+    
+    .referral-button {
+      background: linear-gradient(135deg, $color-brand-yellow 0%, darken($color-brand-yellow, 10%) 100%);
+      color: $color-black;
+      
+      &:hover {
+        background: linear-gradient(135deg, lighten($color-brand-yellow, 5%) 0%, $color-brand-yellow 100%);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba($color-brand-yellow, 0.3);
+      }
+    }
+  }
 }
 
 // Responsive section adjustments
@@ -62,6 +188,10 @@
     .container {
       padding: 0 $spacing-md;
     }
+    
+    .trial-referral-cta {
+      gap: $spacing-md;
+    }
   }
 }
 
@@ -71,6 +201,15 @@
     
     .container {
       padding: 0 $spacing-sm;
+    }
+    
+    .trial-referral-cta {
+      grid-template-columns: 1fr;
+      gap: $spacing-lg;
+    }
+    
+    .trial-referral-card {
+      padding: $spacing-lg;
     }
   }
 }

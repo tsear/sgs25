@@ -637,55 +637,57 @@
     }
 }
 
-/* Feature Card
+/* Feature Card (scoped to cloud software page)
    ========================================================================= */
-.feature-card {
-    background: $color-white;
-    padding: 32px;
-    border-radius: 12px;
-    border: 2px solid transparent;
-    transition: all 0.3s ease;
-    
-    @media (max-width: $breakpoint-sm) {
-        padding: 28px 24px;
-    }
-    
-    // Alternating hover colors
-    &:nth-child(3n+1):hover {
-        border-color: $color-brand-pink;
-        box-shadow: 0 12px 40px rgba(216, 18, 89, 0.2);
-    }
-    
-    &:nth-child(3n+2):hover {
-        border-color: $color-brand-yellow;
-        box-shadow: 0 12px 40px rgba(255, 188, 65, 0.2);
-    }
-    
-    &:nth-child(3n):hover {
-        border-color: $color-brand-blue;
-        box-shadow: 0 12px 40px rgba(1, 107, 166, 0.2);
-    }
-    
-    &:hover {
-        transform: translateY(-4px);
-    }
-    
-    &__title {
-        font-family: $font-secondary;
-        font-size: 20px;
-        font-weight: 600;
-        color: $color-black;
-        margin-bottom: 12px;
+.cloud-software-features {
+    .feature-card {
+        background: $color-white;
+        padding: 32px;
+        border-radius: 12px;
+        border: 2px solid transparent;
+        transition: all 0.3s ease;
         
         @media (max-width: $breakpoint-sm) {
-            font-size: 18px;
+            padding: 28px 24px;
         }
-    }
-    
-    &__text {
-        font-size: 15px;
-        line-height: 1.6;
-        color: rgba(0, 0, 0, 0.7);
+        
+        // Alternating hover colors
+        &:nth-child(3n+1):hover {
+            border-color: $color-brand-pink;
+            box-shadow: 0 12px 40px rgba(216, 18, 89, 0.2);
+        }
+        
+        &:nth-child(3n+2):hover {
+            border-color: $color-brand-yellow;
+            box-shadow: 0 12px 40px rgba(255, 188, 65, 0.2);
+        }
+        
+        &:nth-child(3n):hover {
+            border-color: $color-brand-blue;
+            box-shadow: 0 12px 40px rgba(1, 107, 166, 0.2);
+        }
+        
+        &:hover {
+            transform: translateY(-4px);
+        }
+        
+        &__title {
+            font-family: $font-secondary;
+            font-size: 20px;
+            font-weight: 600;
+            color: $color-black;
+            margin-bottom: 12px;
+            
+            @media (max-width: $breakpoint-sm) {
+                font-size: 18px;
+            }
+        }
+        
+        &__text {
+            font-size: 15px;
+            line-height: 1.6;
+            color: rgba(0, 0, 0, 0.7);
+        }
     }
 }
 

@@ -1,0 +1,418 @@
+/* ============================================================================
+   Referral Program Content Section - Referral Program Details and Benefits
+   ============================================================================ */
+
+.referral-content {
+  background: #000000;
+  color: #FFFFFF;
+  padding: 80px 0 120px;
+  border-bottom: 1px solid #FFFFFF;
+  
+  @media (max-width: 768px) { padding: 60px 0 80px; }
+  @media (max-width: 480px) { padding: 40px 0 60px; }
+  
+  &__container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 120px;
+    
+    @media (max-width: 1024px) { padding: 0 80px; }
+    @media (max-width: 768px) { padding: 0 40px; }
+    @media (max-width: 480px) { padding: 0 20px; }
+  }
+  
+  // Section Title (reusable)
+  .section-title {
+    font-family: 'Poppins', Arial, sans-serif;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 1.2;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    margin: 0 0 60px 0;
+    text-align: center;
+    
+    @media (max-width: 768px) { font-size: 36px; margin-bottom: 40px; }
+    @media (max-width: 480px) { font-size: 28px; margin-bottom: 32px; }
+  }
+  
+  /* ========================================================================
+     How It Works Section - 3 Step Cards
+     ======================================================================== */
+  
+  &__how-it-works {
+    margin-bottom: 120px;
+    
+    @media (max-width: 768px) { margin-bottom: 80px; }
+    @media (max-width: 480px) { margin-bottom: 60px; }
+  }
+  
+  .steps-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    
+    @media (max-width: 768px) { grid-template-columns: 1fr; gap: 32px; }
+  }
+  
+  .step-card {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 40px 32px;
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+    
+    &:hover {
+      transform: translateY(-8px);
+      border-color: rgba(255, 255, 255, 0.2);
+      box-shadow: 0 16px 40px rgba(216, 18, 89, 0.15);
+    }
+    
+    &[data-step="1"]:hover { box-shadow: 0 16px 40px rgba(216, 18, 89, 0.15); }
+    &[data-step="2"]:hover { box-shadow: 0 16px 40px rgba(255, 188, 65, 0.15); }
+    &[data-step="3"]:hover { box-shadow: 0 16px 40px rgba(0, 123, 255, 0.15); }
+  }
+  
+  .step-number {
+    width: 64px;
+    height: 64px;
+    background: linear-gradient(135deg, $color-brand-pink 0%, darken($color-brand-pink, 10%) 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Poppins', Arial, sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+    color: #FFFFFF;
+    margin: 0 auto 24px;
+    
+    .step-card[data-step="2"] & {
+      background: linear-gradient(135deg, $color-brand-yellow 0%, darken($color-brand-yellow, 10%) 100%);
+      color: #000000;
+    }
+    
+    .step-card[data-step="3"] & {
+      background: linear-gradient(135deg, #007BFF 0%, darken(#007BFF, 10%) 100%);
+    }
+  }
+  
+  .step-title {
+    font-family: 'Poppins', Arial, sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 1.3;
+    color: #FFFFFF;
+    margin: 0 0 16px 0;
+    
+    @media (max-width: 480px) { font-size: 20px; }
+  }
+  
+  .step-description {
+    font-family: 'Poppins', Arial, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
+    
+    @media (max-width: 480px) { font-size: 14px; }
+  }
+  
+  /* ========================================================================
+     Rewards Tiers Section - 3 Tier Cards
+     ======================================================================== */
+  
+  &__rewards {
+    margin-bottom: 120px;
+    
+    @media (max-width: 768px) { margin-bottom: 80px; }
+    @media (max-width: 480px) { margin-bottom: 60px; }
+  }
+  
+  .rewards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    
+    @media (max-width: 1024px) { gap: 24px; }
+    @media (max-width: 768px) { grid-template-columns: 1fr; gap: 32px; }
+  }
+  
+  .reward-card {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 40px 32px;
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+    
+    &:hover {
+      transform: translateY(-8px);
+    }
+    
+    &--basic:hover {
+      border-color: rgba(205, 127, 50, 0.5);
+      box-shadow: 0 16px 40px rgba(205, 127, 50, 0.2);
+    }
+    
+    &--pro {
+      border-color: rgba(255, 255, 255, 0.15);
+      
+      &:hover {
+        border-color: rgba(192, 192, 192, 0.6);
+        box-shadow: 0 16px 40px rgba(192, 192, 192, 0.2);
+      }
+    }
+    
+    &--elite:hover {
+      border-color: rgba(255, 215, 0, 0.6);
+      box-shadow: 0 16px 40px rgba(255, 215, 0, 0.2);
+    }
+  }
+  
+  .reward-badge {
+    display: inline-block;
+    font-family: 'Poppins', Arial, sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 8px 16px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    margin-bottom: 24px;
+  }
+  
+  .reward-title {
+    font-family: 'Poppins', Arial, sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    color: #FFFFFF;
+    margin: 0 0 16px 0;
+    
+    @media (max-width: 480px) { font-size: 18px; }
+  }
+  
+  .reward-amount {
+    font-family: 'Poppins', Arial, sans-serif;
+    font-weight: 700;
+    font-size: 56px;
+    line-height: 1;
+    color: $color-brand-pink;
+    margin: 0 0 8px 0;
+    
+    .reward-card--pro & { color: $color-brand-yellow; }
+    .reward-card--elite & { color: #FFD700; }
+    
+    @media (max-width: 480px) { font-size: 48px; }
+  }
+  
+  .reward-per {
+    font-family: 'Poppins', Arial, sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.6);
+    margin: 0 0 32px 0;
+  }
+  
+  .reward-benefits {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+    
+    li {
+      font-family: 'Poppins', Arial, sans-serif;
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 1.6;
+      color: rgba(255, 255, 255, 0.8);
+      padding-left: 28px;
+      margin-bottom: 12px;
+      position: relative;
+      
+      &:before {
+        content: '✓';
+        position: absolute;
+        left: 0;
+        color: $color-brand-pink;
+        font-weight: 700;
+      }
+      
+      &:last-child { margin-bottom: 0; }
+      
+      @media (max-width: 480px) { font-size: 14px; }
+    }
+  }
+  
+  /* ========================================================================
+     Who Benefits Section - 6 Card Grid
+     ======================================================================== */
+  
+  &__benefits {
+    margin-bottom: 120px;
+    
+    @media (max-width: 768px) { margin-bottom: 80px; }
+    @media (max-width: 480px) { margin-bottom: 60px; }
+  }
+  
+  .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    
+    @media (max-width: 1024px) { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+    @media (max-width: 768px) { grid-template-columns: 1fr; gap: 24px; }
+  }
+  
+  .benefit-card {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 32px 24px;
+    text-align: center;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      transform: translateY(-4px);
+      border-color: rgba($color-brand-yellow, 0.4);
+      box-shadow: 0 12px 32px rgba($color-brand-yellow, 0.15);
+    }
+  }
+  
+  .benefit-icon {
+    font-size: 48px;
+    margin-bottom: 16px;
+    line-height: 1;
+  }
+  
+  .benefit-title {
+    font-family: 'Poppins', Arial, sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.3;
+    color: #FFFFFF;
+    margin: 0 0 12px 0;
+    
+    @media (max-width: 480px) { font-size: 18px; }
+  }
+  
+  .benefit-description {
+    font-family: 'Poppins', Arial, sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
+  }
+  
+  /* ========================================================================
+     CTA Section - Final Call to Action
+     ======================================================================== */
+  
+  &__cta {
+    margin-bottom: 0;
+  }
+  
+  .cta-card {
+    background: linear-gradient(135deg, rgba($color-brand-pink, 0.1) 0%, rgba($color-brand-yellow, 0.05) 100%);
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    border-radius: 24px;
+    padding: 80px 60px;
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+    
+    @media (max-width: 768px) { padding: 60px 40px; }
+    @media (max-width: 480px) { padding: 40px 24px; }
+  }
+  
+  .cta-title {
+    font-family: 'Poppins', Arial, sans-serif;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 1.2;
+    color: #FFFFFF;
+    margin: 0 0 24px 0;
+    
+    @media (max-width: 768px) { font-size: 36px; }
+    @media (max-width: 480px) { font-size: 28px; }
+  }
+  
+  .cta-description {
+    font-family: 'Poppins', Arial, sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0 0 40px 0;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    
+    @media (max-width: 768px) { font-size: 16px; margin-bottom: 32px; }
+    @media (max-width: 480px) { font-size: 15px; }
+  }
+  
+  .cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 32px;
+    
+    @media (max-width: 768px) { flex-direction: column; gap: 16px; }
+  }
+  
+  .cta-button {
+    display: inline-block;
+    padding: 16px 40px;
+    border-radius: 12px;
+    font-family: 'Poppins', Arial, sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    
+    &--primary {
+      background: linear-gradient(135deg, $color-brand-pink 0%, darken($color-brand-pink, 10%) 100%);
+      color: #FFFFFF;
+      
+      &:hover {
+        background: linear-gradient(135deg, lighten($color-brand-pink, 5%) 0%, $color-brand-pink 100%);
+        transform: translateY(-2px);
+        box-shadow: 0 12px 28px rgba($color-brand-pink, 0.4);
+      }
+    }
+    
+    &--secondary {
+      background: transparent;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      color: #FFFFFF;
+      
+      &:hover {
+        background: rgba(255, 255, 255, 0.05);
+        border-color: rgba(255, 255, 255, 0.5);
+        transform: translateY(-2px);
+      }
+    }
+    
+    @media (max-width: 768px) {
+      width: 100%;
+      padding: 14px 32px;
+    }
+  }
+  
+  .cta-note {
+    font-family: 'Poppins', Arial, sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: $color-brand-yellow;
+    margin: 0;
+    
+    @media (max-width: 480px) { font-size: 14px; }
+  }
+}

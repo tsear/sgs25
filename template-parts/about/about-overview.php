@@ -23,7 +23,7 @@
                 </div>
                 <div class="story-section__visual">
                     <div class="story-stat">
-                        <span class="story-stat__number">2016</span>
+                        <span class="story-stat__number">2022</span>
                         <span class="story-stat__label">Founded</span>
                     </div>
                 </div>
@@ -88,9 +88,9 @@
             <div class="story-cta">
                 <div class="story-cta__content">
                     <h3 class="story-cta__title">Ready to Write Your Success Story?</h3>
-                    <p class="story-cta__text">Join hundreds of organizations who've transformed their funding approach with Smart Grant Solutions.</p>
+                    <p class="story-cta__text">Join the many organizations who've transformed their financial management approach with Smart Grant Solutions.</p>
                     <div class="story-cta__actions">
-                        <a href="/grants" class="btn btn--primary btn--large">Explore Grant Services</a>
+                        <a href="/cloud-software" class="btn btn--primary btn--large">Explore MissionGranted</a>
                         <a href="/contact" class="btn btn--outline btn--large">Schedule Consultation</a>
                     </div>
                 </div>

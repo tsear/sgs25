@@ -1,0 +1,433 @@
+/* ============================================================================
+   Landing Hero Section - Homepage
+   Simple, clean hero section - no fancy viewport tricks
+   ============================================================================ */
+
+.landing-hero {
+  position: relative;
+  background: #000000;
+  padding: 120px 0 100px;
+  overflow: hidden;
+  width: 100%; // Force full width
+  max-width: 100vw; // Don't exceed viewport
+  box-sizing: border-box; // Include padding in width calculation
+  
+  @media (max-width: 768px) {
+    padding: 80px 0 60px;
+    overflow-x: hidden; // Prevent horizontal scroll
+  }
+  
+  @media (max-width: 479px) {
+    padding: 60px 0 40px;
+  }
+}
+
+// Background Elements
+.landing-hero__background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.landing-hero__grid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  opacity: 0.4;
+}
+
+.landing-hero__spotlight {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(
+    circle,
+    rgba(216, 18, 89, 0.15) 0%,
+    rgba(255, 176, 63, 0.08) 40%,
+    transparent 70%
+  );
+  animation: pulse 8s ease-in-out infinite;
+  
+  @media (max-width: 768px) {
+    width: 600px;
+    height: 600px;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.5;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+}
+
+// Content Container
+.landing-hero__container {
+  position: relative;
+  z-index: 2;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
+  width: 100%;
+  box-sizing: border-box; // Include padding in width calculation
+  
+  @media (max-width: 768px) {
+    padding: 0 20px; // Symmetric padding
+    margin: 0 auto; // Ensure centering
+    max-width: 100%; // Don't exceed viewport
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  @media (max-width: 479px) {
+    padding: 0 20px;
+  }
+}
+
+// Content Grid
+.landing-hero__content {
+  display: grid;
+  grid-template-columns: 1fr 0.9fr; // Give right column less space
+  gap: 60px; // Reduced from 80px
+  align-items: center; // Center both columns vertically
+  
+  @media (max-width: 1024px) {
+    gap: 50px;
+  }
+  
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    width: 100%; // Force full width on mobile
+    margin: 0; // Remove any margins
+  }
+}
+
+// Left Column - Brand Statement
+.landing-hero__brand {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  justify-content: center; // Center content vertically within column
+  width: 100%; // Force full width
+  
+  @media (max-width: 768px) {
+    gap: 24px;
+    text-align: center;
+    padding-top: 20px; // Add extra padding above on mobile
+    align-items: center; // Center all flex items horizontally on mobile
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+  }
+  
+  @media (max-width: 479px) {
+    padding-top: 30px; // Slightly less on very small screens
+  }
+}
+
+.landing-hero__logo-line {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  
+  @media (max-width: 768px) {
+    justify-content: center;
+    width: 100%; // Force full width to prevent offset
+    max-width: 100%; // Don't exceed parent
+    margin: 0;
+    box-sizing: border-box;
+  }
+}
+
+.landing-hero__logo {
+  height: clamp(3rem, 4vw, 4rem); // Slightly larger than "IS" text
+  width: auto;
+  flex-shrink: 0; // Prevent shrinking
+  
+  @media (max-width: 768px) {
+    height: clamp(2.5rem, 3.5vw, 3.5rem); // Proportional on mobile
+  }
+  
+  @media (max-width: 479px) {
+    height: clamp(2rem, 3vw, 3rem); // Smaller on very small screens
+  }
+  
+  img {
+    height: 100%;
+    width: auto;
+    display: block;
+  }
+}
+
+.landing-hero__is {
+  font-family: 'Poppins', Arial, sans-serif;
+  font-size: clamp(2rem, 3vw, 2.75rem); // Reduced from 3.75rem max
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1;
+  flex-shrink: 0; // Prevent shrinking
+  
+  @media (max-width: 768px) {
+    font-size: clamp(1.75rem, 2.5vw, 2.25rem);
+  }
+}
+
+.landing-hero__tagline {
+  font-family: 'Poppins', Arial, sans-serif;
+  font-size: clamp(2.5rem, 4vw, 4rem); // Normal desktop size
+  font-weight: 700;
+  line-height: 1.1;
+  color: $color-brand-pink;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  
+  // Fixed width to prevent layout shift during typewriter animation
+  min-width: 100%;
+  min-height: calc(clamp(2.5rem, 4vw, 4rem) * 1.1 * 2); // Reserve space for 2 lines
+  display: inline-block;
+  
+  // Typewriter effect
+  &--typing {
+    position: relative;
+    
+    // Use pseudo-element for cursor to avoid text width calculation
+    &::after {
+      content: '|';
+      animation: blink 1s step-end infinite;
+      display: inline-block;
+      width: 0.15em; // Fixed width for cursor
+    }
+  }
+  
+  @media (max-width: 768px) {
+    font-size: clamp(1.75rem, 3vw, 2.5rem); // Smaller on mobile
+    min-height: calc(clamp(1.75rem, 3vw, 2.5rem) * 1.1 * 2);
+    max-width: 100%; // Full width on mobile
+    min-width: auto; // Remove min-width on mobile
+    width: 100%; // Full width
+    display: block; // Change to block for proper centering
+    text-align: center; // Center the text itself
+    
+    br {
+      display: none;
+    }
+  }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.landing-hero__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  font-family: 'Inter', Arial, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: $color-brand-yellow;
+  width: fit-content;
+  
+  svg {
+    width: 16px;
+    height: 16px;
+  }
+  
+  @media (max-width: 768px) {
+    margin: 0; // Remove auto margin, let parent center it
+  }
+}
+
+// Right Column - Value Proposition
+.landing-hero__value-prop {
+  display: flex;
+  flex-direction: column;
+  gap: 24px; // Reduced from 32px
+  padding: 40px; // Reduced from 48px
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  max-width: 540px; // Constrain width to make it smaller
+  margin-top: -40px; // Move it up relative to left column
+  
+  @media (max-width: 1024px) {
+    max-width: 100%;
+    margin-top: 0;
+  }
+  
+  @media (max-width: 768px) {
+    padding: 16px; // Minimal internal padding on mobile
+    gap: 20px;
+    width: 100%; // Force full width on mobile
+    max-width: 100%;
+    margin: 0; // Remove any margins
+    box-sizing: border-box;
+    border-radius: 8px; // Smaller radius on mobile
+  }
+  
+  @media (max-width: 479px) {
+    padding: 12px; // Even less internal padding
+    gap: 16px;
+  }
+}
+
+.landing-hero__headline {
+  font-family: 'Poppins', Arial, sans-serif;
+  font-size: clamp(1.5rem, 2.5vw, 2rem); // Reduced from 2.5rem max
+  font-weight: 600;
+  line-height: 1.2;
+  color: #ffffff;
+  margin: 0;
+  
+  .brand-highlight {
+    color: $color-brand-yellow;
+  }
+}
+
+.landing-hero__subheadline {
+  font-family: 'Inter', Arial, sans-serif;
+  font-size: clamp(0.9375rem, 1.25vw, 1rem); // Slightly smaller
+  font-weight: 400;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+}
+
+.landing-hero__features {
+  display: flex;
+  flex-direction: column;
+  gap: 12px; // Reduced from 16px
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.landing-hero__feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-family: 'Inter', Arial, sans-serif;
+  font-size: 0.9375rem; // Reduced from 1rem
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.9);
+  
+  &::before {
+    content: '';
+    flex-shrink: 0;
+    width: 6px;
+    height: 6px;
+    margin-top: 8px;
+    border-radius: 50%;
+    background: $color-brand-yellow;
+  }
+}
+
+.landing-hero__cta-group {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  
+  @media (max-width: 479px) {
+    flex-direction: column;
+  }
+}
+
+.landing-hero__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 32px;
+  border-radius: 8px;
+  font-family: 'Inter', Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  
+  &--primary {
+    background: linear-gradient(135deg, $color-brand-pink 0%, #ff6b35 100%);
+    color: #ffffff;
+    border: 2px solid transparent;
+    
+    &:hover {
+      background: linear-gradient(135deg, darken($color-brand-pink, 5%) 0%, darken(#ff6b35, 5%) 100%);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(216, 18, 89, 0.3);
+    }
+  }
+  
+  &--secondary {
+    background: transparent;
+    color: $color-brand-yellow;
+    border: 2px solid $color-brand-yellow;
+    
+    &:hover {
+      background: $color-brand-yellow;
+      color: #000000;
+      transform: translateY(-2px);
+    }
+  }
+  
+  svg {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.2s ease;
+  }
+  
+  &:hover svg {
+    transform: translateX(3px);
+  }
+  
+  @media (max-width: 479px) {
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+// Trust Badge Row
+.landing-hero__trust {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-family: 'Inter', Arial, sans-serif;
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.6);
+  
+  svg {
+    width: 16px;
+    height: 16px;
+    color: $color-brand-yellow;
+  }
+  
+  strong {
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 600;
+  }
+}

@@ -19,7 +19,7 @@
         
         <!-- Description -->
         <div class="blog-header__description">
-            <p>Insights, tools, and stories to help nonprofits win and steward funding with confidence.</p>
+            <p>Insights, tools, and stories to help nonprofits and local governments steward funding with confidence.</p>
         </div>
     </div>
     

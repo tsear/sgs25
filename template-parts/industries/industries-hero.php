@@ -19,7 +19,7 @@
         
         <!-- Description -->
         <div class="industries-header__description">
-            <p>Specialized grant management expertise across diverse sectors. From healthcare to education, we understand the unique funding landscape of your industry.</p>
+            <p>Specialized financial grant management and compliance expertise across the nonprofit and local government sectors. From conservation to child welfare, we understand the unique funding landscape within your industry.</p>
         </div>
     </div>
 </section>

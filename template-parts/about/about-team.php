@@ -63,7 +63,7 @@
         <div class="philosophy-cta">
             <div class="philosophy-cta__content">
                 <h3 class="philosophy-cta__title">Ready to Experience the Difference?</h3>
-                <p class="philosophy-cta__text">See how our philosophy translates into real results. Let's discuss your funding goals and explore how we can partner together.</p>
+                <p class="philosophy-cta__text">See how our philosophy translates into real results--Let's discuss your financial management needs and explore how we can partner together.</p>
                 <div class="philosophy-cta__actions">
                     <a href="/contact" class="btn btn--primary btn--large">Start a Conversation</a>
                     <a href="/success-stories" class="btn btn--outline btn--large">View Success Stories</a>

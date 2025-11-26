@@ -44,27 +44,27 @@ function sgs_register_post_types() {
         'show_in_rest'        => true,
     ));
 
-    // Success Stories Post Type
+    // Testimonials Post Type (formerly Success Stories)
     register_post_type('success_story', array(
         'labels' => array(
-            'name'               => __('Success Stories', 'sgs'),
-            'singular_name'      => __('Success Story', 'sgs'),
-            'menu_name'          => __('Success Stories', 'sgs'),
+            'name'               => __('Testimonials', 'sgs'),
+            'singular_name'      => __('Testimonial', 'sgs'),
+            'menu_name'          => __('Testimonials', 'sgs'),
             'add_new'            => __('Add New', 'sgs'),
-            'add_new_item'       => __('Add New Success Story', 'sgs'),
-            'edit_item'          => __('Edit Success Story', 'sgs'),
-            'new_item'           => __('New Success Story', 'sgs'),
-            'view_item'          => __('View Success Story', 'sgs'),
-            'search_items'       => __('Search Success Stories', 'sgs'),
-            'not_found'          => __('No success stories found', 'sgs'),
-            'not_found_in_trash' => __('No success stories found in Trash', 'sgs'),
+            'add_new_item'       => __('Add New Testimonial', 'sgs'),
+            'edit_item'          => __('Edit Testimonial', 'sgs'),
+            'new_item'           => __('New Testimonial', 'sgs'),
+            'view_item'          => __('View Testimonial', 'sgs'),
+            'search_items'       => __('Search Testimonials', 'sgs'),
+            'not_found'          => __('No testimonials found', 'sgs'),
+            'not_found_in_trash' => __('No testimonials found in Trash', 'sgs'),
         ),
         'public'              => true,
         'publicly_queryable'  => true,
         'show_ui'             => true,
         'show_in_menu'        => true,
         'query_var'           => true,
-        'rewrite'             => array('slug' => 'success-stories'),
+        'rewrite'             => array('slug' => 'testimonials'),
         'capability_type'     => 'post',
         'has_archive'         => true,
         'hierarchical'        => false,
@@ -158,20 +158,20 @@ function sgs_register_taxonomies() {
         'show_in_rest'      => true,
     ));
 
-    // Success Story Categories
+    // Testimonial Categories (formerly Success Story Categories)
     register_taxonomy('success_story_category', 'success_story', array(
         'labels' => array(
-            'name'              => __('Success Story Categories', 'sgs'),
-            'singular_name'     => __('Success Story Category', 'sgs'),
-            'search_items'      => __('Search Story Categories', 'sgs'),
-            'all_items'         => __('All Story Categories', 'sgs'),
-            'parent_item'       => __('Parent Story Category', 'sgs'),
-            'parent_item_colon' => __('Parent Story Category:', 'sgs'),
-            'edit_item'         => __('Edit Story Category', 'sgs'),
-            'update_item'       => __('Update Story Category', 'sgs'),
-            'add_new_item'      => __('Add New Story Category', 'sgs'),
-            'new_item_name'     => __('New Story Category Name', 'sgs'),
-            'menu_name'         => __('Story Categories', 'sgs'),
+            'name'              => __('Testimonial Categories', 'sgs'),
+            'singular_name'     => __('Testimonial Category', 'sgs'),
+            'search_items'      => __('Search Testimonial Categories', 'sgs'),
+            'all_items'         => __('All Testimonial Categories', 'sgs'),
+            'parent_item'       => __('Parent Testimonial Category', 'sgs'),
+            'parent_item_colon' => __('Parent Testimonial Category:', 'sgs'),
+            'edit_item'         => __('Edit Testimonial Category', 'sgs'),
+            'update_item'       => __('Update Testimonial Category', 'sgs'),
+            'add_new_item'      => __('Add New Testimonial Category', 'sgs'),
+            'new_item_name'     => __('New Testimonial Category Name', 'sgs'),
+            'menu_name'         => __('Testimonial Categories', 'sgs'),
         ),
         'hierarchical'      => true,
         'public'            => true,
@@ -179,7 +179,7 @@ function sgs_register_taxonomies() {
         'show_ui'           => true,
         'show_admin_column' => true,
         'query_var'         => true,
-        'rewrite'           => array('slug' => 'success-story-category'),
+        'rewrite'           => array('slug' => 'testimonial-category'),
         'show_in_rest'      => true,
     ));
 

@@ -19,7 +19,7 @@
         
         <!-- Description -->
         <div class="about-header__description">
-            <p>We're dedicated to empowering organizations with innovative grant management solutions and expert consulting services to maximize funding success.</p>
+            <p>We're dedicated to empowering mission-driven organizations with innovative financial management software solutions and expert consulting services that amplify strategic impact.</p>
         </div>
     </div>
 </section>

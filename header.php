@@ -64,8 +64,8 @@
                     <!-- Industries Button - Cell 5 -->
                     <a href="<?php echo home_url('/industries'); ?>" class="nav-link-industries <?php echo is_page('industries') ? 'active' : ''; ?>">INDUSTRIES</a>
                     
-                    <!-- Success Stories Button - Cell 5 -->
-                    <a href="<?php echo home_url('/success-stories'); ?>" class="nav-link-success-stories <?php echo is_page('success-stories') ? 'active' : ''; ?>">TESTIMONIALS</a>
+                    <!-- Testimonials Button - Cell 5 -->
+                    <a href="<?php echo home_url('/testimonials'); ?>" class="nav-link-success-stories <?php echo is_page('success-stories') ? 'active' : ''; ?>">TESTIMONIALS</a>
                     
                     <!-- Grants Button - Cell 6 -->
                     <a href="<?php echo home_url('/grants'); ?>" class="nav-link-grants <?php echo is_page('grants') ? 'active' : ''; ?>">GRANTS</a>
@@ -100,7 +100,7 @@
                 <a href="<?php echo home_url('/about'); ?>" class="mobile-nav-link <?php echo is_page('about') ? 'active' : ''; ?>">ABOUT</a>
                 <a href="<?php echo home_url('/product'); ?>" class="mobile-nav-link <?php echo is_page('product') ? 'active' : ''; ?>">PRODUCT</a>
                 <a href="<?php echo home_url('/industries'); ?>" class="mobile-nav-link <?php echo is_page('industries') ? 'active' : ''; ?>">INDUSTRIES</a>
-                <a href="<?php echo home_url('/success-stories'); ?>" class="mobile-nav-link <?php echo is_page('success-stories') ? 'active' : ''; ?>">TESTIMONIALS</a>
+                <a href="<?php echo home_url('/testimonials'); ?>" class="mobile-nav-link <?php echo is_page('success-stories') ? 'active' : ''; ?>">TESTIMONIALS</a>
                 <a href="<?php echo home_url('/grants'); ?>" class="mobile-nav-link <?php echo is_page('grants') ? 'active' : ''; ?>">GRANTS</a>
                 <a href="<?php echo home_url('/blog'); ?>" class="mobile-nav-link <?php echo is_page('blog') ? 'active' : ''; ?>">BLOG</a>
                 <a href="<?php echo home_url('/contact'); ?>" class="mobile-nav-link <?php echo is_page('contact') ? 'active' : ''; ?>">CONTACT</a>

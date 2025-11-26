@@ -1,14 +1,14 @@
 <?php
 /**
- * Template part for success stories search form
- * Handles search and filtering functionality for success stories
+ * Template part for testimonials search form
+ * Handles search and filtering functionality for testimonials
  */
 
 // Get current search and filter values
 $search_query = get_query_var('s', '');
 $category_filter = get_query_var('success_story_category', '');
 
-// Get success story categories for filtering
+// Get testimonial categories for filtering
 $story_categories = get_terms(array(
     'taxonomy' => 'success_story_category',
     'hide_empty' => true,
@@ -32,14 +32,14 @@ if (is_wp_error($story_categories)) {
                 <div class="success-stories-search__row">
                     <!-- Search Input -->
                     <div class="success-stories-search__field success-stories-search__field--search">
-                        <label for="success-stories-search-input" class="success-stories-search__label">Search Success Stories</label>
+                        <label for="success-stories-search-input" class="success-stories-search__label">Search Testimonials</label>
                         <div class="success-stories-search__input-wrapper">
                             <input 
                                 type="search" 
                                 id="success-stories-search-input"
                                 name="s" 
                                 value="<?php echo esc_attr($search_query); ?>" 
-                                placeholder="Search success stories..." 
+                                placeholder="Search testimonials..." 
                                 class="success-stories-search__input"
                                 autocomplete="off"
                             >

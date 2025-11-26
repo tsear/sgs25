@@ -1,6 +1,6 @@
 <?php
 /**
- * Success Stories Hero Section
+ * Testimonials Hero Section
  * Rocket trail design with proper alignment
  */
 ?>
@@ -20,7 +20,7 @@
         
         <!-- Description -->
         <div class="success-stories-header__description">
-            <p>Find out for yourself how our clients have transformed their grant management processes and achieved remarkable outcomes.</p>
+            <p>Find out for yourself how our clients have transformed their financial grant management and compliance processes and achieved remarkable outcomes.</p>
         </div>
     </div>
 </section>

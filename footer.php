@@ -32,11 +32,11 @@
                     <div class="footer-contact">
                         <div class="contact-item">
                             <span class="icon">📧</span>
-                            <span>hello@smartgrantsolutions.com</span>
+                            <span>info@smartgrantsolutions.com</span>
                         </div>
                         <div class="contact-item">
                             <span class="icon">📞</span>
-                            <span>(555) 123-4567</span>
+                            <span>+1 (888) 274-5121</span>
                         </div>
                     </div>
                     <?php get_template_part('template-parts/footer-badge-carousel'); ?>
@@ -50,7 +50,7 @@
                         <li><a href="<?php echo home_url('/about'); ?>">About</a></li>
                         <li><a href="<?php echo home_url('/product'); ?>">Product</a></li>
                         <li><a href="<?php echo home_url('/industries'); ?>">Industries</a></li>
-                        <li><a href="<?php echo home_url('/success-stories'); ?>">Success Stories</a></li>
+                        <li><a href="<?php echo home_url('/testimonials'); ?>">Testimonials</a></li>
                         <li><a href="<?php echo home_url('/grants'); ?>">Grant Opportunities</a></li>
                     </ul>
                 </div>
@@ -119,7 +119,7 @@
                 <!-- Resources & Contact -->
                 <div class="footer-section footer-newsletter">
                     <h4>Stay Connected</h4>
-                    <p>Get insights on grant funding trends and opportunities.</p>
+                    <p>Get finance insights and information on important trends for mission-driven organizations.</p>
                     <form class="newsletter-form">
                         <div class="form-group">
                             <input type="email" name="email" placeholder="you@here.co" required>

@@ -7,6 +7,16 @@
 // Check if a specific post type was requested
 $post_type = isset($_GET['post_type']) ? sanitize_text_field($_GET['post_type']) : '';
 
+// If searching for downloadable content, use downloads search template
+if ($post_type === 'downloadable_content') {
+    get_header();
+    get_template_part('template-parts/downloads/downloads-hero');
+    get_template_part('template-parts/downloads/downloads-search-form');
+    get_template_part('template-parts/downloads/downloads-grid');
+    get_footer();
+    return;
+}
+
 // If searching for grants, use grants search template
 if ($post_type === 'grant_opportunity') {
     get_header();
@@ -17,7 +27,7 @@ if ($post_type === 'grant_opportunity') {
     return;
 }
 
-// If searching for success stories, use success stories search template
+// If searching for testimonials, use testimonials search template
 if ($post_type === 'success_story') {
     get_header();
     get_template_part('template-parts/success-stories/success-stories-hero');

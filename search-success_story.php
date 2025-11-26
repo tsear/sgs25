@@ -1,7 +1,7 @@
 <?php
 /**
- * Search Results Template for Success Stories
- * Displays search results specifically for success story post type
+ * Search Results Template for Testimonials
+ * Displays search results specifically for testimonial post type
  */
 
 get_header();

@@ -7,12 +7,61 @@
   border-radius: 12px;
   transition: all $transition-fast;
   position: relative;
+  display: block;
+  text-decoration: none;
+  cursor: pointer;
   
   // Hover effects for dark background
   &:hover {
     transform: translateY(-4px);
     border-color: $color-white;
     background-color: rgba(255, 255, 255, 0.02);
+  }
+  
+  // Three-color highlights on hover using brand colors
+  &[data-card-index="1"]:hover {
+    border-color: $color-brand-pink;
+    box-shadow: 0 8px 24px rgba($color-brand-pink, 0.2);
+    
+    .card-icon {
+      background-color: rgba($color-brand-pink, 0.12);
+    }
+  }
+  
+  &[data-card-index="2"]:hover {
+    border-color: $color-brand-yellow;
+    box-shadow: 0 8px 24px rgba($color-brand-yellow, 0.2);
+    
+    .card-icon {
+      background-color: rgba($color-brand-yellow, 0.12);
+    }
+  }
+  
+  &[data-card-index="3"]:hover {
+    border-color: $color-brand-blue;
+    box-shadow: 0 8px 24px rgba($color-brand-blue, 0.2);
+    
+    .card-icon {
+      background-color: rgba($color-brand-blue, 0.12);
+    }
+  }
+  
+  &[data-card-index="4"]:hover {
+    border-color: $color-brand-pink;
+    box-shadow: 0 8px 24px rgba($color-brand-pink, 0.2);
+    
+    .card-icon {
+      background-color: rgba($color-brand-pink, 0.12);
+    }
+  }
+  
+  &[data-card-index="5"]:hover {
+    border-color: $color-brand-yellow;
+    box-shadow: 0 8px 24px rgba($color-brand-yellow, 0.2);
+    
+    .card-icon {
+      background-color: rgba($color-brand-yellow, 0.12);
+    }
   }
   
   // Card content structure
@@ -68,7 +117,6 @@
   // Tilda-style hover interactions
   &:hover {
     .card-icon {
-      background-color: rgba($color-secondary, 0.12);
       transform: scale(1.05);
       
       svg {

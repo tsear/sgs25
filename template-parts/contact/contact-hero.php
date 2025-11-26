@@ -19,7 +19,7 @@
         
         <!-- Description -->
         <div class="product-header__description">
-            <p>Ready to simplify your grant management? Fill out the form, and we'll get back to you</p>
+            <p>Let’s build the financial operational foundation your organization deserves. Complete the form, and we’ll connect to explore how we can help.</p>
         </div>
     </div>
 </section>

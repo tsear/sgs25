@@ -12,13 +12,12 @@
             <!-- Primary CTA -->
             <div class="primary-cta">
                 <h2>Still have questions?</h2>
-                <p>We're here to help you find the perfect solution for your organization's grant management needs.</p>
-                <button class="btn btn-primary scroll-to-form">Get Your Questions Answered</button>
+                <p>We're here to help you find the perfect solution for your organization's financial management and grant compliance needs.</p>
             </div>
 
             <!-- Divider -->
             <div class="cta-divider">
-                <span>Or explore what makes us different</span>
+                <span>Explore what makes us different</span>
             </div>
 
             <!-- Secondary CTAs -->
@@ -31,7 +30,7 @@
                         </svg>
                     </div>
                     <h3>Curious if we're the right fit?</h3>
-                    <p>Learn about our mission, values, and the team behind MissionGranted's approach to grant management.</p>
+                    <p>Explore our mission, vision, and the team redefining how nonprofits and local governments manage grant-funded operations.</p>
                     <a href="<?php echo home_url('/about'); ?>" class="cta-link">Discover Our Story <span>→</span></a>
                 </div>
 
@@ -44,7 +43,7 @@
                         </svg>
                     </div>
                     <h3>Curious about our capabilities?</h3>
-                    <p>Explore the powerful features that make grant management simple, compliant, and stress-free.</p>
+                    <p>Explore the powerful features that make our financial grant management and compliance software, MissionGranted, simple, compliant, and stress-free.</p>
                     <a href="<?php echo home_url('/product'); ?>" class="cta-link">See What We Build <span>→</span></a>
                 </div>
 

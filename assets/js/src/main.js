@@ -16,6 +16,7 @@ import RocketAnimation from './modules/rocket-animation.js';
 import initMobileMenu from './modules/mobile-menu.js';
 import DownloadsGateway from './modules/downloads.js';
 import ContactPage from './modules/contact-page.js';
+import LandingHeroTypewriter from './modules/landing-hero.js';
 import './modules/hubspot-tracking.js';
 import './footer-badge-carousel.js';
 
@@ -168,10 +169,10 @@ class SGSTheme {
     }
     
     initTypedAnimation() {
-        // Initialize typed animation if element exists
+        // Initialize landing hero typewriter if element exists
         const typedElement = document.querySelector('#hero-typed-text');
         if (typedElement) {
-            this.typedAnimation = new TypedAnimation('#hero-typed-text');
+            this.landingHero = new LandingHeroTypewriter();
         }
     }
     

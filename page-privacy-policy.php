@@ -152,9 +152,8 @@ get_header();
                     <p>If you have any questions about this Privacy Policy or our data practices, please contact us:</p>
                     <div class="contact-info">
                         <p><strong>Smart Grant Solutions</strong></p>
-                        <p>Email: <a href="mailto:privacy@smartgrantsolutions.com">privacy@smartgrantsolutions.com</a></p>
-                        <p>Phone: (555) 123-4567</p>
-                        <p>Address: [Your Business Address]</p>
+                        <p>Email: <a href="mailto:info@smartgrantsolutions.com">info@smartgrantsolutions.com</a></p>
+                        <p>Phone: +1 (888) 274-5121</p>
                     </div>
                 </div>
 

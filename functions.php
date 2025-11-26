@@ -31,7 +31,7 @@ if (version_compare($wp_version, '5.0', '<')) {
 }
 
 // Define theme constants
-define('SGS_THEME_VERSION', '1.0.1');
+define('SGS_THEME_VERSION', '1.0.2');
 define('SGS_THEME_URI', get_template_directory_uri());
 define('SGS_THEME_DIR', get_template_directory());
 
@@ -68,8 +68,10 @@ function sgs_theme_setup() {
 // Enqueue scripts and styles
 add_action('wp_enqueue_scripts', 'sgs_enqueue_assets');
 function sgs_enqueue_assets() {
-    // Enqueue our compiled SASS (will be deferred by critical CSS system)
-    wp_enqueue_style('smartgrantsolutions-style', get_stylesheet_uri(), array(), SGS_THEME_VERSION);
+    // Enqueue our compiled SASS with file modification time for cache busting
+    $css_file = get_stylesheet_directory() . '/style.css';
+    $css_version = file_exists($css_file) ? filemtime($css_file) : SGS_THEME_VERSION;
+    wp_enqueue_style('smartgrantsolutions-style', get_stylesheet_uri(), array(), $css_version);
     
     // Enqueue fonts (Poppins for hero, DM Sans for content)
     wp_enqueue_style('sgs-fonts', 'https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap', array(), null);
@@ -83,7 +85,6 @@ function sgs_enqueue_assets() {
     
     // Homepage-specific scripts (not in bundle yet)
     if (is_front_page() || is_home()) {
-        wp_enqueue_script('sgs-typed-animation', SGS_THEME_URI . '/assets/js/modules/typed-animation.js', array(), SGS_THEME_VERSION, true);
         wp_enqueue_script('sgs-trusted-orgs-carousel', SGS_THEME_URI . '/assets/js/modules/trusted-organizations-carousel.js', array(), SGS_THEME_VERSION, true);
         wp_enqueue_script('sgs-video-features', SGS_THEME_URI . '/assets/js/modules/video-features.js', array('jquery'), SGS_THEME_VERSION, true);
     }
