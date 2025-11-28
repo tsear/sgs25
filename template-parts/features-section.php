@@ -63,7 +63,7 @@ $image_base_url = get_template_directory_uri() . '/assets/images/';
                     <span class="highlight">Competitive Advantage</span>
                 </h3>
                 <p class="features-cta__description">
-                    From healthcare nonprofits securing $2M+ in federal funding to tech startups landing SBIR grants—our platform adapts to your industry's unique requirements. Stop chasing grants. Start winning them systematically.
+                    From small nonprofits looking to become grant-ready to large organizations managing a complex funding portfolio, our software platform, MissionGranted, adapts as you scale. Working with your accounting system, MissionGranted is the strategic ally you need to manage your grants and restricted funds effectively and stay in compliance.
                 </p>
                 <div class="features-cta__buttons">
                     <a href="<?php echo esc_url(home_url('/industries')); ?>" class="features-cta__button features-cta__button--primary">
@@ -72,7 +72,7 @@ $image_base_url = get_template_directory_uri() . '/assets/images/';
                             <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
                         </svg>
                     </a>
-                    <a href="<?php echo esc_url(home_url('/demo')); ?>" class="features-cta__button features-cta__button--secondary">
+                    <a href="https://www.youtube.com/watch?v=futXVdlQgcI" class="features-cta__button features-cta__button--secondary" target="_blank" rel="noopener">
                         <span>See It In Action</span>
                         <svg viewBox="0 0 24 24" fill="currentColor">
                             <path d="M8 5v14l11-7z"/>
@@ -81,16 +81,16 @@ $image_base_url = get_template_directory_uri() . '/assets/images/';
                 </div>
                 <div class="features-cta__stats">
                     <div class="features-cta__stat">
-                        <span class="stat-number">$47M+</span>
-                        <span class="stat-label">Grants Secured</span>
+                        <span class="stat-number">$62M+</span>
+                        <span class="stat-label">Grants Managed</span>
                     </div>
                     <div class="features-cta__stat">
-                        <span class="stat-number">78%</span>
-                        <span class="stat-label">Success Rate</span>
+                        <span class="stat-number">12%</span>
+                        <span class="stat-label">YoY Budget Increase</span>
                     </div>
                     <div class="features-cta__stat">
-                        <span class="stat-number">60%</span>
-                        <span class="stat-label">Time Saved</span>
+                        <span class="stat-number">20+/mth</span>
+                        <span class="stat-label">Hours Saved</span>
                     </div>
                 </div>
             </div>
@@ -120,24 +120,26 @@ $image_base_url = get_template_directory_uri() . '/assets/images/';
         <!-- Integration & Trial Section -->
         <div class="features-section__bottom">
             <div class="integrations-trust">
-                <p class="integrations-label">Seamlessly integrates with your existing tools</p>
+                <p class="integrations-label">Integrates with your accounting system</p>
                 <div class="integration-logos">
                     <span class="integration-item">QuickBooks</span>
                     <span class="integration-divider">•</span>
-                    <span class="integration-item">Xero</span>
+                    <span class="integration-item">Sage</span>
                     <span class="integration-divider">•</span>
-                    <span class="integration-item">Salesforce</span>
+                    <span class="integration-item">MIP</span>
                     <span class="integration-divider">•</span>
-                    <span class="integration-item">Microsoft 365</span>
+                    <span class="integration-item">Fund EZ</span>
+                    <span class="integration-divider">•</span>
+                    <span class="integration-item">And more</span>
                 </div>
             </div>
             
             <div class="trial-referral-cta">
                 <div class="trial-referral-card trial-card">
-                    <div class="trial-icon">🎉</div>
-                    <h4 class="trial-title">Start Your Free Trial</h4>
-                    <p class="trial-description">14 days full access • No credit card required • Cancel anytime</p>
-                    <a href="<?php echo esc_url(home_url('/demo')); ?>" class="trial-button">Get Started Free</a>
+                    <div class="trial-icon">📅</div>
+                    <h4 class="trial-title">Request a Demo</h4>
+                    <p class="trial-description">See MissionGranted tailored to your grants, funding streams, and compliance workflows.</p>
+                    <a href="<?php echo esc_url(home_url('/contact')); ?>" class="trial-button">Book a Demo</a>
                 </div>
                 
                 <div class="trial-referral-card referral-card">

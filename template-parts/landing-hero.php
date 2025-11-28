@@ -46,17 +46,17 @@
             <!-- Right Column: Value Proposition -->
             <div class="landing-hero__value-prop">
                 <h2 class="landing-hero__headline">
-                    We Make <span class="brand-highlight">Grant Management</span> and Financial Compliance <span class="brand-highlight">Simple</span>
+                    We Make <span class="brand-highlight">Grant Management</span> and Financial Compliance <span class="brand-highlight">Easy</span>
                 </h2>
                 
                 <p class="landing-hero__subheadline">
-                    Smart Grant Solutions provides cloud-based software and expert consulting to help nonprofits, governments, and grantmakers maximize their impact.
+                    Smart Grant Solutions provides first-of-its-kind cloud-based financial software, MissionGranted, and expert consulting to help nonprofits and local governments maximize their mission impact.
                 </p>
                 
                 <ul class="landing-hero__features">
-                    <li class="landing-hero__feature">Automated compliance tracking and audit preparation</li>
-                    <li class="landing-hero__feature">Real-time financial reporting and analytics</li>
-                    <li class="landing-hero__feature">Expert consulting from grant professionals</li>
+                    <li class="landing-hero__feature">Automated compliance tracking and budget preparation</li>
+                    <li class="landing-hero__feature">Real-time financial grant reporting and analytics</li>
+                    <li class="landing-hero__feature">Expert consulting from grant management professionals</li>
                     <li class="landing-hero__feature">Integrated tools that replace multiple spreadsheets</li>
                 </ul>
                 
@@ -77,7 +77,7 @@
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M12 2L3 7v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-9-5z"/>
                     </svg>
-                    <span>Secure, compliant, and <strong>audit-ready</strong> from day one</span>
+                       <span><strong>Secure</strong>, <strong>compliant</strong>, and <strong>audit-ready</strong> from day one</span>
                 </div>
             </div>
             

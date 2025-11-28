@@ -370,14 +370,28 @@
   white-space: nowrap;
   
   &--primary {
-    background: linear-gradient(135deg, $color-brand-pink 0%, #ff6b35 100%);
+    background: linear-gradient(135deg, $color-brand-pink 0%, lighten($color-brand-pink, 15%) 100%);
     color: #ffffff;
     border: 2px solid transparent;
     
+    &:visited {
+      color: #ffffff;
+    }
+    
     &:hover {
-      background: linear-gradient(135deg, darken($color-brand-pink, 5%) 0%, darken(#ff6b35, 5%) 100%);
+      background: linear-gradient(135deg, darken($color-brand-pink, 5%) 0%, lighten($color-brand-pink, 5%) 100%);
       transform: translateY(-2px);
       box-shadow: 0 8px 24px rgba(216, 18, 89, 0.3);
+      color: #ffffff;
+    }
+
+    &:focus,
+    &:focus-visible,
+    &:active {
+      background: linear-gradient(135deg, $color-brand-pink 0%, lighten($color-brand-pink, 15%) 100%);
+      color: #ffffff;
+      outline: none;
+      box-shadow: 0 0 0 2px rgba(216, 18, 89, 0.25);
     }
   }
   

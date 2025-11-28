@@ -1,0 +1,29 @@
+// Video Features React Section
+// Container/wrapper styles for the React component mount point
+
+#video-features-root {
+  width: 100%;
+  position: relative;
+
+  .video-features__title {
+    margin-bottom: 12px !important;
+  }
+
+  .video-features__body {
+    position: relative;
+    min-height: 650px;
+    padding-left: 0;
+  }
+
+  .card-swap-container {
+    bottom: 25px;
+    right: 0;
+    z-index: 3;
+  }
+
+  @media (max-width: 980px) {
+    .video-features__body {
+      padding-left: 0;
+    }
+  }
+}

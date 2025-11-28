@@ -1,0 +1,57 @@
+
+.card-swap-container {
+  position: absolute;
+  bottom: 25px;
+  right: 0;
+  transform: translate(10%, 10%);
+  transform-origin: bottom right;
+
+  perspective: 900px;
+  overflow: visible;
+}
+
+.card {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  border-radius: 12px;
+  border: 1px solid #fff;
+  background: #000;
+
+  transform-style: preserve-3d;
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.card.card--pink {
+  border-color: #d81259;
+  box-shadow: 0 20px 45px rgba(216, 18, 89, 0.35);
+}
+
+.card.card--yellow {
+  border-color: #ffbc41;
+  box-shadow: 0 20px 45px rgba(255, 188, 65, 0.35);
+}
+
+.card.card--blue {
+  border-color: #016ba6;
+  box-shadow: 0 20px 45px rgba(1, 107, 166, 0.35);
+}
+
+.card.card--cobalt {
+  border-color: #4c85bc;
+  box-shadow: 0 20px 45px rgba(76, 133, 188, 0.35);
+}
+
+@media (max-width: 768px) {
+  .card-swap-container {
+    transform: scale(0.75) translate(10%, 10%);
+  }
+}
+
+@media (max-width: 480px) {
+  .card-swap-container {
+    transform: scale(0.55) translate(10%, 10%);
+  }
+}

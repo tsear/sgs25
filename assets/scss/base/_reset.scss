@@ -79,8 +79,9 @@ a {
   transition: color $transition-fast;
   
   &:hover,
-  &:focus {
-    color: $color-secondary;
+  &:focus,
+  &:focus-visible {
+    color: $color-brand-pink;
   }
 }
 

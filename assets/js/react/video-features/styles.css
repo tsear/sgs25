@@ -1,0 +1,237 @@
+/**
+ * Video Features Component Styles
+ */
+
+.video-features {
+  background-color: #000000;
+  color: #ffffff;
+  padding: 80px 20px;
+  min-height: 600px;
+}
+
+.video-features__container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.video-features__header {
+  text-align: center;
+}
+
+.video-features__title {
+  font-size: 48px;
+  font-weight: 700;
+  margin: 0 0 20px;
+  font-family: 'Poppins', Arial, sans-serif;
+}
+
+.video-features__body {
+  position: relative;
+  display: block;
+  padding-left: 0;
+}
+
+.video-features__cta {
+  position: absolute;
+  left: clamp(60px, 16vw, 180px);
+  bottom: 150px;
+  width: min(360px, 42vw);
+  padding: 28px 32px;
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(5, 5, 5, 0.85);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(16px);
+  z-index: 2;
+}
+
+.video-features__cta-eyebrow {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.28em;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0 0 8px;
+}
+
+.video-features__cta-heading {
+  font-size: 26px;
+  line-height: 1.25;
+  margin: 0 0 12px;
+  font-family: 'Poppins', Arial, sans-serif;
+}
+
+.video-features__cta-copy {
+  margin: 0 0 20px;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.video-features__cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.video-features__cta-button {
+  background: linear-gradient(135deg, #d81259 0%, #ff1f6f 100%);
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 999px;
+  border: none;
+  font-weight: 600;
+  font-family: 'Poppins', Arial, sans-serif;
+  text-decoration: none;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.video-features__cta-button:hover,
+.video-features__cta-button:focus-visible,
+.video-features__cta-button:active {
+  background: linear-gradient(135deg, #d81259 0%, #ff1f6f 100%);
+  color: #fff;
+  transform: translateY(-1px);
+  outline: none;
+}
+
+.video-features__cta-link {
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: none;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.video-features__cta-link:hover {
+  color: #ffffff;
+}
+
+/* Feature Card Content */
+.feature-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+}
+
+.feature-card__gif {
+  width: 100%;
+  height: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #111;
+}
+
+.feature-card__gif img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.feature-card__content {
+  padding: 30px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.feature-card__content h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #ffffff;
+  font-family: 'Poppins', Arial, sans-serif;
+}
+
+.feature-card__content p {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #cccccc;
+  font-family: 'DM Sans', Arial, sans-serif;
+}
+
+@media (max-width: 1100px) {
+  .video-features__cta {
+    left: clamp(50px, 14vw, 160px);
+    bottom: 140px;
+    width: min(320px, 48vw);
+  }
+}
+
+@media (max-width: 980px) {
+  .video-features__cta {
+    position: relative;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    margin: 40px auto 0;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .video-features__body {
+    padding-left: 0;
+  }
+  .video-features {
+    padding: 60px 20px;
+  }
+  .video-features__cta {
+    padding: 24px;
+  }
+  .video-features__cta-heading {
+    font-size: 22px;
+  }
+  .video-features__cta-actions {
+    flex-direction: column;
+  }
+  .video-features__cta-link {
+    padding-left: 4px;
+  }
+  
+  .video-features__title {
+    font-size: 32px;
+    margin-bottom: 40px;
+  }
+  
+  .feature-card__content {
+    padding: 20px;
+  }
+  
+  .feature-card__content h3 {
+    font-size: 18px;
+  }
+  
+  .feature-card__content p {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .video-features__cta {
+    padding: 20px;
+  }
+  .video-features__cta-heading {
+    font-size: 20px;
+  }
+  .video-features__cta-copy {
+    font-size: 14px;
+  }
+  .feature-card__content {
+    padding: 15px;
+  }
+  
+  .feature-card__content h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  .feature-card__content p {
+    font-size: 12px;
+  }
+}

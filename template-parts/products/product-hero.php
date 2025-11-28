@@ -9,7 +9,7 @@
         
         <!-- Title -->
         <div class="product-header__title-frame">
-            <h1 class="product-header__title">Our Product</h1>
+            <h1 class="product-header__title">Our Products</h1>
         </div>
         
         <!-- SVG Container -->
@@ -19,7 +19,7 @@
         
         <!-- Description -->
         <div class="product-header__description">
-            <p>Comprehensive grant management solutions and expert consulting services. From application to award management, we provide the tools and expertise to maximize your funding success.</p>
+            <p>Comprehensive financial grant management solutions and expert consulting services. From application to award management and close, we provide the financial tools and expertise to maximize your funding success.</p>
         </div>
     </div>
 </section>

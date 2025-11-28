@@ -178,22 +178,30 @@
 .product-card__cta {
     display: inline-block;
     padding: 12px 24px;
-    background-color: transparent;
-    color: $color-brand-yellow;
+    background: linear-gradient(135deg, $color-brand-pink 0%, #ff1f6f 100%);
+    color: #ffffff;
     text-decoration: none;
     font-family: 'Poppins', Arial, sans-serif;
     font-weight: 600;
     font-size: 14px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    border: 2px solid $color-brand-yellow;
+    border: none;
     border-radius: 4px;
     transition: all 0.3s ease;
     
     &:hover {
-        background-color: $color-brand-yellow;
-        color: #000000;
+        background: linear-gradient(135deg, lighten($color-brand-pink, 5%) 0%, lighten(#ff1f6f, 5%) 100%);
+        color: #ffffff;
         transform: translateY(-2px);
+    }
+
+    &:focus-visible,
+    &:active {
+        background: linear-gradient(135deg, $color-brand-pink 0%, #ff1f6f 100%);
+        color: #ffffff;
+        outline: none;
+        transform: translateY(0);
     }
 }
 

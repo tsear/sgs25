@@ -25,7 +25,8 @@ get_header();
 
     <?php get_template_part('template-parts/directory-cta'); ?>
 
-    <?php get_template_part('template-parts/video-features'); ?>
+    <?php // get_template_part('template-parts/video-features'); ?>
+    <?php get_template_part('template-parts/video-features-react'); ?>
 
 </main>
 

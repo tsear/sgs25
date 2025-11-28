@@ -8,6 +8,8 @@ yarn-error.log*
 *.css.map
 dist/
 build/
+assets/dist/*.js
+assets/dist/*.css
 
 # OS generated files
 .DS_Store

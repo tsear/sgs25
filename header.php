@@ -59,7 +59,7 @@
                     <a href="<?php echo home_url('/about'); ?>" class="nav-link-about <?php echo is_page('about') ? 'active' : ''; ?>">ABOUT</a>
                     
                     <!-- Product Button - Cell 3 -->
-                    <a href="<?php echo home_url('/product'); ?>" class="nav-link-product <?php echo is_page('product') ? 'active' : ''; ?>">PRODUCT</a>
+                    <a href="<?php echo home_url('/product'); ?>" class="nav-link-product <?php echo is_page('product') ? 'active' : ''; ?>">PRODUCTS</a>
                     
                     <!-- Industries Button - Cell 5 -->
                     <a href="<?php echo home_url('/industries'); ?>" class="nav-link-industries <?php echo is_page('industries') ? 'active' : ''; ?>">INDUSTRIES</a>
@@ -98,7 +98,7 @@
             </div>
             <nav class="mobile-nav-menu">
                 <a href="<?php echo home_url('/about'); ?>" class="mobile-nav-link <?php echo is_page('about') ? 'active' : ''; ?>">ABOUT</a>
-                <a href="<?php echo home_url('/product'); ?>" class="mobile-nav-link <?php echo is_page('product') ? 'active' : ''; ?>">PRODUCT</a>
+                <a href="<?php echo home_url('/product'); ?>" class="mobile-nav-link <?php echo is_page('product') ? 'active' : ''; ?>">PRODUCTS</a>
                 <a href="<?php echo home_url('/industries'); ?>" class="mobile-nav-link <?php echo is_page('industries') ? 'active' : ''; ?>">INDUSTRIES</a>
                 <a href="<?php echo home_url('/testimonials'); ?>" class="mobile-nav-link <?php echo is_page('success-stories') ? 'active' : ''; ?>">TESTIMONIALS</a>
                 <a href="<?php echo home_url('/grants'); ?>" class="mobile-nav-link <?php echo is_page('grants') ? 'active' : ''; ?>">GRANTS</a>

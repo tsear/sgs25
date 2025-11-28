@@ -12,7 +12,7 @@ import initNewsletter from './modules/newsletter.js';
 import FinancialComplianceSlider from './modules/rss-feed-fincom.js';
 import ValuePropAnimations from './modules/value-prop-animations.js';
 import MissionGrantsSlider from './modules/rss-feed-mission-div.js';
-import RocketAnimation from './modules/rocket-animation.js';
+// import RocketAnimation from './modules/rocket-animation.js';
 import initMobileMenu from './modules/mobile-menu.js';
 import DownloadsGateway from './modules/downloads.js';
 import ContactPage from './modules/contact-page.js';

@@ -12,7 +12,7 @@
 $resources = [
     [
         'title' => 'Ultimate Grant Management Whitepaper',
-        'description' => 'Master the minutiae of MissionGranted with our comprehensive guide to advanced grant management strategies.',
+        'description' => 'Master the functionality of MissionGranted with our comprehensive guide to advanced grant management strategies.',
         'type' => 'PDF Guide',
         'icon' => 'document-text',
         'download_url' => home_url('/downloads'),
@@ -20,7 +20,7 @@ $resources = [
     ],
     [
         'title' => 'Financial Compliance Checklist', 
-        'description' => 'Free essential checklist for managing financial grants and ensuring compliance.',
+        'description' => 'Free essential financial checklist for managing grants and ensuring compliance across the award lifecycle.',
         'type' => 'Checklist',
         'icon' => 'clipboard-check',
         'download_url' => home_url('/downloads'),
@@ -28,7 +28,7 @@ $resources = [
     ],
     [
         'title' => 'Grant Opportunity Tracker',
-        'description' => 'Best free resources and templates for tracking and managing grant opportunities.',
+        'description' => 'Manage all of your grant award information in one place so you are always audit ready.',
         'type' => 'Template',
         'icon' => 'table',
         'download_url' => home_url('/downloads'),

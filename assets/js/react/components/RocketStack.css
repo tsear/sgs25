@@ -1,0 +1,94 @@
+.rocket-stack {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 260px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 1;
+  overflow: visible;
+}
+
+.rocket-stack__column {
+  position: relative;
+  width: 200px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  padding-bottom: 190px; /* reserve room for lowered flames */
+  overflow: visible;
+}
+
+.rocket-stack__rockets {
+  position: relative;
+  width: 180px;
+  height: 520px;
+  z-index: 3;
+}
+
+.rocket-piece {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.45));
+}
+
+.rocket-piece-1 { top: 0; }
+.rocket-piece-2 { top: 135px; }
+.rocket-piece-3 { top: 270px; }
+.rocket-piece-4 { top: 405px; }
+
+.rocket-stack__flames {
+  position: absolute;
+  left: 50%;
+  bottom: -40px;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  padding: 26px 36px 14px;
+  align-items: flex-end;
+  justify-content: center;
+  z-index: 2;
+}
+
+.rocket-stack__flames::before {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  width: 250px;
+  height: 190px;
+  transform: translateX(-50%);
+  background: radial-gradient(circle at 50% 50%, rgba(216, 18, 89, 0.65) 0%, rgba(216, 18, 89, 0.2) 40%, rgba(216, 18, 89, 0) 80%);
+  filter: blur(22px);
+  z-index: -2;
+}
+
+.rocket-flame {
+  position: relative;
+  width: 160px;
+  height: auto;
+  object-fit: contain;
+  opacity: 0;
+  transform-origin: top center;
+  z-index: 3;
+}
+
+@media (max-width: 1100px) {
+  .rocket-stack {
+    transform: scale(0.85);
+    transform-origin: bottom left;
+  }
+}
+
+@media (max-width: 980px) {
+  .rocket-stack {
+    display: none;
+  }
+}

@@ -249,25 +249,40 @@
   text-decoration: none;
   transition: all 0.3s ease;
   border: 1px solid transparent;
+  background: linear-gradient(135deg, $color-brand-pink 0%, #ff1f6f 100%);
+  color: #ffffff;
+
+  &:visited,
+  &:hover,
+  &:focus-visible,
+  &:active {
+    color: #ffffff;
+  }
   
   &--primary {
-    background: linear-gradient(135deg, $color-brand-pink 0%, #ff6b35 100%);
-    color: #ffffff;
-    
     &:hover {
-      background: linear-gradient(135deg, darken($color-brand-pink, 5%) 0%, darken(#ff6b35, 5%) 100%);
+      background: linear-gradient(135deg, $color-brand-pink 0%, #ff1f6f 100%);
       transform: translateY(-1px);
+    }
+    
+    &:focus-visible,
+    &:active {
+      background: linear-gradient(135deg, $color-brand-pink 0%, #ff1f6f 100%);
+      border-color: transparent;
+      outline: none;
+      color: #ffffff;
     }
   }
   
   &--secondary {
-    background: transparent;
-    color: $color-brand-yellow;
-    border: 1px solid $color-brand-yellow;
-    
     &:hover {
-      background: $color-brand-yellow;
-      color: #000000;
+      transform: translateY(-1px);
+    }
+    
+    &:focus-visible,
+    &:active {
+      outline: none;
+      border-color: transparent;
     }
   }
   
@@ -318,20 +333,33 @@
   display: inline-flex;
   align-items: center;
   padding: 14px 32px;
-  background: transparent;
+  background: linear-gradient(135deg, $color-brand-pink 0%, #ff1f6f 100%);
   color: #ffffff;
-  border: 2px solid #ffffff;
+  border: none;
   border-radius: 6px;
   font-family: 'Inter', Arial, sans-serif;
   font-size: 1rem;
   font-weight: 500;
   text-decoration: none;
   transition: all 0.3s ease;
+  &:visited,
+  &:hover,
+  &:focus-visible,
+  &:active {
+    color: #ffffff;
+  }
   
   &:hover {
-    background: #ffffff;
-    color: #000000;
     transform: translateY(-2px);
+    background: linear-gradient(135deg, $color-brand-pink 0%, #ff1f6f 100%);
+  }
+
+  &:focus-visible,
+  &:active {
+    background: linear-gradient(135deg, $color-brand-pink 0%, #ff1f6f 100%);
+    color: #ffffff;
+    outline: none;
+    transform: translateY(0);
   }
   
   @media (max-width: 479px) {

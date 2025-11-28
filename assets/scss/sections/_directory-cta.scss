@@ -246,11 +246,25 @@
         &:hover {
             transform: translateY(-2px);
             box-shadow: 0 15px 40px rgba(216, 18, 89, 0.4);
-            background: linear-gradient(135deg, #ff1f6f 0%, #d81259 100%);
+            background: linear-gradient(135deg, lighten(#d81259, 4%) 0%, lighten(#ff1f6f, 4%) 100%);
+            color: #ffffff;
+        }
+
+        &:focus-visible {
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.4);
+            color: #ffffff;
+            background: linear-gradient(135deg, #d81259 0%, #ff1f6f 100%);
         }
 
         &:active {
             transform: translateY(0);
+            color: #ffffff;
+            background: linear-gradient(135deg, #d81259 0%, #ff1f6f 100%);
+        }
+
+        &:visited {
+            color: #ffffff;
         }
     }
 

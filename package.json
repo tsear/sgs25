@@ -14,15 +14,24 @@
     "watch-critical": "sass assets/scss/src/:assets/scss/dist/ --watch --style=expanded --source-map",
     "build-js": "rollup -c",
     "build-js-watch": "rollup -c --watch",
-    "build": "npm run build-css && npm run build-critical && npm run build-js",
-    "build-dev": "npm run build-css-dev && npm run build-critical-dev && npm run build-js",
+    "vite:dev": "vite",
+    "vite:build": "vite build",
+    "vite:watch": "vite build --watch",
+    "build": "npm run build-css && npm run build-critical && npm run build-js && npm run vite:build",
+    "build-dev": "npm run build-css-dev && npm run build-critical-dev && npm run build-js && npm run vite:build",
     "watch": "npm run sass-dev"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^28.0.6",
     "@rollup/plugin-node-resolve": "^16.0.1",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@vitejs/plugin-react": "^5.1.1",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
     "rollup": "^4.50.1",
-    "sass": "^1.77.8"
+    "sass": "^1.77.8",
+    "terser": "^5.44.1",
+    "vite": "^7.2.4"
   },
   "browserslist": [
     "> 1%",
@@ -39,5 +48,8 @@
     "missiongranted"
   ],
   "author": "Smart Grant Solutions",
-  "license": "GPL-2.0+"
+  "license": "GPL-2.0+",
+  "dependencies": {
+    "gsap": "^3.13.0"
+  }
 }

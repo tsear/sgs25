@@ -60,12 +60,12 @@
                     </svg>
                 </div>
                 <h3 class="directory-cta__category-title">Resources</h3>
-                <p class="directory-cta__category-desc">Learn, discover, and grow</p>
+                <p class="directory-cta__category-desc">Learn, discover, and grow with our free resources</p>
                 <ul class="directory-cta__links">
-                    <li><a href="<?php echo home_url('/grants/'); ?>" class="directory-cta__link">Grant Opportunities</a></li>
-                    <li><a href="<?php echo home_url('/downloads/'); ?>" class="directory-cta__link">Downloads</a></li>
+                    <li><a href="<?php echo home_url('/downloads/'); ?>" class="directory-cta__link">Free Downloads</a></li>
                     <li><a href="<?php echo home_url('/blog/'); ?>" class="directory-cta__link">Blog</a></li>
                     <li><a href="<?php echo home_url('/testimonials/'); ?>" class="directory-cta__link">Testimonials</a></li>
+                    <li><a href="<?php echo home_url('/grants/'); ?>" class="directory-cta__link">Grant Opportunities</a></li>
                 </ul>
             </div>
 
@@ -80,7 +80,7 @@
                     </svg>
                 </div>
                 <h3 class="directory-cta__category-title">Company</h3>
-                <p class="directory-cta__category-desc">Get to know us better</p>
+                <p class="directory-cta__category-desc">Get to know us and the philosophy behind our mission</p>
                 <ul class="directory-cta__links">
                     <li><a href="<?php echo home_url('/about/'); ?>" class="directory-cta__link">About Us</a></li>
                     <li><a href="<?php echo home_url('/contact/'); ?>" class="directory-cta__link">Contact</a></li>
@@ -92,8 +92,8 @@
 
         <!-- Bottom CTA -->
         <div class="directory-cta__bottom">
-            <p class="directory-cta__bottom-text">Ready to transform your grant management?</p>
-            <a href="<?php echo home_url('/contact/'); ?>" class="directory-cta__bottom-btn">Get Started Free</a>
+            <p class="directory-cta__bottom-text">Ready to transform your financial grant management experience?</p>
+            <a href="<?php echo home_url('/contact/'); ?>" class="directory-cta__bottom-btn">Get Started Now</a>
         </div>
 
     </div>

@@ -86,7 +86,31 @@ function sgs_enqueue_assets() {
     // Homepage-specific scripts (not in bundle yet)
     if (is_front_page() || is_home()) {
         wp_enqueue_script('sgs-trusted-orgs-carousel', SGS_THEME_URI . '/assets/js/modules/trusted-organizations-carousel.js', array(), SGS_THEME_VERSION, true);
-        wp_enqueue_script('sgs-video-features', SGS_THEME_URI . '/assets/js/modules/video-features.js', array('jquery'), SGS_THEME_VERSION, true);
+        // wp_enqueue_script('sgs-video-features', SGS_THEME_URI . '/assets/js/modules/video-features.js', array('jquery'), SGS_THEME_VERSION, true);
+        
+        // React Video Features Component
+        $video_features_js = SGS_THEME_DIR . '/assets/dist/video-features.js';
+        $video_features_css = SGS_THEME_DIR . '/assets/dist/video-features.css';
+        
+        if (file_exists($video_features_css)) {
+            wp_enqueue_style(
+                'sgs-video-features-react-css',
+                SGS_THEME_URI . '/assets/dist/video-features.css',
+                array(),
+                filemtime($video_features_css)
+            );
+        }
+        
+        if (file_exists($video_features_js)) {
+            wp_enqueue_script(
+                'sgs-video-features-react-js',
+                SGS_THEME_URI . '/assets/dist/video-features.js',
+                array(),
+                filemtime($video_features_js),
+                true
+            );
+            wp_script_add_data('sgs-video-features-react-js', 'type', 'module');
+        }
     }
     
     // Localize script for AJAX
