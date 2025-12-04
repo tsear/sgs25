@@ -32,15 +32,15 @@
                     <div class="approach-features">
                         <div class="approach-feature">
                             <h4 class="approach-feature__title">Technology That Works</h4>
-                            <p class="approach-feature__text">MissionGranted isn't just another grant management software platform — it's a purpose-built, collaborative financial ecosystem designed by grant professionals, for every person involved in the financial grant management process.</p>
+                            <p class="approach-feature__text">MissionGranted isn't just another grant management software system — it's a purpose-built, collaborative financial grant management ecosystem, designed by professionals who understand how nonprofits and local governments work.</p>
                         </div>
                         <div class="approach-feature">
                             <h4 class="approach-feature__title">Expertise That Matters</h4>
-                            <p class="approach-feature__text">Our consulting team brings decades of combined experience across federal, state, foundation, corporate, and donor restricted funding landscapes and how they tie together to create winning strategies.</p>
+                            <p class="approach-feature__text">Our consulting team brings decades of combined experience across federal, state, foundation, corporate, and donor restricted funding landscapes and how they tie together to support post-award financial management services and sustainable success.</p>
                         </div>
                         <div class="approach-feature">
                             <h4 class="approach-feature__title">Results That Last</h4>
-                            <p class="approach-feature__text">We don't just help you financially manage grants — we build your organizational capacity to sustain and scale your funding for success.</p>
+                            <p class="approach-feature__text">We don't just help you financially manage grants — we build your organizational financial capacity to sustain and scale your funding for success.</p>
                         </div>
                     </div>
                 </div>

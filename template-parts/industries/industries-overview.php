@@ -16,15 +16,15 @@
         <!-- Key Stats -->
         <div class="industries-overview__stats">
             <div class="stat-item">
-                <span class="stat-item__number">500+</span>
-                <span class="stat-item__label">Organizations Served</span>
+                <span class="stat-item__number">750+</span>
+                <span class="stat-item__label">Funding Organizations</span>
             </div>
             <div class="stat-item">
-                <span class="stat-item__number">$2.3B+</span>
-                <span class="stat-item__label">Grant Funding Secured</span>
+                <span class="stat-item__number">$250M+</span>
+                <span class="stat-item__label">Grants Managed</span>
             </div>
             <div class="stat-item">
-                <span class="stat-item__number">15+</span>
+                <span class="stat-item__number">40+</span>
                 <span class="stat-item__label">Years Experience</span>
             </div>
         </div>
@@ -41,7 +41,7 @@
             </div>
             <div class="value-block">
                 <h3 class="value-block__title">Strategic Partnerships</h3>
-                <p class="value-block__text">We don't just write grants—we build long-term strategies that position your organization for sustainable funding success.</p>
+                <p class="value-block__text">We don’t just manage grants, we build long-term strategies that scale as you scale and position your organization, or those you fund, for sustainable success.</p>
             </div>
         </div>
 

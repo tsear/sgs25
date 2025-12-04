@@ -19,7 +19,7 @@
         
         <!-- Description -->
         <div class="referral-program-header__description">
-            <p>The SGS Referral Program is conducted to reward our users for referring new clients to our platform.</p>
+            <p>At Smart Grant Solutions, we believe strong financial systems lead to strong mission outcomes. That’s why we created a Referral Program designed to make it easy for you to connect organizations with MissionGranted.</p>
         </div>
     </div>
 </section>

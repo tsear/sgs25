@@ -10,7 +10,7 @@
         <!-- Section Header -->
         <div class="product-overview__header">
             <h2 class="product-overview__title">Comprehensive Grant Management <span class="brand-secondary">Solutions</span></h2>
-            <p class="product-overview__subtitle">From cutting-edge nonprofit and public-sector financial software to expert consulting, we provide everything you need to maximize your funding success.</p>
+            <p class="product-overview__subtitle">From cloud-based financial grant management software to expert consulting, we help you manage your grants with confidence, strengthen compliance, and improve your overall funding performance.</p>
         </div>
 
         <!-- Two Product Grid -->
@@ -23,12 +23,12 @@
                 </div>
                 <h3 class="product-card__title">MissionGranted</h3>
                 <p class="product-card__subtitle">Financial Grant Management Software</p>
-                <p class="product-card__description">Streamline the financial lifecycle of your grants with our comprehensive software solution. Develop application budgets, manage awards, and ensure compliance—all in one powerful platform.</p>
+                <p class="product-card__description">Streamline the financial lifecycle of your grants with our comprehensive software solution. Develop application budgets, manage awards, automate allocations, and ensure compliance—all in one powerful platform built for audit-ready accuracy.</p>
                 <ul class="product-card__features">
                     <li>Award management & budget tracking</li>
                     <li>Automated indirect cost allocation & personnel distribution</li>
-                    <li>Automated Compliance Logic</li>
-                    <li>Compliance monitoring & reporting</li>
+                    <li>Automated Compliance Logic & alerts</li>
+                    <li>Compliance monitoring, real-time analysis, & reporting</li>
                 </ul>
                 <a href="<?php echo home_url('/cloud-software'); ?>" class="product-card__cta">Learn More</a>
             </div>
@@ -40,7 +40,7 @@
                 </div>
                 <h3 class="product-card__title">Expert Consulting</h3>
                 <p class="product-card__subtitle">Comprehensive Financial Mangement Support</p>
-                <p class="product-card__description">Navigate the complex world of nonprofit financial management and grant funding with our seasoned experts. Using industry best practices, we guide you through every facet from system design to policy development.</p>
+                <p class="product-card__description">Navigate the complex world of nonprofit grant finance, public-sector funding, and Uniform Guidance (2 CFR 200) compliance with our seasoned experts. Using industry best practices, we guide you through system design, compliance workflows, and long-term financial strategy.</p>
                 <ul class="product-card__features">
                     <li>Internal grant management & compliance workflow design</li>
                     <li>Systems assessment, redesign & implementation</li>

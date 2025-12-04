@@ -48,6 +48,7 @@
                 <h2 class="landing-hero__headline">
                     We Make <span class="brand-highlight">Grant Management</span> and Financial Compliance <span class="brand-highlight">Easy</span>
                 </h2>
+                <p class="sr-only">MissionGranted is grant management and compliance software tailored for nonprofits and local governments.</p>
                 
                 <p class="landing-hero__subheadline">
                     Smart Grant Solutions provides first-of-its-kind cloud-based financial software, MissionGranted, and expert consulting to help nonprofits and local governments maximize their mission impact.

@@ -19,7 +19,7 @@
         
         <!-- Description -->
         <div class="industries-header__description">
-            <p>Specialized financial grant management and compliance expertise across the nonprofit and local government sectors. From conservation to child welfare, we understand the unique funding landscape within your industry.</p>
+            <p>Specialized financial grant management and compliance expertise for the nonprofit, local government, and funder cohorts. Whether you run a small agency or manage complex public funding streams, we support the unique financial and compliance needs of mission-driven organizations.</p>
         </div>
     </div>
 </section>

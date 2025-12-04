@@ -9,13 +9,11 @@
     <div class="container">
         <div class="cloud-software-intro__content">
             <div class="cloud-software-intro__badge">
-                <span>MissionGranted Platform</span>
+                <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/tild3138-3430-4561-a363-396335613866__property_1default.svg'); ?>" alt="MissionGranted Platform badge" loading="lazy" />
             </div>
             <h1 class="cloud-software-intro__title">If You Move Money Based on Rules, We're Built for You</h1>
             <p class="cloud-software-intro__lead">
-                MissionGranted is an intelligence-driven financial management platform that automates complex workflows, 
-                ensures compliance, and provides real-time visibility across your entire funding lifecycle. Not just grant 
-                management—an ERP designed for organizations that need precision, control, and strategic insight.
+                An intelligent, rule-driven financial management software designed for mission-driven organizations, empowering you to manage grants and funding with clarity, compliance, and confidence.
             </p>
             <div class="cloud-software-intro__stats">
                 <div class="stat-item">
@@ -39,10 +37,9 @@
 <section class="cloud-software-value">
     <div class="container">
         <div class="cloud-software-value__header">
-            <h2 class="cloud-software-value__title">Beyond Grant Management: A True Financial Intelligence Platform</h2>
+            <h2 class="cloud-software-value__title">Beyond Grant Management: The Financial Infrastructure for Mission-Driven Work</h2>
             <p class="cloud-software-value__subtitle">
-                We started with grant management—the most complex financial scenario—and built outward. The result? 
-                A platform that handles any financial workflow predicated on rules, allocations, and compliance.
+                We started with grants, the most complex form of fund accounting, and built a full financial-intelligence platform designed to handle budgeting and funding flows that rely on allocations, rules, and compliance. With MissionGranted, you get:
             </p>
         </div>
 
@@ -54,10 +51,9 @@
                         <path d="M16 24L22 30L32 20" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
                 </div>
-                <h3 class="value-card__title">Rules-Based Financial Engine</h3>
+                <h3 class="value-card__title">Rules-Based Financial Automation</h3>
                 <p class="value-card__text">
-                    Define your allocation rules once—personnel distributions, indirect costs, budget hierarchies—and 
-                    let the platform automate everything downstream. If you move money based on logic, we execute it flawlessly.
+                    Define your allocation rules once and let MissionGranted automate the rest. From personnel distribution to indirect cost allocations, budget vs actuals, and Uniform Guidance (2 CFR 200) compliance, MissionGranted removes manual work and keeps your organization compliance-ready.
                 </p>
             </div>
 
@@ -68,10 +64,9 @@
                         <path d="M16 20H32M16 24H32M16 28H32M16 32H24" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
                     </svg>
                 </div>
-                <h3 class="value-card__title">Funder-Side Data Sovereignty</h3>
+                <h3 class="value-card__title">Real-Time Financial Clarity</h3>
                 <p class="value-card__text">
-                    See your data from both perspectives—the recipient managing funds and the funder tracking portfolio 
-                    performance. Complete transparency, real-time reporting, and full audit trails for all stakeholders.
+                    See every grant, funding stream, and unrestricted dollars in one place. Real-time dashboards provide grant spending visibility, financial tracking automation, and monthly oversight giving your team a single source of truth for grant-funded financial management across your organization.
                 </p>
             </div>
 
@@ -82,10 +77,9 @@
                         <path d="M18 24L22 28L30 20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
                 </div>
-                <h3 class="value-card__title">Intelligence-Driven Compliance</h3>
+                <h3 class="value-card__title">Strategic Financial Planning</h3>
                 <p class="value-card__text">
-                    Risk alerts, strategic recommendations, and proactive compliance monitoring. Not just a tool—an 
-                    intelligent partner that identifies issues before auditors do and suggests optimizations.
+                    Plan confidently for the future. Model funding changes, forecast program sustainability, and make data-informed decisions about staffing, program growth, and resource allocation. MissionGranted supports long-term financial planning for nonprofits and local governments.
                 </p>
             </div>
 
@@ -98,10 +92,9 @@
                         <path d="M20 18L16 30M28 18L32 30" stroke="currentColor" stroke-width="2"/>
                     </svg>
                 </div>
-                <h3 class="value-card__title">Pseudo-ERP Architecture</h3>
+                <h3 class="value-card__title">Effortless Reporting & Compliance</h3>
                 <p class="value-card__text">
-                    Multi-year tracking, scenario planning, budgeting vs. actuals, automated invoicing—everything you'd 
-                    expect from enterprise resource planning, tailored for mission-driven financial complexity.
+                    Never scramble for a report again. MissionGranted generates funder-ready documentation, automates grant reporting, and provides transparent, real-time visibility into spending. Keep auditors, program teams, and funders aligned with accurate, consistent financial reporting for every grant.
                 </p>
             </div>
         </div>
@@ -112,10 +105,9 @@
 <section class="cloud-software-automation">
     <div class="container">
         <div class="cloud-software-automation__header">
-            <h2 class="cloud-software-automation__title">Replace Spreadsheets With Intelligence</h2>
+            <h2 class="cloud-software-automation__title">Replace Spreadsheet With Strategic Capacity</h2>
             <p class="cloud-software-automation__subtitle">
-                These workflows are typically managed in Excel, Google Sheets, or manual processes. MissionGranted 
-                automates them end-to-end, eliminating errors and saving hundreds of hours per year.
+                Manual processes lead to costly errors that may jeopardize funding or trigger audits, lengthy month-end financial close processes, disconnected data locked in multiple spreadsheets, and compliance headaches.  MissionGranted replaces these burdens with clarity, consistency, and control so your team can focus on impact - not admin. 
             </p>
         </div>
 
@@ -125,8 +117,7 @@
                 <div class="automation-item__content">
                     <h3 class="automation-item__title">Indirect Cost Allocations</h3>
                     <p class="automation-item__description">
-                        Automatically distribute shared costs across funding sources using negotiated rates, de minimis 
-                        calculations, or custom allocation rules. Real-time accuracy, zero manual entry.
+                        Automatically distribute shared costs across funding sources using indirect cost rates or custom allocation rules. Real-time accuracy, zero manual entry.
                     </p>
                 </div>
             </div>
@@ -136,8 +127,7 @@
                 <div class="automation-item__content">
                     <h3 class="automation-item__title">Personnel Time Distributions</h3>
                     <p class="automation-item__description">
-                        Track staff allocations across multiple grants, programs, and cost centers. Automated timesheet 
-                        integration, FTE calculations, and compliance-ready documentation.
+                        Budget for and allocate the full burden of each employee across multiple multiple funding sources. Automate the allocation of actual indirect personnel costs right from your payroll file in seconds.
                     </p>
                 </div>
             </div>
@@ -147,8 +137,7 @@
                 <div class="automation-item__content">
                     <h3 class="automation-item__title">Budget vs. Actuals Monitoring</h3>
                     <p class="automation-item__description">
-                        Real-time variance tracking with intelligent alerts when spending deviates from projections. 
-                        By grant, by program, by cost category—complete visibility at every level.
+                        Real-time variance tracking with intelligent alerts when spending deviates from projections. By grant, by GL account, by funder category - we offer complete visibility at every level.
                     </p>
                 </div>
             </div>
@@ -158,8 +147,7 @@
                 <div class="automation-item__content">
                     <h3 class="automation-item__title">Multi-Year Grant Tracking</h3>
                     <p class="automation-item__description">
-                        Manage complex multi-year awards with automatic period rollover, carryforward calculations, 
-                        and lifecycle milestone tracking. Never lose track of commitments or deadlines.
+                        Manage complex multi-year awards with period carryovers and lifecycle lifecycle tracking. Budget for your fiscal year and for funder years at once.
                     </p>
                 </div>
             </div>
@@ -169,8 +157,7 @@
                 <div class="automation-item__content">
                     <h3 class="automation-item__title">Scenario Planning & Forecasting</h3>
                     <p class="automation-item__description">
-                        Model different funding scenarios, budget adjustments, and strategic decisions. See the financial 
-                        impact before you commit, with full audit trails of your analysis.
+                        Model different funding scenarios, budget adjustments, and strategic decisions. See the financial impact before you commit, saving each iteration of your analysis as you go.
                     </p>
                 </div>
             </div>
@@ -208,7 +195,7 @@
                         <div class="problem-item__icon">⏰</div>
                         <div class="problem-item__content">
                             <h4>Your Team Spends Days on Month-End</h4>
-                            <p>Financial close shouldn't take weeks. Automation reduces it to hours—or even real-time.</p>
+                            <p>Financial close shouldn't take weeks. Automation reduces it to hours assisting with allocations, compliance, reporting, and invoicing. </p>
                         </div>
                     </div>
                     <div class="problem-item">
@@ -222,7 +209,7 @@
                         <div class="problem-item__icon">🚨</div>
                         <div class="problem-item__content">
                             <h4>Audits Are Stressful & Time-Consuming</h4>
-                            <p>Scrambling to reconstruct audit trails from multiple sources is avoidable with proper systems.</p>
+                            <p>Scrambling to assemble the necessary grant paperwork and reconstruct grant schedules is avoidable with proper systems.</p>
                         </div>
                     </div>
                 </div>
@@ -236,35 +223,35 @@
                         <div class="benefit-item__check">✓</div>
                         <div class="benefit-item__content">
                             <h4>Multi-Grant Portfolio Organizations</h4>
-                            <p>Managing 5+ concurrent grants with overlapping budgets, timelines, and reporting requirements.</p>
+                            <p>Organizations managing multiple grants or funding streams simultaneously, with overlapping budgets and reporting requirements.</p>
                         </div>
                     </div>
                     <div class="benefit-item">
                         <div class="benefit-item__check">✓</div>
                         <div class="benefit-item__content">
                             <h4>Organizations with Complex Cost Allocations</h4>
-                            <p>Shared staff, indirect cost rates, sub-awards, and cost-sharing agreements that demand precision.</p>
+                            <p>Shared staff, indirect cost rates, cost allocation plans, fiscal sponsorships, and cost-sharing agreements that demand precision.</p>
                         </div>
                     </div>
                     <div class="benefit-item">
                         <div class="benefit-item__check">✓</div>
                         <div class="benefit-item__content">
                             <h4>Compliance-Heavy Environments</h4>
-                            <p>Federal grants, state contracts, or institutional funders requiring detailed audit trails and documentation.</p>
+                            <p>Federal grants, state contracts, donor restrictions, or institutional funders requiring detailed repporting and documentation.</p>
                         </div>
                     </div>
                     <div class="benefit-item">
                         <div class="benefit-item__check">✓</div>
                         <div class="benefit-item__content">
                             <h4>Growing Organizations Outgrowing Spreadsheets</h4>
-                            <p>You've hit the ceiling of what Excel can handle—you need real financial infrastructure.</p>
+                            <p>Managing grants in Excel has become burdensome and you need real financial infrastructure.</p>
                         </div>
                     </div>
                     <div class="benefit-item">
                         <div class="benefit-item__check">✓</div>
                         <div class="benefit-item__content">
-                            <h4>Any Organization Moving Money Based on Rules</h4>
-                            <p>If your financial operations follow defined logic, allocation rules, or hierarchies—we're built for you.</p>
+                            <h4>Organizations Using Money Based on Rules</h4>
+                            <p>Any group whose financial workflows are rule-based, compliance-heavy, or allocation-driven — from nonprofits to local governments.</p>
                         </div>
                     </div>
                 </div>
@@ -277,9 +264,9 @@
 <section class="cloud-software-features">
     <div class="container">
         <div class="cloud-software-features__header">
-            <h2 class="cloud-software-features__title">Platform Capabilities</h2>
+            <h2 class="cloud-software-features__title">MissionGranted Capabilities</h2>
             <p class="cloud-software-features__subtitle">
-                Everything you need to manage financial complexity with confidence, transparency, and strategic intelligence
+                Everything you need to manage financial grant and restricted fund complexity with confidence
             </p>
         </div>
 
@@ -339,37 +326,33 @@
 <section class="cloud-software-implementation">
     <div class="container">
         <div class="cloud-software-implementation__content">
-            <h2 class="cloud-software-implementation__title">Implementation That Actually Works</h2>
+            <h2 class="cloud-software-implementation__title">We Don’t Just Deliver Software - We’re Your Strategic Ally</h2>
             <p class="cloud-software-implementation__lead">
-                Technology is only as good as its implementation. We don't just hand you software—we become your 
-                strategic partner through data migration, setup, training, and ongoing optimization.
+                We don’t just hand you a tool.  We partner with you for quick and smooth implementation through setup, training, and ongoing support. Our team of experts ensures MissionGranted is tailored to your unique financial workflows and compliance needs, so you get maximum value from day one.
             </p>
 
             <div class="cloud-software-implementation__grid">
                 <div class="implementation-phase">
                     <div class="implementation-phase__icon">🎯</div>
-                    <h3 class="implementation-phase__title">Discovery & Design</h3>
+                    <h3 class="implementation-phase__title">Implementation & Setup</h3>
                     <p class="implementation-phase__text">
-                        We analyze your current workflows, data structures, and reporting needs. Then we design 
-                        a customized implementation plan that minimizes disruption and maximizes value.
+                        MissionGranted works with your accounting system by mirroring your GL and fund accounts. We work with you to map accounts and setup smart grant compliance rules. 
                     </p>
                 </div>
 
                 <div class="implementation-phase">
                     <div class="implementation-phase__icon">📦</div>
-                    <h3 class="implementation-phase__title">Data Migration & Setup</h3>
+                    <h3 class="implementation-phase__title">Training & Adoption</h3>
                     <p class="implementation-phase__text">
-                        Clean, validated migration of your historical data. We configure allocation rules, reporting 
-                        templates, and system integrations to match your exact requirements.
+                        We work with your finance, program, and leadership teams to ensure that they know how to use the MissionGranted features most relevant to their role effectively.
                     </p>
                 </div>
 
                 <div class="implementation-phase">
                     <div class="implementation-phase__icon">🎓</div>
-                    <h3 class="implementation-phase__title">Training & Adoption</h3>
+                    <h3 class="implementation-phase__title">Ongoing Support</h3>
                     <p class="implementation-phase__text">
-                        Role-specific training sessions for finance teams, program staff, and executives. We ensure 
-                        everyone knows how to use their relevant features effectively.
+                        As your organization grows, MissionGranted grows with you. We offer ongoing support, feature updates, and process tutorials so you can utilize the platform to its fullest. 
                     </p>
                 </div>
 
@@ -398,10 +381,10 @@
             <div class="cloud-software-cta__buttons">
                 <a href="/contact" class="btn btn--primary btn--large">Request a Demo</a>
                 <a href="/success-stories" class="btn btn--outline btn--large">See Case Studies</a>
+                <a href="https://www.youtube.com/watch?v=futXVdlQgcI" class="btn btn--ghost btn--large" target="_blank" rel="noopener">See how it works</a>
             </div>
             <div class="cloud-software-cta__note">
-                <strong>Implementation timeframe:</strong> Most organizations are fully operational within 6-8 weeks. 
-                We provide dedicated support throughout your journey.
+                <strong>Implementation timeframe:</strong> Most organizations are fully operational after spending 6 - 8 hours with our team.  We provide dedicated support throughout our journey and beyond. 
             </div>
         </div>
     </div>

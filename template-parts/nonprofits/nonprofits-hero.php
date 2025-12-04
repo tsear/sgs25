@@ -19,7 +19,7 @@
         
         <!-- Description -->
         <div class="nonprofits-header__description">
-            <p>Cloud-based solutions & expert consulting tailored for nonprofits.</p>
+            <p>Expert consulting and cloud-based software solutions tailored for nonprofit organizations.</p>
         </div>
     </div>
 </section>

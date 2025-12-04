@@ -103,7 +103,7 @@
     line-height: 1.2;
     color: $color-white;
     text-align: center;
-    margin-bottom: 60px;
+    margin-bottom: 24px;
     
     .brand-blue {
       color: $color-brand-blue;
@@ -112,6 +112,16 @@
     @media (max-width: 768px) {
       font-size: 36px;
     }
+  }
+
+  &__lead {
+    max-width: 900px;
+    margin: 0 auto 60px;
+    font-size: 18px;
+    line-height: 1.7;
+    color: $color-white;
+    text-align: center;
+    opacity: 0.85;
   }
   
   // White divider line at bottom

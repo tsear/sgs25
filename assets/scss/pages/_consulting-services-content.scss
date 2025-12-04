@@ -255,7 +255,7 @@
    ========================================================================= */
 .consulting-services-why {
     padding: 100px 0;
-    background: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(216, 18, 89, 0.05) 100%);
+    background: $color-black;
     
     @media (max-width: $breakpoint-md) {
         padding: 80px 0;
@@ -725,7 +725,7 @@
    ========================================================================= */
 .consulting-services-cta {
     padding: 120px 0;
-    background: linear-gradient(180deg, rgba(216, 18, 89, 0.05) 0%, rgba(0, 0, 0, 1) 100%);
+    background: $color-black;
     
     @media (max-width: $breakpoint-md) {
         padding: 80px 0;

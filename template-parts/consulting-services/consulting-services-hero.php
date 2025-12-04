@@ -19,7 +19,7 @@
         
         <!-- Description -->
         <div class="consulting-services-header__description">
-            <p>Expert consulting services. From application to award management, we provide the tools and expertise to maximize your funding success.</p>
+            <p>We provide expert financial management and grant compliance consulting services to help nonprofits and local governments build resilient, compliant, and impact-driven operations.</p>
         </div>
     </div>
 </section>

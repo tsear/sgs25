@@ -14,12 +14,12 @@
         
         <!-- SVG Container -->
         <div class="about-header__svg-container">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/blue-rocket-div.svg" alt="" />
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/blue-rocket-div.svg"/>
         </div>
         
         <!-- Description -->
         <div class="about-header__description">
-            <p>We're dedicated to empowering mission-driven organizations with innovative financial management software solutions and expert consulting services that amplify strategic impact.</p>
+            <p>We help mission-driven organizations manage their grant finances with cloud-based software and expert consulting that simplifies budgeting, reporting, and post-award oversight.</p>
         </div>
     </div>
 </section>

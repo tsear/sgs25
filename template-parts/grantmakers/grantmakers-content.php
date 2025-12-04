@@ -42,34 +42,34 @@
     <div class="platform-capabilities__grid">
       <div class="capability-card">
         <div class="capability-card__header">
-          <span class="capability-card__label">Stakeholder Integration</span>
+          <span class="capability-card__label">Best Practice Education</span>
         </div>
-        <h3 class="capability-card__title">One Shared System of Record</h3>
-        <p class="capability-card__text">Connect every stakeholder — grantees, program officers, finance teams — into one unified platform where everyone has the right access at the right time.</p>
+        <h3 class="capability-card__title">Practical Financial Management Training</h3>
+        <p class="capability-card__text">Management and governance learn best practices in accounting system structure, financial processes, internal controls, and policy development ensuring strong, accurate financial data for strategic decision-making.</p>
       </div>
       
       <div class="capability-card">
         <div class="capability-card__header">
-          <span class="capability-card__label">Performance Tracking</span>
+          <span class="capability-card__label">System Automation</span>
         </div>
-        <h3 class="capability-card__title">Real-Time Dashboards</h3>
-        <p class="capability-card__text">Track how funds are spent, when outcomes are achieved, and where bottlenecks occur. See impact unfold in real time.</p>
+        <h3 class="capability-card__title">MissionGranted Software Access</h3>
+        <p class="capability-card__text">MissionGranted builds stronger internal controls and financial clarity enabling organizations to leverage current funding to secure additional resources, scale programs, and achieve lasting sustainability.</p>
       </div>
       
       <div class="capability-card">
         <div class="capability-card__header">
-          <span class="capability-card__label">Risk Management</span>
+          <span class="capability-card__label">Implementation Support</span>
         </div>
-        <h3 class="capability-card__title">Automated Compliance</h3>
-        <p class="capability-card__text">Configurable workflows ensure compliance with federal and internal standards while reducing administrative overhead and human error.</p>
+        <h3 class="capability-card__title">Hands-On Advising + AI Support</h3>
+        <p class="capability-card__text">We help cohort participants apply what they learn to align spending decisions with strategic outcomes along with leveraging AI to support grant writing and financial capacity, building a modern infrastructure.</p>
       </div>
       
       <div class="capability-card">
         <div class="capability-card__header">
-          <span class="capability-card__label">Portfolio Integrity</span>
+          <span class="capability-card__label">Cohort Tracking</span>
         </div>
-        <h3 class="capability-card__title">Strengthen Oversight</h3>
-        <p class="capability-card__text">MissionGranted doesn't just manage data — it builds confidence and improves the integrity of your entire funding pipeline.</p>
+        <h3 class="capability-card__title">Outcome Measurement & Learning</h3>
+        <p class="capability-card__text">Over a three-year period, we track milestones and organizational growth culminating in a white paper demonstrating how capacity building paired with modern financial tools can strengthen under-resourced nonprofits.</p>
       </div>
     </div>
   </div>
@@ -79,8 +79,8 @@
 <section class="sgs-strategic">
   <div class="container">
     <div class="sgs-strategic__intro">
-      <h2 class="sgs-strategic__title">Strategy <span class="brand-yellow">Behind</span> the System</h2>
-      <p class="sgs-strategic__subtitle">Behind every successful grants program is a strategy. That's where Sear Growth Solutions complements MissionGranted — by bringing the human and analytical depth that ensures each implementation reflects the grantmaker's mission, governance model, and risk profile.</p>
+      <h2 class="sgs-strategic__title">Strategy <span class="brand-yellow">Behind</span> Cohort Programs</h2>
+      <p class="sgs-strategic__subtitle">Providing dollars alone is not enough. Pairing funding with training, tools, and financial infrastructure dramatically increases the chances of organizational success and long-term viability. Our cohort model allows grantmakers to build stronger, more resilient grantee ecosystems that deepen community impact.</p>
     </div>
     
     <div class="sgs-strategic__framework">
@@ -123,61 +123,12 @@
   </div>
 </section>
 
-<!-- The Continuous Cycle -->
-<section class="continuous-cycle">
-  <div class="container">
-    <div class="continuous-cycle__header">
-      <p class="continuous-cycle__lead">MissionGranted structures the data. SGS structures the decision-making.</p>
-      <h2 class="continuous-cycle__title">The <span class="brand-yellow">Continuous</span> Cycle</h2>
-    </div>
-    
-    <div class="cycle-flow">
-      <div class="cycle-phase">
-        <div class="cycle-phase__number">1</div>
-        <div class="cycle-phase__content">
-          <h3 class="cycle-phase__title">Discovery</h3>
-          <p class="cycle-phase__text">SGS assesses your current grantmaking model, data sources, and compliance requirements.</p>
-        </div>
-      </div>
-      
-      <div class="cycle-phase">
-        <div class="cycle-phase__number">2</div>
-        <div class="cycle-phase__content">
-          <h3 class="cycle-phase__title">Systemization</h3>
-          <p class="cycle-phase__text">MissionGranted is configured to reflect your priorities — approval chains, funding categories, reporting templates.</p>
-        </div>
-      </div>
-      
-      <div class="cycle-phase">
-        <div class="cycle-phase__number">3</div>
-        <div class="cycle-phase__content">
-          <h3 class="cycle-phase__title">Execution</h3>
-          <p class="cycle-phase__text">The platform tracks every award from commitment to closeout, producing transparent reporting for all stakeholders.</p>
-        </div>
-      </div>
-      
-      <div class="cycle-phase">
-        <div class="cycle-phase__number">4</div>
-        <div class="cycle-phase__content">
-          <h3 class="cycle-phase__title">Optimization</h3>
-          <p class="cycle-phase__text">SGS evaluates outcomes, identifies inefficiencies, and guides strategic adjustments to maximize impact.</p>
-        </div>
-      </div>
-    </div>
-    
-    <div class="continuous-cycle__outcome">
-      <p class="outcome-statement">Strategy informs system design. Data informs strategy.</p>
-      <p class="outcome-result">The result: <strong>a grantmaking operation that is measurable, equitable, and efficient</strong> — where insight drives every dollar and every dollar leaves a traceable mark.</p>
-    </div>
-  </div>
-</section>
-
 <!-- CTA Section -->
 <section class="grantmaker-cta">
   <div class="container">
     <div class="grantmaker-cta__content">
-      <h2 class="grantmaker-cta__title">Ready to Transform <span class="brand-yellow">Your Grantmaking?</span></h2>
-      <p class="grantmaker-cta__text">Let's talk about how MissionGranted + SGS can help you build a more transparent, efficient, and impactful funding operation.</p>
+      <h2 class="grantmaker-cta__title">Ready to Invest in <span class="brand-yellow">Your Financial Capacity?</span></h2>
+      <p class="grantmaker-cta__text">Let’s talk about how SGS can help you design a cohort-based program that strengthens grantees’ financial management, improves compliance, and amplifies the long-term impact of your funding.</p>
       <div class="grantmaker-cta__actions">
         <a href="<?php echo home_url('/contact'); ?>" class="btn btn--primary btn--large">Schedule a Discovery Call</a>
         <a href="<?php echo home_url('/success-stories'); ?>" class="btn btn--outline btn--large">See Funder Success Stories</a>

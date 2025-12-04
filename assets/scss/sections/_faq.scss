@@ -1,0 +1,161 @@
+// =============================
+// FAQ Section Styling
+// =============================
+
+.faq {
+	background: #000000;
+	color: #ffffff;
+	padding: clamp(60px, 8vw, 140px) 20px;
+	position: relative;
+	overflow: hidden;
+
+	&__container {
+		max-width: 1200px;
+		margin: 0 auto;
+		display: flex;
+		flex-direction: column;
+		gap: clamp(32px, 6vw, 64px);
+	}
+
+	&__header {
+		max-width: 840px;
+	}
+
+	&__eyebrow {
+		font-family: 'Inter', Arial, sans-serif;
+		font-size: 0.85rem;
+		letter-spacing: 0.18em;
+		text-transform: uppercase;
+		color: rgba(255, 255, 255, 0.7);
+		margin-bottom: 16px;
+	}
+
+	&__title {
+		font-family: 'Poppins', Arial, sans-serif;
+		font-size: clamp(2rem, 5vw, 3.2rem);
+		line-height: 1.1;
+		margin: 0 0 16px;
+	}
+
+	&__subtitle {
+		font-family: 'Inter', Arial, sans-serif;
+		font-size: 1.1rem;
+		line-height: 1.7;
+		color: rgba(255, 255, 255, 0.75);
+		margin: 0;
+	}
+
+	&__grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+		gap: 20px;
+	}
+
+	&__cta {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: space-between;
+		gap: 24px;
+		padding: 32px;
+		border: 1px solid rgba(255, 255, 255, 0.12);
+		border-radius: 18px;
+		background: rgba(255, 255, 255, 0.04);
+	}
+
+	&__cta p {
+		flex: 1 1 300px;
+		font-family: 'Inter', Arial, sans-serif;
+		font-size: 1.05rem;
+		line-height: 1.65;
+		margin: 0;
+		color: rgba(255, 255, 255, 0.8);
+	}
+
+	&__button {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		padding: 14px 28px;
+		border-radius: 8px;
+		font-family: 'Inter', Arial, sans-serif;
+		font-weight: 600;
+		font-size: 1rem;
+		text-decoration: none;
+		color: #ffffff;
+		background: $color-brand-blue;
+		border: 1px solid transparent;
+		transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+		&:hover {
+			transform: translateY(-2px);
+			background: darken($color-brand-blue, 5%);
+			box-shadow: 0 10px 25px rgba(1, 107, 166, 0.35);
+		}
+	}
+
+	.faq-card {
+		background: rgba(255, 255, 255, 0.02);
+		border: 1px solid rgba(255, 255, 255, 0.08);
+		border-radius: 16px;
+		padding: 28px;
+		min-height: 240px;
+		display: flex;
+		flex-direction: column;
+		gap: 12px;
+		transition: border-color 0.3s ease, transform 0.3s ease, background 0.3s ease;
+
+		&:hover {
+			border-color: rgba(255, 255, 255, 0.2);
+			background: rgba(255, 255, 255, 0.05);
+			transform: translateY(-6px);
+		}
+
+		&__meta {
+			display: flex;
+			align-items: center;
+			gap: 12px;
+			font-family: 'Inter', Arial, sans-serif;
+			font-size: 0.8rem;
+			letter-spacing: 0.08em;
+			text-transform: uppercase;
+			color: rgba(255, 255, 255, 0.5);
+		}
+
+		&__number {
+			font-size: 0.9rem;
+			font-weight: 600;
+			color: rgba(255, 255, 255, 0.6);
+		}
+
+		&__label {
+			color: rgba(255, 255, 255, 0.45);
+		}
+
+		&__question {
+			font-family: 'Poppins', Arial, sans-serif;
+			font-size: 1.2rem;
+			margin: 0;
+		}
+
+		&__answer {
+			font-family: 'Inter', Arial, sans-serif;
+			font-size: 1rem;
+			line-height: 1.65;
+			color: rgba(255, 255, 255, 0.75);
+			margin: 0;
+		}
+	}
+
+	@media (max-width: 768px) {
+		&__cta {
+			flex-direction: column;
+			align-items: flex-start;
+		}
+
+		&__button {
+			width: 100%;
+			text-align: center;
+		}
+	}
+}

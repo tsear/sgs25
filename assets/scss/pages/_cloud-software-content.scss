@@ -20,19 +20,15 @@
     }
     
     &__badge {
-        display: inline-block;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
         margin-bottom: 24px;
-        
-        span {
-            display: inline-block;
-            padding: 8px 20px;
-            background: linear-gradient(135deg, $color-brand-pink 0%, $color-brand-yellow 100%);
-            color: $color-white;
-            font-size: 12px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            border-radius: 24px;
+
+        img {
+            width: clamp(140px, 40%, 260px);
+            height: auto;
+            display: block;
         }
     }
     
@@ -588,7 +584,7 @@
    ========================================================================= */
 .cloud-software-features {
     padding: 100px 0;
-    background: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(255, 188, 65, 0.05) 100%);
+    background: $color-black;
     
     @media (max-width: $breakpoint-md) {
         padding: 80px 0;
@@ -794,7 +790,7 @@
    ========================================================================= */
 .cloud-software-cta {
     padding: 120px 0;
-    background: linear-gradient(180deg, rgba(216, 18, 89, 0.05) 0%, rgba(0, 0, 0, 1) 100%);
+    background: $color-black;
     
     @media (max-width: $breakpoint-md) {
         padding: 80px 0;

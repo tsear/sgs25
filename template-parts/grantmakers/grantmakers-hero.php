@@ -19,7 +19,7 @@
         
         <!-- Description -->
         <div class="grantmakers-header__description">
-            <p>Cloud-based solutions & expert consulting tailored for grantmakers.</p>
+            <p>We partner with grantmakers who want to ensure their investments lead to long-term, sustainable impact. Through cohort-based programs, we provide nonprofits with the training, tools, and infrastructure they need to increase capacity and grow strategically. </p>
         </div>
     </div>
 </section>

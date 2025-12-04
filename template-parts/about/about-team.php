@@ -14,7 +14,7 @@
         <!-- Section Header -->
         <div class="about-philosophy__header">
             <h2 class="about-philosophy__title">Our <span class="brand-blue">Philosophy</span></h2>
-            <p class="about-philosophy__lead">The principles and beliefs that drive everything we do in the grant funding ecosystem.</p>
+            <p class="about-philosophy__lead">Everything we do is built on strengthening the grant funding infrastructure organizations rely on—tools, systems, and guidance that ensure financial clarity at every step.</p>
         </div>
 
         <!-- Mission Statement -->
@@ -63,7 +63,7 @@
         <div class="philosophy-cta">
             <div class="philosophy-cta__content">
                 <h3 class="philosophy-cta__title">Ready to Experience the Difference?</h3>
-                <p class="philosophy-cta__text">See how our philosophy translates into real results--Let's discuss your financial management needs and explore how we can partner together.</p>
+                <p class="philosophy-cta__text">If your organization needs grant budgeting consulting, nonprofit financial systems design, or a better way to manage your post-award workflow, we’re ready to help.</p>
                 <div class="philosophy-cta__actions">
                     <a href="/contact" class="btn btn--primary btn--large">Start a Conversation</a>
                     <a href="/success-stories" class="btn btn--outline btn--large">View Success Stories</a>

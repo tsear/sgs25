@@ -15,11 +15,11 @@
                     <h2 class="financial-compliance__title">Automating Financial Compliance</h2>
                 </div>
                 <div class="financial-compliance__svg-container">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/blue-rocket-div.svg" alt="" />
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/red-rocket-div.svg" alt="" />
                 </div>
                 <div class="financial-compliance__description">
                     <p class="compliance-description">
-                        Smart Automations to drive Intelligent Solutions.
+                        Visit the Smart Grant Solutions blog for practical guidance on financial grant management—built from real frontline experience.
                     </p>
                 </div>
             </div>

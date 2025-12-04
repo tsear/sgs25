@@ -167,35 +167,39 @@
   }
 }
 
-.benefit-item {
-  text-align: center;
+.missiongranted-solution {
   
-  &__icon {
-    width: 64px;
-    height: 64px;
-    margin: 0 auto 24px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    background: rgba($color-brand-pink, 0.1);
-    color: $color-brand-pink;
-  }
-  
-  &__title {
-    font-family: $font-tertiary;
-    font-size: 24px;
-    font-weight: $font-weight-bold;
-    color: $color-white;
-    margin-bottom: 12px;
-  }
-  
-  &__text {
-    font-size: 16px;
-    line-height: 1.6;
-    color: $color-white;
-    opacity: 0.9;
-    margin: 0;
+  .benefit-item {
+    display: block;
+    text-align: center;
+    
+    &__icon {
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: rgba($color-brand-pink, 0.1);
+      color: $color-brand-pink;
+    }
+    
+    &__title {
+      font-family: $font-tertiary;
+      font-size: 24px;
+      font-weight: $font-weight-bold;
+      color: $color-white;
+      margin-bottom: 12px;
+    }
+    
+    &__text {
+      font-size: 16px;
+      line-height: 1.6;
+      color: $color-white;
+      opacity: 0.9;
+      margin: 0;
+    }
   }
 }
 

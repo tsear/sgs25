@@ -8,15 +8,9 @@
 <section class="consulting-services-intro">
     <div class="container">
         <div class="consulting-services-intro__content">
-            <h2 class="consulting-services-intro__title">Your Nonprofit's Hands-On Strategic Ally</h2>
+            <h2 class="consulting-services-intro__title">Your Partner for <span class="brand-yellow">Sustainable Impact</span></h2>
             <p class="consulting-services-intro__lead">
-                We're not just advisors—we're your partners in implementation. SGS provides specialized consulting 
-                services that help mission-driven organizations navigate complex operational, financial, and strategic 
-                challenges with sustainable, practical solutions.
-            </p>
-            <p class="consulting-services-intro__supporting">
-                Nonprofits are expected to solve big problems with limited resources. We help you build the systems, 
-                processes, and governance structures that enable high-impact work without compromising your mission.
+                We’re not just advisors — we roll up our sleeves and become part of your team. With SGS consulting, you get hands-on support building financial systems, compliance structures, and operational processes that turn grant complexity into long-term capacity and organizational clarity.
             </p>
         </div>
     </div>
@@ -27,9 +21,6 @@
     <div class="container">
         <div class="consulting-services-areas__header">
             <h2 class="consulting-services-areas__title">Core Service Areas</h2>
-            <p class="consulting-services-areas__subtitle">
-                Specialized expertise tailored to the unique needs of mission-driven organizations
-            </p>
         </div>
 
         <div class="consulting-services-areas__grid">
@@ -41,16 +32,16 @@
                         <path d="M20 32L28 40L44 24" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
                 </div>
-                <h3 class="service-area-card__title">Business & Operational Planning</h3>
+                <h3 class="service-area-card__title">Business & Strategic Planning</h3>
                 <p class="service-area-card__description">
                     Develop strategic roadmaps for sustainable growth and mission-alignment. We help you create 
                     clear, actionable plans that guide your organization from vision to execution.
                 </p>
                 <ul class="service-area-card__features">
-                    <li>Strategic planning & roadmapping</li>
-                    <li>Mission-alignment assessments</li>
-                    <li>Growth & scaling strategies</li>
-                    <li>Performance metrics & KPIs</li>
+                    <li>Tailored Business Planning</li>
+                    <li>Operating Program Development</li>
+                    <li>Hands-On Plan Execution</li>
+                    <li>Performance Metrics & Outcomes</li>
                 </ul>
             </div>
 
@@ -62,16 +53,16 @@
                         <path d="M20 28H44M20 36H44M20 44H44" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
                     </svg>
                 </div>
-                <h3 class="service-area-card__title">Financial Management</h3>
+                <h3 class="service-area-card__title">Finance & Compliance Management</h3>
                 <p class="service-area-card__description">
                     Identify diversified revenue streams, improve financial processes, and ensure compliance. 
                     We help you map funding sources, reporting timelines, and build financial sustainability.
                 </p>
                 <ul class="service-area-card__features">
-                    <li>Revenue diversification strategies</li>
-                    <li>Financial process optimization</li>
-                    <li>Compliance & reporting systems</li>
-                    <li>Budget planning & forecasting</li>
+                    <li>Strategic Financial Management</li>
+                    <li>Financial Process Optimization</li>
+                    <li>Complex Budgeting Scenarios</li>
+                    <li>Compliance & Reporting Processes</li>
                 </ul>
             </div>
 
@@ -85,16 +76,16 @@
                         <path d="M28 26L24 38M36 26L40 38" stroke="currentColor" stroke-width="2"/>
                     </svg>
                 </div>
-                <h3 class="service-area-card__title">Operational Excellence & Governance</h3>
+                <h3 class="service-area-card__title">Operational Excellence</h3>
                 <p class="service-area-card__description">
                     Streamline internal practices, strengthen governance structures, and enable long-term 
                     institutional health. Build the foundation for organizational effectiveness.
                 </p>
                 <ul class="service-area-card__features">
-                    <li>Process improvement & efficiency</li>
-                    <li>Governance structure design</li>
-                    <li>Board development & training</li>
-                    <li>Policy & procedure documentation</li>
+                    <li>Process improvement & Efficiency</li>
+                    <li>Policy & Procedure Development</li>
+                    <li>Board Development & Governance</li>
+                    <li>Outcome Measurement</li>
                 </ul>
             </div>
 
@@ -130,59 +121,54 @@
                 <div class="consulting-services-why__label">Why SGS</div>
                 <h2 class="consulting-services-why__title">Implementation, Not Just Advice</h2>
                 <p class="consulting-services-why__text">
-                    Many nonprofits face complex operational, financial, and strategic challenges while being 
-                    asked to deliver high impact with limited resources. Traditional consulting often stops at 
-                    recommendations—we go further.
+                    Many nonprofits face complex operational, financial, and strategic challenges while being asked to deliver high mission impact with limited resources. Traditional consulting often stops at recommendations - we go further.
                 </p>
                 <p class="consulting-services-why__text">
-                    We're hands-on partners who help you implement sustainable systems and practices. From 
-                    developing clear maps of funding sources and reporting timelines to streamlining operations 
-                    and strengthening governance—we're with you every step of the way.
+                    We're your hands-on strategic partner who helps you implement sustainable systems and practices. From developing clear maps of funding sources and reporting timelines to streamlining operations and strengthening governance we're with you every step of the way.
                 </p>
                 <div class="consulting-services-why__highlight">
-                    <strong>Our Approach:</strong> We don't just tell you what to do—we help you do it, build it, 
-                    and sustain it for long-term success.
+                    <strong>Our Approach:</strong> Many consultants stop at strategy. We go further.  We help you build, implement, and sustain robust financial and operational infrastructure.
                 </div>
             </div>
 
             <!-- For Whom -->
             <div class="consulting-services-why__block">
                 <div class="consulting-services-why__label">For Whom</div>
-                <h2 class="consulting-services-why__title">Your Ideal Partner If...</h2>
+                <h2 class="consulting-services-why__title">Your Ideal Partner If You're...</h2>
                 <ul class="consulting-services-why__checklist">
                     <li>
                         <span class="checklist-icon">✓</span>
                         <div>
-                            <strong>You're scaling up</strong><br>
+                            <strong>Scaling Up</strong><br>
                             Growing organizations need stronger operational foundations and governance structures
                         </div>
                     </li>
                     <li>
                         <span class="checklist-icon">✓</span>
                         <div>
-                            <strong>You're reorganizing internally</strong><br>
+                            <strong>Reorganizing Internally</strong><br>
                             Major transitions require strategic planning and change management expertise
                         </div>
                     </li>
                     <li>
                         <span class="checklist-icon">✓</span>
                         <div>
-                            <strong>You face compliance pressures</strong><br>
-                            Navigate complex requirements with confidence and efficiency
+                            <strong>Facing Compliance Pressures</strong><br>
+                            Complex compliance rules require systems and processes that provide consistent results and can stand up to scrutiny
                         </div>
                     </li>
                     <li>
                         <span class="checklist-icon">✓</span>
                         <div>
-                            <strong>You need more than a one-off session</strong><br>
-                            You want a partner who stays engaged through implementation
+                            <strong>Growing Strategically</strong><br>
+                            Our services are tailored for small to mid-sized organizations seeking sustainable, practical solutions
                         </div>
                     </li>
                     <li>
                         <span class="checklist-icon">✓</span>
                         <div>
-                            <strong>You're small to mid-sized</strong><br>
-                            Our services are tailored for nonprofits seeking sustainable, practical solutions
+                            <strong>Looking for a Partner</strong><br>
+                            Our mission is to fuel yours and we partner with you for strategic success rather than just providing a one-time fix
                         </div>
                     </li>
                 </ul>
@@ -195,7 +181,7 @@
 <section class="consulting-services-process">
     <div class="container">
         <div class="consulting-services-process__header">
-            <h2 class="consulting-services-process__title">How We Work With You</h2>
+            <h2 class="consulting-services-process__title">Our Approach: From Discovery to Sustainable Systems</h2>
             <p class="consulting-services-process__subtitle">
                 A collaborative, implementation-focused approach from discovery to sustainability
             </p>
@@ -256,10 +242,9 @@
         
         <div class="consulting-services-strengths__grid">
             <div class="strength-card">
-                <h3 class="strength-card__title">Nonprofit Vertical Specialization</h3>
+                <h3 class="strength-card__title">Nonprofit Specialization</h3>
                 <p class="strength-card__text">
-                    We understand the mission-driven landscape intimately. From restricted funding to board 
-                    governance to impact measurement—we speak your language and tailor our services accordingly.
+                    We understand the mission-driven landscape intimately. From restricted funding to board governance to impact measurement we speak your language and tailor our services accordingly.
                 </p>
             </div>
 
@@ -274,32 +259,16 @@
             <div class="strength-card">
                 <h3 class="strength-card__title">Operational & Strategic Focus</h3>
                 <p class="strength-card__text">
-                    We emphasize governance, financial stewardship, and operational discipline—especially 
-                    valuable when scaling up, reorganizing, or facing compliance pressures.
+                    We emphasize governance, financial stewardship, and operational discipline which is especially valuable when scaling up, reorganizing, or facing compliance pressures.
                 </p>
             </div>
 
             <div class="strength-card">
                 <h3 class="strength-card__title">Sustainable Systems</h3>
                 <p class="strength-card__text">
-                    Our solutions are designed for long-term institutional health. We build capacity within 
-                    your organization, not dependency on consultants.
+                    Our solutions are designed for long-term institutional health. We build capacity, not dependency, within your organization so that you can grow efficiently and continue to increase your impact. 
                 </p>
             </div>
-        </div>
-    </div>
-</section>
-
-<!-- Important Note -->
-<section class="consulting-services-note">
-    <div class="container">
-        <div class="consulting-services-note__box">
-            <h3 class="consulting-services-note__title">Important to Know</h3>
-            <p class="consulting-services-note__text">
-                Our expertise centers on operational strategy, financial management, governance, and compliance. 
-                If you're seeking creative marketing, digital growth, or brand storytelling services, we recommend 
-                confirming scope—our strength is operational excellence and strategic implementation for mission-driven organizations.
-            </p>
         </div>
     </div>
 </section>

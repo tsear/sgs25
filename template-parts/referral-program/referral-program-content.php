@@ -10,6 +10,7 @@
         <!-- How It Works Section -->
         <div class="referral-content__how-it-works">
             <h2 class="section-title">How It Works</h2>
+            <p class="section-subtitle">General Referral Partners - Earn a Thank You Bonus</p>
             <div class="steps-grid">
                 <div class="step-card" data-step="1">
                     <div class="step-number">1</div>
@@ -20,13 +21,37 @@
                 <div class="step-card" data-step="2">
                     <div class="step-number">2</div>
                     <h3 class="step-title">They Sign Up</h3>
-                    <p class="step-description">When they create an account and start a trial, you'll be notified and tracking begins.</p>
+                    <p class="step-description">When they request information you’ll be notified and tracking begins.</p>
                 </div>
                 
                 <div class="step-card" data-step="3">
                     <div class="step-number">3</div>
                     <h3 class="step-title">You Get Rewarded</h3>
-                    <p class="step-description">Earn rewards when they become a paying customer. The more you refer, the more you earn.</p>
+                    <p class="step-description">Earn a share when they become a paying customer. The more you refer, the more you earn.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="referral-content__how-it-works referral-content__how-it-works--pro">
+            <h2 class="section-title">How It Works</h2>
+            <p class="section-subtitle">Professional Referral Partners - Support Clients Ethically</p>
+            <div class="steps-grid">
+                <div class="step-card" data-step="1">
+                    <div class="step-number">1</div>
+                    <h3 class="step-title">Introduce Your Client</h3>
+                    <p class="step-description">Connect SGS with the organizations you advise so we can co-create the implementation plan.</p>
+                </div>
+                
+                <div class="step-card" data-step="2">
+                    <div class="step-number">2</div>
+                    <h3 class="step-title">SGS Runs the Process</h3>
+                    <p class="step-description">Our team handles demos, scoping, and contracting directly with the organization you introduced.</p>
+                </div>
+                
+                <div class="step-card" data-step="3">
+                    <div class="step-number">3</div>
+                    <h3 class="step-title">You Collect the Share</h3>
+                    <p class="step-description">Receive a revenue share on software and implementation fees once the deal closes—no delivery work required.</p>
                 </div>
             </div>
         </div>
@@ -81,38 +106,38 @@
             <div class="benefits-grid">
                 <div class="benefit-card">
                     <div class="benefit-icon">🏥</div>
-                    <h3 class="benefit-title">Healthcare Nonprofits</h3>
-                    <p class="benefit-description">Organizations managing HRSA, CDC, or state health department grants.</p>
+                    <h3 class="benefit-title">Government Grants</h3>
+                    <p class="benefit-description">Entities managing federal, state, or local grants gain built-in compliance controls aligned with Uniform Guidance and other regulatory requirements.</p>
                 </div>
                 
                 <div class="benefit-card">
                     <div class="benefit-icon">🎓</div>
-                    <h3 class="benefit-title">Educational Institutions</h3>
-                    <p class="benefit-description">Schools, colleges, and training programs with federal or state funding.</p>
+                    <h3 class="benefit-title">Midsized Organizations</h3>
+                    <p class="benefit-description">Growing nonprofits and local governments gain the scalable financial infrastructure they need to support expansion, new grants, and increased accountability.</p>
                 </div>
                 
                 <div class="benefit-card">
                     <div class="benefit-icon">🏛️</div>
-                    <h3 class="benefit-title">Local Government</h3>
-                    <p class="benefit-description">Cities, counties, and municipalities managing grant portfolios.</p>
+                    <h3 class="benefit-title">Outsourced Accounting</h3>
+                    <p class="benefit-description">Organizations working with outsourced accountants benefit from a shared system that streamlines communication, compliance, and reporting accuracy.</p>
                 </div>
                 
                 <div class="benefit-card">
                     <div class="benefit-icon">🚀</div>
-                    <h3 class="benefit-title">Tech Startups</h3>
-                    <p class="benefit-description">Companies pursuing SBIR/STTR grants or innovation funding.</p>
+                    <h3 class="benefit-title">Audit Findings or Close Calls</h3>
+                    <p class="benefit-description">Organizations looking to correct weaknesses in internal controls or documentation benefit from audit-ready workflows.</p>
                 </div>
                 
                 <div class="benefit-card">
                     <div class="benefit-icon">🤝</div>
-                    <h3 class="benefit-title">Social Services</h3>
-                    <p class="benefit-description">Organizations serving communities through multiple grant programs.</p>
+                    <h3 class="benefit-title">High Compliance Burden</h3>
+                    <p class="benefit-description">Ideal for entities managing ARPA/CSLFRF, state contracts, HUD funding, or any grants with heavy reporting and audit requirements.</p>
                 </div>
                 
                 <div class="benefit-card">
                     <div class="benefit-icon">🌱</div>
-                    <h3 class="benefit-title">Environmental Groups</h3>
-                    <p class="benefit-description">Conservation and sustainability projects with complex funding.</p>
+                    <h3 class="benefit-title">Multiple Funding Streams</h3>
+                    <p class="benefit-description">Organizations juggling several grants or restricted funds benefit from MissionGranted’s automated allocations and unified financial visibility.</p>
                 </div>
             </div>
         </div>
@@ -121,7 +146,7 @@
         <div class="referral-content__cta">
             <div class="cta-card">
                 <h2 class="cta-title">Ready to Start Earning?</h2>
-                <p class="cta-description">Join our referral program today and start earning rewards while helping organizations succeed with their grant management.</p>
+                <p class="cta-description">Join our referral program today and start earning while helping organizations succeed with their grant management.</p>
                 <div class="cta-buttons">
                     <a href="<?php echo esc_url(home_url('/referral-program#signup')); ?>" class="cta-button cta-button--primary">
                         Get Your Referral Link

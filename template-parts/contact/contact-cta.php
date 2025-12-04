@@ -30,7 +30,7 @@
                         </svg>
                     </div>
                     <h3>Curious if we're the right fit?</h3>
-                    <p>Explore our mission, vision, and the team redefining how nonprofits and local governments manage grant-funded operations.</p>
+                    <p>Explore our mission, vision, and the team redefining how nonprofits and local governments manage grants.</p>
                     <a href="<?php echo home_url('/about'); ?>" class="cta-link">Discover Our Story <span>→</span></a>
                 </div>
 
@@ -43,7 +43,7 @@
                         </svg>
                     </div>
                     <h3>Curious about our capabilities?</h3>
-                    <p>Explore the powerful features that make our financial grant management and compliance software, MissionGranted, simple, compliant, and stress-free.</p>
+                    <p>Explore the powerful features that make our financial grant management and compliance software, MissionGranted, easy.</p>
                     <a href="<?php echo home_url('/product'); ?>" class="cta-link">See What We Build <span>→</span></a>
                 </div>
 

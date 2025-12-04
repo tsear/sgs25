@@ -31,6 +31,19 @@
     <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/<?php echo esc_js(get_option('sgs_hubspot_portal_id', '44675524')); ?>.js"></script>
     <!-- End of HubSpot Embed Code -->
     
+    <?php
+    // Fallback meta description and canonical when Rank Math (or other SEO plugins) are not supplying them.
+    if (!has_action('rank_math/frontend/description')) {
+        $site_description = get_bloginfo('description', 'display');
+        if (!empty($site_description)) {
+            echo '<meta name="description" content="' . esc_attr($site_description) . '" />' . "\n";
+        }
+
+        $canonical_url = home_url(add_query_arg(null, null));
+        echo '<link rel="canonical" href="' . esc_url($canonical_url) . '" />' . "\n";
+    }
+    ?>
+
     <?php wp_head(); ?>
 </head>
 

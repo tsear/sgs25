@@ -10,7 +10,6 @@
         <!-- Section Header -->
         <div class="industries-sectors__header">
             <h2 class="industries-sectors__title">Our Core <span class="brand-pink">Sectors</span></h2>
-            <p class="industries-sectors__lead">Three distinct sectors, each with specialized expertise and proven track records.</p>
         </div>
 
         <!-- Sectors Grid -->
@@ -27,20 +26,22 @@
                 </div>
                 <h3 class="sector-card__title">Nonprofits</h3>
                 <p class="sector-card__subtitle">All Sizes, All Missions</p>
-                <p class="sector-card__description">From grassroots community organizations to multi-national NGOs, we understand the unique challenges and opportunities at every scale of nonprofit work.</p>
+                <p class="sector-card__description">From community-based nonprofits to statewide organizations and national advocacy groups we support grant-funded missions of all scales.</p>
                 
                 <div class="sector-card__features">
                     <ul class="feature-list">
-                        <li>Small community-based organizations</li>
-                        <li>Regional nonprofits & foundations</li>
-                        <li>National advocacy organizations</li>
-                        <li>Multi-national NGOs & relief agencies</li>
-                        <li>Faith-based & cultural institutions</li>
+                        <li>Human Services</li>
+                        <li>Workforce Development & Training</li>
+                        <li>Education & Youth Development</li>
+                        <li>Housing & Community Development</li>
+                        <li>Environment & Conservation</li>
+                        <li>Animal Welfare</li>
+                        <li>Arts & Culture</li>
                     </ul>
                 </div>
                 <div class="sector-card__expertise">
                     <h4>Specialized Expertise</h4>
-                    <p>Board governance, IRS compliance, program evaluation, capacity building, international development protocols, and mission-driven strategic planning.</p>
+                    <p>Board governance, grant & restricted fund compliance, program evaluation, capacity building, and mission-driven strategic planning.</p>
                 </div>
                 <a href="<?php echo home_url('/nonprofits'); ?>" class="browse-btn-outline">Learn More</a>
             </div>
@@ -54,22 +55,24 @@
                     </svg>
                 </div>
                 <h3 class="sector-card__title">Local Government</h3>
-                <p class="sector-card__subtitle">Infrastructure to Campaigns</p>
-                <p class="sector-card__description">Everything from large-scale infrastructure projects to campaigns and community development initiatives—we navigate the complex world of funding.</p>
+                <p class="sector-card__subtitle">Municipalities & Districts</p>
+                <p class="sector-card__description">Whether you manage infrastructure projects or multi-department grant portfolios we understand the complexities of public funding compliance.</p>
                 
                 <div class="sector-card__features">
                     <ul class="feature-list">
-                        <li>Infrastructure & public works</li>
-                        <li>Economic development initiatives</li>
-                        <li>Political campaigns & advocacy</li>
-                        <li>Community safety & health programs</li>
-                        <li>Environmental & sustainability projects</li>
+                        <li>Municipalities</li>
+                        <li>Townships</li>
+                        <li>Housing Authorities</li>
+                        <li>Library Districts</li>
+                        <li>Parks & Recreation</li>
+                        <li>Workforce Development Boards</li>
+                        <li>K-12 & Charter Schools</li>
                     </ul>
                 </div>
 
                 <div class="sector-card__expertise">
                     <h4>Specialized Expertise</h4>
-                    <p>Government procurement rules, public accountability standards, campaign finance regulations, municipal budgeting, and stakeholder engagement strategies.</p>
+                    <p>Government procurement rules, policy standards, Uniform Guidance regulations, and stakeholder engagement strategies.</p>
                 </div>
                 <a href="<?php echo home_url('/local-government'); ?>" class="browse-btn-outline">Learn More</a>
             </div>
@@ -85,22 +88,24 @@
                     </svg>
                 </div>
                 <h3 class="sector-card__title">Grantmakers</h3>
-                <p class="sector-card__subtitle">Embedded Partnership</p>
-                <p class="sector-card__description">We work directly with funding organizations to embed ourselves in their recipients' workflows, maximizing efficiency and impact across funding ecosystems.</p>
+                <p class="sector-card__subtitle">Cohort Capacity Building</p>
+                <p class="sector-card__description">For funders committed to strengthening their grantees, we provide cohort-based programs that build financial capacity, improve compliance, and amplify the long-term impact of your investments.</p>
                 
                 <div class="sector-card__features">
                     <ul class="feature-list">
-                        <li>Private foundations & Heritage Foundations</li>
-                        <li>Corporate giving programs</li>
-                        <li>Community foundations</li>
-                        <li>Government funding agencies</li>
-                        <li>International development organizations</li>
+                        <li>Community Foundations</li>
+                        <li>Private Family Foundations</li>
+                        <li>Place-Based Funders</li>
+                        <li>Rural & Regional Funders</li>
+                        <li>Intermediary Funders</li>
+                        <li>Corporate Foundations</li>
+                        <li>Donor Advised Funds</li>
                     </ul>
                 </div>
 
                 <div class="sector-card__expertise">
                     <h4>Specialized Expertise</h4>
-                    <p>Due diligence protocols, impact measurement frameworks, capacity assessment tools, and streamlined application management systems that benefit both funders and recipients.</p>
+                    <p>Grantee capacity building, financial management training, post-award compliance practices, grant-funded financial systems design.</p>
                 </div>
                 <a href="<?php echo home_url('/grantmakers'); ?>" class="browse-btn-outline">Learn More</a>
             </div>

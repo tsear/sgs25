@@ -72,6 +72,7 @@ export default class LandingHero {
         if (heroText) {
             // Phrases to cycle through
             const phrases = [
+                'FINANCIAL GRANT MANAGEMENT',
                 'FINANCIAL EMPOWERMENT',
                 'GRANT SUCCESS',
                 'COMPLIANCE SIMPLIFIED',

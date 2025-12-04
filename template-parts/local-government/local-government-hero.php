@@ -19,7 +19,7 @@
         
         <!-- Description -->
         <div class="local-government-header__description">
-            <p>Cloud-based solutions & expert consulting tailored for local government.</p>
+            <p>Expert consulting and cloud-based software solutions tailored for local government.</p>
         </div>
     </div>
 </section>

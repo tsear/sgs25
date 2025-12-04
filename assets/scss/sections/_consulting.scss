@@ -1,0 +1,176 @@
+// ========================================
+// Consulting Services Partial
+// Pairing MissionGranted with expert consulting
+// ========================================
+
+.consulting {
+	position: relative;
+	padding: clamp(60px, 8vw, 140px) 20px;
+	background: #000000;
+	color: #ffffff;
+	overflow: hidden;
+
+	&__glow {
+		display: none;
+	}
+
+	&__container {
+		position: relative;
+		max-width: 1200px;
+		margin: 0 auto;
+		display: flex;
+		flex-direction: column;
+		gap: clamp(32px, 6vw, 64px);
+	}
+
+	&__intro {
+		max-width: 760px;
+	}
+
+	&__eyebrow {
+		font-family: 'Inter', Arial, sans-serif;
+		font-size: 0.875rem;
+		letter-spacing: 0.2em;
+		text-transform: uppercase;
+		color: rgba(255, 255, 255, 0.7);
+		margin-bottom: 16px;
+	}
+
+	&__headline {
+		font-family: 'Poppins', Arial, sans-serif;
+		font-size: clamp(2rem, 5vw, 3.5rem);
+		line-height: 1.1;
+		margin: 0 0 20px;
+
+		span {
+			color: $color-brand-pink;
+		}
+	}
+
+	&__lead {
+		font-family: 'Inter', Arial, sans-serif;
+		font-size: 1.125rem;
+		line-height: 1.7;
+		color: rgba(255, 255, 255, 0.8);
+		margin: 0;
+	}
+
+	&__grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+		gap: 20px;
+	}
+
+	&__cta {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: space-between;
+		gap: 24px;
+		padding: 32px;
+		border-radius: 16px;
+		background: linear-gradient(135deg, rgba(216, 18, 89, 0.2), rgba(1, 107, 166, 0.2));
+		border: 1px solid rgba(255, 255, 255, 0.12);
+	}
+
+	&__cta-copy {
+		flex: 1 1 300px;
+		font-family: 'Inter', Arial, sans-serif;
+		font-size: 1.125rem;
+		color: rgba(255, 255, 255, 0.85);
+		line-height: 1.6;
+		margin: 0;
+	}
+
+	&__cta-actions {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 16px;
+	}
+
+	&__button {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		padding: 14px 28px;
+		border-radius: 8px;
+		font-family: 'Inter', Arial, sans-serif;
+		font-weight: 600;
+		font-size: 1rem;
+		text-decoration: none;
+		transition: all 0.3s ease;
+
+		&--primary {
+			background: linear-gradient(135deg, $color-brand-pink 0%, #ff1f6f 100%);
+			color: #ffffff;
+			border: 1px solid transparent;
+
+			&:hover {
+				transform: translateY(-2px);
+				box-shadow: 0 10px 25px rgba(216, 18, 89, 0.35);
+			}
+		}
+
+		&--secondary {
+			border: 1px solid rgba(255, 255, 255, 0.4);
+			color: #ffffff;
+			background: transparent;
+
+			&:hover {
+				border-color: #ffffff;
+				color: #ffffff;
+				transform: translateY(-2px);
+			}
+		}
+	}
+
+	.consulting-card {
+		background: rgba(255, 255, 255, 0.03);
+		border: 1px solid rgba(255, 255, 255, 0.08);
+		border-radius: 16px;
+		padding: 28px;
+		min-height: 240px;
+		display: flex;
+		flex-direction: column;
+		gap: 12px;
+		transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+
+		&:hover {
+			transform: translateY(-6px);
+			border-color: rgba(255, 255, 255, 0.25);
+			background: rgba(255, 255, 255, 0.06);
+		}
+
+		h3 {
+			font-family: 'Poppins', Arial, sans-serif;
+			font-size: 1.25rem;
+			margin: 0;
+			color: #ffffff;
+		}
+
+		p {
+			font-family: 'Inter', Arial, sans-serif;
+			font-size: 0.95rem;
+			line-height: 1.65;
+			color: rgba(255, 255, 255, 0.75);
+			margin: 0;
+		}
+	}
+
+	@media (max-width: 768px) {
+		&__cta {
+			flex-direction: column;
+			align-items: flex-start;
+		}
+
+		&__cta-actions {
+			width: 100%;
+			flex-direction: column;
+		}
+
+		&__button {
+			width: 100%;
+			text-align: center;
+		}
+	}
+}
