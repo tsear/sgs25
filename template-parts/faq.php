@@ -10,15 +10,15 @@ $faqs = [
 	],
 	[
 		'question' => 'How is MissionGranted different from other grant management software?',
-		'answer'   => 'It focuses on post-award financial management, not just applications and tracking.'
+		'answer'   => 'Other software focuses on grant acquisition and program tracking. We are the only software that focuses on financial management and how funding works together strategically.'
 	],
 	[
 		'question' => 'Does MissionGranted integrate with our accounting system?',
-		'answer'   => 'Yes—QuickBooks, Sage, MIP, Fund EZ, and more.'
+		'answer'   => 'Yes. MissionGranted works with QuickBooks, Sage, MIP, Fund EZ, and more.'
 	],
 	[
 		'question' => 'Can MissionGranted support multi-year or complex funding portfolios?',
-		'answer'   => 'Yes. It handles multi-year budgets, roll-forward funds, and restricted funding.'
+		'answer'   => 'Yes. It handles multi-year grants, restricted funding, and budgets with a diverse mix of funding sources.'
 	],
 	[
 		'question' => 'Do you offer support beyond the software?',
@@ -26,7 +26,7 @@ $faqs = [
 	],
 	[
 		'question' => 'Can you help us stay compliant with federal rules like Uniform Guidance (2 CFR 200)?',
-		'answer'   => 'Yes—both the software and consulting services support UGG compliance.'
+		'answer'   => 'Yes. Both - the software and consulting services support UGG compliance.'
 	],
 	[
 		'question' => 'Is MissionGranted built for nonprofits, local governments, or grantmakers?',
@@ -34,7 +34,7 @@ $faqs = [
 	],
 	[
 		'question' => 'How long does it take to get started?',
-		'answer'   => 'Most organizations begin using MissionGranted within days, with onboarding tailored to your financial systems and grant structure.'
+		'answer'   => 'The platform adapts to nonprofit and local government workflows and works with funders to support grantees.'
 	],
 ];
 ?>

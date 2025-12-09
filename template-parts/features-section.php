@@ -57,7 +57,14 @@ $image_base_url = get_template_directory_uri() . '/assets/images/';
         <!-- Features CTA -->
         <div class="features-section__cta">
             <div class="features-cta__content">
-                <div class="features-cta__badge">🚀 Join 500+ Organizations</div>
+                <div class="features-cta__badge">
+                    <img 
+                        src="<?php echo get_template_directory_uri(); ?>/assets/images/MGStackedLogo_White.png" 
+                        alt="MissionGranted Logo"
+                        class="mission-granted-logo"
+                        style="max-width: 120px; height: auto;"
+                    />
+                </div>
                 <h3 class="features-cta__title">
                     Turn Grant <span class="highlight">Complexity</span> into 
                     <span class="highlight">Competitive Advantage</span>

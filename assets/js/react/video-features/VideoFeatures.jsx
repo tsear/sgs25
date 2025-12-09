@@ -27,7 +27,7 @@ const VideoFeatures = ({ themeUri = '' }) => {
             <h3 className="video-features__cta-heading">See MissionGranted in action</h3>
             <p className="video-features__cta-copy">
               Bring every grant, budget, and compliance check into one command center. We’ll walk your team through a live
-              workspace tailored to your programs.
+              workspace tailored to your needs.
             </p>
             <div className="video-features__cta-actions">
               <a className="video-features__cta-button" href="/contact">
@@ -57,8 +57,8 @@ const VideoFeatures = ({ themeUri = '' }) => {
                   />
                 </div>
                 <div className="feature-card__content">
-                  <h3>Strategic Resource Management</h3>
-                  <p>Budgeting keeps you compliant, and MissionGranted keeps it simple. Our tools pull all your funding sources into one clear view so you can see how they work together, plan for what-ifs, adjust when things change, and make confident decisions that move your mission forward.</p>
+                  <h3>Simplified Compliance</h3>
+                  <p>MissionGranted works alongside your accounting system to spot compliance risks early and offer clear guidance on spending and budgets. With smart alerts and recommendations, you can align funding to shifting program needs while staying compliant and making the most of your limited resources.</p>
                 </div>
               </div>
             </Card>
@@ -72,8 +72,8 @@ const VideoFeatures = ({ themeUri = '' }) => {
                   />
                 </div>
                 <div className="feature-card__content">
-                  <h3>Automation Over Spreadsheets</h3>
-                  <p>MissionGranted takes the messy compliance work you're stuck doing in spreadsheets—like indirect costs and payroll splits—and automates it. That means fewer mistakes, less wasted time, and more capacity for your team to focus on the bigger picture.</p>
+                  <h3>Compliance Ready Data</h3>
+                  <p>Built for social impact organizations, MissionGranted combines an easy-to-use interface with built-in financial best practices and real-time compliance guidance. It keeps your budgets up to date, your team confident, and your organization ready to meet regulatory requirements without stress.</p>
                 </div>
               </div>
             </Card>
@@ -87,8 +87,8 @@ const VideoFeatures = ({ themeUri = '' }) => {
                   />
                 </div>
                 <div className="feature-card__content">
-                  <h3>Simplified Compliance</h3>
-                  <p>MissionGranted works alongside your team to spot compliance risks early and offer clear guidance on budgets and spending. With smarter alerts and recommendations, you can align funding to shifting program needs, stay compliant, and make the most of limited resources.</p>
+                  <h3>Strategic Resource Management</h3>
+                  <p>Budgeting is the cornerstone of compliance, and MissionGranted makes it easy. Our tools pull all your funding sources into one clear view so you can see how they work together, plan for what-ifs, adjust when things change, and make confident decisions that move your mission forward.</p>
                 </div>
               </div>
             </Card>
@@ -102,8 +102,8 @@ const VideoFeatures = ({ themeUri = '' }) => {
                   />
                 </div>
                 <div className="feature-card__content">
-                  <h3>Audit Ready Data</h3>
-                  <p>Built for social impact organizations, MissionGranted combines an easy-to-use interface with built-in financial best practices and real-time compliance guidance. It keeps your numbers accurate, your team confident, and your organization ready to meet requirements without the stress.</p>
+                  <h3>Automation Over Spreadsheets</h3>
+                  <p>MissionGranted takes the messy compliance work you're stuck doing in spreadsheets —like indirect costs and personnel distributions — and automates them. That means fewer mistakes, less wasted time, and more capacity for your team to focus on the bigger picture.</p>
                 </div>
               </div>
             </Card>

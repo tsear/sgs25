@@ -39,7 +39,7 @@
                         <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
                         <polyline points="22 4 12 14.01 9 11.01"></polyline>
                     </svg>
-                    <span>Trusted by 500+ Organizations</span>
+                    <span>Trusted by Orgs Nationwide</span>
                 </div>
             </div>
             
@@ -51,7 +51,7 @@
                 <p class="sr-only">MissionGranted is grant management and compliance software tailored for nonprofits and local governments.</p>
                 
                 <p class="landing-hero__subheadline">
-                    Smart Grant Solutions provides first-of-its-kind cloud-based financial software, MissionGranted, and expert consulting to help nonprofits and local governments maximize their mission impact.
+                    Smart Grant Solutions provides THE first-of-its-kind cloud-based financial software, MissionGranted, and expert consulting to help nonprofits and local governments maximize their mission impact.
                 </p>
                 
                 <ul class="landing-hero__features">
