@@ -155,8 +155,8 @@ class SGSTheme {
             this.initMissionGrants();
         }
         
-        // Downloads gateway - only on downloads page
-        if (document.querySelector('#download-gate-modal')) {
+        // Downloads gateway - always initialize on pages with download triggers
+        if (document.querySelector('.download-trigger') || document.querySelector('#download-gate-modal')) {
             console.log('Initializing downloads gateway...');
             this.initDownloads();
         }
