@@ -25,7 +25,78 @@ $contact_form_id = get_option('sgs_hubspot_contact_form_id', '2cd3f48e-c5a2-4f5f
                                         portalId: "<?php echo esc_js($portal_id); ?>",
                                         formId: "<?php echo esc_js($contact_form_id); ?>",
                                         region: "na1",
-                                        target: '#hubspot-form-contact'
+                                        target: '#hubspot-form-contact',
+                                        onFormSubmit: function($form) {
+                                            console.log('📤 Form being submitted');
+                                            const referralField = document.querySelector('input[name="referral_source"]');
+                                            if (referralField) {
+                                                console.log('📤 Referral field value at submission:', referralField.value);
+                                            } else {
+                                                console.warn('⚠️ Referral field not found at submission');
+                                            }
+                                        },
+                                        onFormReady: function($form) {
+                                            console.log('📋 HubSpot form ready, checking for referral cookie');
+                                            
+                                            // Get referral code from cookie
+                                            const cookies = document.cookie.split(';');
+                                            let referralCode = null;
+                                            
+                                            for (let cookie of cookies) {
+                                                const [name, value] = cookie.trim().split('=');
+                                                if (name === 'sgs_referral_public') {
+                                                    referralCode = decodeURIComponent(value);
+                                                    break;
+                                                }
+                                            }
+                                            
+                                            if (referralCode) {
+                                                console.log('✅ Found referral cookie:', referralCode);
+                                                
+                                                // Retry logic to wait for field to be rendered
+                                                let attempts = 0;
+                                                const maxAttempts = 10;
+                                                
+                                                const trySetField = () => {
+                                                    attempts++;
+                                                    
+                                                    // Try multiple ways to get the form element
+                                                    const formElement = $form[0] || $form;
+                                                    
+                                                    // Debug: log what we're searching in
+                                                    if (attempts === 1) {
+                                                        console.log('🔍 Form element type:', formElement);
+                                                        console.log('🔍 All inputs in form:', formElement.querySelectorAll('input'));
+                                                    }
+                                                    
+                                                    // Try to find the field
+                                                    let referralField = formElement.querySelector('input[name="referral_source"]');
+                                                    
+                                                    // Also try looking in the entire document (HubSpot might render it elsewhere)
+                                                    if (!referralField) {
+                                                        referralField = document.querySelector('input[name="referral_source"]');
+                                                        if (referralField && attempts === 1) {
+                                                            console.log('🔍 Found field in document but not in form element');
+                                                        }
+                                                    }
+                                                    
+                                                    if (referralField) {
+                                                        referralField.value = referralCode;
+                                                        console.log('✅ Referral field populated with:', referralCode);
+                                                    } else if (attempts < maxAttempts) {
+                                                        console.log(`⏳ Waiting for referral_source field (attempt ${attempts}/${maxAttempts})`);
+                                                        setTimeout(trySetField, 100);
+                                                    } else {
+                                                        console.warn('⚠️ referral_source field not found after ' + maxAttempts + ' attempts');
+                                                        console.log('🔍 All inputs with name attribute:', document.querySelectorAll('input[name]'));
+                                                    }
+                                                };
+                                                
+                                                trySetField();
+                                            } else {
+                                                console.log('ℹ️ No referral cookie found');
+                                            }
+                                        }
                                     });
                                 } else {
                                     console.error('HubSpot forms script not loaded');

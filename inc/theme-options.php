@@ -21,6 +21,15 @@ function sgs_add_theme_options_page() {
         'sgs-theme-options',
         'sgs_theme_options_page'
     );
+    
+    // Add HubSpot API Test page
+    add_theme_page(
+        __('HubSpot API Test', 'sgs'),
+        __('HubSpot API Test', 'sgs'),
+        'manage_options',
+        'sgs-hubspot-test',
+        'sgs_hubspot_test_page'
+    );
 }
 add_action('admin_menu', 'sgs_add_theme_options_page');
 
@@ -37,6 +46,7 @@ function sgs_theme_options_page() {
         update_option('sgs_footer_text', wp_kses_post($_POST['sgs_footer_text']));
     // HubSpot IDs
     update_option('sgs_hubspot_portal_id', sanitize_text_field($_POST['sgs_hubspot_portal_id']));
+    update_option('sgs_hubspot_api_key', sanitize_text_field($_POST['sgs_hubspot_api_key']));
     update_option('sgs_hubspot_newsletter_form_id', sanitize_text_field($_POST['sgs_hubspot_newsletter_form_id']));
     update_option('sgs_hubspot_contact_form_id', sanitize_text_field($_POST['sgs_hubspot_contact_form_id']));
     update_option('sgs_hubspot_grant_form_id', sanitize_text_field($_POST['sgs_hubspot_grant_form_id']));
@@ -75,6 +85,15 @@ function sgs_theme_options_page() {
                     <td>
                         <input type="text" id="sgs_hubspot_portal_id" name="sgs_hubspot_portal_id" value="<?php echo esc_attr($hubspot_portal_id); ?>" class="regular-text" />
                         <p class="description"><?php _e('Used when submitting native forms to HubSpot Forms API.', 'sgs'); ?></p>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        <label for="sgs_hubspot_api_key"><?php _e('HubSpot Private App Access Token', 'sgs'); ?></label>
+                    </th>
+                    <td>
+                        <input type="password" id="sgs_hubspot_api_key" name="sgs_hubspot_api_key" value="<?php echo esc_attr(get_option('sgs_hubspot_api_key', '')); ?>" class="regular-text" />
+                        <p class="description"><?php _e('Required for referral tracking integration. Create a Private App in HubSpot Settings → Integrations → Private Apps with "contacts" write permission.', 'sgs'); ?></p>
                     </td>
                 </tr>
                 <tr>
@@ -234,6 +253,18 @@ function sgs_get_hubspot_portal_id() {
     return get_option('sgs_hubspot_portal_id', '');
 }
 
+function sgs_get_hubspot_newsletter_form_id() {
+    return get_option('sgs_hubspot_newsletter_form_id', '');
+}
+
+function sgs_get_hubspot_contact_form_id() {
+    return get_option('sgs_hubspot_contact_form_id', '');
+}
+
+function sgs_get_hubspot_grant_form_id() {
+    return get_option('sgs_hubspot_grant_form_id', '');
+}
+
 function sgs_get_hubspot_form_id($key) {
     $map = array(
         'newsletter' => get_option('sgs_hubspot_newsletter_form_id', ''),
@@ -333,6 +364,133 @@ function sgs_render_badge_row($badge = [], $index = 0) {
         </div>
     </div>
     <?php
+}
+
+/**
+ * HubSpot API Test Page
+ */
+function sgs_hubspot_test_page() {
+    $api_key = get_option('sgs_hubspot_api_key');
+    
+    echo '<div class="wrap">';
+    echo '<h1>HubSpot API Test</h1>';
+    
+    if (empty($api_key)) {
+        echo '<div class="notice notice-error"><p>❌ No API key configured. Please add one in Theme Options.</p></div>';
+        echo '</div>';
+        return;
+    }
+    
+    echo '<div style="background: #f0f0f0; padding: 15px; margin: 15px 0; border-left: 4px solid #0073aa;">';
+    echo '<p><strong>API Key (first 20 chars):</strong> <code>' . esc_html(substr($api_key, 0, 20)) . '...</code></p>';
+    echo '<p><strong>API Key Length:</strong> ' . strlen($api_key) . ' characters</p>';
+    echo '<p><strong>Full Key (for debugging):</strong> <code style="word-break: break-all;">' . esc_html($api_key) . '</code></p>';
+    echo '</div>';
+    
+    $is_private_app = strpos($api_key, 'pat-') === 0;
+    echo '<p><strong>Auth Type:</strong> ' . ($is_private_app ? 'Private App (Bearer)' : 'Legacy API Key (hapikey)') . '</p>';
+    
+    // Test 1: Search for contacts with referral_code property
+    echo '<h2>Test 1: Search for Referral Contacts</h2>';
+    $url = 'https://api.hubapi.com/crm/v3/objects/contacts/search';
+    $body = [
+        'filterGroups' => [
+            [
+                'filters' => [
+                    [
+                        'propertyName' => 'referral_code',
+                        'operator' => 'HAS_PROPERTY'
+                    ]
+                ]
+            ]
+        ],
+        'limit' => 5
+    ];
+    
+    if ($is_private_app) {
+        $args = [
+            'headers' => [
+                'Authorization' => 'Bearer ' . $api_key,
+                'Content-Type' => 'application/json'
+            ],
+            'body' => json_encode($body),
+            'timeout' => 15
+        ];
+    } else {
+        $url .= '?hapikey=' . $api_key;
+        $args = [
+            'headers' => [
+                'Content-Type' => 'application/json'
+            ],
+            'body' => json_encode($body),
+            'timeout' => 15
+        ];
+    }
+    
+    $response = wp_remote_post($url, $args);
+    
+    if (is_wp_error($response)) {
+        echo '<div class="notice notice-error"><p>❌ Error: ' . esc_html($response->get_error_message()) . '</p></div>';
+    } else {
+        $status = wp_remote_retrieve_response_code($response);
+        $response_body = wp_remote_retrieve_body($response);
+        
+        echo '<p><strong>Status Code:</strong> <span style="color: ' . ($status == 200 ? 'green' : 'red') . ';">' . $status . '</span></p>';
+        
+        if ($status == 200) {
+            echo '<div class="notice notice-success"><p>✅ API connection successful!</p></div>';
+            $data = json_decode($response_body, true);
+            echo '<p><strong>Found ' . count($data['results'] ?? []) . ' contacts with referral_code property</strong></p>';
+            if (!empty($data['results'])) {
+                echo '<pre>' . esc_html(json_encode($data['results'], JSON_PRETTY_PRINT)) . '</pre>';
+            }
+        } else {
+            echo '<div class="notice notice-error"><p>❌ API Error</p></div>';
+            echo '<pre>' . esc_html($response_body) . '</pre>';
+        }
+    }
+    
+    // Test 2: Try to create a test contact
+    if (isset($_POST['create_test_contact'])) {
+        echo '<h2>Test 2: Create Test Contact</h2>';
+        $test_url = 'https://api.hubapi.com/crm/v3/objects/contacts';
+        $test_body = [
+            'properties' => [
+                'email' => 'test-' . time() . '@example.com',
+                'firstname' => 'Test',
+                'lastname' => 'User',
+                'referral_code' => 'test' . substr(md5(time()), 0, 4)
+            ]
+        ];
+        
+        if (!$is_private_app) {
+            $test_url .= '?hapikey=' . $api_key;
+        }
+        
+        $test_args = [
+            'headers' => $is_private_app ? [
+                'Authorization' => 'Bearer ' . $api_key,
+                'Content-Type' => 'application/json'
+            ] : [
+                'Content-Type' => 'application/json'
+            ],
+            'body' => json_encode($test_body),
+            'timeout' => 15
+        ];
+        
+        $test_response = wp_remote_post($test_url, $test_args);
+        $test_status = wp_remote_retrieve_response_code($test_response);
+        $test_body_response = wp_remote_retrieve_body($test_response);
+        
+        echo '<p><strong>Status:</strong> ' . $test_status . '</p>';
+        echo '<pre>' . esc_html($test_body_response) . '</pre>';
+    }
+    
+    echo '<form method="post">';
+    echo '<input type="submit" name="create_test_contact" value="Create Test Contact" class="button button-primary">';
+    echo '</form>';
+    
+    echo '</div>';
 }
 
 /**

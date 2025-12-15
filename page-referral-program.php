@@ -10,6 +10,8 @@ get_header(); ?>
 
     <?php get_template_part('template-parts/referral-program/referral-program-hero'); ?>
 
+    <?php get_template_part('template-parts/referral-program/referral-signup-form'); ?>
+
     <?php get_template_part('template-parts/referral-program/referral-program-content'); ?>
 
 </main>

@@ -3,9 +3,6 @@
  * Main entry point with modular imports
  */
 
-console.log('🔥🔥🔥 MAIN.JS: File is loading!');
-console.log('🔥🔥🔥 MAIN.JS: Browser is:', navigator.userAgent);
-
 import BlogShowMore from './modules/blog-showmore.js';
 import BlogSearch from './modules/blog-search.js';
 import initNewsletter from './modules/newsletter.js';
@@ -17,6 +14,8 @@ import initMobileMenu from './modules/mobile-menu.js';
 import DownloadsGateway from './modules/downloads.js';
 import ContactPage from './modules/contact-page.js';
 import LandingHeroTypewriter from './modules/landing-hero.js';
+import { initReferral } from './modules/referral-minimal.js';
+import { initReferralSignupForm } from './modules/referral-signup.js';
 import './modules/hubspot-tracking.js';
 import './footer-badge-carousel.js';
 
@@ -127,43 +126,36 @@ class SGSTheme {
     initConditionalModules() {
         // Blog modules - only on blog/post pages
         if (document.querySelector('.blog-content, .blog-container, .post-content, .blog-search-container')) {
-            console.log('Initializing blog modules...');
             this.initBlogModules();
         }
 
-        // ✅ Grants page - initialize show more for grants
+        // Grants page - initialize show more for grants
         if (document.querySelector('.grants-posts-grid, .grants-show-more')) {
-            console.log('Initializing grants show more...');
             new BlogShowMore();
         }
         
         // Newsletter - only if form container exists
         if (document.querySelector('#newsletter-form, .newsletter-container')) {
-            console.log('Initializing newsletter...');
             this.initNewsletter();
         }
         
         // Financial Compliance slider - only if slider exists
         if (document.querySelector('[data-fc-slider]')) {
-            console.log('Initializing financial compliance slider...');
             this.initFinancialCompliance();
         }
         
         // Mission Grants slider - only if slider exists  
         if (document.querySelector('[data-mission-slider]')) {
-            console.log('Initializing mission grants slider...');
             this.initMissionGrants();
         }
         
         // Downloads gateway - always initialize on pages with download triggers
         if (document.querySelector('.download-trigger') || document.querySelector('#download-gate-modal')) {
-            console.log('Initializing downloads gateway...');
             this.initDownloads();
         }
         
         // Contact page - only on contact page
         if (document.querySelector('.page-template-page-contact')) {
-            console.log('Initializing contact page...');
             this.initContactPage();
         }
     }
@@ -191,11 +183,16 @@ class SGSTheme {
             this.financialComplianceSlider = new FinancialComplianceSlider();
         }
     }
+    initFinancialCompliance() {
+        // Only initialize if slider exists
+        if (document.querySelector('[data-fc-slider]')) {
+            this.financialComplianceSlider = new FinancialComplianceSlider();
+        }
+    }
     
     initMissionGrants() {
         // Only initialize if slider exists
         if (document.querySelector('[data-mission-slider]')) {
-            console.log('Mission grants slider found, initializing...');
             new MissionGrantsSlider();
         }
     }
@@ -203,41 +200,22 @@ class SGSTheme {
     initNewsletter() {
         // Only initialize if newsletter form exists
         if (document.querySelector('#newsletter-form, .newsletter-container')) {
-            console.log('Newsletter form found, initializing...');
             initNewsletter();
         }
     }
     
     initMobileMenu() {
         // Initialize mobile menu functionality
-        console.log('Initializing mobile menu...');
         initMobileMenu();
     }
     
     initDownloads() {
-        console.log('🚀🚀🚀 MAIN.JS: initDownloads called');
-        console.log('🚀🚀🚀 MAIN.JS: Document ready state:', document.readyState);
-        console.log('🚀🚀🚀 MAIN.JS: Looking for modal...');
-        
         const tryInitialize = () => {
             const modal = document.querySelector('#download-gate-modal');
-            const triggers = document.querySelectorAll('.download-trigger');
-            
-            console.log('🚀🚀🚀 MAIN.JS: tryInitialize called', {
-                modal: modal,
-                modalExists: !!modal,
-                triggerCount: triggers.length,
-                triggers: triggers,
-                bodyClasses: document.body.className
-            });
-            
             if (modal) {
-                console.log('🚀🚀🚀 MAIN.JS: Download modal found, initializing downloads gateway...');
                 this.downloadsGateway = new DownloadsGateway();
-                console.log('🚀🚀🚀 MAIN.JS: Downloads gateway created:', this.downloadsGateway);
                 return true;
             }
-            console.log('🚀🚀🚀 MAIN.JS: Download modal not found yet, will retry...');
             return false;
         };
         
@@ -249,22 +227,12 @@ class SGSTheme {
             
             const retry = () => {
                 attempts++;
-                console.log(`Download modal retry attempt ${attempts}/${maxAttempts}`);
-                
-                if (tryInitialize()) {
-                    console.log('Download modal found on retry - downloads ready!');
-                    return; // Success!
+                if (tryInitialize() || attempts >= maxAttempts) {
+                    return;
                 }
-                
-                if (attempts < maxAttempts) {
-                    // Exponential backoff: 100ms, 200ms, 400ms, 800ms, 1600ms
-                    setTimeout(retry, 100 * Math.pow(2, attempts - 1));
-                } else {
-                    console.log('Download modal not found after all retries - downloads unavailable on this page');
-                }
+                setTimeout(retry, 100 * Math.pow(2, attempts - 1));
             };
             
-            // Start retry sequence
             setTimeout(retry, 100);
         }
     }
@@ -287,11 +255,8 @@ class SGSTheme {
     
     initContactPage() {
         // Initialize contact page functionality
-        console.log('Contact page detected, initializing ContactPage module...');
-        
         try {
             this.contactPage = new ContactPage();
-            console.log('Contact page module initialized successfully');
         } catch (error) {
             console.error('Error initializing contact page:', error);
         }
@@ -301,15 +266,14 @@ class SGSTheme {
 
 // Initialize when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
-    console.log('🔥🔥🔥 MAIN.JS: DOMContentLoaded fired!');
-    console.log('🔥🔥🔥 MAIN.JS: About to create SGSTheme...');
-    
     const sgsTheme = new SGSTheme();
     
-    console.log('🔥🔥🔥 MAIN.JS: SGSTheme created:', sgsTheme);
+    // Initialize referral tracking on every page
+    initReferral();
+    
+    // Initialize referral signup form (on referral program page)
+    initReferralSignupForm();
     
     // Make globally available for debugging
     window.SGSTheme = sgsTheme;
-    
-    console.log('🔥🔥🔥 MAIN.JS: SGSTheme available on window.SGSTheme');
 });

@@ -114,9 +114,10 @@ function sgs_enqueue_assets() {
     }
     
     // Localize script for AJAX
-    wp_localize_script('sgs-main', 'sgs_ajax', array(
-        'ajax_url' => admin_url('admin-ajax.php'),
-        'nonce' => wp_create_nonce('sgs_nonce')
+    wp_localize_script('sgs-main', 'sgsData', array(
+        'ajaxUrl' => admin_url('admin-ajax.php'),
+        'nonce' => wp_create_nonce('sgs_nonce'),
+        'referralNonce' => wp_create_nonce('sgs_referral_signup')
     ));
 }
 
@@ -126,6 +127,8 @@ require_once SGS_THEME_DIR . '/inc/post-types.php';
 require_once SGS_THEME_DIR . '/inc/theme-options.php';
 require_once SGS_THEME_DIR . '/inc/ajax-handlers.php';
 require_once SGS_THEME_DIR . '/inc/critical-css.php';
+require_once SGS_THEME_DIR . '/inc/referral-tracking.php';
+require_once SGS_THEME_DIR . '/inc/referral-api.php';
 
 // Widget areas
 add_action('widgets_init', 'sgs_register_widgets');

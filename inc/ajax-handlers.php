@@ -142,3 +142,9 @@ function sgs_handle_grant_application() {
 }
 add_action('wp_ajax_sgs_grant_application', 'sgs_handle_grant_application');
 add_action('wp_ajax_nopriv_sgs_grant_application', 'sgs_handle_grant_application');
+
+/**
+ * ==============================================================
+ * ALL REFERRAL AJAX HANDLERS MOVED TO inc/referral-api.php
+ * ==============================================================
+ */
