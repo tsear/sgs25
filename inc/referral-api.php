@@ -304,7 +304,7 @@ function sgs_hubspot_create_referral_contact($email, $first_name, $last_name, $o
 }
 
 /**
- * Fetch all referral contacts from HubSpot
+ * Fetch all referral contacts from HubSpot with conversion counts
  */
 function sgs_fetch_referrals_from_hubspot() {
     $api_key = get_option('sgs_hubspot_api_key');
@@ -313,7 +313,7 @@ function sgs_fetch_referrals_from_hubspot() {
         return array();
     }
     
-    // Search for all contacts with a referral_code property
+    // Search for all contacts with a referral_code property (referrers)
     $url = 'https://api.hubapi.com/crm/v3/objects/contacts/search';
     
     $body = array(
@@ -341,7 +341,7 @@ function sgs_fetch_referrals_from_hubspot() {
     $response = sgs_hubspot_request($url, 'POST', $body);
     
     if (is_wp_error($response)) {
-        error_log('HubSpot API error: ' . $response->get_error_message());
+        error_log('HubSpot API error fetching referrers: ' . $response->get_error_message());
         return array();
     }
     
@@ -369,8 +369,57 @@ function sgs_fetch_referrals_from_hubspot() {
             'organization' => $props['company'] ?? 'N/A',
             'created_at' => !empty($props['createdate']) ? date('Y-m-d H:i:s', strtotime($props['createdate'])) : 'N/A',
             'hubspot_contact_id' => $contact['id'],
-            'referrals' => array() // TODO: Fetch associated contacts
+            'conversion_count' => 0,
+            'referrals' => array()
         );
+    }
+    
+    // Now fetch all contacts with referral_source property (converted leads)
+    $conversions_url = 'https://api.hubapi.com/crm/v3/objects/contacts/search';
+    
+    $conversions_body = array(
+        'filterGroups' => array(
+            array(
+                'filters' => array(
+                    array(
+                        'propertyName' => 'referral_source',
+                        'operator' => 'HAS_PROPERTY'
+                    )
+                )
+            )
+        ),
+        'properties' => array(
+            'email',
+            'firstname',
+            'lastname',
+            'referral_source',
+            'createdate'
+        ),
+        'limit' => 100
+    );
+    
+    $conversions_response = sgs_hubspot_request($conversions_url, 'POST', $conversions_body);
+    
+    if (!is_wp_error($conversions_response)) {
+        $conversions_data = json_decode(wp_remote_retrieve_body($conversions_response), true);
+        
+        if (!empty($conversions_data['results'])) {
+            // Match conversions to referral codes
+            foreach ($conversions_data['results'] as $converted_contact) {
+                $converted_props = $converted_contact['properties'];
+                $source_code = $converted_props['referral_source'] ?? '';
+                
+                if (!empty($source_code) && isset($referrals[$source_code])) {
+                    $referrals[$source_code]['conversion_count']++;
+                    $referrals[$source_code]['referrals'][] = array(
+                        'email' => $converted_props['email'] ?? '',
+                        'first_name' => $converted_props['firstname'] ?? '',
+                        'last_name' => $converted_props['lastname'] ?? '',
+                        'created_at' => !empty($converted_props['createdate']) ? date('Y-m-d H:i:s', strtotime($converted_props['createdate'])) : 'N/A'
+                    );
+                }
+            }
+        }
     }
     
     return $referrals;

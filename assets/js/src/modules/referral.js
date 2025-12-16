@@ -159,38 +159,72 @@ function observeNewForms(referralCode) {
 }
 
 /**
- * Optional: Display referral info banner for debugging
- * (Remove in production or gate behind admin check)
+ * Display referral info banner (persistent)
  */
 export function showReferralDebugInfo() {
     const referralCode = getReferralCode();
     
-    if (!referralCode || !document.body.classList.contains('logged-in')) {
+    if (!referralCode) {
+        return;
+    }
+    
+    // Check if banner already exists
+    if (document.getElementById('sgs-referral-banner')) {
         return;
     }
     
     const banner = document.createElement('div');
+    banner.id = 'sgs-referral-banner';
     banner.style.cssText = `
         position: fixed;
-        bottom: 20px;
+        top: 70px;
         right: 20px;
         background: #333;
         color: #fff;
-        padding: 10px 15px;
+        padding: 8px 12px;
         border-radius: 5px;
         font-family: monospace;
-        font-size: 12px;
-        z-index: 99999;
+        font-size: 11px;
+        z-index: 9999;
         box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        cursor: pointer;
+        transition: background 0.2s;
     `;
-    banner.innerHTML = `🔗 Referral: <strong>${referralCode}</strong>`;
+    banner.innerHTML = `🔗 <strong>${referralCode}</strong>`;
+    
+    // Build referral URL pointing to contact page
+    const referralUrl = `https://smartgrantsolutions.com/contact/?referral_source=${referralCode}`;
+    
+    // Click to copy full referral URL
+    banner.addEventListener('click', () => {
+        navigator.clipboard.writeText(referralUrl).then(() => {
+            const originalBg = banner.style.background;
+            banner.style.background = '#FFB03F';
+            banner.innerHTML = `✓ <strong>Copied!</strong>`;
+            
+            setTimeout(() => {
+                banner.style.background = originalBg;
+                banner.innerHTML = `🔗 <strong>${referralCode}</strong>`;
+            }, 1500);
+        }).catch(() => {
+            // Fallback for older browsers
+            const tempInput = document.createElement('input');
+            tempInput.value = referralUrl;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+            
+            const originalBg = banner.style.background;
+            banner.style.background = '#FFB03F';
+            banner.innerHTML = `✓ <strong>Copied!</strong>`;
+            
+            setTimeout(() => {
+                banner.style.background = originalBg;
+                banner.innerHTML = `🔗 <strong>${referralCode}</strong>`;
+            }, 1500);
+        });
+    });
     
     document.body.appendChild(banner);
-    
-    // Auto-hide after 5 seconds
-    setTimeout(() => {
-        banner.style.opacity = '0';
-        banner.style.transition = 'opacity 0.5s';
-        setTimeout(() => banner.remove(), 500);
-    }, 5000);
 }

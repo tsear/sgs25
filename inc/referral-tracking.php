@@ -34,7 +34,7 @@ function sgs_referral_admin_page() {
     $current_month = date('Y-m');
     
     foreach ($referral_codes as $data) {
-        $total_conversions += count($data['referrals'] ?? []);
+        $total_conversions += $data['conversion_count'] ?? 0;
         if (!empty($data['created_at']) && strpos($data['created_at'], $current_month) === 0) {
             $active_this_month++;
         }
@@ -181,7 +181,7 @@ function sgs_referral_admin_page() {
                         <?php foreach ($referral_codes as $code => $data): ?>
                             <?php 
                             $referrals = $data['referrals'] ?? [];
-                            $conversion_count = count($referrals);
+                            $conversion_count = $data['conversion_count'] ?? 0;
                             $is_active = $conversion_count > 0 || (!empty($data['created_at']) && strpos($data['created_at'], date('Y-m')) === 0);
                             ?>
                             <tr data-code="<?php echo esc_attr($code); ?>" data-search="<?php echo esc_attr(strtolower($data['first_name'] . ' ' . $data['last_name'] . ' ' . ($data['organization'] ?? '') . ' ' . $code)); ?>">
@@ -231,9 +231,9 @@ function sgs_referral_admin_page() {
                                                 <tbody>
                                                     <?php foreach ($referrals as $referral): ?>
                                                         <tr>
-                                                            <td><?php echo esc_html($referral['name'] ?? 'N/A'); ?></td>
-                                                            <td><a href="mailto:<?php echo esc_attr($referral['email']); ?>"><?php echo esc_html($referral['email']); ?></a></td>
-                                                            <td><?php echo esc_html($referral['submitted_at'] ?? 'N/A'); ?></td>
+                                                            <td><?php echo esc_html(($referral['first_name'] ?? '') . ' ' . ($referral['last_name'] ?? '')); ?></td>
+                                                            <td><a href="mailto:<?php echo esc_attr($referral['email'] ?? ''); ?>"><?php echo esc_html($referral['email'] ?? 'N/A'); ?></a></td>
+                                                            <td><?php echo esc_html($referral['created_at'] ?? 'N/A'); ?></td>
                                                         </tr>
                                                     <?php endforeach; ?>
                                                 </tbody>

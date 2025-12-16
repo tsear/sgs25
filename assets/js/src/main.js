@@ -16,6 +16,7 @@ import ContactPage from './modules/contact-page.js';
 import LandingHeroTypewriter from './modules/landing-hero.js';
 import { initReferral } from './modules/referral-minimal.js';
 import { initReferralSignupForm } from './modules/referral-signup.js';
+import { showReferralDebugInfo } from './modules/referral.js';
 import './modules/hubspot-tracking.js';
 import './footer-badge-carousel.js';
 
@@ -273,6 +274,9 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Initialize referral signup form (on referral program page)
     initReferralSignupForm();
+    
+    // Show persistent referral banner if code exists
+    showReferralDebugInfo();
     
     // Make globally available for debugging
     window.SGSTheme = sgsTheme;
