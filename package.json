@@ -1,6 +1,6 @@
 {
   "name": "smartgrantsolutions-theme",
-  "version": "1.2.1",
+  "version": "1.1.1",
   "description": "1:1 WordPress recreation of Smart Grant Solutions Tilda website",
   "type": "module",
   "main": "assets/js/main.js",
