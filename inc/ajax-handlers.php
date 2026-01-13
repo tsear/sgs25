@@ -43,11 +43,7 @@ function sgs_handle_newsletter_signup() {
     $existing[] = $email;
     update_option('sgs_newsletter_subscribers', $existing);
 
-    // Send notification to admin
-    $admin_email = get_option('admin_email');
-    $subject = __('New Newsletter Subscriber', 'sgs');
-    $message = sprintf(__('New newsletter subscriber: %s', 'sgs'), $email);
-    wp_mail($admin_email, $subject, $message);
+    // Note: Admin notifications handled by HubSpot
 
     wp_send_json_success(array(
         'message' => __('Thank you for subscribing to our newsletter!', 'sgs')
@@ -107,28 +103,7 @@ function sgs_handle_grant_application() {
     $application_id = wp_insert_post($application_data);
 
     if ($application_id) {
-        // Send confirmation email to applicant
-        $subject = __('Grant Application Received', 'sgs');
-        $message = sprintf(
-            __("Dear %s,\n\nWe have received your grant application for '%s'.\n\nApplication ID: %d\n\nWe will review your application and contact you soon.\n\nBest regards,\nSmart Grant Solutions Team", 'sgs'),
-            $applicant_name,
-            $project_title,
-            $application_id
-        );
-        wp_mail($email, $subject, $message);
-
-        // Send notification to admin
-        $admin_email = get_option('admin_email');
-        $admin_subject = __('New Grant Application', 'sgs');
-        $admin_message = sprintf(
-            __("New grant application received:\n\nApplicant: %s\nOrganization: %s\nProject: %s\nFunding Amount: %s\n\nView application: %s", 'sgs'),
-            $applicant_name,
-            $organization,
-            $project_title,
-            $funding_amount,
-            admin_url('post.php?post=' . $application_id . '&action=edit')
-        );
-        wp_mail($admin_email, $admin_subject, $admin_message);
+        // Note: Email notifications handled by HubSpot
 
         wp_send_json_success(array(
             'message' => __('Thank you! Your grant application has been submitted successfully. You will receive a confirmation email shortly.', 'sgs'),
