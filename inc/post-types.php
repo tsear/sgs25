@@ -11,6 +11,14 @@ if (!defined('ABSPATH')) {
 }
 
 /**
+ * Force author support after registration
+ */
+add_action('init', 'sgs_force_author_support', 99);
+function sgs_force_author_support() {
+    add_post_type_support('grant_opportunity', 'author');
+}
+
+/**
  * Register Custom Post Types
  */
 function sgs_register_post_types() {
