@@ -40,7 +40,7 @@ function sgs_register_post_types() {
         'hierarchical'        => false,
         'menu_position'       => 5,
         'menu_icon'           => 'dashicons-money-alt',
-        'supports'            => array('title', 'editor', 'excerpt', 'thumbnail', 'custom-fields'),
+        'supports'            => array('title', 'editor', 'excerpt', 'thumbnail', 'custom-fields', 'author'),
         'show_in_rest'        => true,
     ));
 
